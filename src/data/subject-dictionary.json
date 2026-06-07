@@ -1,0 +1,152 @@
+[
+  {
+    "zh": "黑发晶手串",
+    "en": "black rutilated quartz bracelet",
+    "category": "jewelry",
+    "materialHintsZh": ["黑发晶", "天然晶石", "抛光珠体", "金属隔珠"],
+    "materialHintsEn": ["black rutilated quartz", "natural crystal beads", "polished stone texture", "metal spacer beads"],
+    "visualHintsZh": ["高级珠宝静物", "微距材质细节", "柔和高光", "低调奢华"],
+    "visualHintsEn": ["premium jewelry still life", "macro material detail", "soft refined highlights", "restrained luxury"],
+    "recommendedDirections": ["jewelry-still-ad", "oriental-bracelet", "cmf-macro-study"]
+  },
+  {
+    "zh": "绿松石手串",
+    "en": "turquoise beaded bracelet",
+    "category": "jewelry",
+    "materialHintsZh": ["绿松石", "银色隔珠", "天然矿石纹理", "手工打磨珠体"],
+    "materialHintsEn": ["turquoise stone", "silver spacer beads", "natural mineral veining", "hand-polished beads"],
+    "visualHintsZh": ["东方轻奢", "珠宝静物广告", "温润材质", "礼品视觉"],
+    "visualHintsEn": ["oriental quiet luxury", "jewelry still-life advertising", "warm tactile material", "gift-oriented visual"],
+    "recommendedDirections": ["oriental-bracelet", "jewelry-still-ad", "minimal-still-life"]
+  },
+  {
+    "zh": "胡桃木休闲椅",
+    "en": "walnut lounge chair",
+    "category": "furniture",
+    "materialHintsZh": ["胡桃木", "黑色皮革", "温润木纹", "精致榫接"],
+    "materialHintsEn": ["walnut wood", "black leather upholstery", "warm wood grain", "refined joinery"],
+    "visualHintsZh": ["高端家具展厅", "现代画廊空间", "材质对比", "作品集展示"],
+    "visualHintsEn": ["high-end furniture showroom", "modern gallery space", "material contrast", "portfolio presentation"],
+    "recommendedDirections": ["furniture-gallery", "cmf-macro-study", "lifestyle-scene", "industrial-portfolio"]
+  },
+  {
+    "zh": "便携显示器",
+    "en": "portable monitor",
+    "category": "consumer-electronics",
+    "materialHintsZh": ["超薄铝合金", "玻璃屏幕", "细窄边框", "屏幕反射"],
+    "materialHintsEn": ["ultra-thin aluminum body", "glass display surface", "narrow bezel", "controlled screen reflection"],
+    "visualHintsZh": ["Apple 风官网主视觉", "极简工作台", "结构展示", "未来科技"],
+    "visualHintsEn": ["Apple-inspired website hero", "minimal workstation", "clear structural presentation", "future technology aesthetic"],
+    "recommendedDirections": ["apple-hero", "future-tech-render", "industrial-portfolio"]
+  },
+  {
+    "zh": "香水瓶",
+    "en": "perfume bottle",
+    "category": "beauty",
+    "materialHintsZh": ["透明玻璃", "液体折射", "金属瓶盖", "细腻标签"],
+    "materialHintsEn": ["transparent glass", "liquid refraction", "metal cap", "refined label texture"],
+    "visualHintsZh": ["高端香氛广告", "柔雾光线", "玻璃折射", "品牌大片"],
+    "visualHintsEn": ["luxury fragrance campaign", "soft misty light", "glass refraction", "brand campaign visual"],
+    "recommendedDirections": ["beauty-fragrance-film", "minimal-still-life", "exhibition-key-visual"]
+  },
+  {
+    "zh": "咖啡机",
+    "en": "coffee machine",
+    "category": "home-appliance",
+    "materialHintsZh": ["不锈钢", "哑光黑塑料", "玻璃水箱", "精密按键"],
+    "materialHintsEn": ["stainless steel", "matte black plastic", "glass water tank", "precision buttons"],
+    "visualHintsZh": ["厨房生活方式", "电商主图", "高级家电", "功能质感"],
+    "visualHintsEn": ["kitchen lifestyle scene", "ecommerce hero image", "premium home appliance", "functional material quality"],
+    "recommendedDirections": ["lifestyle-scene", "ecommerce-conversion", "minimal-still-life"]
+  },
+  {
+    "zh": "落地灯",
+    "en": "floor lamp",
+    "category": "lighting",
+    "materialHintsZh": ["金属灯杆", "织物灯罩", "暖色光源", "稳定底座"],
+    "materialHintsEn": ["metal lamp stem", "fabric lampshade", "warm light source", "stable base"],
+    "visualHintsZh": ["现代家居场景", "灯光氛围", "家具展厅", "生活方式广告"],
+    "visualHintsEn": ["modern home interior", "lighting ambience", "furniture showroom", "lifestyle advertising"],
+    "recommendedDirections": ["furniture-gallery", "lifestyle-scene", "minimal-still-life"]
+  },
+  {
+    "zh": "陶瓷花瓶",
+    "en": "ceramic vase",
+    "category": "home-decor",
+    "materialHintsZh": ["陶瓷釉面", "手工纹理", "柔和反光", "细腻边缘"],
+    "materialHintsEn": ["ceramic glaze", "handcrafted texture", "soft reflection", "refined rim detail"],
+    "visualHintsZh": ["高端静物摄影", "画廊陈列", "材质微距", "家居装饰"],
+    "visualHintsEn": ["premium still-life photography", "gallery display", "macro material detail", "home decor styling"],
+    "recommendedDirections": ["minimal-still-life", "cmf-macro-study", "furniture-gallery"]
+  },
+  {
+    "zh": "高端音箱",
+    "en": "premium speaker",
+    "category": "consumer-electronics",
+    "materialHintsZh": ["织物网面", "铝合金外壳", "哑光塑料", "精密倒角"],
+    "materialHintsEn": ["woven acoustic fabric", "aluminum housing", "matte plastic", "precision chamfer"],
+    "visualHintsZh": ["官网主视觉", "未来科技渲染", "工业设计展示", "高端静物"],
+    "visualHintsEn": ["website hero visual", "future technology render", "industrial design presentation", "premium still life"],
+    "recommendedDirections": ["apple-hero", "future-tech-render", "industrial-portfolio"]
+  },
+  {
+    "zh": "包装礼盒",
+    "en": "premium gift box packaging",
+    "category": "packaging",
+    "materialHintsZh": ["特种纸", "烫金细节", "硬盒结构", "细腻压纹"],
+    "materialHintsEn": ["specialty paper", "foil stamping detail", "rigid box structure", "subtle embossing"],
+    "visualHintsZh": ["礼品视觉", "电商主图", "高级包装提案", "极简静物"],
+    "visualHintsEn": ["gift-oriented visual", "ecommerce hero image", "premium packaging proposal", "minimal still life"],
+    "recommendedDirections": ["minimal-still-life", "ecommerce-conversion", "exhibition-key-visual"]
+  },
+  {
+    "zh": "口红",
+    "en": "lipstick",
+    "category": "beauty",
+    "materialHintsZh": ["金属管身", "膏体质感", "高光边缘", "品牌色彩"],
+    "materialHintsEn": ["metal lipstick tube", "creamy lipstick texture", "controlled edge highlight", "brand color accent"],
+    "visualHintsZh": ["美妆商业大片", "社媒封面", "高端静物", "电商主图"],
+    "visualHintsEn": ["beauty campaign visual", "social media cover", "premium still life", "ecommerce main image"],
+    "recommendedDirections": ["beauty-fragrance-film", "minimal-still-life", "ecommerce-conversion"]
+  },
+  {
+    "zh": "手提包",
+    "en": "handbag",
+    "category": "fashion",
+    "materialHintsZh": ["真皮纹理", "金属五金", "精致缝线", "挺括廓形"],
+    "materialHintsEn": ["genuine leather grain", "metal hardware", "precise stitching", "structured silhouette"],
+    "visualHintsZh": ["轻奢广告", "生活方式场景", "电商主图", "高端静物"],
+    "visualHintsEn": ["quiet luxury advertising", "lifestyle scene", "ecommerce hero image", "premium still life"],
+    "recommendedDirections": ["lifestyle-scene", "minimal-still-life", "ecommerce-conversion"]
+  },
+  {
+    "zh": "茶叶礼盒",
+    "en": "premium tea gift box",
+    "category": "packaging",
+    "materialHintsZh": ["纸质礼盒", "茶叶纹理", "东方色彩", "烫金工艺"],
+    "materialHintsEn": ["paper gift box", "tea leaf texture", "oriental color palette", "foil stamping"],
+    "visualHintsZh": ["东方礼品视觉", "高级包装", "社媒封面", "电商详情页"],
+    "visualHintsEn": ["oriental gift visual", "premium packaging", "social media cover", "ecommerce detail image"],
+    "recommendedDirections": ["minimal-still-life", "exhibition-key-visual", "ecommerce-conversion"]
+  },
+  {
+    "zh": "智能手表",
+    "en": "smartwatch",
+    "category": "consumer-electronics",
+    "materialHintsZh": ["金属表壳", "玻璃屏幕", "硅胶表带", "精密传感器"],
+    "materialHintsEn": ["metal watch case", "glass display", "silicone strap", "precision sensors"],
+    "visualHintsZh": ["未来科技", "官网主视觉", "结构展示", "电商主图"],
+    "visualHintsEn": ["future technology visual", "website hero", "structural presentation", "ecommerce hero image"],
+    "recommendedDirections": ["future-tech-render", "apple-hero", "industrial-portfolio"]
+  },
+  {
+    "zh": "蓝牙耳机",
+    "en": "wireless earbuds",
+    "category": "consumer-electronics",
+    "materialHintsZh": ["哑光塑料", "充电盒", "细腻倒角", "柔和反射"],
+    "materialHintsEn": ["matte plastic", "charging case", "refined chamfer", "soft controlled reflection"],
+    "visualHintsZh": ["Apple 风官网主视觉", "未来科技", "电商主图", "高端静物"],
+    "visualHintsEn": ["Apple-inspired website hero", "future technology render", "ecommerce main image", "premium still life"],
+    "recommendedDirections": ["apple-hero", "future-tech-render", "ecommerce-conversion"]
+  }
+]

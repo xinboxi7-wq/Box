@@ -1,0 +1,176 @@
+[
+  {
+    "id": "product-rendering",
+    "name": "产品渲染",
+    "description": "用于新品概念、包装视觉、材质表达和官网主视觉。",
+    "accent": "#3E8B82",
+    "prompts": [
+      {
+        "id": "ceramic-speaker-studio",
+        "title": "陶瓷质感智能音箱",
+        "scene": "适合官网首屏、新品预热、产品概念提案。",
+        "chinese": "为一款圆润的智能音箱生成高级产品渲染图，主体为温润白色陶瓷外壳，顶部有细腻金属网孔，放置在浅灰色无缝摄影棚背景中。画面构图居中，45 度视角，柔和侧逆光，突出陶瓷釉面、金属细节和极简科技感。无文字、无 logo、无人物，画面干净、真实、适合高端品牌官网。",
+        "english": "Create a premium product render of a rounded smart speaker with a warm white ceramic shell and a refined metal mesh top. Place it in a light gray seamless studio background, centered composition, 45-degree angle, soft rim light, emphasizing ceramic glaze, metal detail, and minimal technology aesthetics. No text, no logo, no people, clean and realistic for a high-end brand website."
+      },
+      {
+        "id": "cosmetic-bottle-glass",
+        "title": "玻璃护肤精华瓶",
+        "scene": "适合美妆包装、电商详情页、品牌视觉探索。",
+        "chinese": "生成一张高端护肤精华瓶产品渲染，透明磨砂玻璃瓶身，银色按压泵头，瓶内液体呈淡青色。产品放在微湿的浅色石材台面上，背景有柔和散景和植物阴影。使用自然晨光，材质真实，反射克制，画面高级、干净、适合轻奢护肤品牌。无可读文字、无 logo、无水印。",
+        "english": "Generate a high-end product render of a skincare serum bottle with a translucent frosted glass body, silver pump, and pale teal liquid inside. Place it on a slightly wet light stone surface with soft bokeh and subtle plant shadows in the background. Use natural morning light, realistic materials, restrained reflections, clean luxury skincare style. No readable text, no logo, no watermark."
+      },
+      {
+        "id": "modular-lamp-render",
+        "title": "模块化桌面灯具",
+        "scene": "适合工业设计作品集、众筹页面、产品说明图。",
+        "chinese": "为一款模块化桌面灯具生成写实渲染图，灯体由哑光黑色铝合金灯杆、可旋转关节和暖白色亚克力灯罩组成。场景为现代设计工作室桌面，旁边有几何草图和材质样板。构图清晰，轻微俯视，突出结构、比例和可调节功能。光线柔和，背景简洁，不出现文字和品牌标识。",
+        "english": "Create a realistic render of a modular desk lamp made of matte black aluminum arms, rotating joints, and a warm white acrylic diffuser. Set it on a modern design studio desk with geometric sketches and material swatches nearby. Use a clean slightly top-down composition, highlighting structure, proportion, and adjustability. Soft lighting, simple background, no text or branding."
+      }
+    ]
+  },
+  {
+    "id": "bracelet-beads",
+    "name": "手链手串",
+    "description": "用于珠宝饰品、文玩手串、水晶搭配和电商展示。",
+    "accent": "#B75F4B",
+    "prompts": [
+      {
+        "id": "jade-bracelet-closeup",
+        "title": "和田玉手串微距",
+        "scene": "适合文玩珠宝详情页、社媒种草图。",
+        "chinese": "生成一张和田玉手串的高级微距产品图，玉珠呈温润青白色，颗颗圆润，纹理自然细腻。手串放在深灰色亚麻布上，旁边有一小片浅色宣纸和低调木质托盘。使用柔和侧光，突出玉石通透感和手工质感。画面安静、东方审美、无文字、无 logo、无人物。",
+        "english": "Generate a premium macro product photo of a Hetian jade bead bracelet. The beads are warm pale green-white, rounded, with natural delicate textures. Place the bracelet on dark gray linen with a small piece of light rice paper and a subtle wooden tray nearby. Use soft side lighting to emphasize translucency and craftsmanship. Quiet Eastern aesthetic, no text, no logo, no people."
+      },
+      {
+        "id": "crystal-stack-bracelet",
+        "title": "水晶叠戴组合",
+        "scene": "适合小红书封面、电商搭配图、饰品系列图。",
+        "chinese": "生成一组水晶手链叠戴产品图，包括白水晶、烟晶和淡粉色晶石，珠径大小有层次，搭配小巧银色隔珠。手链自然摆放在暖白色陶瓷盘中，背景有柔和日光和浅色织物。画面轻盈、通透、适合年轻女性饰品品牌。保持真实材质，不要夸张闪光，不要文字和水印。",
+        "english": "Create a product image of stacked crystal bracelets featuring clear quartz, smoky quartz, and pale pink stones, with varied bead sizes and small silver spacer beads. Arrange them naturally in a warm white ceramic dish with soft daylight and light fabric in the background. Airy, translucent, suitable for a young women's accessory brand. Keep materials realistic, avoid exaggerated sparkle, no text or watermark."
+      },
+      {
+        "id": "wooden-prayer-beads",
+        "title": "沉香木手串静物",
+        "scene": "适合传统文化产品、礼品海报、收藏展示。",
+        "chinese": "为一串沉香木手串生成静物摄影图，珠子为深褐色木纹，表面半哑光，搭配一颗简洁银色尾珠。手串放在黑色石板和浅色丝绸之间，旁边有一缕非常淡的香烟氛围但不遮挡主体。光线克制，质感沉稳，构图留白充足，适合高端礼品视觉。无文字、无 logo。",
+        "english": "Create a still-life product photo of an agarwood bead bracelet with deep brown wood grain, semi-matte surface, and one minimal silver end bead. Place it between a black stone slab and light silk, with a very subtle incense atmosphere that does not cover the subject. Restrained lighting, calm texture, generous negative space, suitable for premium gift visuals. No text, no logo."
+      }
+    ]
+  },
+  {
+    "id": "furniture-design",
+    "name": "家具设计",
+    "description": "用于椅子、沙发、柜体、空间搭配和设计提案。",
+    "accent": "#7E8F4F",
+    "prompts": [
+      {
+        "id": "walnut-lounge-chair",
+        "title": "胡桃木休闲椅",
+        "scene": "适合家具概念渲染、作品集、展会物料。",
+        "chinese": "生成一款胡桃木休闲椅的设计渲染图，椅架为流畅弧线结构，坐垫为浅灰色羊毛织物，整体低矮舒展。场景为极简室内空间，浅色地面，背景有柔和自然光。镜头高度略低，突出椅子轮廓、木纹和人体工学比例。画面高级、安静、无人物、无文字、无 logo。",
+        "english": "Generate a furniture design render of a walnut lounge chair with a smooth curved wooden frame and light gray wool cushions, low and relaxed proportions. Set it in a minimal interior with a light floor and soft natural light. Use a slightly low camera angle to emphasize silhouette, wood grain, and ergonomic proportions. Premium, calm, no people, no text, no logo."
+      },
+      {
+        "id": "modular-sofa-system",
+        "title": "模块化云朵沙发",
+        "scene": "适合室内软装方案、家具品牌主图。",
+        "chinese": "为一组模块化云朵沙发生成室内场景图，沙发为米白色蓬松织物模块，可自由组合，搭配低矮黑色茶几和一盏细杆落地灯。空间为开阔客厅，墙面为浅灰绿，窗边有自然光。构图平衡，突出舒适感、模块结构和高级生活方式。不要出现人物、品牌文字或杂乱装饰。",
+        "english": "Create an interior scene image for a modular cloud sofa system. The sofa uses soft off-white fabric modules that can be rearranged, paired with a low black coffee table and a slender floor lamp. Set it in an open living room with muted gray-green walls and natural window light. Balanced composition, highlighting comfort, modular structure, and elevated lifestyle. No people, brand text, or clutter."
+      },
+      {
+        "id": "storage-cabinet-render",
+        "title": "极简收纳边柜",
+        "scene": "适合柜体设计、电商详情、室内搭配图。",
+        "chinese": "生成一个极简收纳边柜的产品渲染，柜体为浅橡木贴面，门板无把手，边缘圆角细腻，台面放置一只陶瓷花器和一本合上的设计书。背景为干净白墙，地面为微水泥质感。使用柔和阴影和真实比例，突出木纹、结构细节和家居搭配感。无文字、无 logo、无人物。",
+        "english": "Generate a product render of a minimal storage sideboard with light oak veneer, handleless doors, and refined rounded edges. Place a ceramic vase and a closed design book on top. Use a clean white wall and microcement floor background. Soft shadows and realistic scale, emphasizing wood grain, construction details, and interior styling. No text, no logo, no people."
+      }
+    ]
+  },
+  {
+    "id": "ecommerce-main-image",
+    "name": "电商主图",
+    "description": "用于平台首图、卖点可视化、套装陈列和转化素材。",
+    "accent": "#D49B43",
+    "prompts": [
+      {
+        "id": "portable-blender-main",
+        "title": "便携榨汁杯主图",
+        "scene": "适合淘宝、京东、抖音商城产品首图。",
+        "chinese": "生成一张便携榨汁杯电商主图，产品为白色机身和透明杯体，旁边摆放切开的草莓、香蕉和冰块，背景为明亮厨房台面。主体占画面 70%，角度清晰，突出小巧、易清洗和新鲜果汁氛围。画面干净、有购买欲，不要添加任何文字、价格、logo 或夸张特效。",
+        "english": "Create an ecommerce main image for a portable blender with a white body and transparent cup. Place sliced strawberries, bananas, and ice cubes beside it on a bright kitchen counter. The product should occupy about 70 percent of the frame, clear angle, emphasizing compact size, easy cleaning, and fresh juice mood. Clean and appealing, no text, price, logo, or exaggerated effects."
+      },
+      {
+        "id": "pet-dryer-box-main",
+        "title": "宠物烘干箱主图",
+        "scene": "适合宠物用品电商首图、功能展示图。",
+        "chinese": "生成一张宠物烘干箱电商主图，产品为圆角白色箱体，透明舱门，内部有一只安静坐着的小型犬，环境为明亮干净的家居空间。构图突出产品外观、安全感和舒适体验，光线柔和，阴影自然。画面专业、可信、适合电商平台，不要文字、促销标签、logo 或水印。",
+        "english": "Generate an ecommerce main image for a pet drying box with a rounded white body and transparent door. A small calm dog sits inside, set in a bright clean home environment. The composition should emphasize product appearance, safety, and comfort. Soft light, natural shadows, professional and trustworthy for ecommerce. No text, promotion labels, logo, or watermark."
+      },
+      {
+        "id": "desk-organizer-kit",
+        "title": "桌面收纳套装",
+        "scene": "适合办公用品套装主图、场景化销售页。",
+        "chinese": "生成一张桌面收纳套装电商主图，包括笔筒、文件托盘、线缆收纳盒和小抽屉模块，材质为哑光深灰与浅木纹组合。所有产品整齐摆放在白色办公桌上，背景有笔记本电脑的局部虚化。构图有秩序，突出套装完整性和桌面整洁感。无文字、无品牌标识、无人物。",
+        "english": "Create an ecommerce main image for a desktop organizer set including a pen holder, document tray, cable box, and small drawer module, made of matte dark gray material with light wood accents. Arrange all products neatly on a white desk with a softly blurred laptop in the background. Ordered composition, emphasizing complete set value and tidy workspace. No text, no branding, no people."
+      }
+    ]
+  },
+  {
+    "id": "poster-design",
+    "name": "海报设计",
+    "description": "用于活动海报、品牌发布、展览视觉和社媒封面。",
+    "accent": "#4B7DB7",
+    "prompts": [
+      {
+        "id": "design-exhibition-poster",
+        "title": "设计展视觉海报",
+        "scene": "适合展览主视觉、朋友圈海报、活动预告。",
+        "chinese": "生成一张现代设计展海报视觉，主题围绕“材料与形态”，画面中有纸张、金属片、玻璃块和织物的抽象组合，排列形成强烈的空间层次。竖版构图，留出顶部和底部可放文字的空白区域，但不要生成任何文字。风格高级、干净、具有编辑设计感，色彩包含白、黑、 muted teal 和 soft coral。",
+        "english": "Create a modern design exhibition poster visual about materials and forms, featuring an abstract arrangement of paper, metal sheets, glass blocks, and fabric with strong spatial layering. Vertical composition with blank areas at the top and bottom for future text, but do not generate any text. Premium, clean editorial design style, using white, black, muted teal, and soft coral."
+      },
+      {
+        "id": "coffee-launch-poster",
+        "title": "咖啡新品发布海报",
+        "scene": "适合餐饮品牌上新、社媒推广、门店物料。",
+        "chinese": "生成一张咖啡新品发布海报主视觉，主体是一杯冰拿铁，透明杯壁有冷凝水，旁边有咖啡豆和一小块浅色石材。背景为干净的暖白色和深咖啡色块组合，构图竖版，产品居中偏下，顶部留白。光线清爽，画面有高级感。不要生成文字、logo、价格或水印。",
+        "english": "Generate a poster key visual for a new coffee launch. The subject is an iced latte in a transparent cup with condensation, placed beside coffee beans and a small light stone piece. Use a clean warm white and deep coffee color-block background, vertical composition, product centered slightly lower with blank space at the top. Fresh lighting and premium feel. No text, logo, price, or watermark."
+      },
+      {
+        "id": "music-festival-poster",
+        "title": "音乐节氛围海报",
+        "scene": "适合线下活动海报、社群传播、票务页面。",
+        "chinese": "生成一张现代音乐节海报视觉，画面由舞台灯光、抽象声波形态和半透明彩色材质组成，氛围热烈但不杂乱。竖版构图，中心有强视觉焦点，四周保留可排版区域。色彩使用黑色、银色、亮橙和湖蓝，质感高级。不要生成任何文字、logo、人脸或水印。",
+        "english": "Create a modern music festival poster visual with stage lighting, abstract sound-wave forms, and translucent colored materials. Energetic but not cluttered. Vertical composition with a strong central focal point and surrounding areas reserved for layout. Use black, silver, bright orange, and lake blue, with a premium texture. No text, logo, faces, or watermark."
+      }
+    ]
+  },
+  {
+    "id": "video-storyboard",
+    "name": "视频分镜",
+    "description": "用于短视频广告、产品介绍、品牌故事和拍摄脚本。",
+    "accent": "#6E6A9F",
+    "prompts": [
+      {
+        "id": "skincare-storyboard",
+        "title": "护肤精华短视频分镜",
+        "scene": "适合 15 秒短视频广告、品牌种草脚本。",
+        "chinese": "为一支 15 秒护肤精华广告生成 6 格视频分镜画面：1 清晨窗边自然光，产品静置在石材台面；2 手部按压泵头，精华滴落；3 微距展示透明质地；4 年轻女性侧脸涂抹但不露完整身份；5 水润皮肤质感特写；6 产品回到画面中央，背景干净留白。整体风格清透、高级、光线柔和。不要文字、logo 或水印。",
+        "english": "Create a 6-panel storyboard for a 15-second skincare serum ad: 1 morning window light with the product on a stone surface; 2 a hand pressing the pump with serum dropping; 3 macro shot of transparent texture; 4 young woman applying it in side profile without revealing full identity; 5 close-up of hydrated skin texture; 6 product centered again with clean negative space. Clear, premium style with soft light. No text, logo, or watermark."
+      },
+      {
+        "id": "chair-craft-storyboard",
+        "title": "家具工艺品牌片",
+        "scene": "适合品牌短片、工艺介绍、展会视频脚本。",
+        "chinese": "生成一组 8 格家具工艺品牌片分镜，主题是一把胡桃木休闲椅从材料到成品的过程：木材纹理特写、设计草图、木工打磨、弯曲结构组装、织物坐垫缝制、成品细节、放入室内空间、最终静物英雄镜头。画面统一为暖自然光，构图精致，质感真实，有高级手工艺氛围。不要文字、logo、字幕或水印。",
+        "english": "Generate an 8-panel storyboard for a furniture craftsmanship brand film about a walnut lounge chair from material to finished piece: wood grain close-up, design sketch, sanding process, curved frame assembly, fabric cushion stitching, finished detail shot, placement in an interior, final still-life hero shot. Use consistent warm natural light, refined composition, realistic texture, premium craftsmanship atmosphere. No text, logo, subtitles, or watermark."
+      },
+      {
+        "id": "ecommerce-product-demo",
+        "title": "电商产品功能演示",
+        "scene": "适合抖音信息流、详情页视频、直播间素材。",
+        "chinese": "为一款桌面收纳套装生成 6 格短视频分镜：1 杂乱桌面开场；2 手把文件和线缆分类；3 收纳模块逐个摆入；4 俯拍展示桌面从乱到整齐的变化；5 微距展示抽屉和线缆盒细节；6 完整桌面成品镜头。风格明亮、真实、节奏清晰，突出解决问题的过程。不要生成文字、logo、人脸或水印。",
+        "english": "Create a 6-panel short-video storyboard for a desktop organizer set: 1 messy desk opening shot; 2 hands sorting papers and cables; 3 organizer modules placed one by one; 4 top-down shot showing the transformation from cluttered to tidy; 5 macro details of drawer and cable box; 6 final complete tidy desk hero shot. Bright, realistic, clear pacing, emphasizing the problem-solving process. No text, logo, faces, or watermark."
+      }
+    ]
+  }
+]

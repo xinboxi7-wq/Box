@@ -1,0 +1,1282 @@
+{
+  "projectTypes": [
+    {
+      "id": "product-design",
+      "name": "产品设计",
+      "description": "适合消费电子、生活用品、创新硬件和概念产品的商业视觉探索。",
+      "recommendedDirections": [
+        "future-tech-render",
+        "apple-hero",
+        "industrial-portfolio",
+        "minimal-still-life"
+      ]
+    },
+    {
+      "id": "furniture-design",
+      "name": "家具设计",
+      "description": "适合椅子、桌柜、沙发、灯具等家具产品的渲染与展示。",
+      "recommendedDirections": [
+        "furniture-gallery",
+        "cmf-macro-study",
+        "lifestyle-scene",
+        "industrial-portfolio"
+      ]
+    },
+    {
+      "id": "jewelry-design",
+      "name": "珠宝饰品",
+      "description": "适合手串、手链、戒指、项链、耳饰和精品静物广告。",
+      "recommendedDirections": [
+        "jewelry-still-ad",
+        "oriental-bracelet",
+        "minimal-still-life",
+        "exhibition-key-visual"
+      ]
+    },
+    {
+      "id": "cmf-design",
+      "name": "CMF 设计",
+      "description": "适合材质、色彩、表面处理、工艺细节和趋势研究表达。",
+      "recommendedDirections": [
+        "cmf-macro-study",
+        "industrial-portfolio",
+        "minimal-still-life",
+        "exhibition-key-visual"
+      ]
+    },
+    {
+      "id": "ecommerce-main",
+      "name": "电商主图",
+      "description": "适合平台首图、详情页头图、卖点展示和转化素材。",
+      "recommendedDirections": [
+        "ecommerce-conversion",
+        "minimal-still-life",
+        "lifestyle-scene",
+        "beauty-fragrance-film"
+      ]
+    },
+    {
+      "id": "brand-ad",
+      "name": "品牌广告",
+      "description": "适合品牌大片、发布会 KV、社媒广告和海报传播。",
+      "recommendedDirections": [
+        "jewelry-still-ad",
+        "beauty-fragrance-film",
+        "lifestyle-scene",
+        "exhibition-key-visual"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "name": "作品集展示",
+      "description": "适合设计作品集、客户提案、评审材料和概念说明。",
+      "recommendedDirections": [
+        "industrial-portfolio",
+        "cmf-macro-study",
+        "furniture-gallery",
+        "future-tech-render"
+      ]
+    },
+    {
+      "id": "website-hero",
+      "name": "官网主视觉",
+      "description": "适合官网首屏、产品落地页、新品发布页面和品牌主页。",
+      "recommendedDirections": [
+        "apple-hero",
+        "furniture-gallery",
+        "future-tech-render",
+        "minimal-still-life"
+      ]
+    }
+  ],
+  "commercialGoals": [
+    {
+      "id": "premium-feel",
+      "name": "高级感",
+      "description": "强调克制、精致、品牌价值和高端商业质感。",
+      "visualKeywords": [
+        "克制留白",
+        "精致边缘",
+        "高级材质",
+        "低饱和空间"
+      ],
+      "promptKeywords": [
+        "premium",
+        "refined",
+        "high-end",
+        "minimal composition",
+        "commercial visual"
+      ]
+    },
+    {
+      "id": "material-expression",
+      "name": "材质表达",
+      "description": "突出 CMF、表面工艺、纹理、反射和触感。",
+      "visualKeywords": [
+        "材质微距",
+        "真实纹理",
+        "表面工艺",
+        "触感对比"
+      ],
+      "promptKeywords": [
+        "realistic material response",
+        "CMF detail",
+        "macro texture",
+        "surface finish"
+      ]
+    },
+    {
+      "id": "structure-display",
+      "name": "结构展示",
+      "description": "清晰呈现比例、结构、连接方式和设计逻辑。",
+      "visualKeywords": [
+        "结构清晰",
+        "比例可信",
+        "模块关系",
+        "设计说明"
+      ],
+      "promptKeywords": [
+        "clear structure",
+        "believable proportions",
+        "design presentation",
+        "clean geometry"
+      ]
+    },
+    {
+      "id": "conversion-selling",
+      "name": "转化卖点",
+      "description": "面向电商和广告，提高主体识别度与购买欲。",
+      "visualKeywords": [
+        "主体突出",
+        "清晰卖点",
+        "高转化",
+        "平台首图"
+      ],
+      "promptKeywords": [
+        "high-converting",
+        "product hero",
+        "clear selling point",
+        "ecommerce visual"
+      ]
+    },
+    {
+      "id": "brand-campaign",
+      "name": "品牌大片",
+      "description": "建立品牌情绪、传播记忆点和广告级视觉叙事。",
+      "visualKeywords": [
+        "品牌 KV",
+        "情绪场景",
+        "广告大片",
+        "视觉记忆"
+      ],
+      "promptKeywords": [
+        "brand campaign",
+        "cinematic commercial",
+        "key visual",
+        "memorable art direction"
+      ]
+    },
+    {
+      "id": "portfolio-quality",
+      "name": "作品集质感",
+      "description": "面向设计评审和提案，强调专业说明与视觉完成度。",
+      "visualKeywords": [
+        "作品集页面",
+        "设计评审",
+        "方案说明",
+        "专业布局"
+      ],
+      "promptKeywords": [
+        "portfolio presentation",
+        "design review",
+        "professional layout",
+        "concept board"
+      ]
+    },
+    {
+      "id": "lifestyle-scene",
+      "name": "生活方式场景",
+      "description": "把对象放入真实使用情境，表达用户想象和生活品质。",
+      "visualKeywords": [
+        "真实使用",
+        "生活方式",
+        "场景价值",
+        "氛围自然"
+      ],
+      "promptKeywords": [
+        "lifestyle photography",
+        "aspirational scene",
+        "believable use scenario",
+        "natural ambience"
+      ]
+    },
+    {
+      "id": "social-spread",
+      "name": "社交媒体传播",
+      "description": "适合小红书、Instagram、短视频封面和社媒广告。",
+      "visualKeywords": [
+        "封面吸引力",
+        "竖版构图",
+        "社媒广告",
+        "可传播"
+      ],
+      "promptKeywords": [
+        "social media cover",
+        "scroll-stopping visual",
+        "vertical ad creative",
+        "editorial composition"
+      ]
+    }
+  ],
+  "visualDirections": [
+    {
+      "id": "apple-hero",
+      "title": "Apple 风官网主视觉",
+      "description": "适合消费电子、办公产品和智能硬件的极简高端官网视觉。",
+      "bestFor": [
+        "消费电子",
+        "办公产品",
+        "智能硬件",
+        "官网首屏"
+      ],
+      "composition": "主体居中或轻微悬浮，背景干净，留白充足，轮廓边缘清晰。",
+      "scene": "极简工作台、浅色官网背景或干净现代创意办公空间。",
+      "cmf": "铝合金、玻璃、哑光塑料、细腻倒角和真实反射。",
+      "lighting": "柔和工作室布光，低反差阴影，边缘有轻微高光。",
+      "camera": "正视、45 度视角或轻微俯视，50mm 至 85mm。",
+      "promptStyle": "minimal, premium, Apple-inspired, website hero visual"
+    },
+    {
+      "id": "furniture-gallery",
+      "title": "高端家具展厅渲染",
+      "description": "用现代展厅空间表达家具比例、材质和品牌调性。",
+      "bestFor": [
+        "家具",
+        "椅子",
+        "沙发",
+        "灯具",
+        "作品集"
+      ],
+      "composition": "中景空间构图，主体占据画面视觉中心，背景以建筑留白衬托体量。",
+      "scene": "安静现代展厅、画廊、低饱和客厅或白色建筑空间。",
+      "cmf": "木纹、皮革、织物、金属或石材之间形成真实材质对比。",
+      "lighting": "柔和自然侧光或展厅环境光，地面保留克制阴影。",
+      "camera": "35mm 至 50mm，略低机位或 45 度视角。",
+      "promptStyle": "high-end furniture showroom render, modern gallery, premium materials"
+    },
+    {
+      "id": "cmf-macro-study",
+      "title": "CMF 材质微距研究",
+      "description": "把主体与材质样板、纹理细节和色彩关系放在同一套视觉系统中。",
+      "bestFor": [
+        "CMF",
+        "材质研究",
+        "作品集",
+        "家具",
+        "产品"
+      ],
+      "composition": "平铺或半俯视构图，主体、样板和局部细节按网格组织。",
+      "scene": "设计工作台、材料样板桌、浅色纸张或中性研究背景。",
+      "cmf": "明确主材、辅材、点缀材、表面处理和触感层次。",
+      "lighting": "柔和自然侧光，保留纹理阴影，避免过曝。",
+      "camera": "100mm Macro、俯拍或 45 度细节特写。",
+      "promptStyle": "CMF material study, macro texture board, design process"
+    },
+    {
+      "id": "jewelry-still-ad",
+      "title": "珠宝静物广告大片",
+      "description": "用精准光影、质感道具和克制构图建立珠宝价值感。",
+      "bestFor": [
+        "珠宝",
+        "手链",
+        "手串",
+        "戒指",
+        "品牌广告"
+      ],
+      "composition": "主体靠近画面中心，搭配少量石材、丝绒或玻璃道具形成层次。",
+      "scene": "深色丝绒、浅色石材、镜面台面或高级静物棚拍环境。",
+      "cmf": "强调宝石通透感、金属高光、珠体纹理和手工质感。",
+      "lighting": "柔光箱加轮廓光，局部高光精准控制。",
+      "camera": "100mm 微距或 85mm 静物镜头，浅景深。",
+      "promptStyle": "premium jewelry still-life advertising, refined highlights, luxury material detail"
+    },
+    {
+      "id": "oriental-bracelet",
+      "title": "东方轻奢手串视觉",
+      "description": "用东方审美、低饱和材质和静物叙事表达手串类产品的文化价值。",
+      "bestFor": [
+        "手串",
+        "手链",
+        "文玩",
+        "玉石",
+        "礼品"
+      ],
+      "composition": "主体自然环绕或半展开，保留留白，以木托、宣纸或石材形成支撑。",
+      "scene": "中式茶室桌面、深灰亚麻、浅色宣纸或低饱和石材台面。",
+      "cmf": "强调珠体纹理、玉石通透、木质油润、银色隔珠和手工细节。",
+      "lighting": "柔和侧光从左前方进入，阴影克制，整体安静高级。",
+      "camera": "85mm 或 100mm 微距，中近景，细节清晰但不过度夸张。",
+      "promptStyle": "oriental quiet luxury bracelet still-life, jade texture, refined cultural mood"
+    },
+    {
+      "id": "ecommerce-conversion",
+      "title": "电商高转化主图",
+      "description": "用更直接的主体占比和清爽场景提升识别度与购买欲。",
+      "bestFor": [
+        "电商主图",
+        "详情页",
+        "消费品",
+        "美妆",
+        "包装"
+      ],
+      "composition": "主体占画面 60%-75%，角度清楚，背景干净，卖点通过场景暗示。",
+      "scene": "电商白底、浅色台面、简洁生活场景或功能演示环境。",
+      "cmf": "材料表达清楚可信，不过度艺术化，帮助用户判断商品品质。",
+      "lighting": "高调柔光和自然投影，保证首图清晰度。",
+      "camera": "正面、45 度视角或轻微俯视，主体边缘清晰。",
+      "promptStyle": "high-converting ecommerce main image, clean product hero, clear selling point"
+    },
+    {
+      "id": "industrial-portfolio",
+      "title": "作品集级工业设计展示",
+      "description": "以专业评审视角表达结构逻辑、比例、CMF 和设计完成度。",
+      "bestFor": [
+        "产品设计",
+        "作品集",
+        "工业设计",
+        "结构展示"
+      ],
+      "composition": "主图搭配局部细节或结构视角，采用清晰留白和理性网格。",
+      "scene": "白色画板、设计评审页面、工作室台面或半透明技术背景。",
+      "cmf": "区分主结构、触摸件、连接件和装饰件的材质关系。",
+      "lighting": "均匀工作室布光，避免情绪光影响结构阅读。",
+      "camera": "45 度、正视、轴测或细节裁切组合。",
+      "promptStyle": "industrial design portfolio presentation, clear structure, professional concept board"
+    },
+    {
+      "id": "beauty-fragrance-film",
+      "title": "美妆香水商业大片",
+      "description": "用液体、玻璃、花材、雾感和光线创造高端美妆叙事。",
+      "bestFor": [
+        "香水",
+        "美妆",
+        "护肤",
+        "品牌广告",
+        "海报"
+      ],
+      "composition": "主体居中偏下，背景保留广告排版空间，辅以透明或自然元素。",
+      "scene": "石材台面、水面、柔雾背景、花艺装置或高端浴室空间。",
+      "cmf": "强调玻璃通透、液体颜色、金属盖体、标签质感和细腻反射。",
+      "lighting": "清透柔光、玻璃折射光和微弱轮廓光。",
+      "camera": "85mm 至 100mm，中近景或广告海报竖构图。",
+      "promptStyle": "luxury beauty campaign, translucent glass, refined fragrance advertising"
+    },
+    {
+      "id": "lifestyle-scene",
+      "title": "生活方式场景广告",
+      "description": "让对象进入真实使用场景，表达用户想象和品牌生活方式。",
+      "bestFor": [
+        "家居",
+        "电商",
+        "品牌广告",
+        "社媒",
+        "官网"
+      ],
+      "composition": "主体与环境共同叙事，主体保持清晰，人物或道具不喧宾夺主。",
+      "scene": "现代客厅、咖啡馆、创意工作台、卧室床头或户外露台。",
+      "cmf": "材质与环境互相呼应，强调触感、温度和生活品质。",
+      "lighting": "自然窗光、暖色家居光或清晨侧光。",
+      "camera": "35mm 或 50mm，中景，轻微景深。",
+      "promptStyle": "lifestyle commercial photography, believable use scenario, aspirational but natural"
+    },
+    {
+      "id": "future-tech-render",
+      "title": "未来科技产品渲染",
+      "description": "用洁净结构、悬浮构图和冷色光强调创新硬件的科技感。",
+      "bestFor": [
+        "消费电子",
+        "智能硬件",
+        "概念产品",
+        "发布会"
+      ],
+      "composition": "主体悬浮或置于极简科技台面，结构线条清楚，背景空间纯净。",
+      "scene": "未来实验室、半透明玻璃平台、冷色发布会空间或科技背景。",
+      "cmf": "强调铝合金、玻璃、微纹理塑料、屏幕反射和精密倒角。",
+      "lighting": "冷色线性光、边缘轮廓光和低对比环境光。",
+      "camera": "50mm，正视或 45 度视角，产品结构完整呈现。",
+      "promptStyle": "futuristic product render, clean technology aesthetic, precision hardware"
+    },
+    {
+      "id": "minimal-still-life",
+      "title": "极简高端静物摄影",
+      "description": "以克制道具、留白和真实材质建立低调但高价值感的视觉。",
+      "bestFor": [
+        "产品",
+        "包装",
+        "珠宝",
+        "美妆",
+        "官网"
+      ],
+      "composition": "主体居中或略偏下，大面积留白，少量几何道具形成平衡。",
+      "scene": "中性棚拍、浅色石材、纸张背景、深色布面或无缝空间。",
+      "cmf": "强调表面细节、边缘、触感和材质之间的安静对比。",
+      "lighting": "大面积柔光加轻微侧光，阴影干净。",
+      "camera": "85mm 静物镜头，中近景，稳定构图。",
+      "promptStyle": "minimal premium still-life photography, refined negative space, realistic material"
+    },
+    {
+      "id": "exhibition-key-visual",
+      "title": "展会海报级主视觉",
+      "description": "把对象或材质方向转化为可传播的展会、发布会和海报主视觉。",
+      "bestFor": [
+        "展会",
+        "发布会",
+        "品牌广告",
+        "海报",
+        "CMF"
+      ],
+      "composition": "中心强视觉焦点，周围保留标题和信息排版空间，不生成可读文字。",
+      "scene": "抽象展台、材质装置、建筑化空间或品牌发布会背景。",
+      "cmf": "用材料块、光影、透明介质和反射组织视觉层级。",
+      "lighting": "聚光灯、体积光、舞台环境光或戏剧化轮廓光。",
+      "camera": "竖版海报、宽银幕或低角度英雄构图。",
+      "promptStyle": "exhibition key visual, poster-grade composition, commercial art direction"
+    }
+  ],
+  "platformRules": {
+    "midjourney": {
+      "intro": "Use compact English keywords and visual phrases.",
+      "style": "More like art direction tokens than long instructions.",
+      "suffix": "premium commercial visual, realistic materials, refined lighting, clean edges, ultra detailed --ar 16:9 --style raw"
+    },
+    "flux": {
+      "intro": "Use natural language with strong physical and material clarity.",
+      "style": "Emphasize realistic materials, coherent geometry and believable lighting.",
+      "suffix": "high fidelity, coherent geometry, physically plausible materials, refined shadows, no text, no watermark"
+    },
+    "gptImage": {
+      "intro": "Use a complete and explicit Chinese visual instruction.",
+      "style": "Describe subject, space, materials, camera, lighting and constraints clearly.",
+      "suffix": "画面必须专业、干净、真实、适合商业发布，不生成可读文字、水印或多余品牌标识。"
+    }
+  },
+  "solutionTemplates": [
+    {
+      "id": "tpl-apple-hero",
+      "title": "Apple 风官网主视觉",
+      "projectType": "website-hero",
+      "goal": [
+        "premium-feel",
+        "structure-display"
+      ],
+      "visualDirection": "apple-hero",
+      "suitableSubjects": [
+        "显示器",
+        "耳机",
+        "音箱",
+        "键盘",
+        "手机",
+        "智能",
+        "办公",
+        "电子"
+      ],
+      "summary": "用极简悬浮构图、干净留白和精密材质表现高端消费电子的官网首屏质感。",
+      "commercialValue": "适合官网 Hero、产品落地页、新品发布页和高端硬件品牌视觉。",
+      "concept": "让对象像新品发布页上的主角一样被安静托起，画面只保留能证明结构、比例和材质品质的信息。",
+      "composition": "主体以居中悬浮或轻微 45 度角呈现，周围保持大面积呼吸空间，让轮廓和细节在第一眼就被读懂。",
+      "scene": "浅灰到白色的现代官网空间，带有克制的工作台或无缝背景，不出现杂乱装饰。",
+      "cmf": "强调铝合金、玻璃、哑光塑料、屏幕反射、细腻倒角和真实接触阴影。",
+      "lighting": "大面积柔光从上方和侧前方进入，边缘有轻微轮廓高光，整体低反差且干净。",
+      "camera": "50mm 到 85mm 的正视或轻微俯视视角，主体比例完整，边缘清晰。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "Flux",
+        "GPT Image"
+      ],
+      "templateCategory": "technology",
+      "suitableCategories": [
+        "consumer-electronics",
+        "technology",
+        "product-design"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "jewelry",
+        "beauty"
+      ]
+    },
+    {
+      "id": "tpl-furniture-gallery",
+      "title": "高端家具展厅渲染",
+      "projectType": "furniture-design",
+      "goal": [
+        "premium-feel",
+        "material-expression",
+        "structure-display"
+      ],
+      "visualDirection": "furniture-gallery",
+      "suitableSubjects": [
+        "椅",
+        "沙发",
+        "茶几",
+        "边桌",
+        "柜",
+        "灯",
+        "床头柜",
+        "书架"
+      ],
+      "summary": "用现代展厅和建筑留白承托家具的比例、坐感想象和材质层次。",
+      "commercialValue": "适合家具品牌官网、设计提案、作品集项目页和高端空间渠道展示。",
+      "concept": "把对象放进一个可信的展厅语境里，让观众感受到它不仅是单件家具，也是空间气质的一部分。",
+      "composition": "主体位于画面中轴偏下，背景墙面和地面形成稳定透视，留出足够空间展示体量、腿部结构和轮廓线。",
+      "scene": "安静的现代画廊或低饱和住宅展厅，地面干净，背景只有少量建筑线条。",
+      "cmf": "重点呈现木纹、皮革、织物、石材或金属的真实触感，材质之间要有清晰但克制的对比。",
+      "lighting": "自然侧光与柔和环境光结合，阴影落在地面并帮助说明结构，避免过度戏剧化。",
+      "camera": "35mm 到 50mm 的略低机位或 45 度视角，保留真实空间透视。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "Flux",
+        "GPT Image",
+        "Midjourney"
+      ],
+      "templateCategory": "furniture",
+      "suitableCategories": [
+        "furniture",
+        "lighting"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "jewelry",
+        "beauty",
+        "consumer-electronics"
+      ]
+    },
+    {
+      "id": "tpl-jewelry-still",
+      "title": "珠宝静物广告大片",
+      "projectType": "jewelry-design",
+      "goal": [
+        "premium-feel",
+        "brand-campaign",
+        "material-expression"
+      ],
+      "visualDirection": "jewelry-still-ad",
+      "suitableSubjects": [
+        "手链",
+        "手串",
+        "戒指",
+        "项链",
+        "吊坠",
+        "耳环",
+        "胸针",
+        "珠宝"
+      ],
+      "summary": "用精准高光、少量高级道具和浅景深表现珠宝的价值感与收藏属性。",
+      "commercialValue": "适合精品珠宝广告、礼品视觉、社交媒体封面和品牌静物大片。",
+      "concept": "画面像一张精心布置的高级静物广告，重点不是堆满装饰，而是让材质、光泽和细节自己说话。",
+      "composition": "主体靠近视觉中心，以丝绒、石材或镜面道具形成前后层次，画面保留可用于广告排版的安静区域。",
+      "scene": "深色丝绒、浅色石材、镜面台面或高级静物棚拍环境，背景低调但有质感。",
+      "cmf": "强调宝石通透感、金属边缘高光、珠体纹理和精密手工细节，反射需要真实可控。",
+      "lighting": "柔光箱配合细窄轮廓光，局部高光集中在宝石和金属边缘。",
+      "camera": "100mm 微距或 85mm 静物镜头，浅景深，重点细节锐利。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "GPT Image",
+        "Flux"
+      ],
+      "templateCategory": "jewelry",
+      "suitableCategories": [
+        "jewelry",
+        "bracelet",
+        "ring",
+        "necklace"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "beauty",
+        "consumer-electronics"
+      ]
+    },
+    {
+      "id": "tpl-oriental-bracelet",
+      "title": "东方轻奢手串视觉",
+      "projectType": "jewelry-design",
+      "goal": [
+        "premium-feel",
+        "material-expression",
+        "brand-campaign"
+      ],
+      "visualDirection": "oriental-bracelet",
+      "suitableSubjects": [
+        "手串",
+        "手链",
+        "玉石",
+        "绿松石",
+        "沉香",
+        "南红",
+        "佛珠"
+      ],
+      "summary": "把东方审美、玉石纹理和轻奢静物结合，适合手串类产品广告。",
+      "commercialValue": "适合文玩珠宝、东方轻奢品牌、小红书封面和高端礼品视觉。",
+      "concept": "以安静东方气质表达材质价值，不做符号堆砌，用纸张、木托、石材和柔光形成文化感。",
+      "composition": "手串自然环绕或半展开，画面保留留白，辅以宣纸、木质托盘或石材边角建立节奏。",
+      "scene": "中式茶室桌面、深灰亚麻、浅色宣纸或低饱和石材台面，整体安静克制。",
+      "cmf": "强调珠体纹理、玉石通透、木质油润、银色隔珠和手工打磨痕迹。",
+      "lighting": "柔和侧光从左前方进入，阴影轻而清楚，整体有温润高级感。",
+      "camera": "85mm 或 100mm 微距，中近景，细节清晰但不过度锐化。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "GPT Image",
+        "Midjourney",
+        "Flux"
+      ],
+      "templateCategory": "jewelry",
+      "suitableCategories": [
+        "jewelry",
+        "bracelet"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "beauty",
+        "consumer-electronics"
+      ]
+    },
+    {
+      "id": "tpl-cmf-macro",
+      "title": "CMF 材质微距研究",
+      "projectType": "cmf-design",
+      "goal": [
+        "material-expression",
+        "portfolio-quality"
+      ],
+      "visualDirection": "cmf-macro-study",
+      "suitableSubjects": [
+        "CMF",
+        "材质",
+        "木",
+        "金属",
+        "玻璃",
+        "皮革",
+        "织物",
+        "包装",
+        "家具"
+      ],
+      "summary": "把对象、材质样板和微距纹理组织为专业研究板，适合设计评审。",
+      "commercialValue": "能够把设计过程和材质判断可视化，提升作品集与客户提案的专业度。",
+      "concept": "不只展示成品，而是展示材质选择背后的逻辑，让主材、辅材、点缀材形成清晰系统。",
+      "composition": "半俯视网格构图，主体、色板和材料样块形成清楚层级，每个细节都服务于 CMF 判断。",
+      "scene": "设计工作台、CMF 材料桌、浅色纸张或中性研究背景，保持专业且不过度装饰。",
+      "cmf": "明确表现表面纹理、触感、光泽度、边缘处理和材料之间的对比关系。",
+      "lighting": "柔和自然侧光，保留材质阴影，避免过曝和过度锐化。",
+      "camera": "100mm Macro 或俯拍视角，适合纹理和样板细节。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Flux",
+        "GPT Image",
+        "Midjourney"
+      ],
+      "templateCategory": "material-detail",
+      "suitableCategories": [
+        "jewelry",
+        "furniture",
+        "consumer-electronics",
+        "beauty",
+        "homeware",
+        "lighting",
+        "packaging",
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift"
+      ],
+      "blockedCategories": []
+    },
+    {
+      "id": "tpl-ecommerce-conversion",
+      "title": "电商高转化主图",
+      "projectType": "ecommerce-main",
+      "goal": [
+        "conversion-selling",
+        "material-expression"
+      ],
+      "visualDirection": "ecommerce-conversion",
+      "suitableSubjects": [
+        "杯",
+        "包装",
+        "香水",
+        "耳机",
+        "键盘",
+        "灯",
+        "美妆",
+        "食品",
+        "收纳"
+      ],
+      "summary": "让主体足够大、足够清楚，并用少量场景元素暗示卖点和使用价值。",
+      "commercialValue": "适合淘宝、京东、抖音商城和详情页首图，直接服务点击与转化。",
+      "concept": "把购买判断所需的信息放在第一眼：主体形态、材质、体积、使用场景和品质感。",
+      "composition": "主体占画面 60%-75%，角度清楚，背景干净，配件或食材只做辅助，不抢主体。",
+      "scene": "电商白底、浅色生活台面或简洁功能演示场景，信息直接但不廉价。",
+      "cmf": "材质表达要真实可信，避免过度艺术化影响商品判断。",
+      "lighting": "高调柔光和自然投影，让主体边缘清楚，细节在小尺寸下仍然可读。",
+      "camera": "正面或 45 度视角，50mm，中近景，主体不变形。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "Flux",
+        "GPT Image",
+        "Midjourney"
+      ],
+      "templateCategory": "ecommerce",
+      "suitableCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "beauty",
+        "consumer-electronics",
+        "homeware",
+        "fashion-accessory"
+      ],
+      "blockedCategories": []
+    },
+    {
+      "id": "tpl-industrial-portfolio",
+      "title": "作品集级工业设计展示",
+      "projectType": "portfolio",
+      "goal": [
+        "structure-display",
+        "portfolio-quality"
+      ],
+      "visualDirection": "industrial-portfolio",
+      "suitableSubjects": [
+        "产品",
+        "椅",
+        "灯",
+        "键盘",
+        "耳机",
+        "音箱",
+        "包装",
+        "设备"
+      ],
+      "summary": "用理性构图表达结构、比例、功能和 CMF，让画面适合设计评审。",
+      "commercialValue": "适合作品集、客户提案、毕业设计和产品概念评审。",
+      "concept": "把视觉重点放在设计逻辑，而不是单纯好看；让观众理解为什么这样设计。",
+      "composition": "主视觉搭配局部细节窗口，采用清晰网格和留白，让结构、比例和细节有阅读顺序。",
+      "scene": "白色设计展示板、工作室台面或半透明技术空间，背景理性而干净。",
+      "cmf": "区分承重件、触摸件、连接件和装饰件的材料与工艺，表现设计完整度。",
+      "lighting": "均匀工作室布光，阴影稳定，结构边缘清晰，避免情绪化光影干扰判断。",
+      "camera": "45 度、正视或轴测视角，必要时带细节裁切。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "GPT Image",
+        "Flux",
+        "Midjourney"
+      ],
+      "templateCategory": "portfolio",
+      "suitableCategories": [
+        "furniture",
+        "consumer-electronics",
+        "product-design",
+        "lighting"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "jewelry",
+        "beauty"
+      ]
+    },
+    {
+      "id": "tpl-beauty-fragrance",
+      "title": "美妆香水商业大片",
+      "projectType": "brand-ad",
+      "goal": [
+        "brand-campaign",
+        "premium-feel"
+      ],
+      "visualDirection": "beauty-fragrance-film",
+      "suitableSubjects": [
+        "香水",
+        "面霜",
+        "精华",
+        "口红",
+        "粉底",
+        "包装瓶",
+        "美妆"
+      ],
+      "summary": "用玻璃、液体、花材和柔雾光线制造高端美妆品牌大片感。",
+      "commercialValue": "适合香水、美妆、护肤新品发布和高端社交媒体广告。",
+      "concept": "对象不是孤立摆拍，而是处在一个有气味、湿度和光线情绪的品牌世界里。",
+      "composition": "主体居中偏下，背景留出广告排版空间，透明道具形成前后层次。",
+      "scene": "水面、石材台面、柔雾背景、花艺装置或高端浴室空间。",
+      "cmf": "强调玻璃通透、液体颜色、金属盖体、标签纸张和细腻反射。",
+      "lighting": "清透柔光、玻璃折射光和微弱轮廓光，让边缘通透但不过曝。",
+      "camera": "85mm 至 100mm，中近景或竖版广告海报构图。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "GPT Image",
+        "Flux"
+      ],
+      "templateCategory": "beauty",
+      "suitableCategories": [
+        "beauty",
+        "personal-care",
+        "perfume"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "jewelry",
+        "consumer-electronics"
+      ]
+    },
+    {
+      "id": "tpl-lifestyle-scene",
+      "title": "生活方式场景广告",
+      "projectType": "brand-ad",
+      "goal": [
+        "lifestyle-scene",
+        "conversion-selling"
+      ],
+      "visualDirection": "lifestyle-scene",
+      "suitableSubjects": [
+        "杯",
+        "椅",
+        "灯",
+        "包",
+        "鞋",
+        "耳机",
+        "音箱",
+        "家居",
+        "咖啡"
+      ],
+      "summary": "把对象放进真实而向往的使用场景，让用户快速理解它适合怎样的生活。",
+      "commercialValue": "适合社交媒体、电商详情、官网场景图和生活方式品牌广告。",
+      "concept": "画面不只展示对象形态，更展示它和空间、手感、日常动作之间的关系。",
+      "composition": "主体与环境共同叙事，主体保持清晰，人物或道具只作为氛围辅助。",
+      "scene": "现代客厅、咖啡馆、创意工作台、卧室床头或户外露台。",
+      "cmf": "材质与环境互相呼应，强调温度、触感和生活品质。",
+      "lighting": "自然窗光、暖色家居光或清晨侧光，情绪自然不做作。",
+      "camera": "35mm 或 50mm，中景，轻微景深，空间关系可信。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Flux",
+        "GPT Image",
+        "Midjourney"
+      ],
+      "templateCategory": "lifestyle",
+      "suitableCategories": [
+        "furniture",
+        "homeware",
+        "lighting",
+        "consumer-electronics",
+        "fashion-accessory",
+        "beauty"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "jewelry"
+      ]
+    },
+    {
+      "id": "tpl-future-tech",
+      "title": "未来科技产品渲染",
+      "projectType": "product-design",
+      "goal": [
+        "structure-display",
+        "premium-feel"
+      ],
+      "visualDirection": "future-tech-render",
+      "suitableSubjects": [
+        "智能",
+        "耳机",
+        "音箱",
+        "显示器",
+        "键盘",
+        "鼠标",
+        "设备",
+        "硬件"
+      ],
+      "summary": "用冷静科技空间、悬浮构图和精密材质呈现未来硬件质感。",
+      "commercialValue": "适合智能硬件、概念产品、发布会预热和官网科技视觉。",
+      "concept": "将对象处理成高精密设备，突出结构完整性、材料工艺和未来感。",
+      "composition": "对象悬浮或置于玻璃平台上，背景空间纯净，线条明确，有清楚的视觉重心。",
+      "scene": "未来实验室、半透明玻璃台、冷色发布会空间或科技背景。",
+      "cmf": "强调铝合金、玻璃、屏幕反射、微纹理塑料和精密倒角。",
+      "lighting": "冷色线性光、边缘轮廓光和低对比环境光，避免花哨霓虹。",
+      "camera": "50mm，正视或 45 度视角，结构完整呈现。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "Flux",
+        "GPT Image"
+      ],
+      "templateCategory": "technology",
+      "suitableCategories": [
+        "consumer-electronics",
+        "technology",
+        "product-design"
+      ],
+      "blockedCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "jewelry",
+        "beauty"
+      ]
+    },
+    {
+      "id": "tpl-minimal-still",
+      "title": "极简高端静物摄影",
+      "projectType": "product-design",
+      "goal": [
+        "premium-feel",
+        "material-expression"
+      ],
+      "visualDirection": "minimal-still-life",
+      "suitableSubjects": [
+        "包装",
+        "杯",
+        "香水",
+        "珠宝",
+        "音箱",
+        "灯",
+        "盒",
+        "产品"
+      ],
+      "summary": "用克制留白、少量几何道具和真实材质，让对象呈现低调但昂贵的质感。",
+      "commercialValue": "适合品牌官网、包装提案、产品静物和高级社媒内容。",
+      "concept": "少即是多，画面只保留能证明设计品质的材质、轮廓、阴影和空间。",
+      "composition": "主体居中或略偏下，大面积留白，少量几何道具形成平衡和尺度参考。",
+      "scene": "中性棚拍、浅色石材、纸张背景、深色布面或无缝空间。",
+      "cmf": "强调表面细节、边缘、触感和材质之间的安静对比。",
+      "lighting": "大面积柔光加轻微侧光，阴影干净且不抢主体。",
+      "camera": "85mm 静物镜头，中近景，稳定构图。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "GPT Image",
+        "Flux",
+        "Midjourney"
+      ],
+      "templateCategory": "commercial-still",
+      "suitableCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "jewelry",
+        "furniture",
+        "beauty",
+        "homeware",
+        "lighting",
+        "consumer-electronics",
+        "fashion-accessory"
+      ],
+      "blockedCategories": []
+    },
+    {
+      "id": "tpl-exhibition-kv",
+      "title": "展会海报级主视觉",
+      "projectType": "brand-ad",
+      "goal": [
+        "brand-campaign",
+        "social-spread"
+      ],
+      "visualDirection": "exhibition-key-visual",
+      "suitableSubjects": [
+        "展会",
+        "发布",
+        "产品",
+        "家具",
+        "CMF",
+        "包装",
+        "科技"
+      ],
+      "summary": "把对象转化为展会、发布会或海报级主视觉，强化传播和仪式感。",
+      "commercialValue": "适合展会海报、发布会背景、品牌 KV 和社媒传播主图。",
+      "concept": "不只是展示对象，而是为对象创造一个可传播的视觉事件。",
+      "composition": "中心强视觉焦点，周围保留排版空间，但图像本身不生成可读文字。",
+      "scene": "抽象展台、材质装置、建筑化空间或品牌发布会背景。",
+      "cmf": "用材料块、光影、透明介质和反射组织视觉层级，增强记忆点。",
+      "lighting": "聚光灯、体积光、舞台环境光或戏剧化轮廓光，控制在高级范围内。",
+      "camera": "竖版海报、宽银幕或低角度英雄构图。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "GPT Image",
+        "Flux"
+      ],
+      "templateCategory": "brand-advertising",
+      "suitableCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging",
+        "furniture",
+        "consumer-electronics",
+        "beauty",
+        "homeware",
+        "lighting",
+        "fashion-accessory"
+      ],
+      "blockedCategories": []
+    },
+    {
+      "id": "tpl-packaging-brand-ad",
+      "title": "高端礼盒品牌广告",
+      "projectType": "brand-ad",
+      "goal": [
+        "brand-campaign",
+        "premium-feel",
+        "conversion-selling"
+      ],
+      "visualDirection": "exhibition-key-visual",
+      "templateCategory": "packaging",
+      "suitableCategories": [
+        "gift-packaging",
+        "packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift"
+      ],
+      "blockedCategories": [
+        "beauty",
+        "furniture",
+        "consumer-electronics",
+        "jewelry"
+      ],
+      "suitableSubjects": [
+        "月饼礼盒",
+        "茶叶礼盒",
+        "珠宝包装盒",
+        "高端纸袋",
+        "礼盒",
+        "包装盒"
+      ],
+      "summary": "以高级礼赠场景呈现包装结构、开合层次和品牌仪式感。",
+      "commercialValue": "适合礼盒新品发布、节日档品牌广告、高端礼赠视觉和社媒主视觉。",
+      "concept": "把礼盒作为品牌价值的载体，而不是简单包装盒摆拍；画面需要体现开箱仪式、材质层次和礼赠情绪。",
+      "composition": "主体礼盒居中或轻微打开，盒盖、内托、纸张和礼品内容形成清晰层次，周围保留高级广告排版空间。",
+      "scene": "深色木台、石材台面、品牌礼赠桌面、东方节日陈列或高端零售展示环境。",
+      "cmf": "强调纸张肌理、烫金压纹、丝带、内衬、硬盒边缘和高级印刷工艺。",
+      "lighting": "柔和主光配合细窄轮廓光，突出包装边缘、纸张纹理和礼盒开合结构。",
+      "camera": "45 度静物视角或轻微俯视，70mm 至 100mm，保证礼盒结构清楚且不变形。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "GPT Image",
+        "Flux"
+      ]
+    },
+    {
+      "id": "tpl-festival-gift-kv",
+      "title": "节日礼赠商业主视觉",
+      "projectType": "brand-ad",
+      "goal": [
+        "brand-campaign",
+        "social-spread",
+        "premium-feel"
+      ],
+      "visualDirection": "exhibition-key-visual",
+      "templateCategory": "packaging",
+      "suitableCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging"
+      ],
+      "blockedCategories": [
+        "beauty",
+        "furniture",
+        "consumer-electronics",
+        "jewelry"
+      ],
+      "suitableSubjects": [
+        "月饼礼盒",
+        "茶叶礼盒",
+        "巧克力礼盒",
+        "红酒包装盒",
+        "中秋礼盒",
+        "节日礼盒"
+      ],
+      "summary": "围绕节日礼赠和品牌情绪做主视觉，突出高级材质、文化氛围和赠礼价值。",
+      "commercialValue": "适合中秋、春节、节庆礼赠、电商活动页 KV 和品牌节日广告。",
+      "concept": "让礼盒成为节日场景里的视觉核心，借助材质、光影和少量符号表达礼赠关系与品牌档次。",
+      "composition": "礼盒作为中心视觉，配合节日相关道具形成克制环绕，避免堆满装饰，保留清晰传播焦点。",
+      "scene": "节日礼赠桌面、东方雅致空间、品牌橱窗、暗调木质场景或高端礼品陈列。",
+      "cmf": "重点表现硬盒结构、纸张压纹、烫金、绸带、内托和食品或礼品内容的精致度。",
+      "lighting": "温暖柔光和低对比侧光，营造节日高级感，同时保留包装结构细节。",
+      "camera": "竖版 4:5 或宽幅 16:9 主视觉构图，轻微俯视或 45 度礼盒广告视角。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "pro",
+      "recommendedPlatforms": [
+        "Midjourney",
+        "GPT Image",
+        "Flux"
+      ]
+    },
+    {
+      "id": "tpl-packaging-ecommerce-main",
+      "title": "电商礼盒转化主图",
+      "projectType": "ecommerce-main",
+      "goal": [
+        "conversion-selling",
+        "brand-campaign",
+        "premium-feel"
+      ],
+      "visualDirection": "ecommerce-conversion",
+      "templateCategory": "ecommerce",
+      "suitableCategories": [
+        "gift-packaging",
+        "tea-gift",
+        "food-packaging",
+        "food-gift",
+        "packaging"
+      ],
+      "blockedCategories": [
+        "beauty",
+        "furniture",
+        "consumer-electronics",
+        "jewelry"
+      ],
+      "suitableSubjects": [
+        "月饼礼盒",
+        "茶叶礼盒",
+        "咖啡包装盒",
+        "护肤品套盒",
+        "礼盒",
+        "包装盒"
+      ],
+      "summary": "用清晰礼盒主体、开盒层次和少量礼赠元素服务点击率与转化。",
+      "commercialValue": "适合电商主图、详情页首屏、活动页头图和礼盒销售素材。",
+      "concept": "在第一眼说明这是高品质礼盒：结构完整、内容可见、材质可信、礼赠价值明确。",
+      "composition": "礼盒占画面 60%-75%，可采用开盒视角展示内托和内容物，辅助道具少而准确。",
+      "scene": "干净浅色台面、电商棚拍背景、节日礼赠小场景或品牌活动页视觉环境。",
+      "cmf": "突出纸盒挺括边缘、印刷质感、内衬材质、礼品内容和包装工艺。",
+      "lighting": "高调柔光与自然投影，保证小图下礼盒轮廓、开合结构和材质细节清晰。",
+      "camera": "正面或 45 度电商视角，50mm 至 85mm，中近景，避免透视变形。",
+      "negativePrompt": "低清晰度、错误文字、水印、畸变结构、多余 logo、廉价质感、杂乱背景、不自然反射",
+      "premiumLevel": "free",
+      "recommendedPlatforms": [
+        "Flux",
+        "GPT Image",
+        "Midjourney"
+      ]
+    }
+  ],
+  "examples": [
+    {
+      "subject": "胡桃木休闲椅",
+      "projectTypeId": "furniture-design",
+      "goalIds": [
+        "premium-feel",
+        "material-expression"
+      ],
+      "keywords": "胡桃木、黑色皮革、柔和自然光、不要复杂背景",
+      "title": "高端家具官网主视觉",
+      "note": "适合家具品牌发布、作品集和客户提案。"
+    },
+    {
+      "subject": "绿松石手串",
+      "projectTypeId": "jewelry-design",
+      "goalIds": [
+        "premium-feel",
+        "brand-campaign"
+      ],
+      "keywords": "绿松石、银色隔珠、深灰亚麻、东方轻奢",
+      "title": "东方轻奢珠宝广告",
+      "note": "适合珠宝静物、礼品视觉和社媒封面。"
+    },
+    {
+      "subject": "便携显示器",
+      "projectTypeId": "website-hero",
+      "goalIds": [
+        "premium-feel",
+        "structure-display"
+      ],
+      "keywords": "超薄铝合金、干净工作台、屏幕反射、Apple 风",
+      "title": "Apple 风官网主视觉",
+      "note": "适合消费电子官网首屏和新品发布。"
+    },
+    {
+      "subject": "香水瓶",
+      "projectTypeId": "brand-ad",
+      "goalIds": [
+        "premium-feel",
+        "brand-campaign"
+      ],
+      "keywords": "透明玻璃、液体折射、花材、柔雾光线",
+      "title": "高端美妆商业大片",
+      "note": "适合香氛品牌广告和海报视觉。"
+    }
+  ],
+  "pricing": {
+    "free": [
+      "每次生成 3 个基础方案",
+      "中文 Prompt",
+      "English Prompt",
+      "最近 5 条历史记录"
+    ],
+    "pro": [
+      "每次生成 6 个高级方案",
+      "Midjourney / Flux / GPT Image 专用 Prompt",
+      "CMF 深化方案",
+      "出图迭代建议",
+      "品牌调性预设",
+      "一键导出完整方案包",
+      "收藏无限制"
+    ]
+  }
+}

@@ -1,0 +1,2215 @@
+[
+  {
+    "zh": "胡桃木休闲椅",
+    "en": "walnut lounge chair",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "胡桃木",
+      "真皮坐垫",
+      "高端家具展厅"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "真皮单人沙发",
+    "en": "leather armchair",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "真皮纹理",
+      "现代客厅",
+      "低饱和空间"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "北欧餐椅",
+    "en": "nordic dining chair",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "高级感",
+      "作品集质感"
+    ],
+    "keywords": [
+      "北欧木作",
+      "餐厅场景",
+      "清爽构图"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "模块化书架",
+    "en": "modular bookshelf",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "结构展示",
+      "作品集质感"
+    ],
+    "keywords": [
+      "模块结构",
+      "收纳系统",
+      "建筑感空间"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "大理石茶几",
+    "en": "marble coffee table",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "大理石纹理",
+      "金属边框",
+      "高端客厅"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "实木边柜",
+    "en": "solid wood side cabinet",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "作品集质感"
+    ],
+    "keywords": [
+      "实木纹理",
+      "储物结构",
+      "静谧家居"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "办公椅",
+    "en": "ergonomic office chair",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "结构展示",
+      "高级感"
+    ],
+    "keywords": [
+      "人体工学",
+      "网布材质",
+      "办公空间"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "弧形落地灯",
+    "en": "arc floor lamp",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "弧形结构",
+      "金属灯杆",
+      "柔和氛围光"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "现代床头柜",
+    "en": "modern bedside table",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "床头场景",
+      "木质抽屉",
+      "极简卧室"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "藤编休闲椅",
+    "en": "rattan lounge chair",
+    "category": "furniture",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "藤编纹理",
+      "自然材质",
+      "度假生活方式"
+    ],
+    "allowedTemplateCategories": [
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "portfolio",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "绿松石手串",
+    "en": "turquoise bead bracelet",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "天然石",
+      "珠宝静物",
+      "东方轻奢"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "黑发晶手串",
+    "en": "black rutilated quartz bracelet",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "黑发晶",
+      "天然晶石",
+      "低调奢华"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "南红玛瑙手串",
+    "en": "southern red agate bracelet",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "南红玛瑙",
+      "温润珠体",
+      "中式礼品"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "和田玉手链",
+    "en": "hetian jade bracelet",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "和田玉",
+      "柔和玉质",
+      "东方审美"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "珍珠项链",
+    "en": "pearl necklace",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "珍珠光泽",
+      "优雅静物",
+      "高级珠宝"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "银质戒指",
+    "en": "silver ring",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "材质表达",
+      "高级感"
+    ],
+    "keywords": [
+      "银质高光",
+      "微距细节",
+      "手工痕迹"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "翡翠吊坠",
+    "en": "jade pendant",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "翡翠通透感",
+      "金属镶嵌",
+      "收藏属性"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "金属耳环",
+    "en": "metal earrings",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "金属曲面",
+      "时装静物",
+      "精致高光"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "水晶手链",
+    "en": "crystal bracelet",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "水晶通透",
+      "抛光珠体",
+      "柔和反射"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "古法金手镯",
+    "en": "heritage gold bangle",
+    "category": "jewelry",
+    "recommendedProjectType": "珠宝饰品",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "古法金",
+      "哑光金属",
+      "传统工艺"
+    ],
+    "allowedTemplateCategories": [
+      "jewelry",
+      "material-detail",
+      "commercial-still",
+      "brand-advertising"
+    ],
+    "blockedTemplateCategories": [
+      "furniture",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "便携显示器",
+    "en": "portable monitor",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "官网主视觉",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "轻薄屏幕",
+      "移动办公",
+      "极简科技"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "蓝牙耳机",
+    "en": "bluetooth earbuds",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "充电仓",
+      "精密塑料",
+      "科技静物"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "智能手表",
+    "en": "smartwatch",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "官网主视觉",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "玻璃屏幕",
+      "金属表壳",
+      "健康科技"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "机械键盘",
+    "en": "mechanical keyboard",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "结构展示",
+      "材质表达"
+    ],
+    "keywords": [
+      "键帽细节",
+      "桌面装备",
+      "结构层次"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "无线鼠标",
+    "en": "wireless mouse",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "人体工学",
+      "哑光塑料",
+      "办公桌面"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "桌面音箱",
+    "en": "desktop speaker",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "金属网罩",
+      "桌面声学",
+      "精致设备"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "迷你投影仪",
+    "en": "mini projector",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "官网主视觉",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "镜头模组",
+      "客厅影音",
+      "未来科技"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "电子墨水阅读器",
+    "en": "e-ink reader",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "电子墨水屏",
+      "阅读场景",
+      "轻薄设备"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "智能台灯",
+    "en": "smart desk lamp",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "结构展示",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "桌面照明",
+      "线性灯臂",
+      "智能控制"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "便携充电宝",
+    "en": "portable power bank",
+    "category": "consumer-electronics",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "移动电源",
+      "接口细节",
+      "旅行装备"
+    ],
+    "allowedTemplateCategories": [
+      "technology",
+      "product-design",
+      "brand-advertising",
+      "lifestyle",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "furniture"
+    ]
+  },
+  {
+    "zh": "香水瓶",
+    "en": "perfume bottle",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "透明玻璃",
+      "香氛广告",
+      "高级水面"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "口红",
+    "en": "lipstick",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "金属管身",
+      "膏体质感",
+      "美妆大片"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "精华液瓶",
+    "en": "serum bottle",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "滴管瓶",
+      "玻璃反射",
+      "护肤科技"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "面霜罐",
+    "en": "face cream jar",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "膏霜质地",
+      "陶瓷罐体",
+      "洁净护肤"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "粉底液",
+    "en": "liquid foundation bottle",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "转化卖点"
+    ],
+    "keywords": [
+      "肤色液体",
+      "玻璃瓶身",
+      "美妆静物"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "护手霜",
+    "en": "hand cream tube",
+    "category": "beauty",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "高级感"
+    ],
+    "keywords": [
+      "软管包装",
+      "日常护理",
+      "温和质感"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "洗发水瓶",
+    "en": "shampoo bottle",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "转化卖点"
+    ],
+    "keywords": [
+      "浴室场景",
+      "水珠质感",
+      "清洁护理"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "香薰蜡烛",
+    "en": "scented candle",
+    "category": "beauty",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "香氛家居",
+      "温暖烛光",
+      "礼品视觉"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "高端剃须刀",
+    "en": "premium electric shaver",
+    "category": "beauty",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "结构展示"
+    ],
+    "keywords": [
+      "金属机身",
+      "个护科技",
+      "精密刀头"
+    ],
+    "allowedTemplateCategories": [
+      "beauty",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "护肤礼盒",
+    "en": "skincare gift set",
+    "category": "gift-packaging",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "转化卖点"
+    ],
+    "keywords": [
+      "套盒陈列",
+      "护肤包装",
+      "节日礼赠"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "茶叶礼盒",
+    "en": "tea gift box",
+    "category": "tea-gift",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "高级感"
+    ],
+    "keywords": [
+      "茶文化",
+      "礼盒包装",
+      "东方高级感",
+      "礼品广告"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "咖啡包装盒",
+    "en": "coffee packaging box",
+    "category": "food-packaging",
+    "recommendedProjectType": "电商主图",
+    "recommendedGoals": [
+      "转化卖点",
+      "品牌大片"
+    ],
+    "keywords": [
+      "咖啡包装",
+      "精品咖啡",
+      "食品礼品",
+      "电商主图"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "巧克力礼盒",
+    "en": "chocolate gift box",
+    "category": "food-gift",
+    "recommendedProjectType": "电商主图",
+    "recommendedGoals": [
+      "转化卖点",
+      "高级感"
+    ],
+    "keywords": [
+      "甜品礼赠",
+      "节日包装",
+      "高级纸盒"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "香水包装盒",
+    "en": "perfume packaging box",
+    "category": "gift-packaging",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "高级感"
+    ],
+    "keywords": [
+      "香水外盒",
+      "开盒展示",
+      "奢侈品包装"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "月饼礼盒",
+    "en": "mooncake gift box",
+    "category": "gift-packaging",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "转化卖点"
+    ],
+    "keywords": [
+      "中秋礼盒",
+      "节日礼赠",
+      "高级包装",
+      "礼品广告"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "珠宝包装盒",
+    "en": "jewelry packaging box",
+    "category": "gift-packaging",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "绒面盒体",
+      "开盒细节",
+      "珠宝陈列"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "红酒包装盒",
+    "en": "wine packaging box",
+    "category": "food-gift",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "转化卖点"
+    ],
+    "keywords": [
+      "红酒礼盒",
+      "木盒质感",
+      "商务礼赠"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "护肤品套盒",
+    "en": "skincare package set",
+    "category": "gift-packaging",
+    "recommendedProjectType": "电商主图",
+    "recommendedGoals": [
+      "转化卖点",
+      "品牌大片"
+    ],
+    "keywords": [
+      "套盒陈列",
+      "护肤包装",
+      "电商主图"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "高端纸袋",
+    "en": "premium paper shopping bag",
+    "category": "gift-packaging",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "品牌大片"
+    ],
+    "keywords": [
+      "纸袋工艺",
+      "手提绳",
+      "品牌包装"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "精品包装瓶",
+    "en": "premium packaging bottle",
+    "category": "packaging",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "瓶型设计",
+      "包装结构",
+      "玻璃或金属"
+    ],
+    "allowedTemplateCategories": [
+      "packaging",
+      "brand-advertising",
+      "ecommerce",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "beauty",
+      "jewelry",
+      "furniture",
+      "technology"
+    ]
+  },
+  {
+    "zh": "陶瓷花瓶",
+    "en": "ceramic vase",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "高级感"
+    ],
+    "keywords": [
+      "陶瓷釉面",
+      "家居静物",
+      "花艺搭配"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "玻璃水杯",
+    "en": "glass tumbler",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "透明玻璃",
+      "水面反射",
+      "日用器物"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "保温杯",
+    "en": "insulated tumbler",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "转化卖点"
+    ],
+    "keywords": [
+      "金属杯身",
+      "户外通勤",
+      "功能卖点"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "香薰机",
+    "en": "aroma diffuser",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "高级感"
+    ],
+    "keywords": [
+      "雾化效果",
+      "家居香氛",
+      "柔和灯光"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "收纳托盘",
+    "en": "storage tray",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "材质表达"
+    ],
+    "keywords": [
+      "桌面收纳",
+      "皮革或木质",
+      "秩序感"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "桌面置物架",
+    "en": "desktop organizer rack",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "结构展示",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "桌面整理",
+      "模块结构",
+      "办公场景"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "纸巾盒",
+    "en": "tissue box holder",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "高级感"
+    ],
+    "keywords": [
+      "家居小物",
+      "材质细节",
+      "低调陈列"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "装饰摆件",
+    "en": "decorative object",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "艺术摆件",
+      "空间装饰",
+      "静物摄影"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "石材果盘",
+    "en": "stone fruit bowl",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "材质表达",
+      "高级感"
+    ],
+    "keywords": [
+      "石材纹理",
+      "餐桌静物",
+      "高端家居"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "极简挂钟",
+    "en": "minimal wall clock",
+    "category": "homeware",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "墙面场景",
+      "极简结构",
+      "时间器物"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "lifestyle",
+      "commercial-still",
+      "material-detail",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "落地灯",
+    "en": "floor lamp",
+    "category": "lighting",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "客厅灯光",
+      "金属灯杆",
+      "氛围照明"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "台灯",
+    "en": "table lamp",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "桌面照明",
+      "灯罩材质",
+      "阅读氛围"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "吊灯",
+    "en": "pendant lamp",
+    "category": "lighting",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "餐厅吊灯",
+      "空间光影",
+      "装置感"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "壁灯",
+    "en": "wall lamp",
+    "category": "lighting",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "材质表达"
+    ],
+    "keywords": [
+      "墙面光影",
+      "酒店空间",
+      "柔和氛围"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "氛围灯",
+    "en": "ambient lamp",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "高级感"
+    ],
+    "keywords": [
+      "柔和光晕",
+      "夜间场景",
+      "情绪照明"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "户外庭院灯",
+    "en": "outdoor garden lamp",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "材质表达"
+    ],
+    "keywords": [
+      "户外庭院",
+      "防水材质",
+      "夜景光影"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "线性灯",
+    "en": "linear light fixture",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "结构展示",
+      "高级感"
+    ],
+    "keywords": [
+      "线性结构",
+      "建筑照明",
+      "极简科技"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "玻璃球灯",
+    "en": "glass globe lamp",
+    "category": "lighting",
+    "recommendedProjectType": "家具设计",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "玻璃球罩",
+      "柔和高光",
+      "精致空间"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "金属阅读灯",
+    "en": "metal reading lamp",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "材质表达",
+      "结构展示"
+    ],
+    "keywords": [
+      "金属灯臂",
+      "阅读场景",
+      "精密转轴"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "便携露营灯",
+    "en": "portable camping lantern",
+    "category": "lighting",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "生活方式场景",
+      "结构展示"
+    ],
+    "keywords": [
+      "户外露营",
+      "便携结构",
+      "暖色灯光"
+    ],
+    "allowedTemplateCategories": [
+      "product-design",
+      "furniture",
+      "lifestyle",
+      "material-detail",
+      "commercial-still"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "手提包",
+    "en": "handbag",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "社交媒体传播"
+    ],
+    "keywords": [
+      "皮革包身",
+      "时尚静物",
+      "高级配饰"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "双肩包",
+    "en": "backpack",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "通勤背包",
+      "织物纹理",
+      "城市生活"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "皮革钱包",
+    "en": "leather wallet",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "皮革纹理",
+      "缝线细节",
+      "商务配饰"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "运动鞋",
+    "en": "sneakers",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "社交媒体传播"
+    ],
+    "keywords": [
+      "鞋面材质",
+      "运动场景",
+      "年轻化广告"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "太阳镜",
+    "en": "sunglasses",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "品牌大片",
+      "高级感"
+    ],
+    "keywords": [
+      "镜片反射",
+      "金属镜架",
+      "时尚大片"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "羊毛围巾",
+    "en": "wool scarf",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "材质表达",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "羊毛纹理",
+      "秋冬氛围",
+      "温暖质感"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "棒球帽",
+    "en": "baseball cap",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "社交媒体传播",
+      "品牌大片"
+    ],
+    "keywords": [
+      "织物帽檐",
+      "街头风格",
+      "年轻品牌"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "皮带",
+    "en": "leather belt",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "品牌广告",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "皮革纹理",
+      "金属扣具",
+      "商务质感"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "行李箱",
+    "en": "suitcase",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "结构展示",
+      "生活方式场景"
+    ],
+    "keywords": [
+      "旅行场景",
+      "拉杆结构",
+      "耐用外壳"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  },
+  {
+    "zh": "高端雨伞",
+    "en": "premium umbrella",
+    "category": "fashion-accessory",
+    "recommendedProjectType": "产品设计",
+    "recommendedGoals": [
+      "高级感",
+      "材质表达"
+    ],
+    "keywords": [
+      "伞骨结构",
+      "织物防水",
+      "生活方式"
+    ],
+    "allowedTemplateCategories": [
+      "brand-advertising",
+      "commercial-still",
+      "lifestyle",
+      "ecommerce"
+    ],
+    "blockedTemplateCategories": [
+      "jewelry",
+      "beauty",
+      "furniture",
+      "packaging",
+      "technology"
+    ]
+  }
+]

@@ -1,0 +1,4756 @@
+{
+  "subjects": [
+    {
+      "id": "furniture",
+      "zh": "家具",
+      "en": "Furniture",
+      "items": [
+        {
+          "id": "furniture-lounge-chair",
+          "zh": "休闲椅",
+          "en": "lounge chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-office-chair",
+          "zh": "办公椅",
+          "en": "office chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-dining-chair",
+          "zh": "餐椅",
+          "en": "dining chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-side-table",
+          "zh": "边桌",
+          "en": "side table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-coffee-table",
+          "zh": "茶几",
+          "en": "coffee table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-bookshelf",
+          "zh": "书架",
+          "en": "bookshelf",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-sofa",
+          "zh": "沙发",
+          "en": "sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-nightstand",
+          "zh": "床头柜",
+          "en": "nightstand",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-tv-cabinet",
+          "zh": "电视柜",
+          "en": "TV cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-storage-cabinet",
+          "zh": "储物柜",
+          "en": "storage cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-high-back-lounge-chair",
+          "zh": "高靠背休闲椅",
+          "en": "high-back lounge chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-low-back-lounge-chair",
+          "zh": "低靠背休闲椅",
+          "en": "low-back lounge chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-single-armchair",
+          "zh": "单人扶手椅",
+          "en": "single armchair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-chaise-lounge",
+          "zh": "躺椅",
+          "en": "chaise lounge",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-rocking-chair",
+          "zh": "摇椅",
+          "en": "rocking chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-folding-chair",
+          "zh": "折叠椅",
+          "en": "folding chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-bar-stool",
+          "zh": "吧椅",
+          "en": "bar stool",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-conference-chair",
+          "zh": "会议椅",
+          "en": "conference chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-ergonomic-office-chair",
+          "zh": "人体工学办公椅",
+          "en": "ergonomic office chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-mesh-office-chair",
+          "zh": "网布办公椅",
+          "en": "mesh office chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-leather-office-chair",
+          "zh": "皮质办公椅",
+          "en": "leather office chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-height-adjustable-office-chair",
+          "zh": "升降办公椅",
+          "en": "height-adjustable office chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-solid-wood-dining-chair",
+          "zh": "实木餐椅",
+          "en": "solid wood dining chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-upholstered-dining-chair",
+          "zh": "软包餐椅",
+          "en": "upholstered dining chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-metal-dining-chair",
+          "zh": "金属餐椅",
+          "en": "metal dining chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-outdoor-dining-chair",
+          "zh": "户外餐椅",
+          "en": "outdoor dining chair",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-round-side-table",
+          "zh": "圆形边桌",
+          "en": "round side table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-c-shaped-side-table",
+          "zh": "C形边桌",
+          "en": "C-shaped side table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-mobile-side-table",
+          "zh": "移动边桌",
+          "en": "mobile side table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-nesting-side-table",
+          "zh": "嵌套边桌",
+          "en": "nesting side table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-round-coffee-table",
+          "zh": "圆形茶几",
+          "en": "round coffee table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-square-coffee-table",
+          "zh": "方形茶几",
+          "en": "square coffee table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-freeform-coffee-table",
+          "zh": "异形茶几",
+          "en": "freeform coffee table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-lift-top-coffee-table",
+          "zh": "升降茶几",
+          "en": "lift-top coffee table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-modular-bookshelf",
+          "zh": "模块化书架",
+          "en": "modular bookshelf",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-floor-standing-bookshelf",
+          "zh": "落地书架",
+          "en": "floor-standing bookshelf",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-wall-mounted-bookshelf",
+          "zh": "墙面书架",
+          "en": "wall-mounted bookshelf",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-open-shelving-unit",
+          "zh": "开放式书架",
+          "en": "open shelving unit",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-modular-sofa",
+          "zh": "模块化沙发",
+          "en": "modular sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-two-seat-sofa",
+          "zh": "双人沙发",
+          "en": "two-seat sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-three-seat-sofa",
+          "zh": "三人沙发",
+          "en": "three-seat sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-sectional-corner-sofa",
+          "zh": "转角沙发",
+          "en": "sectional corner sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-cloud-sofa",
+          "zh": "云朵沙发",
+          "en": "cloud sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-leather-sofa",
+          "zh": "皮质沙发",
+          "en": "leather sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-fabric-sofa",
+          "zh": "布艺沙发",
+          "en": "fabric sofa",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-drawer-nightstand",
+          "zh": "抽屉床头柜",
+          "en": "drawer nightstand",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-floating-nightstand",
+          "zh": "悬浮床头柜",
+          "en": "floating nightstand",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-cylindrical-nightstand",
+          "zh": "圆柱床头柜",
+          "en": "cylindrical nightstand",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-low-tv-console",
+          "zh": "低矮电视柜",
+          "en": "low TV console",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-floating-tv-cabinet",
+          "zh": "悬浮电视柜",
+          "en": "floating TV cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-modular-tv-cabinet",
+          "zh": "模块化电视柜",
+          "en": "modular TV cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-glass-door-storage-cabinet",
+          "zh": "玻璃门储物柜",
+          "en": "glass-door storage cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-drawer-storage-cabinet",
+          "zh": "抽屉储物柜",
+          "en": "drawer storage cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-entryway-cabinet",
+          "zh": "玄关柜",
+          "en": "entryway cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-sideboard-cabinet",
+          "zh": "餐边柜",
+          "en": "sideboard cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-display-cabinet",
+          "zh": "展示柜",
+          "en": "display cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-shoe-cabinet",
+          "zh": "鞋柜",
+          "en": "shoe cabinet",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-coat-rack",
+          "zh": "衣帽架",
+          "en": "coat rack",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-work-table",
+          "zh": "工作台",
+          "en": "work table",
+          "categoryId": "furniture"
+        },
+        {
+          "id": "furniture-vanity-desk",
+          "zh": "梳妆台",
+          "en": "vanity desk",
+          "categoryId": "furniture"
+        }
+      ]
+    },
+    {
+      "id": "jewelry",
+      "zh": "饰品珠宝",
+      "en": "Accessories and Jewelry",
+      "items": [
+        {
+          "id": "jewelry-beaded-bracelet",
+          "zh": "手串",
+          "en": "beaded bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-bracelet",
+          "zh": "手链",
+          "en": "bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-necklace",
+          "zh": "项链",
+          "en": "necklace",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-ring",
+          "zh": "戒指",
+          "en": "ring",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-earrings",
+          "zh": "耳环",
+          "en": "earrings",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-pendant",
+          "zh": "吊坠",
+          "en": "pendant",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-brooch",
+          "zh": "胸针",
+          "en": "brooch",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-prayer-bead-bracelet",
+          "zh": "佛珠手串",
+          "en": "prayer bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-crystal-bead-bracelet",
+          "zh": "水晶手串",
+          "en": "crystal bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-hetian-jade-bead-bracelet",
+          "zh": "和田玉手串",
+          "en": "Hetian jade bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-agarwood-bead-bracelet",
+          "zh": "沉香手串",
+          "en": "agarwood bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-red-agate-bead-bracelet",
+          "zh": "南红手串",
+          "en": "red agate bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-turquoise-bead-bracelet",
+          "zh": "绿松石手串",
+          "en": "turquoise bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-silver-bead-bracelet",
+          "zh": "银珠手链",
+          "en": "silver bead bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-pearl-bracelet",
+          "zh": "珍珠手链",
+          "en": "pearl bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-woven-bracelet",
+          "zh": "编织手链",
+          "en": "woven bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-chain-bracelet",
+          "zh": "链条手链",
+          "en": "chain bracelet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-collarbone-necklace",
+          "zh": "锁骨链",
+          "en": "collarbone necklace",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-pearl-necklace",
+          "zh": "珍珠项链",
+          "en": "pearl necklace",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-pendant-necklace",
+          "zh": "吊坠项链",
+          "en": "pendant necklace",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-metal-chain-necklace",
+          "zh": "金属项链",
+          "en": "metal chain necklace",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-wide-band-ring",
+          "zh": "宽戒指",
+          "en": "wide band ring",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-open-ring",
+          "zh": "开口戒指",
+          "en": "open ring",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-gemstone-ring",
+          "zh": "宝石戒指",
+          "en": "gemstone ring",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-wedding-ring",
+          "zh": "婚戒",
+          "en": "wedding ring",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-hoop-earrings",
+          "zh": "圈形耳环",
+          "en": "hoop earrings",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-stud-earrings",
+          "zh": "耳钉",
+          "en": "stud earrings",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-long-drop-earrings",
+          "zh": "长款耳坠",
+          "en": "long drop earrings",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-pearl-earrings",
+          "zh": "珍珠耳环",
+          "en": "pearl earrings",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-jade-pendant",
+          "zh": "玉石吊坠",
+          "en": "jade pendant",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-metal-pendant",
+          "zh": "金属吊坠",
+          "en": "metal pendant",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-crystal-pendant",
+          "zh": "水晶吊坠",
+          "en": "crystal pendant",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-metal-brooch",
+          "zh": "金属胸针",
+          "en": "metal brooch",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-enamel-brooch",
+          "zh": "珐琅胸针",
+          "en": "enamel brooch",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-floral-brooch",
+          "zh": "花形胸针",
+          "en": "floral brooch",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-jewelry-set",
+          "zh": "珠宝套装",
+          "en": "jewelry set",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-amulet-charm",
+          "zh": "护身符吊饰",
+          "en": "amulet charm",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-stacked-wrist-jewelry-set",
+          "zh": "腕饰套装",
+          "en": "stacked wrist jewelry set",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-anklet",
+          "zh": "脚链",
+          "en": "anklet",
+          "categoryId": "jewelry"
+        },
+        {
+          "id": "jewelry-cufflinks",
+          "zh": "袖扣",
+          "en": "cufflinks",
+          "categoryId": "jewelry"
+        }
+      ]
+    },
+    {
+      "id": "consumer-electronics",
+      "zh": "消费电子",
+      "en": "Consumer Electronics",
+      "items": [
+        {
+          "id": "consumer-electronics-earphones",
+          "zh": "耳机",
+          "en": "earphones",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-speaker",
+          "zh": "音箱",
+          "en": "speaker",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-keyboard",
+          "zh": "键盘",
+          "en": "keyboard",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-mouse",
+          "zh": "鼠标",
+          "en": "mouse",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-smartphone",
+          "zh": "手机",
+          "en": "smartphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-tablet",
+          "zh": "平板",
+          "en": "tablet",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-monitor",
+          "zh": "显示器",
+          "en": "monitor",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-smartwatch",
+          "zh": "智能手表",
+          "en": "smartwatch",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-wireless-earbuds",
+          "zh": "无线耳机",
+          "en": "wireless earbuds",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-over-ear-headphones",
+          "zh": "头戴耳机",
+          "en": "over-ear headphones",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-open-ear-headphones",
+          "zh": "开放式耳机",
+          "en": "open-ear headphones",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-noise-cancelling-headphones",
+          "zh": "降噪耳机",
+          "en": "noise-cancelling headphones",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-bluetooth-speaker",
+          "zh": "蓝牙音箱",
+          "en": "Bluetooth speaker",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-desktop-speaker",
+          "zh": "桌面音箱",
+          "en": "desktop speaker",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-smart-speaker",
+          "zh": "智能音箱",
+          "en": "smart speaker",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-portable-speaker",
+          "zh": "便携音箱",
+          "en": "portable speaker",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-mechanical-keyboard",
+          "zh": "机械键盘",
+          "en": "mechanical keyboard",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-low-profile-keyboard",
+          "zh": "薄膜键盘",
+          "en": "low-profile keyboard",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-ergonomic-keyboard",
+          "zh": "人体工学键盘",
+          "en": "ergonomic keyboard",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-gaming-keyboard",
+          "zh": "游戏键盘",
+          "en": "gaming keyboard",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-gaming-mouse",
+          "zh": "游戏鼠标",
+          "en": "gaming mouse",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-office-mouse",
+          "zh": "办公鼠标",
+          "en": "office mouse",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-vertical-mouse",
+          "zh": "垂直鼠标",
+          "en": "vertical mouse",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-trackpad",
+          "zh": "触控板",
+          "en": "trackpad",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-foldable-smartphone",
+          "zh": "折叠手机",
+          "en": "foldable smartphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-bar-smartphone",
+          "zh": "直板手机",
+          "en": "bar smartphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-concept-smartphone",
+          "zh": "概念手机",
+          "en": "concept smartphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-camera-focused-smartphone",
+          "zh": "相机手机",
+          "en": "camera-focused smartphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-compact-tablet",
+          "zh": "小尺寸平板",
+          "en": "compact tablet",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-large-tablet",
+          "zh": "大屏平板",
+          "en": "large tablet",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-drawing-tablet",
+          "zh": "绘图平板",
+          "en": "drawing tablet",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-e-ink-tablet",
+          "zh": "电子墨水平板",
+          "en": "e-ink tablet",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-ultrawide-monitor",
+          "zh": "超宽显示器",
+          "en": "ultrawide monitor",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-portable-monitor",
+          "zh": "便携显示器",
+          "en": "portable monitor",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-curved-monitor",
+          "zh": "曲面显示器",
+          "en": "curved monitor",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-professional-design-monitor",
+          "zh": "专业设计显示器",
+          "en": "professional design monitor",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-sports-smartwatch",
+          "zh": "运动手表",
+          "en": "sports smartwatch",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-kids-smartwatch",
+          "zh": "儿童手表",
+          "en": "kids smartwatch",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-charging-dock",
+          "zh": "充电底座",
+          "en": "charging dock",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-power-bank",
+          "zh": "移动电源",
+          "en": "power bank",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-wireless-router",
+          "zh": "路由器",
+          "en": "wireless router",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-digital-camera",
+          "zh": "数码相机",
+          "en": "digital camera",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-action-camera",
+          "zh": "运动相机",
+          "en": "action camera",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-drone",
+          "zh": "无人机",
+          "en": "drone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-projector",
+          "zh": "投影仪",
+          "en": "projector",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-e-reader",
+          "zh": "电子书阅读器",
+          "en": "e-reader",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-game-controller",
+          "zh": "游戏手柄",
+          "en": "game controller",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-vr-headset",
+          "zh": "VR头显",
+          "en": "VR headset",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-ar-glasses",
+          "zh": "AR眼镜",
+          "en": "AR glasses",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-microphone",
+          "zh": "麦克风",
+          "en": "microphone",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-voice-recorder",
+          "zh": "录音笔",
+          "en": "voice recorder",
+          "categoryId": "consumer-electronics"
+        },
+        {
+          "id": "consumer-electronics-usb-c-dock",
+          "zh": "扩展坞",
+          "en": "USB-C dock",
+          "categoryId": "consumer-electronics"
+        }
+      ]
+    },
+    {
+      "id": "homeware",
+      "zh": "家居用品",
+      "en": "Homeware",
+      "items": [
+        {
+          "id": "homeware-insulated-tumbler",
+          "zh": "保温杯",
+          "en": "insulated tumbler",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-coffee-cup",
+          "zh": "咖啡杯",
+          "en": "coffee cup",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-vase",
+          "zh": "花瓶",
+          "en": "vase",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-aroma-diffuser",
+          "zh": "香薰机",
+          "en": "aroma diffuser",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-tissue-box",
+          "zh": "纸巾盒",
+          "en": "tissue box",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-storage-box",
+          "zh": "收纳盒",
+          "en": "storage box",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-mirror",
+          "zh": "镜子",
+          "en": "mirror",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-travel-tumbler",
+          "zh": "随行保温杯",
+          "en": "travel tumbler",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-vacuum-insulated-bottle",
+          "zh": "真空保温杯",
+          "en": "vacuum insulated bottle",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-mug",
+          "zh": "马克杯",
+          "en": "mug",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-espresso-cup",
+          "zh": "浓缩咖啡杯",
+          "en": "espresso cup",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-glass-cup",
+          "zh": "玻璃杯",
+          "en": "glass cup",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-ceramic-vase",
+          "zh": "陶瓷花瓶",
+          "en": "ceramic vase",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-glass-vase",
+          "zh": "玻璃花瓶",
+          "en": "glass vase",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-metal-vase",
+          "zh": "金属花瓶",
+          "en": "metal vase",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-aroma-stone-diffuser",
+          "zh": "扩香石",
+          "en": "aroma stone diffuser",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-scented-candle",
+          "zh": "香薰蜡烛",
+          "en": "scented candle",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-wall-mounted-tissue-box",
+          "zh": "壁挂纸巾盒",
+          "en": "wall-mounted tissue box",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-desktop-organizer-box",
+          "zh": "桌面收纳盒",
+          "en": "desktop organizer box",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-cosmetic-organizer",
+          "zh": "化妆品收纳盒",
+          "en": "cosmetic organizer",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-floor-mirror",
+          "zh": "落地镜",
+          "en": "floor mirror",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-vanity-mirror",
+          "zh": "化妆镜",
+          "en": "vanity mirror",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-serving-tray",
+          "zh": "托盘",
+          "en": "serving tray",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-fruit-bowl",
+          "zh": "果盘",
+          "en": "fruit bowl",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-trash-bin",
+          "zh": "垃圾桶",
+          "en": "trash bin",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-storage-rack",
+          "zh": "置物架",
+          "en": "storage rack",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-clothes-hanger",
+          "zh": "衣架",
+          "en": "clothes hanger",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-wall-hook",
+          "zh": "挂钩",
+          "en": "wall hook",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-alarm-clock",
+          "zh": "闹钟",
+          "en": "alarm clock",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-humidifier",
+          "zh": "加湿器",
+          "en": "humidifier",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-air-purifier",
+          "zh": "空气净化器",
+          "en": "air purifier",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-fragrance-bottle",
+          "zh": "香薰瓶",
+          "en": "fragrance bottle",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-tableware-set",
+          "zh": "餐具套装",
+          "en": "tableware set",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-water-pitcher",
+          "zh": "水壶",
+          "en": "water pitcher",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-cutting-board",
+          "zh": "砧板",
+          "en": "cutting board",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-placemat",
+          "zh": "餐垫",
+          "en": "placemat",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-bathroom-shelf",
+          "zh": "浴室置物架",
+          "en": "bathroom shelf",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-soap-dish",
+          "zh": "肥皂盒",
+          "en": "soap dish",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-candle-holder",
+          "zh": "烛台",
+          "en": "candle holder",
+          "categoryId": "homeware"
+        },
+        {
+          "id": "homeware-desk-clock",
+          "zh": "桌面时钟",
+          "en": "desk clock",
+          "categoryId": "homeware"
+        }
+      ]
+    },
+    {
+      "id": "lighting",
+      "zh": "灯具",
+      "en": "Lighting Fixtures",
+      "items": [
+        {
+          "id": "lighting-desk-lamp",
+          "zh": "台灯",
+          "en": "desk lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-floor-lamp",
+          "zh": "落地灯",
+          "en": "floor lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-pendant-lamp",
+          "zh": "吊灯",
+          "en": "pendant lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-wall-lamp",
+          "zh": "壁灯",
+          "en": "wall lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-ambient-lamp",
+          "zh": "氛围灯",
+          "en": "ambient lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-reading-desk-lamp",
+          "zh": "阅读台灯",
+          "en": "reading desk lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-cordless-table-lamp",
+          "zh": "无线台灯",
+          "en": "cordless table lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-clip-on-lamp",
+          "zh": "夹子台灯",
+          "en": "clip-on lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-eye-care-desk-lamp",
+          "zh": "护眼台灯",
+          "en": "eye-care desk lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-foldable-desk-lamp",
+          "zh": "可折叠台灯",
+          "en": "foldable desk lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-arc-floor-lamp",
+          "zh": "弧形落地灯",
+          "en": "arc floor lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-tripod-floor-lamp",
+          "zh": "三脚落地灯",
+          "en": "tripod floor lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-linear-floor-lamp",
+          "zh": "线性落地灯",
+          "en": "linear floor lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-globe-pendant-lamp",
+          "zh": "球形吊灯",
+          "en": "globe pendant lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-linear-pendant-lamp",
+          "zh": "线性吊灯",
+          "en": "linear pendant lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-dining-pendant-lamp",
+          "zh": "餐厅吊灯",
+          "en": "dining pendant lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-chandelier",
+          "zh": "枝形吊灯",
+          "en": "chandelier",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-bedside-wall-lamp",
+          "zh": "床头壁灯",
+          "en": "bedside wall lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-outdoor-wall-lamp",
+          "zh": "户外壁灯",
+          "en": "outdoor wall lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-wall-washer-lamp",
+          "zh": "洗墙壁灯",
+          "en": "wall washer lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-magnetic-track-light",
+          "zh": "磁吸轨道灯",
+          "en": "magnetic track light",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-downlight",
+          "zh": "筒灯",
+          "en": "downlight",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-spotlight-fixture",
+          "zh": "射灯",
+          "en": "spotlight fixture",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-led-light-strip",
+          "zh": "灯带",
+          "en": "LED light strip",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-night-light",
+          "zh": "小夜灯",
+          "en": "night light",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-camping-lantern",
+          "zh": "露营灯",
+          "en": "camping lantern",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-garden-lamp",
+          "zh": "庭院灯",
+          "en": "garden lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-solar-lamp",
+          "zh": "太阳能灯",
+          "en": "solar lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-decorative-string-lights",
+          "zh": "装饰灯串",
+          "en": "decorative string lights",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-smart-light-bulb",
+          "zh": "智能灯泡",
+          "en": "smart light bulb",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-sculptural-lamp",
+          "zh": "艺术灯具",
+          "en": "sculptural lamp",
+          "categoryId": "lighting"
+        },
+        {
+          "id": "lighting-modular-lighting-fixture",
+          "zh": "模块化灯具",
+          "en": "modular lighting fixture",
+          "categoryId": "lighting"
+        }
+      ]
+    },
+    {
+      "id": "beauty-personal-care",
+      "zh": "美妆个护",
+      "en": "Beauty and Personal Care",
+      "items": [
+        {
+          "id": "beauty-personal-care-perfume-bottle",
+          "zh": "香水",
+          "en": "perfume bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-lipstick",
+          "zh": "口红",
+          "en": "lipstick",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-face-cream-jar",
+          "zh": "面霜",
+          "en": "face cream jar",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-serum-bottle",
+          "zh": "精华液",
+          "en": "serum bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-foundation-bottle",
+          "zh": "粉底液",
+          "en": "foundation bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-shampoo-bottle",
+          "zh": "洗发水",
+          "en": "shampoo bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-eau-de-toilette-bottle",
+          "zh": "淡香水",
+          "en": "eau de toilette bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-fragrance-gift-set",
+          "zh": "香氛礼盒",
+          "en": "fragrance gift set",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-lip-gloss-tube",
+          "zh": "唇釉",
+          "en": "lip gloss tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-lip-balm-tube",
+          "zh": "唇膏",
+          "en": "lip balm tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-eyeshadow-palette",
+          "zh": "眼影盘",
+          "en": "eyeshadow palette",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-blush-compact",
+          "zh": "腮红盘",
+          "en": "blush compact",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-loose-powder-jar",
+          "zh": "散粉盒",
+          "en": "loose powder jar",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-cushion-compact",
+          "zh": "气垫粉盒",
+          "en": "cushion compact",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-facial-cleanser-tube",
+          "zh": "洁面乳",
+          "en": "facial cleanser tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-toner-bottle",
+          "zh": "爽肤水",
+          "en": "toner bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-lotion-bottle",
+          "zh": "乳液",
+          "en": "lotion bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-body-lotion-bottle",
+          "zh": "身体乳",
+          "en": "body lotion bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-hand-cream-tube",
+          "zh": "护手霜",
+          "en": "hand cream tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-facial-mask-sachet",
+          "zh": "面膜包装",
+          "en": "facial mask sachet",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-sunscreen-tube",
+          "zh": "防晒霜",
+          "en": "sunscreen tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-body-wash-bottle",
+          "zh": "沐浴露",
+          "en": "body wash bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-conditioner-bottle",
+          "zh": "护发素",
+          "en": "conditioner bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-hair-mask-jar",
+          "zh": "发膜罐",
+          "en": "hair mask jar",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-electric-toothbrush",
+          "zh": "电动牙刷",
+          "en": "electric toothbrush",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-electric-shaver",
+          "zh": "剃须刀",
+          "en": "electric shaver",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-hair-dryer",
+          "zh": "吹风机",
+          "en": "hair dryer",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-curling-iron",
+          "zh": "卷发棒",
+          "en": "curling iron",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-beauty-device",
+          "zh": "美容仪",
+          "en": "beauty device",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-facial-cleansing-device",
+          "zh": "洁面仪",
+          "en": "facial cleansing device",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-soap-bar",
+          "zh": "香皂",
+          "en": "soap bar",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-toothpaste-tube",
+          "zh": "牙膏",
+          "en": "toothpaste tube",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-nail-polish-bottle",
+          "zh": "指甲油",
+          "en": "nail polish bottle",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-makeup-brush",
+          "zh": "化妆刷",
+          "en": "makeup brush",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-makeup-sponge",
+          "zh": "粉扑",
+          "en": "makeup sponge",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-contour-palette",
+          "zh": "修容盘",
+          "en": "contour palette",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-eyebrow-pencil",
+          "zh": "眉笔",
+          "en": "eyebrow pencil",
+          "categoryId": "beauty-personal-care"
+        },
+        {
+          "id": "beauty-personal-care-mascara-tube",
+          "zh": "睫毛膏",
+          "en": "mascara tube",
+          "categoryId": "beauty-personal-care"
+        }
+      ]
+    },
+    {
+      "id": "food-beverage",
+      "zh": "食品饮料",
+      "en": "Food and Beverage",
+      "items": [
+        {
+          "id": "food-beverage-coffee-beverage",
+          "zh": "咖啡",
+          "en": "coffee beverage",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-tea-leaves",
+          "zh": "茶叶",
+          "en": "tea leaves",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-mineral-water-bottle",
+          "zh": "矿泉水",
+          "en": "mineral water bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-chocolate",
+          "zh": "巧克力",
+          "en": "chocolate",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-cookies",
+          "zh": "饼干",
+          "en": "cookies",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-red-wine-bottle",
+          "zh": "红酒",
+          "en": "red wine bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-latte-coffee",
+          "zh": "拿铁咖啡",
+          "en": "latte coffee",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-cold-brew-coffee",
+          "zh": "冷萃咖啡",
+          "en": "cold brew coffee",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-coffee-beans",
+          "zh": "咖啡豆",
+          "en": "coffee beans",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-drip-coffee-pack",
+          "zh": "挂耳咖啡",
+          "en": "drip coffee pack",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-green-tea",
+          "zh": "绿茶",
+          "en": "green tea",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-oolong-tea",
+          "zh": "乌龙茶",
+          "en": "oolong tea",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-black-tea",
+          "zh": "红茶",
+          "en": "black tea",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-pu-erh-tea-cake",
+          "zh": "普洱茶",
+          "en": "pu-erh tea cake",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-sparkling-water",
+          "zh": "气泡水",
+          "en": "sparkling water",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-fruit-juice-bottle",
+          "zh": "果汁",
+          "en": "fruit juice bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-energy-drink-can",
+          "zh": "功能饮料",
+          "en": "energy drink can",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-beer-bottle",
+          "zh": "啤酒",
+          "en": "beer bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-white-wine-bottle",
+          "zh": "白葡萄酒",
+          "en": "white wine bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-champagne-bottle",
+          "zh": "香槟",
+          "en": "champagne bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-dark-chocolate-bar",
+          "zh": "黑巧克力",
+          "en": "dark chocolate bar",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-chocolate-truffles",
+          "zh": "松露巧克力",
+          "en": "chocolate truffles",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-sandwich-cookies",
+          "zh": "夹心饼干",
+          "en": "sandwich cookies",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-butter-cookies",
+          "zh": "曲奇",
+          "en": "butter cookies",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-cereal-box",
+          "zh": "麦片",
+          "en": "cereal box",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-mixed-nuts",
+          "zh": "坚果",
+          "en": "mixed nuts",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-candy",
+          "zh": "糖果",
+          "en": "candy",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-ice-cream",
+          "zh": "冰淇淋",
+          "en": "ice cream",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-yogurt-cup",
+          "zh": "酸奶",
+          "en": "yogurt cup",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-cheese",
+          "zh": "奶酪",
+          "en": "cheese",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-olive-oil-bottle",
+          "zh": "橄榄油",
+          "en": "olive oil bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-honey-jar",
+          "zh": "蜂蜜",
+          "en": "honey jar",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-jam-jar",
+          "zh": "果酱",
+          "en": "jam jar",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-sauce-bottle",
+          "zh": "调味酱",
+          "en": "sauce bottle",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-cake",
+          "zh": "蛋糕",
+          "en": "cake",
+          "categoryId": "food-beverage"
+        },
+        {
+          "id": "food-beverage-artisan-bread",
+          "zh": "面包",
+          "en": "artisan bread",
+          "categoryId": "food-beverage"
+        }
+      ]
+    },
+    {
+      "id": "packaging",
+      "zh": "包装",
+      "en": "Packaging",
+      "items": [
+        {
+          "id": "packaging-gift-box",
+          "zh": "礼盒",
+          "en": "gift box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-packaging-box",
+          "zh": "包装盒",
+          "en": "packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-packaging-bottle",
+          "zh": "包装瓶",
+          "en": "packaging bottle",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-packaging-jar",
+          "zh": "包装罐",
+          "en": "packaging jar",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-paper-bag",
+          "zh": "纸袋",
+          "en": "paper bag",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-drawer-gift-box",
+          "zh": "抽屉式礼盒",
+          "en": "drawer gift box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-rigid-lift-off-gift-box",
+          "zh": "天地盖礼盒",
+          "en": "rigid lift-off gift box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-magnetic-flap-gift-box",
+          "zh": "翻盖礼盒",
+          "en": "magnetic flap gift box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-gift-set-box",
+          "zh": "套装礼盒",
+          "en": "gift set box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-jewelry-gift-box",
+          "zh": "珠宝礼盒",
+          "en": "jewelry gift box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-cosmetic-packaging-box",
+          "zh": "美妆包装盒",
+          "en": "cosmetic packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-food-packaging-box",
+          "zh": "食品包装盒",
+          "en": "food packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-tea-packaging-box",
+          "zh": "茶叶包装盒",
+          "en": "tea packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-electronics-packaging-box",
+          "zh": "电子产品包装盒",
+          "en": "electronics packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-perfume-packaging-box",
+          "zh": "香水包装盒",
+          "en": "perfume packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-wine-packaging-box",
+          "zh": "酒类包装盒",
+          "en": "wine packaging box",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-cylindrical-packaging-tin",
+          "zh": "圆柱包装罐",
+          "en": "cylindrical packaging tin",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-metal-packaging-tin",
+          "zh": "金属包装罐",
+          "en": "metal packaging tin",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-glass-packaging-bottle",
+          "zh": "玻璃包装瓶",
+          "en": "glass packaging bottle",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-plastic-packaging-bottle",
+          "zh": "塑料包装瓶",
+          "en": "plastic packaging bottle",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-pump-bottle-packaging",
+          "zh": "泵头包装瓶",
+          "en": "pump bottle packaging",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-dropper-bottle",
+          "zh": "滴管瓶",
+          "en": "dropper bottle",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-spray-bottle",
+          "zh": "喷雾瓶",
+          "en": "spray bottle",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-tube-packaging",
+          "zh": "软管包装",
+          "en": "tube packaging",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-refill-pouch",
+          "zh": "补充装袋",
+          "en": "refill pouch",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-stand-up-pouch",
+          "zh": "自立袋",
+          "en": "stand-up pouch",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-kraft-paper-bag",
+          "zh": "牛皮纸袋",
+          "en": "kraft paper bag",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-luxury-shopping-bag",
+          "zh": "精品购物袋",
+          "en": "luxury shopping bag",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-handle-paper-bag",
+          "zh": "手提纸袋",
+          "en": "handle paper bag",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-label-sticker",
+          "zh": "标签贴纸",
+          "en": "label sticker",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-paper-sleeve",
+          "zh": "封套",
+          "en": "paper sleeve",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-hang-tag",
+          "zh": "卡纸吊牌",
+          "en": "hang tag",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-blister-packaging",
+          "zh": "泡罩包装",
+          "en": "blister packaging",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-molded-pulp-packaging",
+          "zh": "环保纸浆包装",
+          "en": "molded pulp packaging",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-shipping-carton",
+          "zh": "运输外箱",
+          "en": "shipping carton",
+          "categoryId": "packaging"
+        },
+        {
+          "id": "packaging-display-packaging",
+          "zh": "展示包装",
+          "en": "display packaging",
+          "categoryId": "packaging"
+        }
+      ]
+    },
+    {
+      "id": "fashion-accessories",
+      "zh": "服饰配件",
+      "en": "Fashion Accessories",
+      "items": [
+        {
+          "id": "fashion-accessories-handbag",
+          "zh": "手提包",
+          "en": "handbag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-backpack",
+          "zh": "双肩包",
+          "en": "backpack",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-wallet",
+          "zh": "钱包",
+          "en": "wallet",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-sneakers",
+          "zh": "运动鞋",
+          "en": "sneakers",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-leather-shoes",
+          "zh": "皮鞋",
+          "en": "leather shoes",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-hat",
+          "zh": "帽子",
+          "en": "hat",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-eyewear",
+          "zh": "眼镜",
+          "en": "eyewear",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-tote-bag",
+          "zh": "托特包",
+          "en": "tote bag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-shoulder-bag",
+          "zh": "单肩包",
+          "en": "shoulder bag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-crossbody-bag",
+          "zh": "斜挎包",
+          "en": "crossbody bag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-bucket-bag",
+          "zh": "水桶包",
+          "en": "bucket bag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-evening-clutch",
+          "zh": "晚宴包",
+          "en": "evening clutch",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-duffel-bag",
+          "zh": "旅行包",
+          "en": "duffel bag",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-laptop-backpack",
+          "zh": "电脑背包",
+          "en": "laptop backpack",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-hiking-backpack",
+          "zh": "登山包",
+          "en": "hiking backpack",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-card-holder",
+          "zh": "卡包",
+          "en": "card holder",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-long-wallet",
+          "zh": "长款钱包",
+          "en": "long wallet",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-bifold-wallet",
+          "zh": "短款钱包",
+          "en": "bifold wallet",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-running-shoes",
+          "zh": "跑步鞋",
+          "en": "running shoes",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-basketball-shoes",
+          "zh": "篮球鞋",
+          "en": "basketball shoes",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-retro-sneakers",
+          "zh": "复古运动鞋",
+          "en": "retro sneakers",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-skate-shoes",
+          "zh": "板鞋",
+          "en": "skate shoes",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-loafers",
+          "zh": "乐福鞋",
+          "en": "loafers",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-derby-shoes",
+          "zh": "德比鞋",
+          "en": "derby shoes",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-chelsea-boots",
+          "zh": "切尔西靴",
+          "en": "Chelsea boots",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-baseball-cap",
+          "zh": "棒球帽",
+          "en": "baseball cap",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-bucket-hat",
+          "zh": "渔夫帽",
+          "en": "bucket hat",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-knit-beanie",
+          "zh": "针织帽",
+          "en": "knit beanie",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-sunglasses",
+          "zh": "太阳镜",
+          "en": "sunglasses",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-optical-glasses",
+          "zh": "光学眼镜",
+          "en": "optical glasses",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-sports-glasses",
+          "zh": "运动眼镜",
+          "en": "sports glasses",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-belt",
+          "zh": "腰带",
+          "en": "belt",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-silk-scarf",
+          "zh": "丝巾",
+          "en": "silk scarf",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-gloves",
+          "zh": "手套",
+          "en": "gloves",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-scarf",
+          "zh": "围巾",
+          "en": "scarf",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-tie",
+          "zh": "领带",
+          "en": "tie",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-hair-clip",
+          "zh": "发夹",
+          "en": "hair clip",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-keychain",
+          "zh": "钥匙扣",
+          "en": "keychain",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-suitcase",
+          "zh": "行李箱",
+          "en": "suitcase",
+          "categoryId": "fashion-accessories"
+        },
+        {
+          "id": "fashion-accessories-watch-strap",
+          "zh": "表带",
+          "en": "watch strap",
+          "categoryId": "fashion-accessories"
+        }
+      ]
+    },
+    {
+      "id": "vehicles",
+      "zh": "交通工具",
+      "en": "Vehicles",
+      "items": [
+        {
+          "id": "vehicles-car",
+          "zh": "汽车",
+          "en": "car",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-motorcycle",
+          "zh": "摩托车",
+          "en": "motorcycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-bicycle",
+          "zh": "自行车",
+          "en": "bicycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-scooter",
+          "zh": "滑板车",
+          "en": "scooter",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-yacht",
+          "zh": "游艇",
+          "en": "yacht",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-concept-car",
+          "zh": "概念汽车",
+          "en": "concept car",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-electric-vehicle",
+          "zh": "电动汽车",
+          "en": "electric vehicle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-sports-car",
+          "zh": "跑车",
+          "en": "sports car",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-suv",
+          "zh": "SUV",
+          "en": "SUV",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-compact-city-car",
+          "zh": "城市小车",
+          "en": "compact city car",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-off-road-vehicle",
+          "zh": "越野车",
+          "en": "off-road vehicle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-executive-van",
+          "zh": "商务车",
+          "en": "executive van",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-electric-motorcycle",
+          "zh": "电动摩托车",
+          "en": "electric motorcycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-retro-motorcycle",
+          "zh": "复古摩托车",
+          "en": "retro motorcycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-cruiser-motorcycle",
+          "zh": "巡航摩托车",
+          "en": "cruiser motorcycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-mountain-bike",
+          "zh": "山地自行车",
+          "en": "mountain bike",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-road-bike",
+          "zh": "公路自行车",
+          "en": "road bike",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-folding-bicycle",
+          "zh": "折叠自行车",
+          "en": "folding bicycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-electric-bicycle",
+          "zh": "电动自行车",
+          "en": "electric bicycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-kids-bicycle",
+          "zh": "儿童自行车",
+          "en": "kids bicycle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-electric-scooter",
+          "zh": "电动滑板车",
+          "en": "electric scooter",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-self-balancing-scooter",
+          "zh": "平衡车",
+          "en": "self-balancing scooter",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-skateboard",
+          "zh": "滑板",
+          "en": "skateboard",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-electric-skateboard",
+          "zh": "电动滑板",
+          "en": "electric skateboard",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-luxury-yacht",
+          "zh": "豪华游艇",
+          "en": "luxury yacht",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-sailboat",
+          "zh": "帆船",
+          "en": "sailboat",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-speedboat",
+          "zh": "快艇",
+          "en": "speedboat",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-camper-van",
+          "zh": "房车",
+          "en": "camper van",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-concept-air-vehicle",
+          "zh": "概念飞行器",
+          "en": "concept air vehicle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-urban-commuter-vehicle",
+          "zh": "城市通勤车",
+          "en": "urban commuter vehicle",
+          "categoryId": "vehicles"
+        },
+        {
+          "id": "vehicles-autonomous-delivery-vehicle",
+          "zh": "无人配送车",
+          "en": "autonomous delivery vehicle",
+          "categoryId": "vehicles"
+        }
+      ]
+    }
+  ],
+  "styles": [
+    {
+      "id": "minimalism",
+      "zh": "极简主义",
+      "en": "minimalism"
+    },
+    {
+      "id": "scandinavian-design",
+      "zh": "北欧",
+      "en": "Scandinavian design"
+    },
+    {
+      "id": "wabi-sabi",
+      "zh": "侘寂",
+      "en": "wabi-sabi"
+    },
+    {
+      "id": "bauhaus",
+      "zh": "包豪斯",
+      "en": "Bauhaus"
+    },
+    {
+      "id": "modernism",
+      "zh": "现代主义",
+      "en": "modernism"
+    },
+    {
+      "id": "industrial-style",
+      "zh": "工业风",
+      "en": "industrial style"
+    },
+    {
+      "id": "apple-inspired-minimal-product-aesthetic",
+      "zh": "苹果风",
+      "en": "Apple-inspired minimal product aesthetic"
+    },
+    {
+      "id": "futuristic-technology-aesthetic",
+      "zh": "未来科技",
+      "en": "futuristic technology aesthetic"
+    },
+    {
+      "id": "cyberpunk",
+      "zh": "赛博朋克",
+      "en": "cyberpunk"
+    },
+    {
+      "id": "modern-chinese-style",
+      "zh": "新中式",
+      "en": "modern Chinese style"
+    },
+    {
+      "id": "light-luxury",
+      "zh": "轻奢",
+      "en": "light luxury"
+    },
+    {
+      "id": "luxury-advertising-visual",
+      "zh": "奢侈品广告",
+      "en": "luxury advertising visual"
+    },
+    {
+      "id": "japanese-minimalism",
+      "zh": "日式极简",
+      "en": "Japanese minimalism"
+    },
+    {
+      "id": "mediterranean-style",
+      "zh": "地中海",
+      "en": "Mediterranean style"
+    },
+    {
+      "id": "modern-art-inspired",
+      "zh": "现代艺术",
+      "en": "modern art inspired"
+    },
+    {
+      "id": "parametric-design",
+      "zh": "参数化设计",
+      "en": "parametric design"
+    },
+    {
+      "id": "organic-modern",
+      "zh": "有机现代",
+      "en": "organic modern"
+    },
+    {
+      "id": "postmodern-design",
+      "zh": "后现代",
+      "en": "postmodern design"
+    },
+    {
+      "id": "memphis-design",
+      "zh": "孟菲斯",
+      "en": "Memphis design"
+    },
+    {
+      "id": "premium-ecommerce-visual",
+      "zh": "高端电商",
+      "en": "premium ecommerce visual"
+    },
+    {
+      "id": "editorial-magazine-aesthetic",
+      "zh": "编辑杂志",
+      "en": "editorial magazine aesthetic"
+    },
+    {
+      "id": "cinematic-style",
+      "zh": "电影感",
+      "en": "cinematic style"
+    },
+    {
+      "id": "architectural-visualization",
+      "zh": "建筑可视化",
+      "en": "architectural visualization"
+    },
+    {
+      "id": "exhibition-design-visual",
+      "zh": "展览视觉",
+      "en": "exhibition design visual"
+    },
+    {
+      "id": "brand-identity-system",
+      "zh": "品牌系统",
+      "en": "brand identity system"
+    },
+    {
+      "id": "cmf-trend-board",
+      "zh": "CMF趋势板",
+      "en": "CMF trend board"
+    },
+    {
+      "id": "product-advertising",
+      "zh": "产品广告",
+      "en": "product advertising"
+    },
+    {
+      "id": "technology-launch-visual",
+      "zh": "科技发布会",
+      "en": "technology launch visual"
+    },
+    {
+      "id": "sustainable-eco-design",
+      "zh": "环保可持续",
+      "en": "sustainable eco design"
+    },
+    {
+      "id": "biomorphic-design",
+      "zh": "生物仿生",
+      "en": "biomorphic design"
+    },
+    {
+      "id": "soft-playful-3d",
+      "zh": "软萌3D",
+      "en": "soft playful 3D"
+    },
+    {
+      "id": "clay-3d-style",
+      "zh": "黏土3D",
+      "en": "clay 3D style"
+    },
+    {
+      "id": "glassmorphism",
+      "zh": "玻璃拟态",
+      "en": "glassmorphism"
+    },
+    {
+      "id": "neumorphism",
+      "zh": "新拟物",
+      "en": "neumorphism"
+    },
+    {
+      "id": "low-poly-style",
+      "zh": "低多边形",
+      "en": "low-poly style"
+    },
+    {
+      "id": "isometric-illustration",
+      "zh": "等距插画",
+      "en": "isometric illustration"
+    },
+    {
+      "id": "pixel-art",
+      "zh": "像素艺术",
+      "en": "pixel art"
+    },
+    {
+      "id": "flat-vector-design",
+      "zh": "矢量扁平",
+      "en": "flat vector design"
+    },
+    {
+      "id": "hand-drawn-sketch",
+      "zh": "手绘草图",
+      "en": "hand-drawn sketch"
+    },
+    {
+      "id": "industrial-design-line-sketch",
+      "zh": "设计线稿",
+      "en": "industrial design line sketch"
+    },
+    {
+      "id": "watercolor-illustration",
+      "zh": "水彩插画",
+      "en": "watercolor illustration"
+    },
+    {
+      "id": "oil-painting-texture",
+      "zh": "油画质感",
+      "en": "oil painting texture"
+    },
+    {
+      "id": "modern-chinese-guochao",
+      "zh": "国潮",
+      "en": "modern Chinese guochao"
+    },
+    {
+      "id": "eastern-zen-aesthetic",
+      "zh": "东方禅意",
+      "en": "Eastern zen aesthetic"
+    },
+    {
+      "id": "retro-film-photography",
+      "zh": "复古胶片",
+      "en": "retro film photography"
+    },
+    {
+      "id": "black-and-white-photography",
+      "zh": "黑白摄影",
+      "en": "black and white photography"
+    },
+    {
+      "id": "premium-neutral-gray",
+      "zh": "高级灰",
+      "en": "premium neutral gray"
+    },
+    {
+      "id": "warm-lifestyle",
+      "zh": "暖色生活方式",
+      "en": "warm lifestyle"
+    },
+    {
+      "id": "cool-understated-minimalism",
+      "zh": "冷淡风",
+      "en": "cool understated minimalism"
+    },
+    {
+      "id": "y2k-aesthetic",
+      "zh": "Y2K",
+      "en": "Y2K aesthetic"
+    },
+    {
+      "id": "vaporwave",
+      "zh": "蒸汽波",
+      "en": "vaporwave"
+    },
+    {
+      "id": "retro-futurism",
+      "zh": "未来复古",
+      "en": "retro-futurism"
+    },
+    {
+      "id": "space-age-design",
+      "zh": "太空时代",
+      "en": "space-age design"
+    },
+    {
+      "id": "techwear-utility",
+      "zh": "机能风",
+      "en": "techwear utility"
+    },
+    {
+      "id": "outdoor-utility",
+      "zh": "户外机能",
+      "en": "outdoor utility"
+    },
+    {
+      "id": "arctic-expedition-aesthetic",
+      "zh": "极地探险",
+      "en": "arctic expedition aesthetic"
+    },
+    {
+      "id": "motorsport-aesthetic",
+      "zh": "赛车运动",
+      "en": "motorsport aesthetic"
+    },
+    {
+      "id": "premium-jewelry-aesthetic",
+      "zh": "奢华珠宝",
+      "en": "premium jewelry aesthetic"
+    },
+    {
+      "id": "clean-beauty-aesthetic",
+      "zh": "美妆清透",
+      "en": "clean beauty aesthetic"
+    },
+    {
+      "id": "medical-technology-visual",
+      "zh": "医疗科技",
+      "en": "medical technology visual"
+    },
+    {
+      "id": "kid-friendly-design",
+      "zh": "儿童友好",
+      "en": "kid-friendly design"
+    },
+    {
+      "id": "pet-friendly-lifestyle",
+      "zh": "宠物友好",
+      "en": "pet-friendly lifestyle"
+    },
+    {
+      "id": "cafe-lifestyle",
+      "zh": "咖啡馆生活",
+      "en": "cafe lifestyle"
+    },
+    {
+      "id": "boutique-hotel-aesthetic",
+      "zh": "酒店精品",
+      "en": "boutique hotel aesthetic"
+    },
+    {
+      "id": "natural-wellness-aesthetic",
+      "zh": "自然疗愈",
+      "en": "natural wellness aesthetic"
+    },
+    {
+      "id": "crafted-handmade",
+      "zh": "手作工艺",
+      "en": "crafted handmade"
+    },
+    {
+      "id": "brutalism",
+      "zh": "粗野主义",
+      "en": "brutalism"
+    },
+    {
+      "id": "neo-brutalism",
+      "zh": "新粗野主义",
+      "en": "neo-brutalism"
+    },
+    {
+      "id": "art-deco",
+      "zh": "装饰艺术",
+      "en": "Art Deco"
+    },
+    {
+      "id": "art-nouveau",
+      "zh": "新艺术",
+      "en": "Art Nouveau"
+    },
+    {
+      "id": "modern-baroque",
+      "zh": "巴洛克现代",
+      "en": "modern baroque"
+    },
+    {
+      "id": "academic-style",
+      "zh": "学院风",
+      "en": "academic style"
+    },
+    {
+      "id": "retro-industrial-futurism",
+      "zh": "复古未来工业",
+      "en": "retro industrial futurism"
+    },
+    {
+      "id": "transparent-tech-aesthetic",
+      "zh": "透明科技",
+      "en": "transparent tech aesthetic"
+    },
+    {
+      "id": "liquid-metal-aesthetic",
+      "zh": "液态金属",
+      "en": "liquid metal aesthetic"
+    },
+    {
+      "id": "gradient-glass-aesthetic",
+      "zh": "渐变玻璃",
+      "en": "gradient glass aesthetic"
+    },
+    {
+      "id": "data-visualization-aesthetic",
+      "zh": "数据可视化",
+      "en": "data visualization aesthetic"
+    },
+    {
+      "id": "ai-technology-aesthetic",
+      "zh": "AI科技",
+      "en": "AI technology aesthetic"
+    },
+    {
+      "id": "haute-couture-fashion",
+      "zh": "高定时装",
+      "en": "haute couture fashion"
+    },
+    {
+      "id": "streetwear-style",
+      "zh": "街头潮流",
+      "en": "streetwear style"
+    },
+    {
+      "id": "sport-tech-style",
+      "zh": "运动科技",
+      "en": "sport-tech style"
+    },
+    {
+      "id": "still-life-photography",
+      "zh": "静物摄影",
+      "en": "still-life photography"
+    },
+    {
+      "id": "dark-moody-still-life",
+      "zh": "暗调静物",
+      "en": "dark moody still life"
+    },
+    {
+      "id": "high-key-white-visual",
+      "zh": "高调白底",
+      "en": "high-key white visual"
+    },
+    {
+      "id": "macro-material-study",
+      "zh": "微距材质",
+      "en": "macro material study"
+    },
+    {
+      "id": "hyperrealistic-render",
+      "zh": "超写实渲染",
+      "en": "hyperrealistic render"
+    },
+    {
+      "id": "octane-render-aesthetic",
+      "zh": "Octane渲染感",
+      "en": "Octane render aesthetic"
+    },
+    {
+      "id": "keyshot-product-render-aesthetic",
+      "zh": "KeyShot产品渲染",
+      "en": "KeyShot product render aesthetic"
+    },
+    {
+      "id": "blender-product-visualization",
+      "zh": "Blender产品视觉",
+      "en": "Blender product visualization"
+    },
+    {
+      "id": "movie-poster-visual",
+      "zh": "电影海报",
+      "en": "movie poster visual"
+    },
+    {
+      "id": "social-media-ad-visual",
+      "zh": "社媒广告",
+      "en": "social media ad visual"
+    },
+    {
+      "id": "high-converting-ecommerce-style",
+      "zh": "电商爆款",
+      "en": "high-converting ecommerce style"
+    },
+    {
+      "id": "website-hero-visual",
+      "zh": "官网主视觉",
+      "en": "website hero visual"
+    },
+    {
+      "id": "trade-show-key-visual",
+      "zh": "展会主视觉",
+      "en": "trade show key visual"
+    },
+    {
+      "id": "luxury-black-and-gold",
+      "zh": "奢华黑金",
+      "en": "luxury black and gold"
+    },
+    {
+      "id": "silver-tech-aesthetic",
+      "zh": "银色科技",
+      "en": "silver tech aesthetic"
+    },
+    {
+      "id": "natural-wood-aesthetic",
+      "zh": "自然木质",
+      "en": "natural wood aesthetic"
+    },
+    {
+      "id": "soft-cream-minimalism",
+      "zh": "柔和奶油",
+      "en": "soft cream minimalism"
+    },
+    {
+      "id": "fresh-watery-transparency",
+      "zh": "清透水感",
+      "en": "fresh watery transparency"
+    },
+    {
+      "id": "mineral-crystal-aesthetic",
+      "zh": "矿物晶体",
+      "en": "mineral crystal aesthetic"
+    },
+    {
+      "id": "dune-natural-aesthetic",
+      "zh": "沙丘自然",
+      "en": "dune natural aesthetic"
+    },
+    {
+      "id": "urban-executive-style",
+      "zh": "都市精英",
+      "en": "urban executive style"
+    },
+    {
+      "id": "eastern-luxury-aesthetic",
+      "zh": "东方奢华",
+      "en": "Eastern luxury aesthetic"
+    },
+    {
+      "id": "nordic-kids-design",
+      "zh": "北欧儿童",
+      "en": "Nordic kids design"
+    },
+    {
+      "id": "professional-lab-aesthetic",
+      "zh": "专业实验室",
+      "en": "professional lab aesthetic"
+    },
+    {
+      "id": "smart-home-aesthetic",
+      "zh": "智能家居",
+      "en": "smart home aesthetic"
+    },
+    {
+      "id": "wearable-technology-aesthetic",
+      "zh": "可穿戴科技",
+      "en": "wearable technology aesthetic"
+    },
+    {
+      "id": "automotive-concept-design",
+      "zh": "汽车概念",
+      "en": "automotive concept design"
+    },
+    {
+      "id": "furniture-portfolio-render",
+      "zh": "家具作品集",
+      "en": "furniture portfolio render"
+    },
+    {
+      "id": "cmf-sample-board-visual",
+      "zh": "CMF样板间",
+      "en": "CMF sample board visual"
+    },
+    {
+      "id": "premium-packaging-visual",
+      "zh": "包装精品",
+      "en": "premium packaging visual"
+    },
+    {
+      "id": "real-everyday-photography",
+      "zh": "日常真实",
+      "en": "real everyday photography"
+    },
+    {
+      "id": "refined-negative-space-design",
+      "zh": "高级留白",
+      "en": "refined negative-space design"
+    },
+    {
+      "id": "soft-emotional-campaign-visual",
+      "zh": "柔和情绪片",
+      "en": "soft emotional campaign visual"
+    }
+  ],
+  "materials": [
+    {
+      "id": "walnut-wood",
+      "zh": "胡桃木",
+      "en": "walnut wood"
+    },
+    {
+      "id": "ash-wood",
+      "zh": "白蜡木",
+      "en": "ash wood"
+    },
+    {
+      "id": "oak-wood",
+      "zh": "橡木",
+      "en": "oak wood"
+    },
+    {
+      "id": "bamboo",
+      "zh": "竹材",
+      "en": "bamboo"
+    },
+    {
+      "id": "glass",
+      "zh": "玻璃",
+      "en": "glass"
+    },
+    {
+      "id": "acrylic",
+      "zh": "亚克力",
+      "en": "acrylic"
+    },
+    {
+      "id": "ceramic",
+      "zh": "陶瓷",
+      "en": "ceramic"
+    },
+    {
+      "id": "marble",
+      "zh": "大理石",
+      "en": "marble"
+    },
+    {
+      "id": "stainless-steel",
+      "zh": "不锈钢",
+      "en": "stainless steel"
+    },
+    {
+      "id": "aluminum-alloy",
+      "zh": "铝合金",
+      "en": "aluminum alloy"
+    },
+    {
+      "id": "brass",
+      "zh": "黄铜",
+      "en": "brass"
+    },
+    {
+      "id": "leather",
+      "zh": "皮革",
+      "en": "leather"
+    },
+    {
+      "id": "fabric",
+      "zh": "织物",
+      "en": "fabric"
+    },
+    {
+      "id": "frosted-glass",
+      "zh": "磨砂玻璃",
+      "en": "frosted glass"
+    },
+    {
+      "id": "clear-glass",
+      "zh": "透明玻璃",
+      "en": "clear glass"
+    },
+    {
+      "id": "tinted-glass",
+      "zh": "有色玻璃",
+      "en": "tinted glass"
+    },
+    {
+      "id": "glass-brick",
+      "zh": "玻璃砖",
+      "en": "glass brick"
+    },
+    {
+      "id": "mirror-stainless-steel",
+      "zh": "镜面不锈钢",
+      "en": "mirror stainless steel"
+    },
+    {
+      "id": "brushed-metal",
+      "zh": "拉丝金属",
+      "en": "brushed metal"
+    },
+    {
+      "id": "titanium",
+      "zh": "钛金属",
+      "en": "titanium"
+    },
+    {
+      "id": "chrome-metal",
+      "zh": "镀铬金属",
+      "en": "chrome metal"
+    },
+    {
+      "id": "gold-plated-metal",
+      "zh": "镀金金属",
+      "en": "gold-plated metal"
+    },
+    {
+      "id": "anodized-aluminum",
+      "zh": "氧化铝",
+      "en": "anodized aluminum"
+    },
+    {
+      "id": "carbon-fiber",
+      "zh": "碳纤维",
+      "en": "carbon fiber"
+    },
+    {
+      "id": "silicone",
+      "zh": "硅胶",
+      "en": "silicone"
+    },
+    {
+      "id": "rubber",
+      "zh": "橡胶",
+      "en": "rubber"
+    },
+    {
+      "id": "matte-plastic",
+      "zh": "磨砂塑料",
+      "en": "matte plastic"
+    },
+    {
+      "id": "glossy-plastic",
+      "zh": "亮面塑料",
+      "en": "glossy plastic"
+    },
+    {
+      "id": "translucent-resin",
+      "zh": "半透明树脂",
+      "en": "translucent resin"
+    },
+    {
+      "id": "epoxy-resin",
+      "zh": "环氧树脂",
+      "en": "epoxy resin"
+    },
+    {
+      "id": "abs-plastic",
+      "zh": "ABS塑料",
+      "en": "ABS plastic"
+    },
+    {
+      "id": "polycarbonate",
+      "zh": "聚碳酸酯",
+      "en": "polycarbonate"
+    },
+    {
+      "id": "nylon",
+      "zh": "尼龙",
+      "en": "nylon"
+    },
+    {
+      "id": "woven-nylon",
+      "zh": "编织尼龙",
+      "en": "woven nylon"
+    },
+    {
+      "id": "wool",
+      "zh": "羊毛",
+      "en": "wool"
+    },
+    {
+      "id": "linen",
+      "zh": "亚麻",
+      "en": "linen"
+    },
+    {
+      "id": "cotton-fabric",
+      "zh": "棉布",
+      "en": "cotton fabric"
+    },
+    {
+      "id": "silk",
+      "zh": "丝绸",
+      "en": "silk"
+    },
+    {
+      "id": "velvet",
+      "zh": "天鹅绒",
+      "en": "velvet"
+    },
+    {
+      "id": "suede",
+      "zh": "麂皮",
+      "en": "suede"
+    },
+    {
+      "id": "canvas",
+      "zh": "帆布",
+      "en": "canvas"
+    },
+    {
+      "id": "denim",
+      "zh": "牛仔布",
+      "en": "denim"
+    },
+    {
+      "id": "technical-knit-fabric",
+      "zh": "科技针织",
+      "en": "technical knit fabric"
+    },
+    {
+      "id": "vegan-leather",
+      "zh": "人造革",
+      "en": "vegan leather"
+    },
+    {
+      "id": "saddle-leather",
+      "zh": "马鞍皮",
+      "en": "saddle leather"
+    },
+    {
+      "id": "travertine",
+      "zh": "洞石",
+      "en": "travertine"
+    },
+    {
+      "id": "sandstone",
+      "zh": "砂岩",
+      "en": "sandstone"
+    },
+    {
+      "id": "limestone",
+      "zh": "石灰石",
+      "en": "limestone"
+    },
+    {
+      "id": "granite",
+      "zh": "花岗岩",
+      "en": "granite"
+    },
+    {
+      "id": "terrazzo",
+      "zh": "水磨石",
+      "en": "terrazzo"
+    },
+    {
+      "id": "microcement",
+      "zh": "微水泥",
+      "en": "microcement"
+    },
+    {
+      "id": "concrete",
+      "zh": "混凝土",
+      "en": "concrete"
+    },
+    {
+      "id": "glazed-tile",
+      "zh": "釉面砖",
+      "en": "glazed tile"
+    },
+    {
+      "id": "sintered-stone-slab",
+      "zh": "岩板",
+      "en": "sintered stone slab"
+    },
+    {
+      "id": "paper",
+      "zh": "纸张",
+      "en": "paper"
+    },
+    {
+      "id": "rice-paper",
+      "zh": "宣纸",
+      "en": "rice paper"
+    },
+    {
+      "id": "kraft-paper",
+      "zh": "牛皮纸",
+      "en": "kraft paper"
+    },
+    {
+      "id": "cardstock",
+      "zh": "卡纸",
+      "en": "cardstock"
+    },
+    {
+      "id": "recycled-paper-pulp",
+      "zh": "回收纸浆",
+      "en": "recycled paper pulp"
+    },
+    {
+      "id": "corrugated-cardboard",
+      "zh": "瓦楞纸板",
+      "en": "corrugated cardboard"
+    },
+    {
+      "id": "pearlescent-paper",
+      "zh": "珠光纸",
+      "en": "pearlescent paper"
+    },
+    {
+      "id": "holographic-film",
+      "zh": "镭射膜",
+      "en": "holographic film"
+    },
+    {
+      "id": "matte-film",
+      "zh": "哑光膜",
+      "en": "matte film"
+    },
+    {
+      "id": "metallic-foil",
+      "zh": "金属箔",
+      "en": "metallic foil"
+    },
+    {
+      "id": "clear-crystal",
+      "zh": "透明水晶",
+      "en": "clear crystal"
+    },
+    {
+      "id": "smoky-quartz",
+      "zh": "烟晶",
+      "en": "smoky quartz"
+    },
+    {
+      "id": "rose-quartz",
+      "zh": "粉晶",
+      "en": "rose quartz"
+    },
+    {
+      "id": "clear-quartz",
+      "zh": "白水晶",
+      "en": "clear quartz"
+    },
+    {
+      "id": "jade",
+      "zh": "玉石",
+      "en": "jade"
+    },
+    {
+      "id": "hetian-jade",
+      "zh": "和田玉",
+      "en": "Hetian jade"
+    },
+    {
+      "id": "jadeite",
+      "zh": "翡翠",
+      "en": "jadeite"
+    },
+    {
+      "id": "obsidian",
+      "zh": "黑曜石",
+      "en": "obsidian"
+    },
+    {
+      "id": "agate",
+      "zh": "玛瑙",
+      "en": "agate"
+    },
+    {
+      "id": "turquoise",
+      "zh": "绿松石",
+      "en": "turquoise"
+    },
+    {
+      "id": "amber",
+      "zh": "琥珀",
+      "en": "amber"
+    },
+    {
+      "id": "pearl",
+      "zh": "珍珠",
+      "en": "pearl"
+    },
+    {
+      "id": "mother-of-pearl",
+      "zh": "珍珠母贝",
+      "en": "mother of pearl"
+    },
+    {
+      "id": "enamel",
+      "zh": "珐琅",
+      "en": "enamel"
+    },
+    {
+      "id": "porcelain-enamel",
+      "zh": "搪瓷",
+      "en": "porcelain enamel"
+    },
+    {
+      "id": "oil-finished-wood",
+      "zh": "木蜡油表面",
+      "en": "oil-finished wood"
+    },
+    {
+      "id": "high-gloss-lacquer",
+      "zh": "高光烤漆",
+      "en": "high-gloss lacquer"
+    },
+    {
+      "id": "matte-lacquer",
+      "zh": "哑光烤漆",
+      "en": "matte lacquer"
+    },
+    {
+      "id": "powder-coated-metal",
+      "zh": "粉末喷涂金属",
+      "en": "powder-coated metal"
+    },
+    {
+      "id": "electroplated-finish",
+      "zh": "电镀表面",
+      "en": "electroplated finish"
+    },
+    {
+      "id": "brushed-silver",
+      "zh": "拉丝银",
+      "en": "brushed silver"
+    },
+    {
+      "id": "gunmetal-finish",
+      "zh": "枪灰金属",
+      "en": "gunmetal finish"
+    },
+    {
+      "id": "matte-black-metal",
+      "zh": "哑光黑金属",
+      "en": "matte black metal"
+    },
+    {
+      "id": "opal-acrylic",
+      "zh": "乳白亚克力",
+      "en": "opal acrylic"
+    },
+    {
+      "id": "clear-pet",
+      "zh": "透明PET",
+      "en": "clear PET"
+    },
+    {
+      "id": "frosted-pet",
+      "zh": "磨砂PET",
+      "en": "frosted PET"
+    },
+    {
+      "id": "liquid-gel",
+      "zh": "液态凝胶",
+      "en": "liquid gel"
+    },
+    {
+      "id": "foam",
+      "zh": "泡沫",
+      "en": "foam"
+    },
+    {
+      "id": "memory-foam",
+      "zh": "记忆棉",
+      "en": "memory foam"
+    },
+    {
+      "id": "down-filling",
+      "zh": "羽绒",
+      "en": "down filling"
+    },
+    {
+      "id": "sherpa-fleece",
+      "zh": "羊羔绒",
+      "en": "sherpa fleece"
+    },
+    {
+      "id": "rattan-weaving",
+      "zh": "藤编",
+      "en": "rattan weaving"
+    },
+    {
+      "id": "straw-weaving",
+      "zh": "草编",
+      "en": "straw weaving"
+    },
+    {
+      "id": "cork",
+      "zh": "软木",
+      "en": "cork"
+    },
+    {
+      "id": "sponge",
+      "zh": "海绵",
+      "en": "sponge"
+    },
+    {
+      "id": "ice",
+      "zh": "冰块",
+      "en": "ice"
+    },
+    {
+      "id": "water-droplets",
+      "zh": "水滴",
+      "en": "water droplets"
+    },
+    {
+      "id": "condensation",
+      "zh": "冷凝水",
+      "en": "condensation"
+    },
+    {
+      "id": "subtle-smoke",
+      "zh": "烟雾",
+      "en": "subtle smoke"
+    },
+    {
+      "id": "waxed-surface",
+      "zh": "蜡质表面",
+      "en": "waxed surface"
+    },
+    {
+      "id": "soft-matte-skin-texture",
+      "zh": "磨砂皮肤质感",
+      "en": "soft matte skin texture"
+    },
+    {
+      "id": "perforated-metal-mesh",
+      "zh": "金属网孔",
+      "en": "perforated metal mesh"
+    },
+    {
+      "id": "fiber-weave",
+      "zh": "纤维编织",
+      "en": "fiber weave"
+    },
+    {
+      "id": "3d-printed-resin",
+      "zh": "3D打印树脂",
+      "en": "3D printed resin"
+    },
+    {
+      "id": "biodegradable-plastic",
+      "zh": "可降解塑料",
+      "en": "biodegradable plastic"
+    },
+    {
+      "id": "recycled-aluminum",
+      "zh": "再生铝",
+      "en": "recycled aluminum"
+    },
+    {
+      "id": "recycled-textile",
+      "zh": "再生织物",
+      "en": "recycled textile"
+    },
+    {
+      "id": "plant-fiber-material",
+      "zh": "植物纤维",
+      "en": "plant fiber material"
+    },
+    {
+      "id": "mineral-powder-texture",
+      "zh": "矿物粉末",
+      "en": "mineral powder texture"
+    },
+    {
+      "id": "shell-texture",
+      "zh": "贝壳纹理",
+      "en": "shell texture"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "photo-studio",
+      "zh": "摄影棚",
+      "en": "photo studio"
+    },
+    {
+      "id": "modern-living-room",
+      "zh": "现代客厅",
+      "en": "modern living room"
+    },
+    {
+      "id": "showroom",
+      "zh": "展厅",
+      "en": "showroom"
+    },
+    {
+      "id": "art-gallery",
+      "zh": "画廊",
+      "en": "art gallery"
+    },
+    {
+      "id": "office",
+      "zh": "办公室",
+      "en": "office"
+    },
+    {
+      "id": "cafe",
+      "zh": "咖啡馆",
+      "en": "cafe"
+    },
+    {
+      "id": "hotel-lobby",
+      "zh": "酒店大堂",
+      "en": "hotel lobby"
+    },
+    {
+      "id": "outdoor-nature",
+      "zh": "户外自然",
+      "en": "outdoor nature"
+    },
+    {
+      "id": "seaside",
+      "zh": "海边",
+      "en": "seaside"
+    },
+    {
+      "id": "forest",
+      "zh": "森林",
+      "en": "forest"
+    },
+    {
+      "id": "architectural-space",
+      "zh": "建筑空间",
+      "en": "architectural space"
+    },
+    {
+      "id": "seamless-white-photo-studio",
+      "zh": "无缝白底摄影棚",
+      "en": "seamless white photo studio"
+    },
+    {
+      "id": "gray-seamless-backdrop",
+      "zh": "灰色无缝背景",
+      "en": "gray seamless backdrop"
+    },
+    {
+      "id": "premium-black-background",
+      "zh": "黑色高级背景",
+      "en": "premium black background"
+    },
+    {
+      "id": "cmf-material-table",
+      "zh": "CMF材料台",
+      "en": "CMF material table"
+    },
+    {
+      "id": "designer-workspace",
+      "zh": "设计工作室",
+      "en": "designer workspace"
+    },
+    {
+      "id": "industrial-design-workshop",
+      "zh": "工业设计工坊",
+      "en": "industrial design workshop"
+    },
+    {
+      "id": "woodworking-studio",
+      "zh": "木工工坊",
+      "en": "woodworking studio"
+    },
+    {
+      "id": "jewelry-counter",
+      "zh": "珠宝柜台",
+      "en": "jewelry counter"
+    },
+    {
+      "id": "beauty-vanity-table",
+      "zh": "美妆化妆台",
+      "en": "beauty vanity table"
+    },
+    {
+      "id": "bathroom-counter",
+      "zh": "浴室台面",
+      "en": "bathroom counter"
+    },
+    {
+      "id": "minimal-kitchen",
+      "zh": "极简厨房",
+      "en": "minimal kitchen"
+    },
+    {
+      "id": "dining-table-setting",
+      "zh": "餐厅桌面",
+      "en": "dining table setting"
+    },
+    {
+      "id": "bedroom-bedside",
+      "zh": "卧室床头",
+      "en": "bedroom bedside"
+    },
+    {
+      "id": "entryway-interior",
+      "zh": "玄关空间",
+      "en": "entryway interior"
+    },
+    {
+      "id": "study-room",
+      "zh": "书房",
+      "en": "study room"
+    },
+    {
+      "id": "children-s-room",
+      "zh": "儿童房",
+      "en": "children's room"
+    },
+    {
+      "id": "pet-friendly-home",
+      "zh": "宠物家居",
+      "en": "pet-friendly home"
+    },
+    {
+      "id": "smart-home-interior",
+      "zh": "智能家居场景",
+      "en": "smart home interior"
+    },
+    {
+      "id": "furniture-showroom",
+      "zh": "家具展厅",
+      "en": "furniture showroom"
+    },
+    {
+      "id": "brand-pop-up-store",
+      "zh": "品牌快闪店",
+      "en": "brand pop-up store"
+    },
+    {
+      "id": "shopping-mall-display-window",
+      "zh": "商场橱窗",
+      "en": "shopping mall display window"
+    },
+    {
+      "id": "trade-show-booth",
+      "zh": "展会展台",
+      "en": "trade show booth"
+    },
+    {
+      "id": "product-launch-stage",
+      "zh": "发布会舞台",
+      "en": "product launch stage"
+    },
+    {
+      "id": "museum-exhibition-hall",
+      "zh": "美术馆展厅",
+      "en": "museum exhibition hall"
+    },
+    {
+      "id": "boutique-retail-store",
+      "zh": "精品零售店",
+      "en": "boutique retail store"
+    },
+    {
+      "id": "flagship-store-entrance",
+      "zh": "旗舰店入口",
+      "en": "flagship store entrance"
+    },
+    {
+      "id": "airport-lounge",
+      "zh": "机场候机厅",
+      "en": "airport lounge"
+    },
+    {
+      "id": "subway-station",
+      "zh": "地铁站",
+      "en": "subway station"
+    },
+    {
+      "id": "urban-street-corner",
+      "zh": "城市街角",
+      "en": "urban street corner"
+    },
+    {
+      "id": "rooftop-terrace",
+      "zh": "屋顶天台",
+      "en": "rooftop terrace"
+    },
+    {
+      "id": "night-neon-street",
+      "zh": "夜间霓虹街道",
+      "en": "night neon street"
+    },
+    {
+      "id": "rainy-street-after-shower",
+      "zh": "雨后街道",
+      "en": "rainy street after shower"
+    },
+    {
+      "id": "sunny-park",
+      "zh": "阳光公园",
+      "en": "sunny park"
+    },
+    {
+      "id": "spring-park",
+      "zh": "春日公园",
+      "en": "spring park"
+    },
+    {
+      "id": "japanese-garden",
+      "zh": "日式庭院",
+      "en": "Japanese garden"
+    },
+    {
+      "id": "chinese-tea-room",
+      "zh": "中式茶室",
+      "en": "Chinese tea room"
+    },
+    {
+      "id": "zen-courtyard",
+      "zh": "禅意庭院",
+      "en": "zen courtyard"
+    },
+    {
+      "id": "nordic-wooden-cabin",
+      "zh": "北欧木屋",
+      "en": "Nordic wooden cabin"
+    },
+    {
+      "id": "mountain-guesthouse",
+      "zh": "山间民宿",
+      "en": "mountain guesthouse"
+    },
+    {
+      "id": "lakeside-terrace",
+      "zh": "湖边露台",
+      "en": "lakeside terrace"
+    },
+    {
+      "id": "seaside-morning",
+      "zh": "海边清晨",
+      "en": "seaside morning"
+    },
+    {
+      "id": "desert-sunset",
+      "zh": "沙漠日落",
+      "en": "desert sunset"
+    },
+    {
+      "id": "snowy-environment",
+      "zh": "雪地场景",
+      "en": "snowy environment"
+    },
+    {
+      "id": "tropical-plant-interior",
+      "zh": "热带植物空间",
+      "en": "tropical plant interior"
+    },
+    {
+      "id": "floral-tabletop-setting",
+      "zh": "花艺桌面",
+      "en": "floral tabletop setting"
+    },
+    {
+      "id": "bakery-kitchen",
+      "zh": "烘焙厨房",
+      "en": "bakery kitchen"
+    },
+    {
+      "id": "bar-counter",
+      "zh": "酒吧吧台",
+      "en": "bar counter"
+    },
+    {
+      "id": "specialty-coffee-bar",
+      "zh": "精品咖啡吧台",
+      "en": "specialty coffee bar"
+    },
+    {
+      "id": "tea-display-table",
+      "zh": "茶叶陈列台",
+      "en": "tea display table"
+    },
+    {
+      "id": "wine-cellar",
+      "zh": "葡萄酒酒窖",
+      "en": "wine cellar"
+    },
+    {
+      "id": "clean-laboratory",
+      "zh": "实验室",
+      "en": "clean laboratory"
+    },
+    {
+      "id": "futuristic-lab-pod",
+      "zh": "未来实验舱",
+      "en": "futuristic lab pod"
+    },
+    {
+      "id": "medical-clinic-room",
+      "zh": "医疗诊室",
+      "en": "medical clinic room"
+    },
+    {
+      "id": "technology-office",
+      "zh": "科技办公室",
+      "en": "technology office"
+    },
+    {
+      "id": "server-room",
+      "zh": "服务器机房",
+      "en": "server room"
+    },
+    {
+      "id": "automotive-design-studio",
+      "zh": "汽车设计棚",
+      "en": "automotive design studio"
+    },
+    {
+      "id": "concept-car-stage",
+      "zh": "概念车展台",
+      "en": "concept car stage"
+    },
+    {
+      "id": "industrial-warehouse",
+      "zh": "工业仓库",
+      "en": "industrial warehouse"
+    },
+    {
+      "id": "concrete-interior",
+      "zh": "混凝土空间",
+      "en": "concrete interior"
+    },
+    {
+      "id": "white-architectural-atrium",
+      "zh": "白色建筑中庭",
+      "en": "white architectural atrium"
+    },
+    {
+      "id": "glass-curtain-wall-interior",
+      "zh": "玻璃幕墙空间",
+      "en": "glass curtain wall interior"
+    },
+    {
+      "id": "architectural-stairwell",
+      "zh": "楼梯空间",
+      "en": "architectural stairwell"
+    },
+    {
+      "id": "minimal-corridor",
+      "zh": "极简走廊",
+      "en": "minimal corridor"
+    },
+    {
+      "id": "cinema-corridor",
+      "zh": "影院走廊",
+      "en": "cinema corridor"
+    },
+    {
+      "id": "music-stage",
+      "zh": "音乐舞台",
+      "en": "music stage"
+    },
+    {
+      "id": "black-box-theater",
+      "zh": "黑盒剧场",
+      "en": "black box theater"
+    },
+    {
+      "id": "camping-table-setup",
+      "zh": "露营桌面",
+      "en": "camping table setup"
+    },
+    {
+      "id": "outdoor-sports-setting",
+      "zh": "户外运动场景",
+      "en": "outdoor sports setting"
+    },
+    {
+      "id": "mountain-road",
+      "zh": "山地公路",
+      "en": "mountain road"
+    },
+    {
+      "id": "marina-dock",
+      "zh": "码头",
+      "en": "marina dock"
+    },
+    {
+      "id": "yacht-deck",
+      "zh": "游艇甲板",
+      "en": "yacht deck"
+    },
+    {
+      "id": "bicycle-shop",
+      "zh": "自行车店",
+      "en": "bicycle shop"
+    },
+    {
+      "id": "sneaker-display-wall",
+      "zh": "运动鞋陈列墙",
+      "en": "sneaker display wall"
+    },
+    {
+      "id": "luxury-display-cabinet",
+      "zh": "奢侈品陈列柜",
+      "en": "luxury display cabinet"
+    },
+    {
+      "id": "packaging-photography-table",
+      "zh": "包装拍摄台",
+      "en": "packaging photography table"
+    },
+    {
+      "id": "ecommerce-white-background",
+      "zh": "电商白底",
+      "en": "ecommerce white background"
+    },
+    {
+      "id": "ecommerce-lifestyle-tabletop",
+      "zh": "电商场景台面",
+      "en": "ecommerce lifestyle tabletop"
+    },
+    {
+      "id": "website-hero-background",
+      "zh": "官网首屏背景",
+      "en": "website hero background"
+    },
+    {
+      "id": "poster-key-visual-background",
+      "zh": "海报视觉背景",
+      "en": "poster key visual background"
+    },
+    {
+      "id": "social-media-cover-setting",
+      "zh": "社交媒体封面",
+      "en": "social media cover setting"
+    },
+    {
+      "id": "storyboard-panel-layout",
+      "zh": "分镜故事板",
+      "en": "storyboard panel layout"
+    },
+    {
+      "id": "material-sample-desk",
+      "zh": "材料样板桌",
+      "en": "material sample desk"
+    },
+    {
+      "id": "color-trend-board",
+      "zh": "色彩趋势板",
+      "en": "color trend board"
+    },
+    {
+      "id": "design-school-studio",
+      "zh": "设计院校工作间",
+      "en": "design school studio"
+    },
+    {
+      "id": "ceramic-workshop",
+      "zh": "手作陶艺室",
+      "en": "ceramic workshop"
+    },
+    {
+      "id": "fragrance-lab",
+      "zh": "香氛实验室",
+      "en": "fragrance lab"
+    },
+    {
+      "id": "skincare-bathroom-scene",
+      "zh": "护肤品浴室场景",
+      "en": "skincare bathroom scene"
+    },
+    {
+      "id": "fashion-styling-room",
+      "zh": "服装造型间",
+      "en": "fashion styling room"
+    },
+    {
+      "id": "photography-darkroom",
+      "zh": "摄影暗房",
+      "en": "photography darkroom"
+    },
+    {
+      "id": "natural-stone-surface",
+      "zh": "自然石材台面",
+      "en": "natural stone surface"
+    },
+    {
+      "id": "light-wood-tabletop",
+      "zh": "浅色木质台面",
+      "en": "light wood tabletop"
+    },
+    {
+      "id": "dark-metal-tabletop",
+      "zh": "深色金属台面",
+      "en": "dark metal tabletop"
+    },
+    {
+      "id": "transparent-glass-tabletop",
+      "zh": "透明玻璃台面",
+      "en": "transparent glass tabletop"
+    },
+    {
+      "id": "water-reflection-setting",
+      "zh": "水面倒影场景",
+      "en": "water reflection setting"
+    },
+    {
+      "id": "misty-atmosphere-setting",
+      "zh": "薄雾场景",
+      "en": "misty atmosphere setting"
+    },
+    {
+      "id": "morning-window-setting",
+      "zh": "清晨窗边",
+      "en": "morning window setting"
+    },
+    {
+      "id": "sunset-interior",
+      "zh": "黄昏室内",
+      "en": "sunset interior"
+    },
+    {
+      "id": "late-night-studio",
+      "zh": "深夜工作室",
+      "en": "late-night studio"
+    },
+    {
+      "id": "premium-meeting-room",
+      "zh": "高级会议室",
+      "en": "premium meeting room"
+    },
+    {
+      "id": "sustainable-materials-exhibition",
+      "zh": "可持续材料展",
+      "en": "sustainable materials exhibition"
+    },
+    {
+      "id": "futuristic-city-background",
+      "zh": "未来城市背景",
+      "en": "futuristic city background"
+    }
+  ],
+  "cameras": [
+    {
+      "id": "50mm-lens",
+      "zh": "50mm",
+      "en": "50mm lens"
+    },
+    {
+      "id": "85mm-lens",
+      "zh": "85mm",
+      "en": "85mm lens"
+    },
+    {
+      "id": "100mm-macro-lens",
+      "zh": "100mm Macro",
+      "en": "100mm macro lens"
+    },
+    {
+      "id": "overhead-view",
+      "zh": "俯视图",
+      "en": "overhead view"
+    },
+    {
+      "id": "front-view",
+      "zh": "正视图",
+      "en": "front view"
+    },
+    {
+      "id": "isometric-view",
+      "zh": "等距视角",
+      "en": "isometric view"
+    },
+    {
+      "id": "ultra-wide-angle-lens",
+      "zh": "超广角",
+      "en": "ultra-wide angle lens"
+    },
+    {
+      "id": "35mm-environmental-lens",
+      "zh": "35mm环境镜头",
+      "en": "35mm environmental lens"
+    },
+    {
+      "id": "24mm-wide-angle-lens",
+      "zh": "24mm广角",
+      "en": "24mm wide-angle lens"
+    },
+    {
+      "id": "70mm-medium-telephoto-lens",
+      "zh": "70mm中长焦",
+      "en": "70mm medium telephoto lens"
+    },
+    {
+      "id": "135mm-telephoto-lens",
+      "zh": "135mm长焦",
+      "en": "135mm telephoto lens"
+    },
+    {
+      "id": "macro-close-up",
+      "zh": "微距特写",
+      "en": "macro close-up"
+    },
+    {
+      "id": "material-detail-close-up",
+      "zh": "材质细节特写",
+      "en": "material detail close-up"
+    },
+    {
+      "id": "45-degree-angle",
+      "zh": "45度视角",
+      "en": "45-degree angle"
+    },
+    {
+      "id": "low-angle-shot",
+      "zh": "低角度仰拍",
+      "en": "low-angle shot"
+    },
+    {
+      "id": "high-angle-shot",
+      "zh": "高角度俯拍",
+      "en": "high-angle shot"
+    },
+    {
+      "id": "centered-symmetrical-composition",
+      "zh": "中心对称构图",
+      "en": "centered symmetrical composition"
+    },
+    {
+      "id": "rule-of-thirds-composition",
+      "zh": "三分法构图",
+      "en": "rule-of-thirds composition"
+    },
+    {
+      "id": "negative-space-composition",
+      "zh": "留白构图",
+      "en": "negative-space composition"
+    },
+    {
+      "id": "diagonal-composition",
+      "zh": "对角线构图",
+      "en": "diagonal composition"
+    },
+    {
+      "id": "cinematic-widescreen-framing",
+      "zh": "电影宽银幕",
+      "en": "cinematic widescreen framing"
+    },
+    {
+      "id": "vertical-poster-framing",
+      "zh": "竖版海报",
+      "en": "vertical poster framing"
+    },
+    {
+      "id": "square-social-media-framing",
+      "zh": "方形社媒",
+      "en": "square social media framing"
+    },
+    {
+      "id": "ecommerce-hero-product-framing",
+      "zh": "电商主图构图",
+      "en": "ecommerce hero product framing"
+    },
+    {
+      "id": "exploded-view-composition",
+      "zh": "爆炸图视角",
+      "en": "exploded-view composition"
+    },
+    {
+      "id": "cutaway-view",
+      "zh": "剖面视角",
+      "en": "cutaway view"
+    },
+    {
+      "id": "product-orthographic-views",
+      "zh": "产品三视图",
+      "en": "product orthographic views"
+    },
+    {
+      "id": "nine-panel-storyboard-grid",
+      "zh": "分镜九宫格",
+      "en": "nine-panel storyboard grid"
+    },
+    {
+      "id": "handheld-documentary-framing",
+      "zh": "手持纪实",
+      "en": "handheld documentary framing"
+    },
+    {
+      "id": "dynamic-tracking-shot",
+      "zh": "运动追拍",
+      "en": "dynamic tracking shot"
+    },
+    {
+      "id": "shallow-depth-of-field",
+      "zh": "景深虚化",
+      "en": "shallow depth of field"
+    },
+    {
+      "id": "deep-depth-of-field",
+      "zh": "深景深",
+      "en": "deep depth of field"
+    },
+    {
+      "id": "fisheye-perspective",
+      "zh": "鱼眼视角",
+      "en": "fisheye perspective"
+    },
+    {
+      "id": "aerial-drone-view",
+      "zh": "航拍视角",
+      "en": "aerial drone view"
+    },
+    {
+      "id": "axonometric-view",
+      "zh": "轴测图",
+      "en": "axonometric view"
+    },
+    {
+      "id": "flat-lay-composition",
+      "zh": "平铺构图",
+      "en": "flat lay composition"
+    }
+  ],
+  "lighting": [
+    {
+      "id": "softbox-lighting",
+      "zh": "柔光箱",
+      "en": "softbox lighting"
+    },
+    {
+      "id": "natural-side-light",
+      "zh": "自然侧光",
+      "en": "natural side light"
+    },
+    {
+      "id": "backlighting",
+      "zh": "逆光",
+      "en": "backlighting"
+    },
+    {
+      "id": "rim-light",
+      "zh": "轮廓光",
+      "en": "rim light"
+    },
+    {
+      "id": "dramatic-lighting",
+      "zh": "戏剧光",
+      "en": "dramatic lighting"
+    },
+    {
+      "id": "cinematic-lighting",
+      "zh": "电影光效",
+      "en": "cinematic lighting"
+    },
+    {
+      "id": "studio-lighting-setup",
+      "zh": "工作室布光",
+      "en": "studio lighting setup"
+    },
+    {
+      "id": "three-point-lighting",
+      "zh": "三点布光",
+      "en": "three-point lighting"
+    },
+    {
+      "id": "top-soft-light",
+      "zh": "顶部柔光",
+      "en": "top soft light"
+    },
+    {
+      "id": "diffused-window-light",
+      "zh": "窗边漫射光",
+      "en": "diffused window light"
+    },
+    {
+      "id": "morning-natural-light",
+      "zh": "清晨自然光",
+      "en": "morning natural light"
+    },
+    {
+      "id": "golden-hour-light",
+      "zh": "黄昏金色光",
+      "en": "golden hour light"
+    },
+    {
+      "id": "high-key-white-lighting",
+      "zh": "高调白光",
+      "en": "high-key white lighting"
+    },
+    {
+      "id": "low-key-dark-lighting",
+      "zh": "低调暗光",
+      "en": "low-key dark lighting"
+    },
+    {
+      "id": "hard-shadow-lighting",
+      "zh": "硬质投影光",
+      "en": "hard shadow lighting"
+    },
+    {
+      "id": "focused-spotlight",
+      "zh": "聚光灯",
+      "en": "focused spotlight"
+    },
+    {
+      "id": "ring-fill-light",
+      "zh": "环形补光",
+      "en": "ring fill light"
+    },
+    {
+      "id": "soft-bounced-light",
+      "zh": "反射柔光",
+      "en": "soft bounced light"
+    },
+    {
+      "id": "gentle-overhead-light",
+      "zh": "柔和顶光",
+      "en": "gentle overhead light"
+    },
+    {
+      "id": "cool-technological-lighting",
+      "zh": "冷色科技光",
+      "en": "cool technological lighting"
+    },
+    {
+      "id": "warm-home-ambient-lighting",
+      "zh": "暖色家居光",
+      "en": "warm home ambient lighting"
+    },
+    {
+      "id": "colorful-neon-light",
+      "zh": "霓虹彩光",
+      "en": "colorful neon light"
+    },
+    {
+      "id": "linear-led-lighting",
+      "zh": "LED线性光",
+      "en": "linear LED lighting"
+    },
+    {
+      "id": "volumetric-light",
+      "zh": "体积光",
+      "en": "volumetric light"
+    },
+    {
+      "id": "water-reflected-light",
+      "zh": "水面反光",
+      "en": "water-reflected light"
+    },
+    {
+      "id": "refracted-glass-light",
+      "zh": "玻璃折射光",
+      "en": "refracted glass light"
+    },
+    {
+      "id": "controlled-metallic-highlights",
+      "zh": "金属高光",
+      "en": "controlled metallic highlights"
+    },
+    {
+      "id": "jewelry-sparkle-lighting",
+      "zh": "珠宝闪耀光",
+      "en": "jewelry sparkle lighting"
+    },
+    {
+      "id": "clean-beauty-glow-lighting",
+      "zh": "美妆清透光",
+      "en": "clean beauty glow lighting"
+    },
+    {
+      "id": "automotive-studio-strip-lighting",
+      "zh": "汽车棚拍光",
+      "en": "automotive studio strip lighting"
+    },
+    {
+      "id": "showroom-ambient-lighting",
+      "zh": "展厅氛围光",
+      "en": "showroom ambient lighting"
+    },
+    {
+      "id": "colorful-stage-lighting",
+      "zh": "舞台彩光",
+      "en": "colorful stage lighting"
+    },
+    {
+      "id": "candlelit-ambience",
+      "zh": "蜡烛氛围光",
+      "en": "candlelit ambience"
+    },
+    {
+      "id": "sunset-silhouette-light",
+      "zh": "日落剪影光",
+      "en": "sunset silhouette light"
+    },
+    {
+      "id": "rainy-night-reflection-lighting",
+      "zh": "雨夜反射光",
+      "en": "rainy night reflection lighting"
+    },
+    {
+      "id": "soft-natural-shadows",
+      "zh": "柔和阴影",
+      "en": "soft natural shadows"
+    }
+  ],
+  "purposes": [
+    {
+      "id": "product-render",
+      "zh": "产品渲染",
+      "en": "product render"
+    },
+    {
+      "id": "ecommerce-main-image",
+      "zh": "电商主图",
+      "en": "ecommerce main image"
+    },
+    {
+      "id": "brand-advertising",
+      "zh": "品牌广告",
+      "en": "brand advertising"
+    },
+    {
+      "id": "website-hero-visual",
+      "zh": "官网主视觉",
+      "en": "website hero visual"
+    },
+    {
+      "id": "poster-design",
+      "zh": "海报设计",
+      "en": "poster design"
+    },
+    {
+      "id": "social-media-advertisement",
+      "zh": "社交媒体广告",
+      "en": "social media advertisement"
+    },
+    {
+      "id": "trade-show-display",
+      "zh": "展会展示",
+      "en": "trade show display"
+    },
+    {
+      "id": "portfolio-presentation",
+      "zh": "作品集展示",
+      "en": "portfolio presentation"
+    },
+    {
+      "id": "cmf-proposal",
+      "zh": "CMF提案",
+      "en": "CMF proposal"
+    },
+    {
+      "id": "material-trend-board",
+      "zh": "材质趋势板",
+      "en": "material trend board"
+    },
+    {
+      "id": "packaging-proposal",
+      "zh": "包装提案",
+      "en": "packaging proposal"
+    },
+    {
+      "id": "product-concept-visual",
+      "zh": "产品概念图",
+      "en": "product concept visual"
+    },
+    {
+      "id": "crowdfunding-page-visual",
+      "zh": "众筹页面",
+      "en": "crowdfunding page visual"
+    },
+    {
+      "id": "new-product-launch-visual",
+      "zh": "新品发布",
+      "en": "new product launch visual"
+    },
+    {
+      "id": "product-detail-page-hero-image",
+      "zh": "详情页首图",
+      "en": "product detail page hero image"
+    },
+    {
+      "id": "lifestyle-selling-point-image",
+      "zh": "场景化卖点图",
+      "en": "lifestyle selling-point image"
+    },
+    {
+      "id": "xiaohongshu-cover-image",
+      "zh": "小红书封面",
+      "en": "Xiaohongshu cover image"
+    },
+    {
+      "id": "instagram-ad-creative",
+      "zh": "Instagram广告",
+      "en": "Instagram ad creative"
+    },
+    {
+      "id": "midjourney-concept-exploration",
+      "zh": "Midjourney探索",
+      "en": "Midjourney concept exploration"
+    },
+    {
+      "id": "flux-photoreal-generation",
+      "zh": "Flux写实出图",
+      "en": "Flux photoreal generation"
+    },
+    {
+      "id": "gpt-image-refined-generation",
+      "zh": "GPT Image精修",
+      "en": "GPT Image refined generation"
+    },
+    {
+      "id": "short-video-cover",
+      "zh": "短视频封面",
+      "en": "short video cover"
+    },
+    {
+      "id": "video-storyboard",
+      "zh": "视频分镜",
+      "en": "video storyboard"
+    },
+    {
+      "id": "brand-key-visual",
+      "zh": "品牌KV",
+      "en": "brand key visual"
+    },
+    {
+      "id": "launch-event-backdrop",
+      "zh": "发布会背景",
+      "en": "launch event backdrop"
+    },
+    {
+      "id": "retail-window-display",
+      "zh": "门店橱窗",
+      "en": "retail window display"
+    },
+    {
+      "id": "interior-styling-proposal",
+      "zh": "空间软装提案",
+      "en": "interior styling proposal"
+    },
+    {
+      "id": "furniture-catalog-image",
+      "zh": "家具目录",
+      "en": "furniture catalog image"
+    },
+    {
+      "id": "jewelry-detail-image",
+      "zh": "珠宝详情图",
+      "en": "jewelry detail image"
+    },
+    {
+      "id": "beauty-campaign-image",
+      "zh": "美妆广告图",
+      "en": "beauty campaign image"
+    },
+    {
+      "id": "automotive-concept-showcase",
+      "zh": "汽车概念展示",
+      "en": "automotive concept showcase"
+    },
+    {
+      "id": "design-review-board",
+      "zh": "设计评审图",
+      "en": "design review board"
+    },
+    {
+      "id": "client-presentation-slide",
+      "zh": "客户提案页",
+      "en": "client presentation slide"
+    },
+    {
+      "id": "a-b-test-creative",
+      "zh": "A/B测试素材",
+      "en": "A/B test creative"
+    },
+    {
+      "id": "premium-mockup-image",
+      "zh": "高端样机图",
+      "en": "premium mockup image"
+    },
+    {
+      "id": "visual-moodboard",
+      "zh": "视觉灵感板",
+      "en": "visual moodboard"
+    }
+  ]
+}
