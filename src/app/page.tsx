@@ -1,5 +1,6 @@
-import { CommercialVisualStudio } from "@/components/solution/CommercialVisualStudio";
+import { CrystalCaseLibrary } from "@/components/crystal/CrystalCaseLibrary";
+import { crystalCases, crystalProducts } from "@/lib/crystal-cases";
 
 export default function Home() {
-  return <CommercialVisualStudio />;
+  return <CrystalCaseLibrary products={crystalProducts} cases={crystalCases} />;
 }

@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AI Commercial Visual Studio",
+  title: "水晶手串 AI 商业视觉案例库",
   description:
-    "面向产品设计师、CMF 设计师和 AI 绘图用户的本地规则商业视觉 Prompt Studio。"
+    "紫水晶、黄水晶、黑曜石手串的商业视觉 Prompt、构图分析和灯光分析案例库。"
 };
 
 export default function RootLayout({

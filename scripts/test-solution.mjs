@@ -33,6 +33,16 @@ const { clearRecords, removeRecordById } = loadTsModule(
   path.join(projectRoot, "src", "lib", "storage.ts")
 );
 
+const {
+  crystalCases,
+  crystalProducts,
+  getCrystalCaseBySlug,
+  getCrystalCasesBySlugs,
+  latestCaseSlugs,
+  popularCaseSlugs,
+  searchCrystalCases
+} = loadTsModule(path.join(projectRoot, "src", "lib", "crystal-cases.ts"));
+
 const names = {
   blackRutilatedBracelet: "\u9ed1\u53d1\u6676\u624b\u4e32",
   walnutLoungeChair: "\u80e1\u6843\u6728\u4f11\u95f2\u6905",
@@ -120,6 +130,8 @@ function run() {
   assertManualSelectionGuard();
   assertTemplateMatching();
   assertStorageDeletionHelpers();
+  assertCrystalCaseLibrary();
+  assertCrystalHomeSections();
 
   console.log("solution tests passed");
   for (const result of results) {
@@ -130,6 +142,8 @@ function run() {
   console.log("- manual selection guard: preserved manual project type and goals");
   console.log("- template matching: packaging, beauty, furniture, jewelry, electronics passed");
   console.log("- storage helpers: delete single and clear all passed");
+  console.log("- crystal case library: 3 products, 9 cases, routes and search passed");
+  console.log("- crystal home sections: latest and popular slugs passed");
 }
 
 function assertRandomSubjects() {
@@ -354,6 +368,102 @@ function assertStorageDeletionHelpers() {
   assert(
     clearRecords().length === 0,
     "storage: should clear all favorite records"
+  );
+}
+
+function assertCrystalCaseLibrary() {
+  assert(
+    crystalProducts.length === 3,
+    `crystal library: expected 3 products, got ${crystalProducts.length}`
+  );
+  assert(
+    crystalCases.length === 9,
+    `crystal library: expected 9 cases, got ${crystalCases.length}`
+  );
+
+  const expectedStyles = new Set([
+    "\u5962\u4f88\u54c1\u5e7f\u544a\u98ce",
+    "\u5c0f\u7ea2\u4e66\u79cd\u8349\u98ce",
+    "\u7535\u5546\u767d\u5e95\u98ce"
+  ]);
+  const slugs = new Set();
+
+  for (const product of crystalProducts) {
+    const productCases = crystalCases.filter(
+      (caseItem) => caseItem.productId === product.id
+    );
+
+    assert(
+      productCases.length === 3,
+      `crystal library: ${product.name} should have 3 cases`
+    );
+
+    for (const styleName of expectedStyles) {
+      assert(
+        productCases.some((caseItem) => caseItem.styleName === styleName),
+        `crystal library: ${product.name} missing style ${styleName}`
+      );
+    }
+  }
+
+  for (const caseItem of crystalCases) {
+    assertText(caseItem.slug, `${caseItem.id}: missing slug`);
+    assert(!slugs.has(caseItem.slug), `${caseItem.slug}: duplicate case slug`);
+    slugs.add(caseItem.slug);
+    assertObject(
+      getCrystalCaseBySlug(caseItem.slug),
+      `${caseItem.slug}: detail route data should be reachable by slug`
+    );
+    assertText(caseItem.image, `${caseItem.slug}: missing image`);
+    assertText(caseItem.prompt, `${caseItem.slug}: missing prompt`);
+    assertText(caseItem.compositionAnalysis, `${caseItem.slug}: missing composition analysis`);
+    assertText(caseItem.lightingAnalysis, `${caseItem.slug}: missing lighting analysis`);
+    assert(
+      Array.isArray(caseItem.tags) && caseItem.tags.length > 0,
+      `${caseItem.slug}: missing tags`
+    );
+  }
+
+  assertSearchHits("\u7d2b\u6c34\u6676", "amethyst");
+  assertSearchHits("\u9ec4\u6c34\u6676", "citrine");
+  assertSearchHits("\u9ed1\u66dc\u77f3", "obsidian");
+  assertSearchHits("\u5c0f\u7ea2\u4e66", "lifestyle");
+  assertSearchHits("\u767d\u5e95", "ecommerce");
+  assertSearchHits("\u5962\u4f88\u54c1", "luxury");
+}
+
+function assertCrystalHomeSections() {
+  assertHomeCaseSlugs(latestCaseSlugs, "latest cases");
+  assertHomeCaseSlugs(popularCaseSlugs, "popular cases");
+
+  assert(
+    getCrystalCasesBySlugs(latestCaseSlugs).length === 3,
+    "crystal home: latest helper should return 3 valid cases"
+  );
+  assert(
+    getCrystalCasesBySlugs(popularCaseSlugs).length === 3,
+    "crystal home: popular helper should return 3 valid cases"
+  );
+}
+
+function assertHomeCaseSlugs(slugs, label) {
+  assert(slugs.length === 3, `crystal home: ${label} should contain 3 slugs`);
+
+  for (const slug of slugs) {
+    assertObject(
+      getCrystalCaseBySlug(slug),
+      `crystal home: ${label} references missing slug ${slug}`
+    );
+  }
+}
+
+function assertSearchHits(query, expectedPart) {
+  const results = searchCrystalCases(query);
+
+  assert(results.length > 0, `crystal search: expected results for ${query}`);
+  assert(
+    results.some((caseItem) => caseItem.slug.includes(expectedPart)),
+    `crystal search: expected ${query} to hit ${expectedPart}`
   );
 }
 

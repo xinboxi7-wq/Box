@@ -1,0 +1,35 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="900" fill="#F2F3F2"/>
+  <rect x="72" y="72" width="1056" height="756" rx="36" fill="url(#bg)"/>
+  <ellipse cx="602" cy="502" rx="318" ry="88" fill="#000000" opacity="0.2"/>
+  <g filter="url(#shadow)">
+    <circle cx="374" cy="456" r="54" fill="url(#bead)"/>
+    <circle cx="466" cy="392" r="58" fill="url(#bead)"/>
+    <circle cx="578" cy="368" r="61" fill="url(#bead)"/>
+    <circle cx="693" cy="391" r="58" fill="url(#bead)"/>
+    <circle cx="787" cy="456" r="54" fill="url(#bead)"/>
+    <circle cx="753" cy="560" r="56" fill="url(#bead)"/>
+    <circle cx="642" cy="608" r="60" fill="url(#bead)"/>
+    <circle cx="526" cy="597" r="58" fill="url(#bead)"/>
+    <circle cx="419" cy="544" r="55" fill="url(#bead)"/>
+  </g>
+  <path d="M371 457C451 310 682 279 790 457C852 558 743 665 603 664C464 663 311 559 371 457Z" stroke="#FFFFFF" stroke-width="8" opacity="0.3"/>
+  <text x="98" y="146" fill="#1D1F21" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700">Obsidian Bracelet</text>
+  <text x="98" y="195" fill="#596066" font-family="Inter, Arial, sans-serif" font-size="24">Local placeholder visual</text>
+  <defs>
+    <linearGradient id="bg" x1="132" y1="91" x2="1045" y2="815" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.46" stop-color="#D9DDE0"/>
+      <stop offset="1" stop-color="#90979E"/>
+    </linearGradient>
+    <radialGradient id="bead" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(553 370) rotate(70) scale(98)">
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="0.13" stop-color="#7A838A"/>
+      <stop offset="0.45" stop-color="#22272B"/>
+      <stop offset="1" stop-color="#050607"/>
+    </radialGradient>
+    <filter id="shadow" x="290" y="287" width="580" height="430" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="28" stdDeviation="24" flood-color="#000000" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+</svg>
