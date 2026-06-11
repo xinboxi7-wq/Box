@@ -52,19 +52,19 @@ export function CrystalCaseLibrary({
   return (
     <main className="min-h-screen bg-[#F6F7F4] text-neutral-950">
       <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <header className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.56fr)] lg:items-end">
+        <header className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.56fr)] lg:items-end">
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600 shadow-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-teal-600" />
               Crystal Bracelet Case Library
             </div>
-            <h1 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3 text-[2rem] font-semibold leading-[1.04] tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
               <span className="block">Crystal Prompt Library</span>
-              <span className="mt-1 block text-2xl sm:text-3xl lg:text-4xl">
+              <span className="mt-1 block text-2xl leading-tight sm:text-3xl lg:text-4xl">
                 水晶商业视觉 Prompt 库
               </span>
             </h1>
-            <p className="mt-3 max-w-3xl text-sm leading-7 text-neutral-600 sm:text-base">
+            <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
               收录紫水晶、黄水晶、黑曜石等商业视觉案例，包含 AI Prompt、构图分析、灯光分析与风格拆解。
             </p>
           </div>
@@ -92,7 +92,7 @@ export function CrystalCaseLibrary({
                 ) : null}
               </label>
             </div>
-            <div className="flex flex-wrap gap-2">
+            <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap">
               <Link
                 href="#cases"
                 className="inline-flex h-10 items-center justify-center rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
@@ -110,10 +110,10 @@ export function CrystalCaseLibrary({
           </div>
         </header>
 
-        <div className="mt-5 grid gap-4 lg:grid-cols-[minmax(0,1.52fr)_minmax(22rem,0.8fr)]">
+        <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1.52fr)_minmax(22rem,0.8fr)]">
           <section>
             <SectionHeading eyebrow="Latest cases" title="最新案例" />
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <div className="-mx-4 mt-3 flex gap-3 overflow-x-auto px-4 pb-2 sm:mx-0 sm:grid sm:grid-cols-3 sm:overflow-visible sm:px-0 sm:pb-0">
               {latestCases.map((caseItem) => {
                 const product = getCrystalProductById(caseItem.productId);
 
@@ -122,14 +122,18 @@ export function CrystalCaseLibrary({
                 }
 
                 return (
-                  <CrystalCaseCard
+                  <div
                     key={caseItem.id}
-                    caseItem={caseItem}
-                    product={product}
-                    favorite={favoriteSet.has(caseItem.id)}
-                    onToggleFavorite={toggleFavorite}
-                    variant="featured"
-                  />
+                    className="w-[82vw] max-w-[23rem] flex-none sm:w-auto sm:max-w-none"
+                  >
+                    <CrystalCaseCard
+                      caseItem={caseItem}
+                      product={product}
+                      favorite={favoriteSet.has(caseItem.id)}
+                      onToggleFavorite={toggleFavorite}
+                      variant="featured"
+                    />
+                  </div>
                 );
               })}
             </div>
@@ -246,14 +250,14 @@ function ProductCategoryCard({ product }: { product: CrystalProduct }) {
       <img
         src={product.image}
         alt={product.name}
-        className="h-16 w-20 flex-none rounded-md object-cover"
+        className="h-16 w-20 flex-none rounded-md object-cover sm:h-20 sm:w-24"
       />
       <div className="min-w-0">
         <div className="flex items-center gap-1.5 text-sm font-semibold text-neutral-950">
           <Gem className="h-3.5 w-3.5 text-teal-700" aria-hidden="true" />
           {product.name}
         </div>
-        <div className="mt-1 line-clamp-1 text-xs text-neutral-500">
+        <div className="mt-1 line-clamp-2 text-xs leading-5 text-neutral-500">
           {product.tags.join(" / ")}
         </div>
       </div>

@@ -23,10 +23,10 @@ export function CrystalCaseCard({
 }: CrystalCaseCardProps) {
   if (variant === "compact") {
     return (
-      <article className="group flex gap-3 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm transition hover:border-neutral-300 hover:shadow-soft-panel">
+      <article className="group flex gap-3 rounded-lg border border-neutral-200 bg-white p-2.5 shadow-sm transition hover:border-neutral-300 hover:shadow-soft-panel">
         <Link
           href={`/case/${caseItem.slug}`}
-          className="relative h-24 w-28 flex-none overflow-hidden rounded-md bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
+          className="relative h-24 w-28 flex-none overflow-hidden rounded-md bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-32"
         >
           <img
             src={caseItem.image}
@@ -74,7 +74,7 @@ export function CrystalCaseCard({
     <article className="group overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-soft-panel">
       <div
         className={`relative overflow-hidden bg-neutral-100 ${
-          featured ? "aspect-[5/4]" : "aspect-[4/3]"
+          featured ? "aspect-[4/3] sm:aspect-[5/4]" : "aspect-[4/3]"
         }`}
       >
         <img
@@ -96,8 +96,8 @@ export function CrystalCaseCard({
         </button>
       </div>
 
-      <div className={featured ? "p-4" : "p-4"}>
-        <div className="mb-3 flex flex-wrap gap-1.5">
+      <div className={featured ? "p-3 sm:p-4" : "p-4"}>
+        <div className="mb-2 flex flex-wrap gap-1.5 sm:mb-3">
           <span className="rounded-full bg-teal-50 px-2.5 py-1 text-xs font-medium text-teal-800">
             {product.name}
           </span>
@@ -106,7 +106,13 @@ export function CrystalCaseCard({
           </span>
         </div>
 
-        <h3 className={featured ? "text-xl font-semibold leading-tight text-neutral-950" : "text-lg font-semibold leading-tight text-neutral-950"}>
+        <h3
+          className={
+            featured
+              ? "text-lg font-semibold leading-tight text-neutral-950 sm:text-xl"
+              : "text-lg font-semibold leading-tight text-neutral-950"
+          }
+        >
           {caseItem.title}
         </h3>
         <p className={`${featured ? "line-clamp-2" : "line-clamp-3"} mt-2 text-sm leading-6 text-neutral-600`}>
@@ -128,7 +134,7 @@ export function CrystalCaseCard({
 
         <Link
           href={`/case/${caseItem.slug}`}
-          className="mt-4 inline-flex h-10 items-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
+          className="mt-3 inline-flex h-10 items-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:mt-4"
         >
           查看案例
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
