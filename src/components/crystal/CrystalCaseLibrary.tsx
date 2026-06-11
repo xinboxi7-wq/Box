@@ -59,10 +59,13 @@ export function CrystalCaseLibrary({
               Crystal Bracelet Case Library
             </div>
             <h1 className="mt-4 text-3xl font-semibold tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-              水晶手串 AI 商业视觉案例库
+              <span className="block">Crystal Prompt Library</span>
+              <span className="mt-1 block text-2xl sm:text-3xl lg:text-4xl">
+                水晶商业视觉 Prompt 库
+              </span>
             </h1>
             <p className="mt-3 max-w-3xl text-sm leading-7 text-neutral-600 sm:text-base">
-              聚焦紫水晶、黄水晶、黑曜石，快速查看可复用的商业视觉 Prompt、构图分析和灯光分析。
+              收录紫水晶、黄水晶、黑曜石等商业视觉案例，包含 AI Prompt、构图分析、灯光分析与风格拆解。
             </p>
           </div>
 
