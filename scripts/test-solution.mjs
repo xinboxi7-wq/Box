@@ -40,6 +40,7 @@ const {
   getCrystalCasesBySlugs,
   latestCaseSlugs,
   popularCaseSlugs,
+  supportedModelLabels,
   searchCrystalCases
 } = loadTsModule(path.join(projectRoot, "src", "lib", "crystal-cases.ts"));
 
@@ -132,6 +133,7 @@ function run() {
   assertStorageDeletionHelpers();
   assertCrystalCaseLibrary();
   assertCrystalHomeSections();
+  assertSupportedModels();
 
   console.log("solution tests passed");
   for (const result of results) {
@@ -144,6 +146,7 @@ function run() {
   console.log("- storage helpers: delete single and clear all passed");
   console.log("- crystal case library: 3 products, 9 cases, routes and search passed");
   console.log("- crystal home sections: latest and popular slugs passed");
+  console.log("- supported models: GPT Image, Midjourney, Flux passed");
 }
 
 function assertRandomSubjects() {
@@ -443,6 +446,19 @@ function assertCrystalHomeSections() {
   assert(
     getCrystalCasesBySlugs(popularCaseSlugs).length === 3,
     "crystal home: popular helper should return 3 valid cases"
+  );
+}
+
+function assertSupportedModels() {
+  for (const modelName of ["GPT Image", "Midjourney", "Flux"]) {
+    assert(
+      supportedModelLabels.includes(modelName),
+      `supported models: expected ${modelName}`
+    );
+  }
+  assert(
+    supportedModelLabels.length === 3,
+    `supported models: expected 3 labels, got ${supportedModelLabels.length}`
   );
 }
 

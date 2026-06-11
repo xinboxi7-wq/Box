@@ -1,7 +1,11 @@
 "use client";
 
+import { useCallback, useState } from "react";
 import Link from "next/link";
-import { ArrowLeft, Star } from "lucide-react";
+import { ArrowLeft, Check, Copy, Sparkles, Star } from "lucide-react";
+import { Toast, type ToastState } from "@/components/studio/Toast";
+import { copyToClipboard } from "@/lib/clipboard";
+import { supportedModelLabels } from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
 import { useCrystalFavorites } from "./useCrystalFavorites";
 
@@ -16,6 +20,31 @@ export function CrystalCaseDetail({
 }: CrystalCaseDetailProps) {
   const { favoriteSet, toggleFavorite } = useCrystalFavorites();
   const favorite = favoriteSet.has(caseItem.id);
+  const [copied, setCopied] = useState(false);
+  const [toast, setToast] = useState<ToastState>(null);
+
+  const showToast = useCallback((message: string, tone: "success" | "error") => {
+    const id = Date.now();
+    setToast({ id, message, tone });
+    window.setTimeout(() => {
+      setToast((current) => (current?.id === id ? null : current));
+    }, 1800);
+  }, []);
+
+  const handleCopyPrompt = useCallback(async () => {
+    const success = await copyToClipboard(caseItem.prompt);
+
+    if (!success) {
+      showToast("复制失败，请手动复制", "error");
+      return;
+    }
+
+    setCopied(true);
+    showToast("已复制 Prompt", "success");
+    window.setTimeout(() => {
+      setCopied(false);
+    }, 1600);
+  }, [caseItem.prompt, showToast]);
 
   return (
     <main className="min-h-screen bg-[#F6F7F4] text-neutral-950">
@@ -73,6 +102,23 @@ export function CrystalCaseDetail({
                 ))}
               </div>
 
+              <div className="mt-5">
+                <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neutral-400">
+                  <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
+                  支持模型
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {supportedModelLabels.map((model) => (
+                    <span
+                      key={model}
+                      className="rounded-full bg-neutral-950 px-3 py-1 text-xs font-medium text-white"
+                    >
+                      {model}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
               <button
                 type="button"
                 onClick={() => toggleFavorite(caseItem.id)}
@@ -95,11 +141,45 @@ export function CrystalCaseDetail({
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pb-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
-        <div className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
-          <div className="text-sm font-semibold text-neutral-950">Prompt</div>
-          <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-neutral-600">
-            {caseItem.prompt}
-          </p>
+        <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <div className="text-sm font-semibold text-neutral-950">
+                Prompt 展示与复制
+              </div>
+              <p className="mt-1 text-xs leading-5 text-neutral-500">
+                适合复制到 GPT Image、Midjourney 或 Flux 后继续微调。
+              </p>
+            </div>
+            <button
+              type="button"
+              onClick={handleCopyPrompt}
+              className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-auto"
+            >
+              {copied ? (
+                <Check className="h-4 w-4" aria-hidden="true" />
+              ) : (
+                <Copy className="h-4 w-4" aria-hidden="true" />
+              )}
+              {copied ? "已复制" : "复制 Prompt"}
+            </button>
+          </div>
+
+          <div className="mt-4 rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+            <div className="mb-3 flex flex-wrap gap-1.5">
+              {supportedModelLabels.map((model) => (
+                <span
+                  key={model}
+                  className="rounded-full bg-white px-2.5 py-1 text-xs font-medium text-neutral-600 shadow-sm"
+                >
+                  {model}
+                </span>
+              ))}
+            </div>
+            <p className="whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+              {caseItem.prompt}
+            </p>
+          </div>
         </div>
 
         <div className="grid gap-4">
@@ -114,6 +194,7 @@ export function CrystalCaseDetail({
           <AnalysisBlock title="适用场景" value={caseItem.commercialUse} />
         </div>
       </section>
+      <Toast toast={toast} />
     </main>
   );
 }

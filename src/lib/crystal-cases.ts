@@ -21,6 +21,7 @@ export const popularCaseSlugs = [
   "citrine-luxury",
   "obsidian-lifestyle"
 ] as const;
+export const supportedModelLabels = ["GPT Image", "Midjourney", "Flux"] as const;
 
 export function getCrystalProductBySlug(slug: string) {
   return crystalProducts.find((product) => product.slug === slug) ?? null;

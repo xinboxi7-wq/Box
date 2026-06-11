@@ -1,14 +1,23 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { Gem, Search, Star, X } from "lucide-react";
+import {
+  BadgeCheck,
+  ClipboardCheck,
+  Gem,
+  Layers3,
+  Search,
+  Star,
+  X
+} from "lucide-react";
 import {
   getCrystalCasesBySlugs,
   getCrystalProductById,
   getFavoriteCrystalCases,
   latestCaseSlugs,
   popularCaseSlugs,
+  supportedModelLabels,
   searchCrystalCases
 } from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
@@ -176,6 +185,49 @@ export function CrystalCaseLibrary({
         </div>
       </section>
 
+      <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+                Why this library
+              </p>
+              <h2 className="mt-1 text-2xl font-semibold tracking-tight text-neutral-950">
+                为什么使用本案例库
+              </h2>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {supportedModelLabels.map((model) => (
+                <span
+                  key={model}
+                  className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600"
+                >
+                  {model}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-3 md:grid-cols-3">
+            <ValueCard
+              icon={<ClipboardCheck className="h-4 w-4" aria-hidden="true" />}
+              title="Prompt 可直接复用"
+              description="每个案例都整理为完整中文 Prompt，适合快速迁移到 GPT Image、Midjourney 和 Flux。"
+            />
+            <ValueCard
+              icon={<Layers3 className="h-4 w-4" aria-hidden="true" />}
+              title="不只给关键词"
+              description="同步拆解构图、灯光和商业用途，帮助你理解为什么这样写能更稳定出图。"
+            />
+            <ValueCard
+              icon={<BadgeCheck className="h-4 w-4" aria-hidden="true" />}
+              title="围绕商业转化"
+              description="按奢侈品广告、小红书种草、电商白底三类真实使用场景组织案例。"
+            />
+          </div>
+        </div>
+      </section>
+
       <section
         id="cases"
         className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
@@ -237,6 +289,28 @@ function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) 
       <h2 className="mt-1 text-xl font-semibold tracking-tight text-neutral-950">
         {title}
       </h2>
+    </div>
+  );
+}
+
+function ValueCard({
+  icon,
+  title,
+  description
+}: {
+  icon: ReactNode;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+      <div className="flex items-center gap-2 text-sm font-semibold text-neutral-950">
+        <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-teal-700 shadow-sm">
+          {icon}
+        </span>
+        {title}
+      </div>
+      <p className="mt-3 text-sm leading-6 text-neutral-600">{description}</p>
     </div>
   );
 }
