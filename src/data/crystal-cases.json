@@ -1,4 +1,115 @@
 {
+  "braceletRules": {
+    "id": "standard-crystal-bracelet-rules",
+    "name": "全局手串结构规则",
+    "description": "所有水晶手串案例共享同一套视觉结构、几何、材质和风格一致性约束。不同风格只能改变拍摄方式，不能改变产品本体。",
+    "productStructure": {
+      "zh": [
+        "完整圆形手串",
+        "统一圆珠",
+        "珠径一致",
+        "对称手串布局",
+        "不允许缺珠",
+        "不允许断裂手串",
+        "不允许变形手串",
+        "不允许随机额外珠",
+        "不允许过大珠",
+        "不允许过小珠",
+        "不允许明显珠子数量不匹配"
+      ],
+      "en": [
+        "complete circular bracelet",
+        "uniform round beads",
+        "consistent bead diameter",
+        "symmetrical bracelet layout",
+        "no missing beads",
+        "no broken bracelet",
+        "no deformed bracelet",
+        "no random extra beads",
+        "no oversized beads",
+        "no undersized beads",
+        "no obvious bead count mismatch"
+      ]
+    },
+    "geometry": {
+      "zh": [
+        "几何正确的圆形手串",
+        "准确透视",
+        "真实产品摄影比例",
+        "不允许鱼眼镜头变形",
+        "不允许广角变形",
+        "不允许前大后小的夸张透视",
+        "手串一圈的珠子尺度必须一致"
+      ],
+      "en": [
+        "geometrically correct circular bracelet",
+        "accurate perspective",
+        "realistic product photography proportions",
+        "no fisheye lens distortion",
+        "no wide-angle distortion",
+        "no front-large back-small exaggeration",
+        "maintain consistent bead scale around the bracelet"
+      ]
+    },
+    "material": {
+      "zh": [
+        "真实天然宝石外观",
+        "真实水晶纹理",
+        "自然内含物",
+        "真实透明度",
+        "奢侈品珠宝摄影质感",
+        "物理可信的反射",
+        "真实宝石折射"
+      ],
+      "en": [
+        "authentic natural gemstone appearance",
+        "real crystal texture",
+        "natural inclusions",
+        "realistic transparency",
+        "luxury jewelry photography quality",
+        "physically believable reflections",
+        "real gemstone refraction"
+      ]
+    },
+    "styleConsistency": {
+      "allowedChangesZh": ["场景", "灯光", "道具", "构图"],
+      "allowedChangesEn": ["scene", "lighting", "props", "composition"],
+      "lockedElementsZh": ["视觉珠量比例", "珠径", "手串结构", "手串形态"],
+      "lockedElementsEn": [
+        "visual bead quantity proportion",
+        "bead diameter",
+        "bracelet structure",
+        "bracelet form"
+      ]
+    },
+    "promptAppendixZh": "全局 Bracelet Rules：只生成一条完整圆形水晶手串，所有圆珠保持统一珠径、稳定间距和对称结构，手串一圈的珠子尺度必须一致。手串需要呈现真实珠宝摄影比例、准确透视和清晰圆形轮廓，不允许缺珠、断裂、变形、随机额外珠、过大珠、过小珠、明显珠量不匹配、鱼眼变形、广角变形或前大后小的夸张透视。材质必须表现为真实天然宝石，保留晶体通透度、内部纹理、自然内含物、可信折射和物理合理反射。不同风格只能改变灯光、环境、道具和构图，不能改变手串本体结构。",
+    "promptAppendixEn": "Global Bracelet Rules: generate one complete circular crystal bracelet only. All round beads must keep a uniform bead diameter, stable spacing, symmetrical bracelet structure, and consistent bead scale around the entire circle. The bracelet must have realistic jewelry proportions, accurate perspective, and a clear circular silhouette. Avoid missing beads, broken bracelet structure, deformed bracelet shape, random extra beads, oversized beads, undersized beads, obvious bead count mismatch, fisheye distortion, wide-angle distortion, and exaggerated front-large back-small perspective. The material must read as authentic natural gemstone with crystal translucency, internal texture, natural inclusions, believable refraction, and physically plausible reflections. Different styles may only change lighting, environment, props, and composition, never the bracelet structure itself.",
+    "negativeAppendix": "inconsistent bead size, different bead diameters, uneven bead spacing, extra beads, loose beads, missing beads, broken bracelet, duplicate bracelet, distorted bracelet, non-circular bracelet, oval deformation, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, necklace, chain, wrist, hand, model wearing bracelet, plastic material, fake crystal, glass bead look, low quality jewelry render"
+  },
+  "defaultBraceletSize": "medium",
+  "braceletSizes": [
+    {
+      "id": "small",
+      "promptLabelZh": "小尺寸水晶圆珠",
+      "promptLabelEn": "small-sized crystal beads",
+      "internalMm": 8,
+      "internalVisualBeadRange": "22-26"
+    },
+    {
+      "id": "medium",
+      "promptLabelZh": "中等尺寸水晶圆珠",
+      "promptLabelEn": "medium-sized crystal beads",
+      "internalMm": 10,
+      "internalVisualBeadRange": "18-22"
+    },
+    {
+      "id": "large",
+      "promptLabelZh": "大尺寸水晶圆珠",
+      "promptLabelEn": "large-sized crystal beads",
+      "internalMm": 12,
+      "internalVisualBeadRange": "16-20"
+    }
+  ],
   "products": [
     {
       "id": "amethyst",
@@ -8,6 +119,12 @@
       "mineral": "紫水晶手串",
       "description": "适合表达神秘、优雅、疗愈感和轻奢礼赠属性，画面重点放在紫色晶体通透度、珠体光泽和女性化高级感。",
       "image": "/crystals/amethyst-placeholder.svg",
+      "materialSpecZh": "紫水晶珠体需要呈现天然紫色晶体、通透层次、细微冰裂纹和矿物内含物，表面具有真实抛光宝石反射。",
+      "materialSpecEn": "amethyst beads with natural purple crystal translucency, subtle icy fractures, mineral inclusions, and polished gemstone reflections",
+      "colorSpecZh": "颜色以自然紫色、深浅渐变和冷调高光为主。",
+      "colorSpecEn": "natural purple tones with subtle depth variation and cool refined highlights",
+      "textureSpecZh": "纹理表现细微冰裂、矿物内含物、通透晶体层次和抛光表面。",
+      "textureSpecEn": "subtle icy fractures, mineral inclusions, translucent crystal depth, and polished surfaces",
       "tags": ["紫色晶体", "通透感", "轻奢礼赠", "疗愈气质"]
     },
     {
@@ -18,6 +135,12 @@
       "mineral": "黄水晶手串",
       "description": "适合表达温暖、财富感、明亮能量和节日礼品属性，画面重点放在金黄色晶体、柔和高光和积极明亮的商业氛围。",
       "image": "/crystals/citrine-placeholder.svg",
+      "materialSpecZh": "黄水晶珠体需要呈现天然金黄色晶体、温暖通透度、内部矿物纹理和干净抛光表面，避免廉价黄色塑料感。",
+      "materialSpecEn": "citrine beads with natural golden-yellow crystal translucency, warm clarity, internal mineral texture, and clean polished gemstone surfaces",
+      "colorSpecZh": "颜色以天然金黄色、暖调透明感和柔和香槟高光为主。",
+      "colorSpecEn": "natural golden-yellow tones with warm translucency and soft champagne highlights",
+      "textureSpecZh": "纹理表现内部矿物纹路、清透晶体结构、干净抛光表面和温润反射。",
+      "textureSpecEn": "internal mineral lines, clear crystal structure, clean polished surfaces, and warm refined reflections",
       "tags": ["金色晶体", "财富感", "明亮能量", "礼品视觉"]
     },
     {
@@ -28,6 +151,12 @@
       "mineral": "黑曜石手串",
       "description": "适合表达力量感、守护感、男性化质感和低调奢华属性，画面重点放在黑色镜面反射、深色背景和克制高光。",
       "image": "/crystals/obsidian-placeholder.svg",
+      "materialSpecZh": "黑曜石珠体需要呈现天然深黑色宝石质感、镜面抛光反射、可见的边缘高光和真实晶石深度，避免黑色塑料块感。",
+      "materialSpecEn": "obsidian beads with natural deep black gemstone character, mirror-polished reflections, visible edge highlights, and believable stone depth",
+      "colorSpecZh": "颜色以深黑色、冷调边缘高光和低调镜面反射为主。",
+      "colorSpecEn": "deep black tones with cool edge highlights and restrained mirror reflections",
+      "textureSpecZh": "纹理表现镜面抛光质感、黑色晶石深度、细窄高光和真实石质反射。",
+      "textureSpecEn": "mirror-polished texture, deep black stone depth, narrow highlights, and realistic stone reflections",
       "tags": ["黑色晶石", "镜面反射", "守护感", "低调奢华"]
     }
   ],
@@ -35,17 +164,23 @@
     {
       "id": "luxury",
       "name": "奢侈品广告风",
-      "description": "以高级静物、低饱和背景、精确高光和广告大片构图塑造收藏价值。"
+      "description": "以高级静物、低饱和背景、精确高光和广告大片构图塑造收藏价值。",
+      "promptStyleZh": "风格执行：采用奢侈品珠宝广告语言，画面克制、道具极少、留白高级，重点突出水晶通透度、珠体轮廓、精确高光和收藏价值。整体像品牌广告大片，不要廉价装饰或过度堆叠道具。",
+      "promptStyleEn": "Style direction: use luxury jewelry advertising language with restrained styling, minimal props, premium negative space, precise highlights, and a strong focus on crystal translucency, bead silhouette, and collectible value. The image should feel like a refined brand campaign, never cheap or over-decorated."
     },
     {
       "id": "lifestyle",
       "name": "小红书种草风",
-      "description": "以真实桌面、自然光、生活道具和温和氛围强化分享感和购买想象。"
+      "description": "以真实桌面、自然光、生活道具和温和氛围强化分享感和购买想象。",
+      "promptStyleZh": "风格执行：采用真实但经过专业整理的生活方式照片语言，道具必须轻量、干净、服务主体，画面保留社媒封面需要的呼吸感。整体自然亲近，但手串始终是最清晰、最重要的视觉中心。",
+      "promptStyleEn": "Style direction: use a realistic yet professionally styled lifestyle photo language. Props must be light, clean, and supportive, with enough breathing room for a social media cover. The mood should feel natural and approachable, while the bracelet remains the clearest and most important visual focus."
     },
     {
       "id": "ecommerce",
       "name": "电商白底风",
-      "description": "以清晰主体、干净背景、真实材质和缩略图可读性服务转化。"
+      "description": "以清晰主体、干净背景、真实材质和缩略图可读性服务转化。",
+      "promptStyleZh": "风格执行：采用专业电商主图语言，背景纯净，主体居中且完整，轮廓边缘清晰，材质和颜色必须准确可信。不要场景化道具，不要海报氛围，不要影响商品识别的信息。",
+      "promptStyleEn": "Style direction: use professional ecommerce product-main-image language with a clean background, centered complete subject, crisp edges, accurate material, and trustworthy color. Avoid lifestyle props, poster-like atmosphere, or anything that reduces product readability."
     }
   ],
   "cases": [
@@ -61,6 +196,8 @@
       "summary": "以深紫色丝绒、冷调高光和珠宝大片构图表现紫水晶的神秘与收藏属性。",
       "tags": ["奢侈品广告", "紫色丝绒", "高级静物", "收藏属性"],
       "prompt": "一串紫水晶手串作为画面主角，置于深紫色丝绒与浅色石材之间，珠体呈现通透的紫色晶体层次，局部有细腻冰裂纹和自然矿物内含物。画面采用奢侈品珠宝广告风格，背景克制、道具极少，保留大量干净留白，使用低角度近景构图和浅景深，让手串形成优雅弧线。整体氛围神秘、安静、高级，适合品牌广告、礼赠海报和高端详情页首图。",
+      "promptEn": "Create a luxury jewelry advertising image of an amethyst bracelet placed between deep purple velvet and pale stone. The bracelet should form an elegant natural arc in the lower third of the frame, with stable bead rhythm, generous clean negative space, and only velvet folds plus a stone edge as subtle background layers. Show translucent purple crystal depth, fine icy inclusions, natural mineral texture, polished bead surfaces, and delicate bead-edge highlights. Use a large softbox as the main light, a narrow rim light to outline the bracelet, controlled highlights on the upper beads, shallow depth of field, and a quiet mysterious premium mood suitable for a high-end gift campaign.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "主体以自然弧线置于画面下三分之一，珠体大小形成稳定节奏，背景只保留丝绒褶皱和石材边缘作为层次。构图避免复杂道具，让视线集中在紫水晶透明度和手串轮廓。",
       "lightingAnalysis": "使用大面积柔光箱形成柔和主光，再用窄边缘光勾出珠体外轮廓。高光控制在珠体上方和金属隔珠位置，避免过曝，使紫色晶体有深浅变化和珠宝级反射。",
       "commercialUse": "品牌广告 / 高端礼赠 / 珠宝海报"
@@ -77,6 +214,8 @@
       "summary": "用自然窗光、香薰与手账桌面，营造适合社媒分享的疗愈型佩戴想象。",
       "tags": ["小红书封面", "自然窗光", "疗愈桌面", "生活方式"],
       "prompt": "一串紫水晶手串放在浅色木质桌面上，旁边有一本摊开的手账、白色香薰蜡烛和少量干花，画面保持干净、温柔、真实。紫水晶珠体需要有清透的紫色层次和细微反光，整体采用小红书种草风格，像真实用户拍摄但经过专业布光和构图优化。背景明亮柔和，不要复杂信息，不要文字水印，画面适合竖版封面、生活方式内容和轻奢饰品分享。",
+      "promptEn": "Create a vertical 4:5 lifestyle image of an amethyst bracelet on a light wooden desk, slightly below the visual center. Add an open journal, a white scented candle, and a few dried flowers as soft supporting props, keeping the bracelet clearly dominant with enough clean desk space for a social cover layout. The amethyst beads should look translucent with gentle purple layers and subtle reflections. Use natural window light from the left, soft shadows, preserved wood texture, low-intensity bead highlights, and an authentic Xiaohongshu-style daily sharing mood without heavy studio lighting.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用 4:5 竖版构图，手串位于视觉中心略偏下，手账和香薰作为柔和辅助元素，形成生活场景但不喧宾夺主。桌面留白用于后续封面标题排版。",
       "lightingAnalysis": "模拟左侧自然窗光，阴影轻柔并保留桌面质感。紫水晶珠体用低强度反光突出通透感，避免强烈商业棚拍痕迹，让画面更接近社媒真实分享。",
       "commercialUse": "小红书封面 / 社媒种草 / 内容营销"
@@ -92,7 +231,9 @@
       "image": "/crystals/amethyst-placeholder.svg",
       "summary": "以纯净白底和清晰轮廓呈现珠体颜色、尺寸和真实材质，服务主图转化。",
       "tags": ["电商主图", "白底", "主体清晰", "材质真实"],
-      "prompt": "一串紫水晶手串平放在干净白色背景上，主体占画面约百分之七十，珠体排列完整，轮廓清楚，颜色呈现自然紫色渐变。画面需要像专业电商主图，真实表现珠体大小、孔位、隔珠和弹力绳结构，材质不能塑料化，不能有复杂道具或夸张背景。使用柔和均匀光线和自然接触阴影，让消费者能够快速判断手串品质与颜色。",
+      "prompt": "一串紫水晶手串平放在干净白色背景上，主体占画面约百分之七十，珠体排列完整，轮廓清楚，颜色呈现自然紫色渐变。画面需要像专业电商主图，真实表现珠体大小、孔位、弹力绳结构和完整成环状态，材质不能塑料化，不能有复杂道具或夸张背景。使用柔和均匀光线和自然接触阴影，让消费者能够快速判断手串品质与颜色。",
+      "promptEn": "Create a clean square ecommerce main image of an amethyst bracelet on a pure white background. The bracelet should be centered, complete as a ring, occupying about seventy percent of the frame with even safe margins. Show the full bead arrangement, clear silhouette, natural purple color gradient, bead size, bead holes, elastic cord structure, and complete circular form. Use high-position large soft light, minimal hard shadows, subtle contact shadow, accurate color, and realistic polished crystal material. The image should be clear at thumbnail size and focused on product information rather than atmosphere.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用 1:1 居中构图，手串完整成环，边缘留出均匀安全距离。主体占比足够大，缩略图状态下仍能辨认珠体数量、颜色和整体形态。",
       "lightingAnalysis": "使用高位大柔光覆盖整体，减少硬阴影，同时保留轻微接触阴影证明真实摆放。珠体高光不宜过强，重点是颜色准确和材质可信。",
       "commercialUse": "电商主图 / 详情页首屏 / 商品列表图"
@@ -109,6 +250,8 @@
       "summary": "用暖金色光感、香槟色石材和礼品广告构图突出黄水晶的财富感。",
       "tags": ["奢侈品广告", "香槟金", "礼品视觉", "财富感"],
       "prompt": "一串黄水晶手串置于香槟色石材台面上，背景为低饱和暖金色渐变，珠体呈现清透的黄色晶体光泽和天然矿物纹理。画面采用奢侈品广告风格，构图精简，手串轻微倾斜形成优雅弧线，旁边只保留极少量金属质感道具作为价值提示。整体画面温暖、明亮、昂贵，适合节日礼赠、财富主题海报和高端饰品品牌宣传。",
+      "promptEn": "Create a luxury gift advertising image of a citrine bracelet on a champagne-colored stone surface with a low-saturation warm golden background. Arrange the bracelet on a refined diagonal line so it feels fluid and elegant, with only a small metallic prop placed away from the subject as a value cue. Emphasize clear golden-yellow crystal, natural mineral texture, polished bead surfaces, and clean transparent reflections. Use warm soft light as the main light and a narrow rim light from the rear right to create golden edge highlights. The mood should feel bright, expensive, ceremonial, and suitable for a premium festive gift campaign.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "主体沿对角线形成流动感，香槟色台面提供稳定支撑，少量金属道具放在远离主体的位置，避免抢占注意力。整体构图强调财富感和礼赠仪式感。",
       "lightingAnalysis": "使用暖色柔光作为主光，并在右后方加入细窄轮廓光，让黄色晶体产生金色边缘高光。反射需要干净透明，避免变成廉价黄色塑料质感。",
       "commercialUse": "节日礼赠 / 品牌广告 / 高端海报"
@@ -125,6 +268,8 @@
       "summary": "以咖啡桌、晨光和浅色织物建立温暖明亮的日常佩戴场景。",
       "tags": ["小红书封面", "晨光", "咖啡桌", "温暖能量"],
       "prompt": "一串黄水晶手串放在明亮的咖啡桌场景中，旁边有浅色织物、陶瓷杯和一小束浅黄色花材，整体像清晨自然光下的真实生活方式照片。黄水晶珠体需要呈现温暖通透的黄色，局部有自然晶体纹理和柔和反光。画面干净、亲近、有种草感，适合小红书封面和饰品分享内容，不要复杂背景、不要文字水印、不要过度商业棚拍。",
+      "promptEn": "Create a vertical close lifestyle image of a citrine bracelet in a bright morning coffee-table scene. Place the bracelet at the visual center with pale fabric, a ceramic cup, and a small bundle of light yellow flowers forming a soft triangular relationship around it. Keep enough breathing space for a social media cover and make the citrine beads warm, translucent, and naturally textured with gentle reflections. Use warm morning side light, soft shadows, low tabletop reflection, and a friendly Xiaohongshu-style product sharing mood that feels real rather than over-staged.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用竖版近景构图，手串位于桌面视觉中心，杯子和花材形成柔和三角关系。画面保留足够呼吸感，让用户能想象日常佩戴和礼物场景。",
       "lightingAnalysis": "使用早晨自然侧光，色温偏暖，阴影柔和。黄水晶的高光需要透明而不刺眼，桌面反光控制在低强度，强化真实生活感。",
       "commercialUse": "社媒种草 / 礼品推荐 / 生活方式内容"
@@ -141,6 +286,8 @@
       "summary": "用标准白底清楚呈现金黄色珠体、成色差异和商品结构。",
       "tags": ["电商主图", "白底", "颜色准确", "转化卖点"],
       "prompt": "一串黄水晶手串完整展示在纯白背景上，珠体排列规整，主体居中且占画面较大比例。画面需要真实呈现金黄色晶体、珠体通透度、内部纹理和表面抛光效果，适合电商主图和商品详情页。不要出现装饰性复杂道具，不要文字，不要水印，不要夸张光效。整体需要干净、明亮、可信，让消费者快速理解颜色、材质和佩戴尺寸。",
+      "promptEn": "Create a clean square ecommerce product image of a citrine bracelet on a pure white background. Use a top-down or slight overhead angle, keeping the bracelet centered, complete as a ring, and large enough for product platform cropping. Show golden-yellow crystal color, bead transparency, internal texture, polished surface, bead spacing, and wearable size clearly. Use even soft lighting to reduce strong reflections, control yellow saturation without overexposure, and keep a subtle grounding shadow so the product has real volume. The result should be bright, trustworthy, and conversion-focused.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用正上方或微俯视角，手串完整成环，留白均匀，便于商品平台裁切。构图重点是信息清晰而不是氛围表达。",
       "lightingAnalysis": "使用均匀柔光减少强烈反射，控制黄色不过曝。阴影轻微贴地，既保持白底干净，也让珠体有真实体积感。",
       "commercialUse": "电商主图 / 商品详情 / 转化广告"
@@ -157,6 +304,8 @@
       "summary": "用黑色镜面、硬朗边缘光和低调奢华构图表现黑曜石的力量感。",
       "tags": ["奢侈品广告", "黑色镜面", "男性化质感", "力量感"],
       "prompt": "一串黑曜石手串置于黑色镜面石材台面上，背景深灰接近黑色，画面只用极少量冷色边缘光勾勒珠体轮廓。黑曜石珠体需要有深黑色镜面反射和细腻抛光质感，局部反光形成克制的高光线条。整体采用奢侈品广告风格，画面强烈、安静、低调昂贵，适合男士饰品、守护寓意和高端品牌视觉。",
+      "promptEn": "Create a low-key luxury advertising image of an obsidian bracelet on a black mirror stone surface with a deep charcoal background. Place the bracelet as a compact ring in the center of the frame and use a subtle reflection on the tabletop to strengthen weight and stability. The black obsidian beads should have polished mirror-like surfaces, deep black material, fine controlled highlight lines, and visible form instead of flat black shapes. Use a low-light environment with narrow strip rim lighting, almost no frontal fill, and a quiet powerful premium mood suitable for high-end men's accessories.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "手串以紧凑环形置于画面中心，镜面台面制造轻微倒影，强化重量感和稳定感。背景几乎不加入道具，让黑色珠体反射成为主要视觉记忆点。",
       "lightingAnalysis": "使用低照度环境和窄条形轮廓光，重点控制高光边缘，不做大面积正面照明。黑曜石要有真实反射和深度，避免变成无细节黑块。",
       "commercialUse": "高端男士饰品 / 品牌广告 / 礼赠海报"
@@ -173,6 +322,8 @@
       "summary": "以深色桌面、皮革本和自然侧光营造克制、日常、可佩戴的种草氛围。",
       "tags": ["小红书封面", "深色桌面", "皮革质感", "日常佩戴"],
       "prompt": "一串黑曜石手串放在深色木质桌面上，旁边有黑色皮革笔记本、银色钢笔和一杯咖啡，画面像真实生活方式分享，但构图和光线保持专业。黑曜石珠体呈现深黑镜面反射，边缘有细腻高光，整体氛围沉稳、克制、有质感。适合小红书男士饰品种草、日常搭配分享和礼物推荐，不要杂乱背景，不要过度装饰，不要文字水印。",
+      "promptEn": "Create a vertical 4:5 lifestyle image of an obsidian bracelet on a dark wooden desk, positioned slightly to the right of center. Add a black leather notebook, a silver pen, and a cup of coffee as restrained supporting props, keeping the bracelet as the visual anchor for a men's accessory sharing scene. The obsidian beads should show deep black mirror reflections, fine edge highlights, and polished material. Use natural side light from the upper left, keep the right side in controlled deep shadow, and create a calm refined Xiaohongshu-style daily wear atmosphere.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用 4:5 竖版构图，手串位于桌面中心偏右，皮革本和钢笔作为质感辅助道具。整体视觉重心稳定，适合社媒封面裁切。",
       "lightingAnalysis": "模拟窗边自然侧光，主光从左上方进入，右侧保留深色阴影。黑曜石的高光只保留少量线性反射，突出镜面质感和沉稳气质。",
       "commercialUse": "小红书封面 / 男士饰品种草 / 礼物推荐"
@@ -188,7 +339,9 @@
       "image": "/crystals/obsidian-placeholder.svg",
       "summary": "用干净白底和可控反射，让黑色珠体结构、光泽和尺寸一眼可读。",
       "tags": ["电商主图", "白底", "黑色珠体", "清晰轮廓"],
-      "prompt": "一串黑曜石手串完整平放在白色背景上，主体居中，珠体排列清楚，黑色镜面反射自然但不过度夸张。画面需要适合电商主图，清楚展示珠体大小、孔位、隔珠和整体成环状态。背景保持纯净，不要复杂道具，不要文字，不要水印。重点是真实黑色材质、抛光表面、清晰边缘和轻微接触阴影。",
+      "prompt": "一串黑曜石手串完整平放在白色背景上，主体居中，珠体排列清楚，黑色镜面反射自然但不过度夸张。画面需要适合电商主图，清楚展示珠体大小、孔位、抛光表面和整体成环状态。背景保持纯净，不要复杂道具，不要文字，不要水印。重点是真实黑色材质、抛光表面、清晰边缘和轻微接触阴影。",
+      "promptEn": "Create a clean square ecommerce main image of an obsidian bracelet on a pure white background. The bracelet should be centered, complete as a ring, occupy most of the frame, and leave even margins for platform cropping. Clearly show bead size, bead holes, black polished surfaces, crisp edges, and the overall circular form. Use a large soft light with white reflectors so the obsidian keeps deep black material while showing controlled highlights and a subtle contact shadow. The image should remain highly readable as a product thumbnail.",
+      "negativePrompt": "watermark, readable text, extra logo, low resolution, blurry product, inconsistent bead size, different bead diameters, extra beads, missing beads, broken bracelet, distorted bracelet, non-circular bracelet, deformed geometry, wide angle distortion, fisheye lens, incorrect perspective, oversized bead, undersized bead, random spacer beads, multiple accent beads, faceted beads, plastic material, fake crystal, low quality jewelry render",
       "compositionAnalysis": "采用 1:1 商品主图构图，手串完整成环并占据主要画面，边缘留白均匀。黑色主体与白底形成高对比，缩略图中识别度强。",
       "lightingAnalysis": "使用大柔光加白色反光板，让黑曜石在白底上保持黑色深度，同时出现可控高光。避免过曝和灰化，保留珠体体积和真实反射。",
       "commercialUse": "电商主图 / 商品列表 / 详情页材质展示"

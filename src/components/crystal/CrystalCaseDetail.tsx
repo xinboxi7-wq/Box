@@ -1,11 +1,11 @@
 "use client";
 
-import { useCallback, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Check, Copy, Sparkles, Star } from "lucide-react";
 import { Toast, type ToastState } from "@/components/studio/Toast";
 import { copyToClipboard } from "@/lib/clipboard";
-import { supportedModelLabels } from "@/lib/crystal-cases";
+import { buildCrystalPromptSet, supportedModelLabels } from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
 import { useCrystalFavorites } from "./useCrystalFavorites";
 
@@ -14,14 +14,46 @@ type CrystalCaseDetailProps = {
   product: CrystalProduct;
 };
 
+type PromptBlockItem = {
+  id: string;
+  label: string;
+  helper: string;
+  value: string;
+};
+
 export function CrystalCaseDetail({
   caseItem,
   product
 }: CrystalCaseDetailProps) {
   const { favoriteSet, toggleFavorite } = useCrystalFavorites();
   const favorite = favoriteSet.has(caseItem.id);
-  const [copied, setCopied] = useState(false);
+  const [copiedId, setCopiedId] = useState<string | null>(null);
   const [toast, setToast] = useState<ToastState>(null);
+  const promptSet = useMemo(() => buildCrystalPromptSet(caseItem), [caseItem]);
+
+  const promptBlocks = useMemo<PromptBlockItem[]>(
+    () => [
+      {
+        id: "prompt-zh",
+        label: "中文 GPT Image Prompt",
+        helper: "适合直接用于 GPT Image，也可作为中文画面说明。",
+        value: promptSet.prompt
+      },
+      {
+        id: "prompt-en",
+        label: "English GPT Image Prompt",
+        helper: "适合英文模型环境，保持构图、材质和灯光要求完整。",
+        value: promptSet.promptEn
+      },
+      {
+        id: "negative",
+        label: "Negative Prompt",
+        helper: "用于减少低质感、结构错误、文字水印和杂乱背景。",
+        value: promptSet.negativePrompt
+      }
+    ],
+    [promptSet.negativePrompt, promptSet.prompt, promptSet.promptEn]
+  );
 
   const showToast = useCallback((message: string, tone: "success" | "error") => {
     const id = Date.now();
@@ -31,20 +63,23 @@ export function CrystalCaseDetail({
     }, 1800);
   }, []);
 
-  const handleCopyPrompt = useCallback(async () => {
-    const success = await copyToClipboard(caseItem.prompt);
+  const handleCopyPrompt = useCallback(
+    async (promptId: string, value: string) => {
+      const success = await copyToClipboard(value);
 
-    if (!success) {
-      showToast("复制失败，请手动复制", "error");
-      return;
-    }
+      if (!success) {
+        showToast("复制失败，请手动复制", "error");
+        return;
+      }
 
-    setCopied(true);
-    showToast("已复制 Prompt", "success");
-    window.setTimeout(() => {
-      setCopied(false);
-    }, 1600);
-  }, [caseItem.prompt, showToast]);
+      setCopiedId(promptId);
+      showToast("已复制到剪贴板", "success");
+      window.setTimeout(() => {
+        setCopiedId((current) => (current === promptId ? null : current));
+      }, 1600);
+    },
+    [showToast]
+  );
 
   return (
     <main className="min-h-screen bg-[#F6F7F4] text-neutral-950">
@@ -92,9 +127,9 @@ export function CrystalCaseDetail({
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
-                {caseItem.tags.map((tag) => (
+                {caseItem.tags.map((tag, index) => (
                   <span
-                    key={tag}
+                    key={`${caseItem.id}-tag-${tag}-${index}`}
                     className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600"
                   >
                     {tag}
@@ -148,37 +183,30 @@ export function CrystalCaseDetail({
                 Prompt 展示与复制
               </div>
               <p className="mt-1 text-xs leading-5 text-neutral-500">
-                适合复制到 GPT Image、Midjourney 或 Flux 后继续微调。
+                已根据案例描述、构图分析和灯光分析生成中英文 Prompt。
               </p>
             </div>
-            <button
-              type="button"
-              onClick={handleCopyPrompt}
-              className="inline-flex h-10 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-auto"
-            >
-              {copied ? (
-                <Check className="h-4 w-4" aria-hidden="true" />
-              ) : (
-                <Copy className="h-4 w-4" aria-hidden="true" />
-              )}
-              {copied ? "已复制" : "复制 Prompt"}
-            </button>
-          </div>
-
-          <div className="mt-4 rounded-lg border border-neutral-100 bg-neutral-50 p-4">
-            <div className="mb-3 flex flex-wrap gap-1.5">
+            <div className="flex flex-wrap gap-1.5">
               {supportedModelLabels.map((model) => (
                 <span
                   key={model}
-                  className="rounded-full bg-white px-2.5 py-1 text-xs font-medium text-neutral-600 shadow-sm"
+                  className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600"
                 >
                   {model}
                 </span>
               ))}
             </div>
-            <p className="whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-              {caseItem.prompt}
-            </p>
+          </div>
+
+          <div className="mt-4 grid gap-3">
+            {promptBlocks.map((block) => (
+              <PromptBlock
+                key={block.id}
+                block={block}
+                copied={copiedId === block.id}
+                onCopy={handleCopyPrompt}
+              />
+            ))}
           </div>
         </div>
 
@@ -196,6 +224,46 @@ export function CrystalCaseDetail({
       </section>
       <Toast toast={toast} />
     </main>
+  );
+}
+
+function PromptBlock({
+  block,
+  copied,
+  onCopy
+}: {
+  block: PromptBlockItem;
+  copied: boolean;
+  onCopy: (promptId: string, value: string) => void;
+}) {
+  return (
+    <section className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <div className="text-sm font-semibold text-neutral-950">
+            {block.label}
+          </div>
+          <p className="mt-1 text-xs leading-5 text-neutral-500">
+            {block.helper}
+          </p>
+        </div>
+        <button
+          type="button"
+          onClick={() => onCopy(block.id, block.value)}
+          className="inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-3 text-xs font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-auto"
+        >
+          {copied ? (
+            <Check className="h-3.5 w-3.5" aria-hidden="true" />
+          ) : (
+            <Copy className="h-3.5 w-3.5" aria-hidden="true" />
+          )}
+          {copied ? "已复制" : "复制"}
+        </button>
+      </div>
+      <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+        {block.value}
+      </p>
+    </section>
   );
 }
 

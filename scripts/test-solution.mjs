@@ -34,8 +34,13 @@ const { clearRecords, removeRecordById } = loadTsModule(
 );
 
 const {
+  braceletRules,
+  braceletSizes,
+  buildCrystalPromptSet,
   crystalCases,
   crystalProducts,
+  crystalStyles,
+  defaultBraceletSize,
   getCrystalCaseBySlug,
   getCrystalCasesBySlugs,
   latestCaseSlugs,
@@ -132,6 +137,7 @@ function run() {
   assertTemplateMatching();
   assertStorageDeletionHelpers();
   assertCrystalCaseLibrary();
+  assertBraceletRules();
   assertCrystalHomeSections();
   assertSupportedModels();
 
@@ -145,6 +151,7 @@ function run() {
   console.log("- template matching: packaging, beauty, furniture, jewelry, electronics passed");
   console.log("- storage helpers: delete single and clear all passed");
   console.log("- crystal case library: 3 products, 9 cases, routes and search passed");
+  console.log("- bracelet rules: clean prompt labels and internal size references passed");
   console.log("- crystal home sections: latest and popular slugs passed");
   console.log("- supported models: GPT Image, Midjourney, Flux passed");
 }
@@ -418,7 +425,21 @@ function assertCrystalCaseLibrary() {
       `${caseItem.slug}: detail route data should be reachable by slug`
     );
     assertText(caseItem.image, `${caseItem.slug}: missing image`);
-    assertText(caseItem.prompt, `${caseItem.slug}: missing prompt`);
+    assertText(caseItem.prompt, `${caseItem.slug}: missing Chinese prompt`);
+    assertText(caseItem.promptEn, `${caseItem.slug}: missing English prompt`);
+    assertText(caseItem.negativePrompt, `${caseItem.slug}: missing negative prompt`);
+    assert(
+      !containsChinese(caseItem.promptEn),
+      `${caseItem.slug}: English prompt should not contain CJK`
+    );
+    assert(
+      !containsChinese(caseItem.negativePrompt),
+      `${caseItem.slug}: negative prompt should not contain CJK`
+    );
+    assert(
+      caseItem.negativePrompt.includes("watermark"),
+      `${caseItem.slug}: negative prompt should mention watermark`
+    );
     assertText(caseItem.compositionAnalysis, `${caseItem.slug}: missing composition analysis`);
     assertText(caseItem.lightingAnalysis, `${caseItem.slug}: missing lighting analysis`);
     assert(
@@ -447,6 +468,276 @@ function assertCrystalHomeSections() {
     getCrystalCasesBySlugs(popularCaseSlugs).length === 3,
     "crystal home: popular helper should return 3 valid cases"
   );
+}
+
+function assertBraceletRules() {
+  assertObject(braceletRules, "bracelet rules: missing global config");
+  assertText(braceletRules.promptAppendixZh, "bracelet rules: missing Chinese prompt appendix");
+  assertText(braceletRules.promptAppendixEn, "bracelet rules: missing English prompt appendix");
+  assertText(braceletRules.negativeAppendix, "bracelet rules: missing negative appendix");
+  assert(
+    braceletRules.productStructure.zh.includes("\u5b8c\u6574\u5706\u5f62\u624b\u4e32"),
+    "bracelet rules: Chinese product structure should require a complete circular bracelet"
+  );
+  assert(
+    braceletRules.productStructure.en.includes("complete circular bracelet"),
+    "bracelet rules: English product structure should require a complete circular bracelet"
+  );
+  assert(
+    braceletRules.styleConsistency.lockedElementsZh.includes("\u89c6\u89c9\u73e0\u91cf\u6bd4\u4f8b"),
+    "bracelet rules: style consistency should lock visual bead quantity proportion"
+  );
+  assert(defaultBraceletSize === "medium", "bracelet rules: default size should be medium");
+  assert(
+    braceletSizes.length === 3,
+    `bracelet rules: expected 3 bracelet sizes, got ${braceletSizes.length}`
+  );
+  assertBraceletSize("small", 8, "22-26", "small-sized crystal beads");
+  assertBraceletSize("medium", 10, "18-22", "medium-sized crystal beads");
+  assertBraceletSize("large", 12, "16-20", "large-sized crystal beads");
+  assertCrystalStyles();
+
+  for (const caseItem of crystalCases) {
+    const prompts = buildCrystalPromptSet(caseItem);
+    const product = crystalProducts.find(
+      (productItem) => productItem.id === caseItem.productId
+    );
+    const style = crystalStyles.find(
+      (styleItem) => styleItem.id === caseItem.styleId
+    );
+
+    assertObject(product, `${caseItem.slug}: missing product`);
+    assertObject(style, `${caseItem.slug}: missing style`);
+    assert(
+      !("beadSizeClass" in product) && !("beadSizeMm" in product),
+      `${caseItem.slug}: product should not contain bracelet size fields`
+    );
+
+    assert(
+      prompts.prompt.includes("\u7ea620\u9897"),
+      `${caseItem.slug}: Chinese prompt should include approximate bead count`
+    );
+    assert(
+      prompts.prompt.includes("10mm\u5706\u73e0"),
+      `${caseItem.slug}: Chinese prompt should include 10mm round bead specification`
+    );
+    assert(
+      prompts.prompt.includes("\u5b8c\u6574\u95ed\u73af\u624b\u4e32"),
+      `${caseItem.slug}: Chinese prompt should include complete closed bracelet structure`
+    );
+    assert(
+      prompts.prompt.includes("\u7edf\u4e00\u73e0\u5f84"),
+      `${caseItem.slug}: Chinese prompt should include uniform bead diameter`
+    );
+    assert(
+      prompts.prompt.includes("\u5bf9\u79f0\u7ed3\u6784"),
+      `${caseItem.slug}: Chinese prompt should include symmetrical structure`
+    );
+    assert(
+      prompts.prompt.includes(product.materialSpecZh),
+      `${caseItem.slug}: Chinese prompt should include product material specification`
+    );
+    assert(
+      prompts.prompt.includes(caseItem.productName),
+      `${caseItem.slug}: Chinese prompt should include the case product name`
+    );
+    assert(
+      prompts.prompt.includes("\u53ea\u5c55\u793a\u5355\u6761\u624b\u4e32"),
+      `${caseItem.slug}: Chinese prompt should include single-bracelet quality control`
+    );
+    assert(
+      prompts.promptEn.includes("approximately twenty"),
+      `${caseItem.slug}: English prompt should include approximate bead count`
+    );
+    assert(
+      prompts.promptEn.includes("10mm round beads"),
+      `${caseItem.slug}: English prompt should include 10mm round bead specification`
+    );
+    assert(
+      prompts.promptEn.includes("uniform bead diameter"),
+      `${caseItem.slug}: English prompt should include uniform bead diameter`
+    );
+    assert(
+      prompts.promptEn.includes("complete circular bracelet"),
+      `${caseItem.slug}: English prompt should include complete circular bracelet`
+    );
+    assert(
+      prompts.promptEn.includes("symmetrical structure"),
+      `${caseItem.slug}: English prompt should include symmetrical structure`
+    );
+    assert(
+      prompts.promptEn.includes("realistic jewelry proportions"),
+      `${caseItem.slug}: English prompt should include realistic jewelry proportions`
+    );
+    assert(
+      prompts.promptEn.includes(product.materialSpecEn),
+      `${caseItem.slug}: English prompt should include product material specification`
+    );
+    assert(
+      prompts.promptEn.toLowerCase().includes("show only one bracelet"),
+      `${caseItem.slug}: English prompt should include single-bracelet quality control`
+    );
+    assertNoPromptHeadingTerms(prompts.prompt, `${caseItem.slug}: Chinese prompt`);
+    assertNoPromptHeadingTerms(prompts.promptEn, `${caseItem.slug}: English prompt`);
+    assertNoExactBeadCountTerms(prompts.prompt, `${caseItem.slug}: Chinese prompt`);
+    assertNoExactBeadCountTerms(prompts.promptEn, `${caseItem.slug}: English prompt`);
+    assertNoInternalSizeTerms(prompts.prompt, `${caseItem.slug}: Chinese prompt`);
+    assertNoInternalSizeTerms(prompts.promptEn, `${caseItem.slug}: English prompt`);
+    assertChinesePromptLength(prompts.prompt, caseItem.slug);
+    assertEnglishPromptLength(prompts.promptEn, caseItem.slug);
+    assertNoExactBeadCountTerms(
+      prompts.negativePrompt,
+      `${caseItem.slug}: negative prompt`
+    );
+    assertNegativeTerms(prompts.negativePrompt, caseItem.slug);
+    assert(
+      !containsChinese(prompts.promptEn),
+      `${caseItem.slug}: English prompt with bracelet rules should not contain CJK`
+    );
+    assert(
+      !containsChinese(prompts.negativePrompt),
+      `${caseItem.slug}: negative prompt with bracelet rules should not contain CJK`
+    );
+  }
+}
+
+function assertBraceletSize(id, internalMm, internalVisualBeadRange, promptLabelEn) {
+  const braceletSize = braceletSizes.find((size) => size.id === id);
+
+  assertObject(braceletSize, `bracelet rules: missing ${id} bracelet size`);
+  assert(
+    braceletSize.internalMm === internalMm,
+    `bracelet rules: ${id} should keep internal mm ${internalMm}`
+  );
+  assert(
+    braceletSize.internalVisualBeadRange === internalVisualBeadRange,
+    `bracelet rules: ${id} should keep internal visual bead range ${internalVisualBeadRange}`
+  );
+  assert(
+    braceletSize.promptLabelEn === promptLabelEn,
+    `bracelet rules: ${id} should expose clean prompt label ${promptLabelEn}`
+  );
+}
+
+function assertCrystalStyles() {
+  assert(
+    crystalStyles.length === 3,
+    `crystal styles: expected 3 styles, got ${crystalStyles.length}`
+  );
+
+  for (const style of crystalStyles) {
+    assertText(style.promptStyleZh, `${style.id}: missing Chinese style prompt`);
+    assertText(style.promptStyleEn, `${style.id}: missing English style prompt`);
+    assert(
+      !containsChinese(style.promptStyleEn),
+      `${style.id}: English style prompt should not contain CJK`
+    );
+  }
+}
+
+function assertNoExactBeadCountTerms(value, label) {
+  const forbiddenTerms = [
+    "exactly 20",
+    "fewer than 20",
+    "more than 20",
+    "\u7cbe\u786e20\u9897"
+  ];
+
+  for (const term of forbiddenTerms) {
+    assert(!value.includes(term), `${label} should not include ${term}`);
+  }
+}
+
+function assertNoInternalSizeTerms(value, label) {
+  const forbiddenTerms = [
+    "visual bead range",
+    "18-22 beads",
+    "22-26 beads",
+    "16-20 beads",
+    "not an exact bead-count instruction"
+  ];
+
+  for (const term of forbiddenTerms) {
+    assert(!value.includes(term), `${label} should not include ${term}`);
+  }
+}
+
+function assertNoPromptHeadingTerms(value, label) {
+  const forbiddenTerms = [
+    "\u4ea7\u54c1\u6750\u8d28\uff1a",
+    "\u4ea7\u54c1\u989c\u8272\uff1a",
+    "\u4ea7\u54c1\u7eb9\u7406\uff1a",
+    "\u624b\u4e32\u5c3a\u5bf8\u8868\u8fbe\uff1a",
+    "\u98ce\u683c\u6267\u884c\uff1a",
+    "\u6784\u56fe\u8981\u6c42\uff1a",
+    "\u706f\u5149\u8981\u6c42\uff1a",
+    "\u5546\u4e1a\u51fa\u56fe\u8d28\u91cf\uff1a",
+    "Product material:",
+    "Product color:",
+    "Product texture:",
+    "Bracelet size expression:",
+    "Style direction:",
+    "Commercial image quality:",
+    "Global Bracelet Rules:"
+  ];
+
+  for (const term of forbiddenTerms) {
+    assert(!value.includes(term), `${label} should not include heading ${term}`);
+  }
+}
+
+function assertChinesePromptLength(value, label) {
+  assert(
+    value.length >= 250 && value.length <= 450,
+    `${label}: Chinese prompt should be 250-450 characters, got ${value.length}`
+  );
+}
+
+function assertEnglishPromptLength(value, label) {
+  const words = value.trim().split(/\s+/).filter(Boolean);
+
+  assert(
+    words.length >= 120 && words.length <= 220,
+    `${label}: English prompt should be 120-220 words, got ${words.length}`
+  );
+}
+
+function assertNegativeTerms(value, label) {
+  const requiredTerms = [
+    "inconsistent bead size",
+    "different bead diameters",
+    "uneven bead spacing",
+    "extra beads",
+    "loose beads",
+    "missing beads",
+    "broken bracelet",
+    "duplicate bracelet",
+    "distorted bracelet",
+    "non-circular bracelet",
+    "oval deformation",
+    "deformed geometry",
+    "wide angle distortion",
+    "fisheye lens",
+    "incorrect perspective",
+    "oversized bead",
+    "undersized bead",
+    "random spacer beads",
+    "multiple accent beads",
+    "faceted beads",
+    "necklace",
+    "chain",
+    "wrist",
+    "hand",
+    "model wearing bracelet",
+    "plastic material",
+    "fake crystal",
+    "glass bead look",
+    "low quality jewelry render"
+  ];
+
+  for (const term of requiredTerms) {
+    assert(value.includes(term), `${label}: negative prompt should include ${term}`);
+  }
 }
 
 function assertSupportedModels() {
