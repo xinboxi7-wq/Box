@@ -30,6 +30,9 @@ export function CrystalCaseDetail({
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [toast, setToast] = useState<ToastState>(null);
   const promptSet = useMemo(() => buildCrystalPromptSet(caseItem), [caseItem]);
+  const coverImage = caseItem.coverImage || caseItem.image;
+  const galleryImages =
+    caseItem.galleryImages.length > 0 ? caseItem.galleryImages : [coverImage];
 
   const promptBlocks = useMemo<PromptBlockItem[]>(
     () => [
@@ -104,7 +107,7 @@ export function CrystalCaseDetail({
           <div className="grid gap-0 lg:grid-cols-[1.04fr_0.96fr]">
             <div className="bg-neutral-100">
               <img
-                src={caseItem.image}
+                src={coverImage}
                 alt={caseItem.title}
                 className="aspect-[4/3] h-full w-full object-cover"
               />
@@ -211,6 +214,11 @@ export function CrystalCaseDetail({
         </div>
 
         <div className="grid gap-4">
+          <GalleryBlock
+            title="案例图片"
+            images={galleryImages}
+            alt={caseItem.title}
+          />
           <AnalysisBlock
             title="构图分析"
             value={caseItem.compositionAnalysis}
@@ -262,6 +270,35 @@ function PromptBlock({
       </div>
       <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-neutral-700">
         {block.value}
+      </p>
+    </section>
+  );
+}
+
+function GalleryBlock({
+  title,
+  images,
+  alt
+}: {
+  title: string;
+  images: string[];
+  alt: string;
+}) {
+  return (
+    <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+      <div className="text-sm font-semibold text-neutral-950">{title}</div>
+      <div className="mt-3 grid gap-2">
+        {images.map((image, index) => (
+          <img
+            key={`${image}-${index}`}
+            src={image}
+            alt={`${alt} ${index + 1}`}
+            className="aspect-[4/3] w-full rounded-md bg-neutral-100 object-cover"
+          />
+        ))}
+      </div>
+      <p className="mt-3 text-xs leading-5 text-neutral-500">
+        当前为本地占位图，后续可直接替换为真实出图资源。
       </p>
     </section>
   );

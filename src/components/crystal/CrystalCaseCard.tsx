@@ -21,6 +21,8 @@ export function CrystalCaseCard({
   onToggleFavorite,
   variant = "default"
 }: CrystalCaseCardProps) {
+  const caseImage = caseItem.coverImage || caseItem.image;
+
   if (variant === "compact") {
     return (
       <article className="group flex gap-3 rounded-lg border border-neutral-200 bg-white p-2.5 shadow-sm transition hover:border-neutral-300 hover:shadow-soft-panel">
@@ -29,7 +31,7 @@ export function CrystalCaseCard({
           className="relative h-24 w-28 flex-none overflow-hidden rounded-md bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-32"
         >
           <img
-            src={caseItem.image}
+            src={caseImage}
             alt={caseItem.title}
             className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.04]"
           />
@@ -78,7 +80,7 @@ export function CrystalCaseCard({
         }`}
       >
         <img
-          src={caseItem.image}
+          src={caseImage}
           alt={caseItem.title}
           className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
         />

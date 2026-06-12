@@ -17,9 +17,9 @@ export const crystalProducts: CrystalProduct[] = library.products;
 export const crystalStyles: CrystalStyle[] = library.styles;
 export const crystalCases: CrystalCase[] = library.cases.map(applyBraceletRules);
 export const latestCaseSlugs = [
-  "obsidian-luxury",
-  "citrine-lifestyle",
-  "amethyst-ecommerce"
+  "obsidian-gift",
+  "citrine-gift",
+  "amethyst-gift"
 ] as const;
 export const popularCaseSlugs = [
   "amethyst-luxury",
@@ -123,11 +123,10 @@ export function buildCrystalPromptSet(caseItem: CrystalCase) {
   }
 
   const product = getCrystalProductById(caseItem.productId);
-  const braceletSize = getDefaultCrystalBraceletSize();
 
   return {
-    prompt: buildChineseCrystalPrompt(caseItem, product, braceletSize),
-    promptEn: buildEnglishCrystalPrompt(caseItem, product, braceletSize),
+    prompt: buildChineseCrystalPrompt(caseItem, product),
+    promptEn: buildEnglishCrystalPrompt(caseItem, product),
     negativePrompt: appendPromptRule(
       caseItem.negativePrompt,
       braceletRules.negativeAppendix
@@ -153,38 +152,44 @@ function appendPromptRule(value: string, rule: string) {
 
 function hasAppliedBraceletRules(caseItem: CrystalCase) {
   return (
-    caseItem.prompt.includes("约") &&
-    caseItem.prompt.includes("mm圆珠") &&
     caseItem.prompt.includes("完整闭环手串") &&
-    caseItem.promptEn.includes("approximately") &&
-    caseItem.promptEn.includes("mm round beads") &&
-    caseItem.promptEn.includes("complete circular bracelet") &&
+    caseItem.prompt.includes("统一珠径") &&
+    caseItem.prompt.includes("对称结构") &&
+    caseItem.prompt.includes("真实珠宝摄影比例") &&
+    caseItem.prompt.includes("真实天然水晶质感") &&
+    caseItem.prompt.includes("合理透视关系") &&
+    caseItem.prompt.includes("商业摄影表达") &&
+    caseItem.promptEn.includes("complete closed-loop bracelet") &&
+    caseItem.promptEn.includes("uniform bead diameter") &&
+    caseItem.promptEn.includes("symmetrical structure") &&
+    caseItem.promptEn.includes("realistic jewelry photography proportions") &&
+    caseItem.promptEn.includes("authentic natural crystal material quality") &&
+    caseItem.promptEn.includes("reasonable perspective relationship") &&
+    caseItem.promptEn.includes("commercial photography expression") &&
     caseItem.negativePrompt.includes(braceletRules.negativeAppendix)
   );
 }
 
 function buildChineseCrystalPrompt(
   caseItem: CrystalCase,
-  product: CrystalProduct | null,
-  braceletSize: CrystalBraceletSize | null
+  product: CrystalProduct | null
 ) {
   return joinPromptSections([
     sanitizePositivePromptText(caseItem.prompt),
     product ? buildProductSpecZh(product) : "",
-    braceletSize ? buildBraceletSizeSpecZh(braceletSize) : "",
+    braceletRules.promptAppendixZh,
     buildUniversalQualitySpecZh()
   ]);
 }
 
 function buildEnglishCrystalPrompt(
   caseItem: CrystalCase,
-  product: CrystalProduct | null,
-  braceletSize: CrystalBraceletSize | null
+  product: CrystalProduct | null
 ) {
   return joinPromptSections([
     sanitizePositivePromptText(caseItem.promptEn),
     product ? buildProductSpecEn(product) : "",
-    braceletSize ? buildBraceletSizeSpecEn(braceletSize) : "",
+    braceletRules.promptAppendixEn,
     buildUniversalQualitySpecEn()
   ]);
 }
@@ -195,18 +200,6 @@ function buildProductSpecZh(product: CrystalProduct) {
 
 function buildProductSpecEn(product: CrystalProduct) {
   return `The material should read as ${product.materialSpecEn}.`;
-}
-
-function buildBraceletSizeSpecZh(braceletSize: CrystalBraceletSize) {
-  const beadCount = getApproximateBeadCount(braceletSize);
-
-  return `手串由约${beadCount}颗珠径一致的${braceletSize.internalMm}mm圆珠组成，所有珠子保持统一珠径、稳定间距和一致尺度，形成完整闭环手串与对称结构，透视自然，不出现鱼眼、广角变形或前后珠子大小夸张。`;
-}
-
-function buildBraceletSizeSpecEn(braceletSize: CrystalBraceletSize) {
-  const beadCount = getApproximateBeadCount(braceletSize);
-
-  return `Construct the bracelet from approximately ${formatNumberWord(beadCount)} uniform ${braceletSize.internalMm}mm round beads, forming a complete circular bracelet with uniform bead diameter, stable spacing, symmetrical structure, realistic jewelry proportions, accurate perspective, and consistent bead scale around the entire circle.`;
 }
 
 function buildUniversalQualitySpecZh() {
@@ -232,28 +225,6 @@ function sanitizePositivePromptText(value: string) {
     .replace(/metal spacer/gi, "bead-edge")
     .replace(/spacer details/gi, "bead details")
     .replace(/spacer structure/gi, "bead structure");
-}
-
-function getApproximateBeadCount(braceletSize: CrystalBraceletSize) {
-  const [min, max] = braceletSize.internalVisualBeadRange
-    .split("-")
-    .map((value) => Number.parseInt(value, 10));
-
-  if (Number.isFinite(min) && Number.isFinite(max)) {
-    return Math.round((min + max) / 2);
-  }
-
-  return 20;
-}
-
-function formatNumberWord(value: number) {
-  const words: Record<number, string> = {
-    18: "eighteen",
-    20: "twenty",
-    24: "twenty-four"
-  };
-
-  return words[value] ?? String(value);
 }
 
 function normalizeSearchText(value: string) {

@@ -68,13 +68,13 @@ export function CrystalCaseLibrary({
               Crystal Bracelet Case Library
             </div>
             <h1 className="mt-3 text-[2rem] font-semibold leading-[1.04] tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-              <span className="block">Crystal Prompt Library</span>
+              <span className="block">Crystal Bracelet Visual Library</span>
               <span className="mt-1 block text-2xl leading-tight sm:text-3xl lg:text-4xl">
-                水晶商业视觉 Prompt 库
+                水晶手串 AI 商业视觉案例库
               </span>
             </h1>
             <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
-              收录紫水晶、黄水晶、黑曜石等商业视觉案例，包含 AI Prompt、构图分析、灯光分析与风格拆解。
+              面向水晶商家、小红书卖家和电商运营，整理可直接复用的商品图、种草图、品牌广告图与礼赠场景 Prompt。
             </p>
           </div>
 
@@ -222,7 +222,7 @@ export function CrystalCaseLibrary({
             <ValueCard
               icon={<BadgeCheck className="h-4 w-4" aria-hidden="true" />}
               title="围绕商业转化"
-              description="按奢侈品广告、小红书种草、电商白底三类真实使用场景组织案例。"
+              description="按奢侈品广告、小红书种草、电商白底和礼赠场景四类真实使用场景组织案例。"
             />
           </div>
         </div>

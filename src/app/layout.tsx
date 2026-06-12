@@ -3,9 +3,9 @@ import type { ReactNode } from "react";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Crystal Prompt Library - 水晶商业视觉 Prompt 库",
+  title: "水晶手串 AI 商业视觉案例库",
   description:
-    "收录紫水晶、黄水晶、黑曜石等商业视觉案例，包含 AI Prompt、构图分析、灯光分析与风格拆解。"
+    "面向水晶商家、小红书卖家和电商运营，收录可复用的商品图、种草图、品牌广告图和礼赠场景 Prompt。"
 };
 
 export default function RootLayout({

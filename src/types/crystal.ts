@@ -63,6 +63,8 @@ export type CrystalCase = {
   productName: string;
   styleName: string;
   image: string;
+  coverImage: string;
+  galleryImages: string[];
   summary: string;
   tags: string[];
   prompt: string;

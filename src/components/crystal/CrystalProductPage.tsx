@@ -72,7 +72,7 @@ export function CrystalProductPage({
               Product cases
             </p>
             <h2 className="mt-2 text-2xl font-semibold tracking-tight text-neutral-950">
-              {product.name}的 3 个视觉案例
+              {product.name}的商业视觉案例
             </h2>
           </div>
           <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-neutral-500 shadow-sm">

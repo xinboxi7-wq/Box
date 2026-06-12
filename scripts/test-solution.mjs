@@ -150,8 +150,8 @@ function run() {
   console.log("- manual selection guard: preserved manual project type and goals");
   console.log("- template matching: packaging, beauty, furniture, jewelry, electronics passed");
   console.log("- storage helpers: delete single and clear all passed");
-  console.log("- crystal case library: 3 products, 9 cases, routes and search passed");
-  console.log("- bracelet rules: clean prompt labels and internal size references passed");
+  console.log("- crystal case library: 3 products, 12 target cases, routes and search passed");
+  console.log("- bracelet rules: structure stability and commercial photography logic passed");
   console.log("- crystal home sections: latest and popular slugs passed");
   console.log("- supported models: GPT Image, Midjourney, Flux passed");
 }
@@ -382,19 +382,26 @@ function assertStorageDeletionHelpers() {
 }
 
 function assertCrystalCaseLibrary() {
+  const targetProductIds = ["amethyst", "citrine", "obsidian"];
+  const targetStyleIds = ["luxury", "lifestyle", "ecommerce", "gift"];
+  const targetSlugs = targetProductIds.flatMap((productId) =>
+    targetStyleIds.map((styleId) => `${productId}-${styleId}`)
+  );
+
   assert(
     crystalProducts.length === 3,
     `crystal library: expected 3 products, got ${crystalProducts.length}`
   );
   assert(
-    crystalCases.length === 9,
-    `crystal library: expected 9 cases, got ${crystalCases.length}`
+    crystalCases.length >= targetSlugs.length,
+    `crystal library: expected at least ${targetSlugs.length} target cases, got ${crystalCases.length}`
   );
 
   const expectedStyles = new Set([
     "\u5962\u4f88\u54c1\u5e7f\u544a\u98ce",
     "\u5c0f\u7ea2\u4e66\u79cd\u8349\u98ce",
-    "\u7535\u5546\u767d\u5e95\u98ce"
+    "\u7535\u5546\u767d\u5e95\u98ce",
+    "\u793c\u8d60\u573a\u666f\u98ce"
   ]);
   const slugs = new Set();
 
@@ -404,8 +411,8 @@ function assertCrystalCaseLibrary() {
     );
 
     assert(
-      productCases.length === 3,
-      `crystal library: ${product.name} should have 3 cases`
+      productCases.length >= 4,
+      `crystal library: ${product.name} should have at least 4 target cases`
     );
 
     for (const styleName of expectedStyles) {
@@ -416,6 +423,13 @@ function assertCrystalCaseLibrary() {
     }
   }
 
+  for (const slug of targetSlugs) {
+    assertObject(
+      getCrystalCaseBySlug(slug),
+      `crystal library: missing first-stage target case ${slug}`
+    );
+  }
+
   for (const caseItem of crystalCases) {
     assertText(caseItem.slug, `${caseItem.id}: missing slug`);
     assert(!slugs.has(caseItem.slug), `${caseItem.slug}: duplicate case slug`);
@@ -423,8 +437,13 @@ function assertCrystalCaseLibrary() {
     assertObject(
       getCrystalCaseBySlug(caseItem.slug),
       `${caseItem.slug}: detail route data should be reachable by slug`
-    );
+      );
     assertText(caseItem.image, `${caseItem.slug}: missing image`);
+    assertText(caseItem.coverImage, `${caseItem.slug}: missing coverImage`);
+    assert(
+      Array.isArray(caseItem.galleryImages) && caseItem.galleryImages.length > 0,
+      `${caseItem.slug}: missing galleryImages`
+    );
     assertText(caseItem.prompt, `${caseItem.slug}: missing Chinese prompt`);
     assertText(caseItem.promptEn, `${caseItem.slug}: missing English prompt`);
     assertText(caseItem.negativePrompt, `${caseItem.slug}: missing negative prompt`);
@@ -454,6 +473,7 @@ function assertCrystalCaseLibrary() {
   assertSearchHits("\u5c0f\u7ea2\u4e66", "lifestyle");
   assertSearchHits("\u767d\u5e95", "ecommerce");
   assertSearchHits("\u5962\u4f88\u54c1", "luxury");
+  assertSearchHits("\u793c\u8d60", "gift");
 }
 
 function assertCrystalHomeSections() {
@@ -476,25 +496,25 @@ function assertBraceletRules() {
   assertText(braceletRules.promptAppendixEn, "bracelet rules: missing English prompt appendix");
   assertText(braceletRules.negativeAppendix, "bracelet rules: missing negative appendix");
   assert(
-    braceletRules.productStructure.zh.includes("\u5b8c\u6574\u5706\u5f62\u624b\u4e32"),
-    "bracelet rules: Chinese product structure should require a complete circular bracelet"
+    braceletRules.productStructure.zh.includes("完整闭环手串"),
+    "bracelet rules: Chinese product structure should require a complete closed-loop bracelet"
   );
   assert(
-    braceletRules.productStructure.en.includes("complete circular bracelet"),
-    "bracelet rules: English product structure should require a complete circular bracelet"
+    braceletRules.productStructure.en.includes("complete closed-loop bracelet"),
+    "bracelet rules: English product structure should require a complete closed-loop bracelet"
   );
   assert(
-    braceletRules.styleConsistency.lockedElementsZh.includes("\u89c6\u89c9\u73e0\u91cf\u6bd4\u4f8b"),
-    "bracelet rules: style consistency should lock visual bead quantity proportion"
+    braceletRules.styleConsistency.lockedElementsZh.includes("真实珠宝摄影逻辑"),
+    "bracelet rules: style consistency should lock realistic jewelry photography logic"
   );
   assert(defaultBraceletSize === "medium", "bracelet rules: default size should be medium");
   assert(
     braceletSizes.length === 3,
     `bracelet rules: expected 3 bracelet sizes, got ${braceletSizes.length}`
   );
-  assertBraceletSize("small", 8, "22-26", "small-sized crystal beads");
-  assertBraceletSize("medium", 10, "18-22", "medium-sized crystal beads");
-  assertBraceletSize("large", 12, "16-20", "large-sized crystal beads");
+  assertBraceletSize("small", 8, "22-26", "small crystal round beads");
+  assertBraceletSize("medium", 10, "18-22", "medium crystal round beads");
+  assertBraceletSize("large", 12, "16-20", "large crystal round beads");
   assertCrystalStyles();
 
   for (const caseItem of crystalCases) {
@@ -514,28 +534,32 @@ function assertBraceletRules() {
     );
 
     assert(
-      prompts.prompt.includes("\u7ea620\u9897"),
-      `${caseItem.slug}: Chinese prompt should include approximate bead count`
-    );
-    assert(
-      prompts.prompt.includes("10mm\u5706\u73e0"),
-      `${caseItem.slug}: Chinese prompt should include 10mm round bead specification`
-    );
-    assert(
-      prompts.prompt.includes("\u5b8c\u6574\u95ed\u73af\u624b\u4e32"),
+      prompts.prompt.includes("完整闭环手串"),
       `${caseItem.slug}: Chinese prompt should include complete closed bracelet structure`
     );
     assert(
-      prompts.prompt.includes("\u7edf\u4e00\u73e0\u5f84"),
+      prompts.prompt.includes("统一珠径"),
       `${caseItem.slug}: Chinese prompt should include uniform bead diameter`
     );
     assert(
-      prompts.prompt.includes("\u5bf9\u79f0\u7ed3\u6784"),
+      prompts.prompt.includes("对称结构"),
       `${caseItem.slug}: Chinese prompt should include symmetrical structure`
     );
     assert(
-      prompts.prompt.includes(product.materialSpecZh),
-      `${caseItem.slug}: Chinese prompt should include product material specification`
+      prompts.prompt.includes("真实珠宝摄影比例"),
+      `${caseItem.slug}: Chinese prompt should include realistic jewelry photography proportions`
+    );
+    assert(
+      prompts.prompt.includes("真实天然水晶质感"),
+      `${caseItem.slug}: Chinese prompt should include authentic natural crystal material`
+    );
+    assert(
+      prompts.prompt.includes("合理透视关系"),
+      `${caseItem.slug}: Chinese prompt should include reasonable perspective relationship`
+    );
+    assert(
+      prompts.prompt.includes("商业摄影表达"),
+      `${caseItem.slug}: Chinese prompt should include commercial photography expression`
     );
     assert(
       prompts.prompt.includes(caseItem.productName),
@@ -546,32 +570,32 @@ function assertBraceletRules() {
       `${caseItem.slug}: Chinese prompt should include single-bracelet quality control`
     );
     assert(
-      prompts.promptEn.includes("approximately twenty"),
-      `${caseItem.slug}: English prompt should include approximate bead count`
-    );
-    assert(
-      prompts.promptEn.includes("10mm round beads"),
-      `${caseItem.slug}: English prompt should include 10mm round bead specification`
+      prompts.promptEn.includes("complete closed-loop bracelet"),
+      `${caseItem.slug}: English prompt should include complete closed-loop bracelet`
     );
     assert(
       prompts.promptEn.includes("uniform bead diameter"),
       `${caseItem.slug}: English prompt should include uniform bead diameter`
     );
     assert(
-      prompts.promptEn.includes("complete circular bracelet"),
-      `${caseItem.slug}: English prompt should include complete circular bracelet`
-    );
-    assert(
       prompts.promptEn.includes("symmetrical structure"),
       `${caseItem.slug}: English prompt should include symmetrical structure`
     );
     assert(
-      prompts.promptEn.includes("realistic jewelry proportions"),
-      `${caseItem.slug}: English prompt should include realistic jewelry proportions`
+      prompts.promptEn.includes("realistic jewelry photography proportions"),
+      `${caseItem.slug}: English prompt should include realistic jewelry photography proportions`
     );
     assert(
-      prompts.promptEn.includes(product.materialSpecEn),
-      `${caseItem.slug}: English prompt should include product material specification`
+      prompts.promptEn.includes("authentic natural crystal material quality"),
+      `${caseItem.slug}: English prompt should include authentic natural crystal material quality`
+    );
+    assert(
+      prompts.promptEn.includes("reasonable perspective relationship"),
+      `${caseItem.slug}: English prompt should include reasonable perspective relationship`
+    );
+    assert(
+      prompts.promptEn.includes("commercial photography expression"),
+      `${caseItem.slug}: English prompt should include commercial photography expression`
     );
     assert(
       prompts.promptEn.toLowerCase().includes("show only one bracelet"),
@@ -621,8 +645,8 @@ function assertBraceletSize(id, internalMm, internalVisualBeadRange, promptLabel
 
 function assertCrystalStyles() {
   assert(
-    crystalStyles.length === 3,
-    `crystal styles: expected 3 styles, got ${crystalStyles.length}`
+    crystalStyles.length >= 4,
+    `crystal styles: expected at least 4 styles, got ${crystalStyles.length}`
   );
 
   for (const style of crystalStyles) {
