@@ -124,7 +124,7 @@
       "name": "紫水晶",
       "englishName": "Amethyst Bracelet",
       "mineral": "紫水晶手串",
-      "image": "/crystals/amethyst-placeholder.svg",
+      "image": "/crystals/generated/amethyst-luxury.png",
       "description": "适合表达神秘、优雅、疗愈感和轻奢礼赠属性，画面重点放在紫色晶体通透度、珠体光泽和女性化高级感。",
       "materialSpecZh": "紫水晶珠体需要呈现天然紫色晶体、通透层次、细微冰裂纹和矿物内含物，表面具有真实抛光宝石反射。",
       "materialSpecEn": "amethyst beads with natural purple crystal translucency, subtle icy fractures, mineral inclusions, and polished gemstone reflections",
@@ -145,7 +145,7 @@
       "name": "黄水晶",
       "englishName": "Citrine Bracelet",
       "mineral": "黄水晶手串",
-      "image": "/crystals/citrine-placeholder.svg",
+      "image": "/crystals/generated/citrine-luxury.png",
       "description": "适合表达温暖、开运、明亮和礼物属性，画面重点放在金黄色通透度、暖调光泽和积极能量感。",
       "materialSpecZh": "黄水晶珠体需要呈现天然金黄色晶体、温暖通透度、内部矿物纹理和干净抛光表面，避免廉价黄色塑料感。",
       "materialSpecEn": "citrine beads with natural golden-yellow crystal translucency, warm clarity, internal mineral texture, and clean polished gemstone surfaces",
@@ -166,7 +166,7 @@
       "name": "黑曜石",
       "englishName": "Obsidian Bracelet",
       "mineral": "黑曜石手串",
-      "image": "/crystals/obsidian-placeholder.svg",
+      "image": "/crystals/generated/obsidian-luxury.png",
       "description": "适合表达沉稳、力量感、守护寓意和男士饰品属性，画面重点放在深黑镜面质感、边缘高光和低调高级感。",
       "materialSpecZh": "黑曜石珠体需要呈现天然深黑色宝石质感、镜面抛光反射、可见的边缘高光和真实晶石深度，避免黑色塑料块感。",
       "materialSpecEn": "obsidian beads with natural deep black gemstone character, mirror-polished reflections, visible edge highlights, and believable stone depth",
@@ -221,10 +221,10 @@
       "title": "紫水晶奢侈品广告风",
       "productName": "紫水晶手串",
       "styleName": "奢侈品广告风",
-      "image": "/crystals/amethyst-placeholder.svg",
-      "coverImage": "/crystals/amethyst-placeholder.svg",
+      "image": "/crystals/generated/amethyst-luxury.png",
+      "coverImage": "/crystals/generated/amethyst-luxury.png",
       "galleryImages": [
-        "/crystals/amethyst-placeholder.svg"
+        "/crystals/generated/amethyst-luxury.png"
       ],
       "summary": "以深紫色丝绒、冷调高光和珠宝大片构图表现紫水晶的神秘与收藏属性。",
       "tags": [
@@ -248,10 +248,10 @@
       "title": "紫水晶小红书种草风",
       "productName": "紫水晶手串",
       "styleName": "小红书种草风",
-      "image": "/crystals/amethyst-placeholder.svg",
-      "coverImage": "/crystals/amethyst-placeholder.svg",
+      "image": "/crystals/generated/amethyst-lifestyle.png",
+      "coverImage": "/crystals/generated/amethyst-lifestyle.png",
       "galleryImages": [
-        "/crystals/amethyst-placeholder.svg"
+        "/crystals/generated/amethyst-lifestyle.png"
       ],
       "summary": "用浅色桌面、香薰和花瓣营造温柔、疗愈、适合分享的日常佩戴氛围。",
       "tags": [
@@ -275,10 +275,10 @@
       "title": "紫水晶电商白底风",
       "productName": "紫水晶手串",
       "styleName": "电商白底风",
-      "image": "/crystals/amethyst-placeholder.svg",
-      "coverImage": "/crystals/amethyst-placeholder.svg",
+      "image": "/crystals/generated/amethyst-ecommerce.png",
+      "coverImage": "/crystals/generated/amethyst-ecommerce.png",
       "galleryImages": [
-        "/crystals/amethyst-placeholder.svg"
+        "/crystals/generated/amethyst-ecommerce.png"
       ],
       "summary": "用纯净白底清楚展示紫色晶体、珠体排列和完整商品结构。",
       "tags": [
@@ -302,10 +302,10 @@
       "title": "紫水晶礼赠场景风",
       "productName": "紫水晶手串",
       "styleName": "礼赠场景风",
-      "image": "/crystals/amethyst-placeholder.svg",
-      "coverImage": "/crystals/amethyst-placeholder.svg",
+      "image": "/crystals/generated/amethyst-gift.png",
+      "coverImage": "/crystals/generated/amethyst-gift.png",
       "galleryImages": [
-        "/crystals/amethyst-placeholder.svg"
+        "/crystals/generated/amethyst-gift.png"
       ],
       "summary": "以浅紫礼盒、丝带和柔和花材表现疗愈礼物与纪念日赠礼价值。",
       "tags": [
@@ -329,10 +329,10 @@
       "title": "黄水晶奢侈品广告风",
       "productName": "黄水晶手串",
       "styleName": "奢侈品广告风",
-      "image": "/crystals/citrine-placeholder.svg",
-      "coverImage": "/crystals/citrine-placeholder.svg",
+      "image": "/crystals/generated/citrine-luxury.png",
+      "coverImage": "/crystals/generated/citrine-luxury.png",
       "galleryImages": [
-        "/crystals/citrine-placeholder.svg"
+        "/crystals/generated/citrine-luxury.png"
       ],
       "summary": "以香槟金背景、暖调高光和高级静物构图表现黄水晶的明亮价值感。",
       "tags": [
@@ -356,10 +356,10 @@
       "title": "黄水晶小红书种草风",
       "productName": "黄水晶手串",
       "styleName": "小红书种草风",
-      "image": "/crystals/citrine-placeholder.svg",
-      "coverImage": "/crystals/citrine-placeholder.svg",
+      "image": "/crystals/generated/citrine-lifestyle.png",
+      "coverImage": "/crystals/generated/citrine-lifestyle.png",
       "galleryImages": [
-        "/crystals/citrine-placeholder.svg"
+        "/crystals/generated/citrine-lifestyle.png"
       ],
       "summary": "以咖啡、阳光和浅木桌面营造温暖、开运、适合日常分享的种草氛围。",
       "tags": [
@@ -383,10 +383,10 @@
       "title": "黄水晶电商白底风",
       "productName": "黄水晶手串",
       "styleName": "电商白底风",
-      "image": "/crystals/citrine-placeholder.svg",
-      "coverImage": "/crystals/citrine-placeholder.svg",
+      "image": "/crystals/generated/citrine-ecommerce.png",
+      "coverImage": "/crystals/generated/citrine-ecommerce.png",
       "galleryImages": [
-        "/crystals/citrine-placeholder.svg"
+        "/crystals/generated/citrine-ecommerce.png"
       ],
       "summary": "用标准白底清楚呈现金黄色珠体、成色差异和完整商品结构。",
       "tags": [
@@ -410,10 +410,10 @@
       "title": "黄水晶礼赠场景风",
       "productName": "黄水晶手串",
       "styleName": "礼赠场景风",
-      "image": "/crystals/citrine-placeholder.svg",
-      "coverImage": "/crystals/citrine-placeholder.svg",
+      "image": "/crystals/generated/citrine-gift.png",
+      "coverImage": "/crystals/generated/citrine-gift.png",
       "galleryImages": [
-        "/crystals/citrine-placeholder.svg"
+        "/crystals/generated/citrine-gift.png"
       ],
       "summary": "以暖金礼盒、节日纸品和柔和光线表现开运礼物与节日送礼价值。",
       "tags": [
@@ -437,10 +437,10 @@
       "title": "黑曜石奢侈品广告风",
       "productName": "黑曜石手串",
       "styleName": "奢侈品广告风",
-      "image": "/crystals/obsidian-placeholder.svg",
-      "coverImage": "/crystals/obsidian-placeholder.svg",
+      "image": "/crystals/generated/obsidian-luxury.png",
+      "coverImage": "/crystals/generated/obsidian-luxury.png",
       "galleryImages": [
-        "/crystals/obsidian-placeholder.svg"
+        "/crystals/generated/obsidian-luxury.png"
       ],
       "summary": "用黑色镜面、硬朗边缘光和低调奢华构图表现黑曜石的力量感。",
       "tags": [
@@ -464,10 +464,10 @@
       "title": "黑曜石小红书种草风",
       "productName": "黑曜石手串",
       "styleName": "小红书种草风",
-      "image": "/crystals/obsidian-placeholder.svg",
-      "coverImage": "/crystals/obsidian-placeholder.svg",
+      "image": "/crystals/generated/obsidian-lifestyle.png",
+      "coverImage": "/crystals/generated/obsidian-lifestyle.png",
       "galleryImages": [
-        "/crystals/obsidian-placeholder.svg"
+        "/crystals/generated/obsidian-lifestyle.png"
       ],
       "summary": "以深色桌面、皮革本和自然侧光营造克制、日常、可佩戴的种草氛围。",
       "tags": [
@@ -491,10 +491,10 @@
       "title": "黑曜石电商白底风",
       "productName": "黑曜石手串",
       "styleName": "电商白底风",
-      "image": "/crystals/obsidian-placeholder.svg",
-      "coverImage": "/crystals/obsidian-placeholder.svg",
+      "image": "/crystals/generated/obsidian-ecommerce.png",
+      "coverImage": "/crystals/generated/obsidian-ecommerce.png",
       "galleryImages": [
-        "/crystals/obsidian-placeholder.svg"
+        "/crystals/generated/obsidian-ecommerce.png"
       ],
       "summary": "用干净白底和可控反射，让黑色珠体结构、光泽和尺寸一眼可读。",
       "tags": [
@@ -518,10 +518,10 @@
       "title": "黑曜石礼赠场景风",
       "productName": "黑曜石手串",
       "styleName": "礼赠场景风",
-      "image": "/crystals/obsidian-placeholder.svg",
-      "coverImage": "/crystals/obsidian-placeholder.svg",
+      "image": "/crystals/generated/obsidian-gift.png",
+      "coverImage": "/crystals/generated/obsidian-gift.png",
       "galleryImages": [
-        "/crystals/obsidian-placeholder.svg"
+        "/crystals/generated/obsidian-gift.png"
       ],
       "summary": "以深色礼盒、皮革纹理和克制光线表现男士礼物与守护寓意。",
       "tags": [
