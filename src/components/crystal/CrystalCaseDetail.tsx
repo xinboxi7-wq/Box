@@ -1,10 +1,12 @@
 "use client";
 
 import { useCallback, useMemo, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, Copy, Sparkles, Star } from "lucide-react";
 import { Toast, type ToastState } from "@/components/studio/Toast";
 import { copyToClipboard } from "@/lib/clipboard";
+import { replaceCrystalMaterialTerms } from "@/lib/crystal-prompt-customization";
 import { buildCrystalPromptSet, supportedModelLabels } from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
 import { useCrystalFavorites } from "./useCrystalFavorites";
@@ -28,34 +30,46 @@ export function CrystalCaseDetail({
   const { favoriteSet, toggleFavorite } = useCrystalFavorites();
   const favorite = favoriteSet.has(caseItem.id);
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [customMaterial, setCustomMaterial] = useState("");
   const [toast, setToast] = useState<ToastState>(null);
   const promptSet = useMemo(() => buildCrystalPromptSet(caseItem), [caseItem]);
   const coverImage = caseItem.coverImage || caseItem.image;
   const galleryImages =
     caseItem.galleryImages.length > 0 ? caseItem.galleryImages : [coverImage];
+  const normalizedCustomMaterial = customMaterial.trim();
+  const customizePrompt = useCallback(
+    (value: string) =>
+      replaceCrystalMaterialTerms(
+        value,
+        normalizedCustomMaterial,
+        product,
+        caseItem
+      ),
+    [caseItem, normalizedCustomMaterial, product]
+  );
 
   const promptBlocks = useMemo<PromptBlockItem[]>(
     () => [
       {
-        id: "prompt-zh",
-        label: "中文 GPT Image Prompt",
-        helper: "适合直接用于 GPT Image，也可作为中文画面说明。",
-        value: promptSet.prompt
+        id: "gpt-image",
+        label: "GPT Image Prompt",
+        helper: "适合直接用于 GPT Image，材质词会按上方输入实时替换。",
+        value: customizePrompt(promptSet.prompt)
       },
       {
-        id: "prompt-en",
-        label: "English GPT Image Prompt",
-        helper: "适合英文模型环境，保持构图、材质和灯光要求完整。",
-        value: promptSet.promptEn
+        id: "midjourney",
+        label: "Midjourney Prompt",
+        helper: "适合 Midjourney，保留英文商业摄影描述与结构约束。",
+        value: customizePrompt(`${promptSet.promptEn} --style raw --ar 4:5`)
       },
       {
-        id: "negative",
-        label: "Negative Prompt",
-        helper: "用于减少低质感、结构错误、文字水印和杂乱背景。",
-        value: promptSet.negativePrompt
+        id: "flux",
+        label: "Flux Prompt",
+        helper: "适合 Flux 的自然语言描述，强调真实材质、透视和商业摄影表达。",
+        value: customizePrompt(promptSet.promptEn)
       }
     ],
-    [promptSet.negativePrompt, promptSet.prompt, promptSet.promptEn]
+    [customizePrompt, promptSet.prompt, promptSet.promptEn]
   );
 
   const showToast = useCallback((message: string, tone: "success" | "error") => {
@@ -103,16 +117,19 @@ export function CrystalCaseDetail({
           </Link>
         </div>
 
-        <article className="mt-6 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-soft-panel">
+        <article className="mt-5 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-soft-panel sm:mt-6">
           <div className="grid gap-0 lg:grid-cols-[1.04fr_0.96fr]">
             <div className="bg-neutral-100">
-              <img
+              <Image
                 src={coverImage}
                 alt={caseItem.title}
+                width={1200}
+                height={900}
+                priority
                 className="aspect-[4/3] h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col justify-center p-5 sm:p-6">
+            <div className="flex flex-col justify-center p-4 sm:p-6">
               <div className="mb-4 flex flex-wrap gap-2">
                 <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">
                   {product.name}
@@ -122,10 +139,10 @@ export function CrystalCaseDetail({
                 </span>
               </div>
 
-              <h1 className="text-3xl font-semibold tracking-tight text-neutral-950 sm:text-5xl">
+              <h1 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
                 {caseItem.title}
               </h1>
-              <p className="mt-4 text-base leading-8 text-neutral-600">
+              <p className="mt-4 text-sm leading-7 text-neutral-600 sm:text-base sm:leading-8">
                 {caseItem.summary}
               </p>
 
@@ -157,29 +174,41 @@ export function CrystalCaseDetail({
                 </div>
               </div>
 
-              <button
-                type="button"
-                onClick={() => toggleFavorite(caseItem.id)}
-                className={`mt-6 inline-flex h-11 w-fit items-center gap-2 rounded-full px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 ${
-                  favorite
-                    ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
-                    : "bg-neutral-950 text-white hover:bg-neutral-800"
-                }`}
-              >
-                <Star
-                  className="h-4 w-4"
-                  fill={favorite ? "currentColor" : "none"}
-                  aria-hidden="true"
-                />
-                {favorite ? "已收藏" : "收藏案例"}
-              </button>
+              <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+                <button
+                  type="button"
+                  onClick={() => toggleFavorite(caseItem.id)}
+                  className={`inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-fit ${
+                    favorite
+                      ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
+                      : "bg-neutral-950 text-white hover:bg-neutral-800"
+                  }`}
+                >
+                  <Star
+                    className="h-4 w-4"
+                    fill={favorite ? "currentColor" : "none"}
+                    aria-hidden="true"
+                  />
+                  {favorite ? "已收藏" : "收藏案例"}
+                </button>
+                <Link
+                  href="#prompts"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-fit"
+                >
+                  <Copy className="h-4 w-4" aria-hidden="true" />
+                  复制 Prompt
+                </Link>
+              </div>
             </div>
           </div>
         </article>
       </section>
 
       <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pb-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
-        <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5">
+        <div
+          id="prompts"
+          className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5"
+        >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <div className="text-sm font-semibold text-neutral-950">
@@ -202,12 +231,32 @@ export function CrystalCaseDetail({
           </div>
 
           <div className="mt-4 grid gap-3">
+            <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-white to-teal-50/60 p-3 shadow-sm">
+              <label
+                htmlFor="custom-material"
+                className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-teal-800"
+              >
+                动态替换材质
+              </label>
+              <input
+                id="custom-material"
+                value={customMaterial}
+                onChange={(event) => setCustomMaterial(event.target.value)}
+                placeholder="输入其他材质（如：粉水晶）自定义提示词"
+                className="h-12 w-full rounded-full border border-teal-200 bg-white px-4 text-sm font-medium text-neutral-950 shadow-inner outline-none transition placeholder:text-neutral-400 focus:border-teal-600 focus:ring-4 focus:ring-teal-100"
+              />
+              <p className="mt-2 text-xs leading-5 text-neutral-500">
+                输入后会实时替换下方 GPT Image、Midjourney 和 Flux
+                中的水晶材质词，复制时也会复制替换后的版本。
+              </p>
+            </div>
             {promptBlocks.map((block) => (
               <PromptBlock
                 key={block.id}
                 block={block}
                 copied={copiedId === block.id}
                 onCopy={handleCopyPrompt}
+                highlightTerm={normalizedCustomMaterial}
               />
             ))}
           </div>
@@ -238,11 +287,13 @@ export function CrystalCaseDetail({
 function PromptBlock({
   block,
   copied,
-  onCopy
+  onCopy,
+  highlightTerm
 }: {
   block: PromptBlockItem;
   copied: boolean;
   onCopy: (promptId: string, value: string) => void;
+  highlightTerm: string;
 }) {
   return (
     <section className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
@@ -269,10 +320,53 @@ function PromptBlock({
         </button>
       </div>
       <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-neutral-700">
-        {block.value}
+        <HighlightedPromptText value={block.value} term={highlightTerm} />
       </p>
     </section>
   );
+}
+
+function HighlightedPromptText({
+  value,
+  term
+}: {
+  value: string;
+  term: string;
+}) {
+  const normalizedTerm = term.trim();
+
+  if (!normalizedTerm) {
+    return value;
+  }
+
+  const parts = value.split(
+    new RegExp(`(${escapeRegExp(normalizedTerm)})`, containsCjk(normalizedTerm) ? "g" : "gi")
+  );
+
+  return (
+    <>
+      {parts.map((part, index) =>
+        part.toLowerCase() === normalizedTerm.toLowerCase() ? (
+          <mark
+            key={`${part}-${index}`}
+            className="rounded bg-amber-100 px-1 py-0.5 font-semibold text-amber-900"
+          >
+            {part}
+          </mark>
+        ) : (
+          <span key={`${part}-${index}`}>{part}</span>
+        )
+      )}
+    </>
+  );
+}
+
+function containsCjk(value: string) {
+  return /[\u3400-\u9fff]/.test(value);
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function GalleryBlock({
@@ -289,10 +383,12 @@ function GalleryBlock({
       <div className="text-sm font-semibold text-neutral-950">{title}</div>
       <div className="mt-3 grid gap-2">
         {images.map((image, index) => (
-          <img
+          <Image
             key={`${image}-${index}`}
             src={image}
             alt={`${alt} ${index + 1}`}
+            width={900}
+            height={675}
             className="aspect-[4/3] w-full rounded-md bg-neutral-100 object-cover"
           />
         ))}

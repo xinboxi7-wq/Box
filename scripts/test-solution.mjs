@@ -49,6 +49,10 @@ const {
   searchCrystalCases
 } = loadTsModule(path.join(projectRoot, "src", "lib", "crystal-cases.ts"));
 
+const { replaceCrystalMaterialTerms } = loadTsModule(
+  path.join(projectRoot, "src", "lib", "crystal-prompt-customization.ts")
+);
+
 const names = {
   blackRutilatedBracelet: "\u9ed1\u53d1\u6676\u624b\u4e32",
   walnutLoungeChair: "\u80e1\u6843\u6728\u4f11\u95f2\u6905",
@@ -138,6 +142,7 @@ function run() {
   assertStorageDeletionHelpers();
   assertCrystalCaseLibrary();
   assertBraceletRules();
+  assertCrystalMaterialCustomization();
   assertCrystalHomeSections();
   assertSupportedModels();
 
@@ -152,6 +157,7 @@ function run() {
   console.log("- storage helpers: delete single and clear all passed");
   console.log("- crystal case library: 3 products, 12 target cases, routes and search passed");
   console.log("- bracelet rules: structure stability and commercial photography logic passed");
+  console.log("- crystal prompt customization: material replacement passed");
   console.log("- crystal home sections: latest and popular slugs passed");
   console.log("- supported models: GPT Image, Midjourney, Flux passed");
 }
@@ -621,6 +627,75 @@ function assertBraceletRules() {
     assert(
       !containsChinese(prompts.negativePrompt),
       `${caseItem.slug}: negative prompt with bracelet rules should not contain CJK`
+    );
+  }
+}
+
+function assertCrystalMaterialCustomization() {
+  const customChineseMaterial = "粉水晶";
+  const customEnglishMaterial = "rose quartz";
+
+  for (const product of crystalProducts) {
+    const caseItem = getCrystalCaseBySlug(`${product.id}-luxury`);
+
+    assertObject(
+      caseItem,
+      `material customization: missing ${product.id}-luxury case`
+    );
+
+    const promptSet = buildCrystalPromptSet(caseItem);
+    const chinesePrompt = replaceCrystalMaterialTerms(
+      promptSet.prompt,
+      customChineseMaterial,
+      product,
+      caseItem
+    );
+    const englishPrompt = replaceCrystalMaterialTerms(
+      promptSet.promptEn,
+      customEnglishMaterial,
+      product,
+      caseItem
+    );
+    const midjourneyPrompt = replaceCrystalMaterialTerms(
+      `${promptSet.promptEn} --style raw --ar 4:5`,
+      customEnglishMaterial,
+      product,
+      caseItem
+    );
+    const defaultPrompt = replaceCrystalMaterialTerms(
+      promptSet.promptEn,
+      "",
+      product,
+      caseItem
+    );
+
+    assert(
+      chinesePrompt.includes(customChineseMaterial),
+      `${product.id}: Chinese prompt should include custom material`
+    );
+    assert(
+      !chinesePrompt.includes(product.name),
+      `${product.id}: Chinese prompt should replace default Chinese material`
+    );
+    assert(
+      englishPrompt.includes(customEnglishMaterial),
+      `${product.id}: English prompt should include custom material`
+    );
+    assert(
+      !new RegExp(`\\b${product.id}\\b`, "i").test(englishPrompt),
+      `${product.id}: English prompt should replace default English material`
+    );
+    assert(
+      midjourneyPrompt.includes("--style raw --ar 4:5"),
+      `${product.id}: Midjourney prompt should preserve platform suffix`
+    );
+    assert(
+      midjourneyPrompt.includes(customEnglishMaterial),
+      `${product.id}: Midjourney prompt should include custom material`
+    );
+    assert(
+      defaultPrompt === promptSet.promptEn,
+      `${product.id}: empty customization should preserve default prompt`
     );
   }
 }
