@@ -33,8 +33,15 @@ type CrystalCaseLibraryProps = {
   cases: CrystalCase[];
 };
 
+type CaseView = "all" | "latest" | "popular";
+
 const materialFilterProductIds = ["amethyst", "citrine", "obsidian"] as const;
 const allMaterialFilterId = "all";
+const caseViewOptions: Array<{ id: CaseView; label: string; description: string }> = [
+  { id: "all", label: "全部案例", description: "展示完整案例库" },
+  { id: "latest", label: "最新精选", description: "近期运营精选" },
+  { id: "popular", label: "推荐浏览", description: "适合新用户快速理解" }
+];
 
 export function CrystalCaseLibrary({
   products,
@@ -44,6 +51,7 @@ export function CrystalCaseLibrary({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMaterialFilter, setActiveMaterialFilter] =
     useState<string>(allMaterialFilterId);
+  const [activeCaseView, setActiveCaseView] = useState<CaseView>("all");
   const { favoriteIds, favoriteSet, toggleFavorite, clearFavorites } =
     useCrystalFavorites();
 
@@ -75,8 +83,19 @@ export function CrystalCaseLibrary({
       .map((productId) => productsById.get(productId))
       .filter(Boolean) as CrystalProduct[];
   }, [products]);
+  const caseViewCases = useMemo(() => {
+    if (activeCaseView === "latest") {
+      return latestCases;
+    }
+
+    if (activeCaseView === "popular") {
+      return popularCases;
+    }
+
+    return cases;
+  }, [activeCaseView, cases, latestCases, popularCases]);
   const visibleCases = useMemo(() => {
-    const searchedCases = searchCrystalCases(query, cases);
+    const searchedCases = searchCrystalCases(query, caseViewCases);
 
     if (activeMaterialFilter === allMaterialFilterId) {
       return searchedCases;
@@ -85,7 +104,7 @@ export function CrystalCaseLibrary({
     return searchedCases.filter(
       (caseItem) => caseItem.productId === activeMaterialFilter
     );
-  }, [activeMaterialFilter, cases, query]);
+  }, [activeMaterialFilter, caseViewCases, query]);
   const activeMaterialName = useMemo(() => {
     if (activeMaterialFilter === allMaterialFilterId) {
       return "全部";
@@ -96,6 +115,9 @@ export function CrystalCaseLibrary({
         ?.name ?? "全部"
     );
   }, [activeMaterialFilter, materialFilters]);
+  const activeCaseViewLabel =
+    caseViewOptions.find((option) => option.id === activeCaseView)?.label ??
+    "全部案例";
   const favoriteCases = useMemo(
     () => getFavoriteCrystalCases(favoriteIds),
     [favoriteIds]
@@ -111,6 +133,9 @@ export function CrystalCaseLibrary({
 
   return (
     <main className="min-h-screen text-neutral-950">
+      <a href="#cases" className="skip-link">
+        跳到全部商业案例
+      </a>
       <header className="sticky top-0 z-40 border-b border-black/5 bg-[#fbfaf7]/86 backdrop-blur-xl">
         <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
@@ -120,14 +145,17 @@ export function CrystalCaseLibrary({
             <span className="grid h-8 w-8 place-items-center rounded-full bg-neutral-950 text-white">
               <Gem className="h-4 w-4" aria-hidden="true" />
             </span>
-            Crystal Case Library
+            水晶手串案例库
           </Link>
 
-          <nav className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex">
-            <NavPill href="#cases">案例</NavPill>
-            <NavPill href="#products">材质</NavPill>
-            <NavPill href="#why">价值</NavPill>
-            <NavPill href="#favorites">收藏 {favoriteIds.length}</NavPill>
+          <nav
+            aria-label="浏览路径"
+            className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex"
+          >
+            <NavPill href="#cases">浏览案例</NavPill>
+            <NavPill href="#products">按材质选</NavPill>
+            <NavPill href="#why">为什么用</NavPill>
+            <NavPill href="#favorites">我的收藏 {favoriteIds.length}</NavPill>
           </nav>
 
           <button
@@ -153,13 +181,13 @@ export function CrystalCaseLibrary({
           }`}
         >
           <MobileNavLink href="#cases" onClick={() => setMobileMenuOpen(false)}>
-            全部案例
+            浏览全部案例
           </MobileNavLink>
           <MobileNavLink href="#products" onClick={() => setMobileMenuOpen(false)}>
-            产品材质
+            按材质选择
           </MobileNavLink>
           <MobileNavLink href="#why" onClick={() => setMobileMenuOpen(false)}>
-            使用价值
+            为什么使用
           </MobileNavLink>
           <MobileNavLink href="#favorites" onClick={() => setMobileMenuOpen(false)}>
             收藏案例 {favoriteIds.length}
@@ -175,8 +203,14 @@ export function CrystalCaseLibrary({
               水晶手串 AI 商业视觉案例库
             </div>
             <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-950 sm:text-6xl lg:text-7xl">
-              Crystal visual cases for commercial sellers.
+              水晶手串 AI 商业视觉案例库
             </h1>
+            <p
+              lang="en"
+              className="mt-4 max-w-xl text-sm font-medium leading-6 text-neutral-500 sm:text-base"
+            >
+              Crystal visual cases and reusable prompts for commercial sellers.
+            </p>
             <p className="mt-5 max-w-xl text-base leading-7 text-neutral-600">
               面向水晶商家、小红书卖家和电商运营，整理可直接复用的商品图、种草图、品牌广告图与礼赠场景 Prompt。
             </p>
@@ -191,16 +225,18 @@ export function CrystalCaseLibrary({
 
           <div className="mt-8 grid gap-3">
             <SearchBox query={query} onQueryChange={setQuery} />
-            <div className="flex flex-wrap gap-2">
-              {["可复制 Prompt", "可替换材质", "构图与灯光分析"].map((label) => (
-                <span
-                  key={label}
-                  className="rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
-                >
-                  {label}
-                </span>
-              ))}
-            </div>
+            <ol className="grid grid-cols-2 gap-2 text-xs font-semibold text-neutral-600 sm:grid-cols-4 lg:grid-cols-2">
+              {["选水晶材质", "挑商业风格", "打开案例", "复制 Prompt"].map(
+                (label, index) => (
+                  <li
+                    key={label}
+                    className="rounded-full border border-black/10 bg-white px-3 py-1.5"
+                  >
+                    {index + 1}. {label}
+                  </li>
+                )
+              )}
+            </ol>
           </div>
         </div>
 
@@ -214,63 +250,11 @@ export function CrystalCaseLibrary({
         ) : null}
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,0.8fr)]">
-          <section>
-            <SectionHeading eyebrow="Latest" title="最新精选案例" />
-            <div className="mt-4 grid gap-4 md:grid-cols-3">
-              {latestCases.map((caseItem) => {
-                const product = getCrystalProductById(caseItem.productId);
-
-                if (!product) {
-                  return null;
-                }
-
-                return (
-                  <CrystalCaseCard
-                    key={caseItem.id}
-                    caseItem={caseItem}
-                    product={product}
-                    favorite={favoriteSet.has(caseItem.id)}
-                    onToggleFavorite={toggleFavorite}
-                    variant="featured"
-                  />
-                );
-              })}
-            </div>
-          </section>
-
-          <section className="rounded-[1.5rem] border border-black/10 bg-white/70 p-3 shadow-sm">
-            <SectionHeading eyebrow="Popular" title="热门浏览" compact />
-            <div className="mt-3 grid gap-2">
-              {popularCases.map((caseItem) => {
-                const product = getCrystalProductById(caseItem.productId);
-
-                if (!product) {
-                  return null;
-                }
-
-                return (
-                  <CrystalCaseCard
-                    key={caseItem.id}
-                    caseItem={caseItem}
-                    product={product}
-                    favorite={favoriteSet.has(caseItem.id)}
-                    onToggleFavorite={toggleFavorite}
-                    variant="compact"
-                  />
-                );
-              })}
-            </div>
-          </section>
-        </div>
-      </section>
-
       <section
         id="products"
-        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
       >
-        <SectionHeading eyebrow="Materials" title="按水晶材质浏览" />
+        <SectionHeading eyebrow="按材质浏览" title="先选择水晶材质" />
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {products.map((product) => (
             <ProductCategoryCard
@@ -290,7 +274,7 @@ export function CrystalCaseLibrary({
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-200">
-                Why this library
+                为什么使用这个案例库
               </p>
               <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
                 不是关键词堆砌，而是可复用的商业视觉案例。
@@ -323,16 +307,31 @@ export function CrystalCaseLibrary({
       >
         <div className="mb-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <SectionHeading
-            eyebrow="All cases"
+            eyebrow="案例库"
             title={query ? "搜索结果" : "全部商业案例"}
-            description={`当前筛选：${activeMaterialName}，共 ${visibleCases.length} 个案例。`}
+            description={`${activeCaseViewLabel} · 当前材质：${activeMaterialName}，共 ${visibleCases.length} 个案例。`}
           />
           <div className="flex flex-wrap gap-1.5 lg:justify-end">
             <ModelBadges />
           </div>
         </div>
 
-        <div className="mb-5 overflow-x-auto pb-1">
+        <div className="mb-4 overflow-x-auto pb-1">
+          <div className="flex min-w-max gap-2 sm:min-w-0 sm:flex-wrap">
+            {caseViewOptions.map((option) => (
+              <CaseViewButton
+                key={option.id}
+                active={activeCaseView === option.id}
+                description={option.description}
+                onClick={() => setActiveCaseView(option.id)}
+              >
+                {option.label}
+              </CaseViewButton>
+            ))}
+          </div>
+        </div>
+
+        <div className="sticky top-16 z-20 mb-5 -mx-4 overflow-x-auto border-y border-black/5 bg-[#fbfaf7]/92 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
           <div className="flex min-w-max gap-2 sm:min-w-0 sm:flex-wrap">
             <MaterialFilterButton
               active={activeMaterialFilter === allMaterialFilterId}
@@ -501,7 +500,8 @@ function HeroCase({
         <button
           type="button"
           onClick={() => onToggleFavorite(caseItem.id)}
-          aria-label={favorite ? "取消收藏案例" : "收藏案例"}
+          aria-pressed={favorite}
+          aria-label={favorite ? `已收藏 ${caseItem.title}，点击取消收藏` : `收藏 ${caseItem.title}`}
           className="grid h-10 w-10 place-items-center rounded-full bg-white/90 text-neutral-900 shadow-sm backdrop-blur transition hover:bg-white hover:text-amber-600"
         >
           <Star
@@ -512,8 +512,8 @@ function HeroCase({
         </button>
       </div>
       <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/60">
-          Featured commercial case
+        <p className="text-xs font-semibold tracking-[0.18em] text-white/64">
+          精选商业案例
         </p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
           {caseItem.title}
@@ -523,9 +523,10 @@ function HeroCase({
         </p>
         <Link
           href={`/case/${caseItem.slug}`}
+          aria-label={`查看 ${caseItem.title} 的完整 Prompt 和视觉分析`}
           className="mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-100"
         >
-          查看案例
+          查看完整 Prompt
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>
@@ -569,6 +570,34 @@ function MaterialFilterButton({
   );
 }
 
+function CaseViewButton({
+  active,
+  children,
+  description,
+  onClick
+}: {
+  active: boolean;
+  children: ReactNode;
+  description: string;
+  onClick: () => void;
+}) {
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      title={description}
+      className={`inline-flex h-10 items-center rounded-full border px-4 text-sm font-semibold transition ${
+        active
+          ? "border-teal-800 bg-teal-800 text-white shadow-sm"
+          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
 function HeroMetric({ value, label }: { value: string; label: string }) {
   return (
     <div className="rounded-2xl border border-black/10 bg-white/86 px-4 py-3 shadow-sm">
@@ -593,7 +622,7 @@ function SectionHeading({
 }) {
   return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+      <p className="text-xs font-semibold tracking-[0.18em] text-teal-700">
         {eyebrow}
       </p>
       <h2

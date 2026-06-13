@@ -116,8 +116,8 @@ export function applyBraceletRules(caseItem: CrystalCase): CrystalCase {
 export function buildCrystalPromptSet(caseItem: CrystalCase) {
   if (hasAppliedBraceletRules(caseItem)) {
     return {
-      prompt: caseItem.prompt,
-      promptEn: caseItem.promptEn,
+      prompt: sanitizePositivePromptText(caseItem.prompt),
+      promptEn: sanitizePositivePromptText(caseItem.promptEn),
       negativePrompt: caseItem.negativePrompt
     };
   }
@@ -224,7 +224,8 @@ function sanitizePositivePromptText(value: string) {
     .replace(/metal spacers/gi, "bead-edge highlights")
     .replace(/metal spacer/gi, "bead-edge")
     .replace(/spacer details/gi, "bead details")
-    .replace(/spacer structure/gi, "bead structure");
+    .replace(/spacer structure/gi, "bead structure")
+    .replace(/\ban citrine bracelet\b/gi, "a citrine bracelet");
 }
 
 function normalizeSearchText(value: string) {

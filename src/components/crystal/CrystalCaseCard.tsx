@@ -29,6 +29,7 @@ export function CrystalCaseCard({
       <article className="group grid gap-3 rounded-2xl border border-black/10 bg-[#fbfaf7] p-2.5 shadow-sm transition hover:border-black/20 hover:shadow-[0_16px_50px_rgba(23,23,23,0.12)] sm:grid-cols-[8rem_minmax(0,1fr)]">
         <Link
           href={`/case/${caseItem.slug}`}
+          aria-label={`查看 ${caseItem.title} 的完整案例`}
           className="relative aspect-[4/3] overflow-hidden rounded-xl bg-neutral-100 sm:aspect-auto sm:h-28"
         >
           <Image
@@ -48,6 +49,7 @@ export function CrystalCaseCard({
                 </div>
                 <Link
                   href={`/case/${caseItem.slug}`}
+                  aria-label={`查看 ${caseItem.title} 的完整案例`}
                   className="mt-1 line-clamp-2 text-sm font-semibold leading-5 tracking-[-0.01em] text-neutral-950 transition hover:text-teal-800"
                 >
                   {caseItem.title}
@@ -79,6 +81,7 @@ export function CrystalCaseCard({
       >
         <Link
           href={`/case/${caseItem.slug}`}
+          aria-label={`查看 ${caseItem.title} 的完整案例`}
           className="block h-full w-full focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
         >
           <Image
@@ -127,6 +130,7 @@ export function CrystalCaseCard({
 
         <Link
           href={`/case/${caseItem.slug}`}
+          aria-label={`查看 ${caseItem.title} 的完整案例`}
           className={`block font-semibold tracking-[-0.02em] text-neutral-950 transition hover:text-teal-800 ${
             featured ? "text-xl leading-tight" : "text-lg leading-tight"
           }`}
@@ -146,9 +150,10 @@ export function CrystalCaseCard({
 
         <Link
           href={`/case/${caseItem.slug}`}
+          aria-label={`查看 ${caseItem.title} 的完整 Prompt 和视觉分析`}
           className="mt-4 inline-flex h-10 items-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-semibold text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
         >
-          查看案例
+          查看 Prompt 与分析
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </div>
@@ -169,7 +174,8 @@ function FavoriteButton({
     <button
       type="button"
       onClick={onClick}
-      aria-label={favorite ? "取消收藏案例" : "收藏案例"}
+      aria-pressed={favorite}
+      aria-label={favorite ? "已收藏，点击取消收藏" : "收藏这个案例"}
       className={`grid place-items-center rounded-full border border-white/70 bg-white/90 text-neutral-800 shadow-sm backdrop-blur transition hover:bg-white hover:text-amber-600 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 ${
         size === "sm" ? "h-8 w-8" : "h-10 w-10"
       }`}

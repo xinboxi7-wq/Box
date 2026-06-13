@@ -104,8 +104,8 @@ export function CrystalProductPage({
       >
         <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
-              Product cases
+            <p className="text-xs font-semibold tracking-[0.18em] text-teal-700">
+              材质案例
             </p>
             <h2 className="mt-2 text-3xl font-semibold tracking-[-0.03em] text-neutral-950">
               {product.name}的商业视觉案例

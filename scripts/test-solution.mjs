@@ -607,6 +607,10 @@ function assertBraceletRules() {
       prompts.promptEn.toLowerCase().includes("show only one bracelet"),
       `${caseItem.slug}: English prompt should include single-bracelet quality control`
     );
+    assert(
+      !/\ban citrine bracelet\b/i.test(prompts.promptEn),
+      `${caseItem.slug}: English prompt should not use "an citrine bracelet"`
+    );
     assertNoPromptHeadingTerms(prompts.prompt, `${caseItem.slug}: Chinese prompt`);
     assertNoPromptHeadingTerms(prompts.promptEn, `${caseItem.slug}: English prompt`);
     assertNoExactBeadCountTerms(prompts.prompt, `${caseItem.slug}: Chinese prompt`);

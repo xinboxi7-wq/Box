@@ -15,7 +15,11 @@ import {
 import { Toast, type ToastState } from "@/components/studio/Toast";
 import { copyToClipboard } from "@/lib/clipboard";
 import { replaceCrystalMaterialTerms } from "@/lib/crystal-prompt-customization";
-import { buildCrystalPromptSet, supportedModelLabels } from "@/lib/crystal-cases";
+import {
+  buildCrystalPromptSet,
+  getCrystalCasesByProduct,
+  supportedModelLabels
+} from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
 import { useCrystalFavorites } from "./useCrystalFavorites";
 
@@ -44,6 +48,13 @@ export function CrystalCaseDetail({
   const coverImage = caseItem.coverImage || caseItem.image;
   const galleryImages =
     caseItem.galleryImages.length > 0 ? caseItem.galleryImages : [coverImage];
+  const relatedCases = useMemo(
+    () =>
+      getCrystalCasesByProduct(product.id)
+        .filter((relatedCase) => relatedCase.id !== caseItem.id)
+        .slice(0, 3),
+    [caseItem.id, product.id]
+  );
   const normalizedCustomMaterial = customMaterial.trim();
   const customizePrompt = useCallback(
     (value: string) =>
@@ -187,6 +198,12 @@ export function CrystalCaseDetail({
                 <button
                   type="button"
                   onClick={() => toggleFavorite(caseItem.id)}
+                  aria-pressed={favorite}
+                  aria-label={
+                    favorite
+                      ? `已收藏 ${caseItem.title}，点击取消收藏`
+                      : `收藏 ${caseItem.title}`
+                  }
                   className={`inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition sm:w-fit ${
                     favorite
                       ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
@@ -202,10 +219,11 @@ export function CrystalCaseDetail({
                 </button>
                 <Link
                   href="#prompts"
+                  aria-label={`跳到 ${caseItem.title} 的 Prompt 复制区域`}
                   className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-50 hover:text-neutral-950 sm:w-fit"
                 >
                   <Copy className="h-4 w-4" aria-hidden="true" />
-                  复制 Prompt
+                  复制模型 Prompt
                 </Link>
               </div>
             </div>
@@ -221,7 +239,7 @@ export function CrystalCaseDetail({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
-                Prompt studio
+                Prompt 工作台
               </p>
               <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-neutral-950">
                 Prompt 展示与复制
@@ -296,6 +314,62 @@ export function CrystalCaseDetail({
           />
         </div>
       </section>
+
+      <section
+        aria-labelledby="related-cases-title"
+        className="mx-auto w-full max-w-7xl px-4 pb-14 sm:px-6 lg:px-8"
+      >
+        <div className="rounded-[2rem] border border-black/10 bg-[#fbfaf7] p-5 shadow-sm sm:p-6">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <p className="text-xs font-semibold tracking-[0.18em] text-teal-700">
+                继续浏览
+              </p>
+              <h2
+                id="related-cases-title"
+                className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-neutral-950"
+              >
+                更多{product.name}商业视觉案例
+              </h2>
+            </div>
+            <Link
+              href={`/products/${product.slug}`}
+              className="inline-flex h-10 w-fit items-center rounded-full bg-neutral-950 px-4 text-sm font-semibold text-white transition hover:bg-neutral-800"
+            >
+              查看该材质全部案例
+            </Link>
+          </div>
+
+          <div className="mt-5 grid gap-3 md:grid-cols-3">
+            {relatedCases.map((relatedCase) => (
+              <Link
+                key={relatedCase.id}
+                href={`/case/${relatedCase.slug}`}
+                className="group overflow-hidden rounded-[1.25rem] border border-black/10 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-[0_16px_50px_rgba(23,23,23,0.12)]"
+                aria-label={`继续查看 ${relatedCase.title}`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
+                  <Image
+                    src={relatedCase.coverImage || relatedCase.image}
+                    alt={relatedCase.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                    className="object-cover transition duration-700 group-hover:scale-[1.04]"
+                  />
+                </div>
+                <div className="p-4">
+                  <div className="text-xs font-semibold text-teal-700">
+                    {relatedCase.styleName}
+                  </div>
+                  <div className="mt-1 line-clamp-2 text-sm font-semibold leading-5 text-neutral-950">
+                    {relatedCase.title}
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
       <Toast toast={toast} />
     </main>
   );
@@ -326,6 +400,8 @@ function PromptBlock({
         <button
           type="button"
           onClick={() => onCopy(block.id, block.value)}
+          aria-describedby={`${block.id}-copy-status`}
+          aria-label={`复制 ${block.label}`}
           className="inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-3 text-xs font-semibold text-white transition hover:bg-neutral-800 sm:w-auto"
         >
           {copied ? (
@@ -333,9 +409,12 @@ function PromptBlock({
           ) : (
             <Copy className="h-3.5 w-3.5" aria-hidden="true" />
           )}
-          {copied ? "已复制" : "复制"}
+          {copied ? "已复制" : `复制 ${block.label}`}
         </button>
       </div>
+      <span id={`${block.id}-copy-status`} role="status" aria-live="polite" className="sr-only">
+        {copied ? `${block.label} 已复制到剪贴板` : ""}
+      </span>
       <p className="mt-4 max-h-[24rem] overflow-auto whitespace-pre-wrap rounded-2xl bg-neutral-100/70 p-4 text-sm leading-7 text-neutral-700">
         <HighlightedPromptText value={block.value} term={highlightTerm} />
       </p>

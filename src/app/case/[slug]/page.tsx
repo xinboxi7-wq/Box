@@ -7,6 +7,8 @@ import {
   getCrystalProductById
 } from "@/lib/crystal-cases";
 
+const siteUrl = "https://box-cyan-one.vercel.app";
+
 type CasePageProps = {
   params: Promise<{
     slug: string;
@@ -33,7 +35,22 @@ export async function generateMetadata({
 
   return {
     title: `${caseItem.title} - 水晶手串 AI 商业视觉案例库`,
-    description: caseItem.summary
+    description: caseItem.summary,
+    alternates: {
+      canonical: `/case/${caseItem.slug}`
+    },
+    openGraph: {
+      title: `${caseItem.title} - 水晶手串 AI 商业视觉案例库`,
+      description: caseItem.summary,
+      url: `${siteUrl}/case/${caseItem.slug}`,
+      type: "article",
+      images: [
+        {
+          url: caseItem.coverImage || caseItem.image,
+          alt: caseItem.title
+        }
+      ]
+    }
   };
 }
 
@@ -51,5 +68,38 @@ export default async function CasePage({ params }: CasePageProps) {
     notFound();
   }
 
-  return <CrystalCaseDetail caseItem={caseItem} product={product} />;
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "案例库",
+        item: siteUrl
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: product.name,
+        item: `${siteUrl}/products/${product.slug}`
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: caseItem.title,
+        item: `${siteUrl}/case/${caseItem.slug}`
+      }
+    ]
+  };
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <CrystalCaseDetail caseItem={caseItem} product={product} />
+    </>
+  );
 }
