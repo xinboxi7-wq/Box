@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useCallback, useMemo, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
   Check,
@@ -13,6 +13,7 @@ import {
   Star
 } from "lucide-react";
 import { Toast, type ToastState } from "@/components/studio/Toast";
+import { track } from "@/lib/analytics";
 import { copyToClipboard } from "@/lib/clipboard";
 import { replaceCrystalMaterialTerms } from "@/lib/crystal-prompt-customization";
 import {
@@ -67,6 +68,31 @@ export function CrystalCaseDetail({
     [caseItem, normalizedCustomMaterial, product]
   );
 
+  useEffect(() => {
+    track("case_view", {
+      case_id: caseItem.id,
+      case_slug: caseItem.slug,
+      product_id: product.id,
+      style_id: caseItem.styleId
+    });
+  }, [caseItem.id, caseItem.slug, caseItem.styleId, product.id]);
+
+  useEffect(() => {
+    if (!normalizedCustomMaterial) {
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      track("material_replace", {
+        case_slug: caseItem.slug,
+        product_id: product.id,
+        material: normalizedCustomMaterial
+      });
+    }, 600);
+
+    return () => window.clearTimeout(timer);
+  }, [caseItem.slug, normalizedCustomMaterial, product.id]);
+
   const promptBlocks = useMemo<PromptBlockItem[]>(
     () => [
       {
@@ -109,13 +135,29 @@ export function CrystalCaseDetail({
       }
 
       setCopiedId(promptId);
+      track("prompt_copy", {
+        case_id: caseItem.id,
+        case_slug: caseItem.slug,
+        product_id: product.id,
+        model: promptId,
+        custom_material: normalizedCustomMaterial || null
+      });
       showToast("已复制到剪贴板", "success");
       window.setTimeout(() => {
         setCopiedId((current) => (current === promptId ? null : current));
       }, 1600);
     },
-    [showToast]
+    [caseItem.id, caseItem.slug, normalizedCustomMaterial, product.id, showToast]
   );
+  const handleToggleFavorite = () => {
+    toggleFavorite(caseItem.id);
+    track("favorite_toggle", {
+      case_id: caseItem.id,
+      case_slug: caseItem.slug,
+      action: favorite ? "remove" : "add",
+      source: "case_detail"
+    });
+  };
 
   return (
     <main className="min-h-screen text-neutral-950">
@@ -197,7 +239,7 @@ export function CrystalCaseDetail({
               <div className="mt-8 flex flex-col gap-2 sm:flex-row">
                 <button
                   type="button"
-                  onClick={() => toggleFavorite(caseItem.id)}
+                  onClick={handleToggleFavorite}
                   aria-pressed={favorite}
                   aria-label={
                     favorite

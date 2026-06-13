@@ -14,6 +14,7 @@ import {
   Star,
   X
 } from "lucide-react";
+import { track } from "@/lib/analytics";
 import {
   getCrystalCasesBySlugs,
   getCrystalProductById,
@@ -130,6 +131,40 @@ export function CrystalCaseLibrary({
       clearFavorites();
     }
   };
+  const handleQuerySubmit = (submittedQuery: string) => {
+    track("search_submit", {
+      query: submittedQuery.trim(),
+      result_count: visibleCases.length
+    });
+  };
+  const handleMaterialFilterChange = (productId: string) => {
+    setActiveMaterialFilter(productId);
+    track("filter_apply", {
+      filter_type: "material",
+      value: productId,
+      view: activeCaseView
+    });
+  };
+  const handleCaseViewChange = (view: CaseView) => {
+    setActiveCaseView(view);
+    track("filter_apply", {
+      filter_type: "case_view",
+      value: view,
+      material: activeMaterialFilter
+    });
+  };
+  const handleToggleFavorite = (caseId: string, source: string) => {
+    const caseItem = cases.find((item) => item.id === caseId);
+    const willFavorite = !favoriteSet.has(caseId);
+
+    toggleFavorite(caseId);
+    track("favorite_toggle", {
+      case_id: caseId,
+      case_slug: caseItem?.slug,
+      action: willFavorite ? "add" : "remove",
+      source
+    });
+  };
 
   return (
     <main className="min-h-screen text-neutral-950">
@@ -224,7 +259,11 @@ export function CrystalCaseLibrary({
           </div>
 
           <div className="mt-8 grid gap-3">
-            <SearchBox query={query} onQueryChange={setQuery} />
+            <SearchBox
+              query={query}
+              onQueryChange={setQuery}
+              onQuerySubmit={handleQuerySubmit}
+            />
             <ol className="grid grid-cols-2 gap-2 text-xs font-semibold text-neutral-600 sm:grid-cols-4 lg:grid-cols-2">
               {["选水晶材质", "挑商业风格", "打开案例", "复制 Prompt"].map(
                 (label, index) => (
@@ -245,7 +284,7 @@ export function CrystalCaseLibrary({
             caseItem={heroCase}
             product={heroProduct}
             favorite={favoriteSet.has(heroCase.id)}
-            onToggleFavorite={toggleFavorite}
+            onToggleFavorite={(caseId) => handleToggleFavorite(caseId, "hero")}
           />
         ) : null}
       </section>
@@ -323,7 +362,7 @@ export function CrystalCaseLibrary({
                 key={option.id}
                 active={activeCaseView === option.id}
                 description={option.description}
-                onClick={() => setActiveCaseView(option.id)}
+                onClick={() => handleCaseViewChange(option.id)}
               >
                 {option.label}
               </CaseViewButton>
@@ -336,7 +375,7 @@ export function CrystalCaseLibrary({
             <MaterialFilterButton
               active={activeMaterialFilter === allMaterialFilterId}
               count={cases.length}
-              onClick={() => setActiveMaterialFilter(allMaterialFilterId)}
+              onClick={() => handleMaterialFilterChange(allMaterialFilterId)}
             >
               全部
             </MaterialFilterButton>
@@ -345,7 +384,7 @@ export function CrystalCaseLibrary({
                 key={product.id}
                 active={activeMaterialFilter === product.id}
                 count={productCaseCounts.get(product.id) ?? 0}
-                onClick={() => setActiveMaterialFilter(product.id)}
+                onClick={() => handleMaterialFilterChange(product.id)}
               >
                 {product.name}
               </MaterialFilterButton>
@@ -358,6 +397,9 @@ export function CrystalCaseLibrary({
               更多材质敬请期待...
             </button>
           </div>
+          <p className="mt-2 text-xs leading-5 text-neutral-500">
+            排序说明：最新精选与推荐浏览为运营编辑排序，暂不展示虚构浏览量或收藏量。
+          </p>
         </div>
 
         {visibleCases.length === 0 ? (
@@ -382,7 +424,9 @@ export function CrystalCaseLibrary({
                   caseItem={caseItem}
                   product={product}
                   favorite={favoriteSet.has(caseItem.id)}
-                  onToggleFavorite={toggleFavorite}
+                  onToggleFavorite={(caseId) =>
+                    handleToggleFavorite(caseId, "case_grid")
+                  }
                 />
               );
             })}
@@ -393,7 +437,7 @@ export function CrystalCaseLibrary({
       <section className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <CrystalFavoritePanel
           favoriteCases={favoriteCases}
-          onToggleFavorite={toggleFavorite}
+          onToggleFavorite={(caseId) => handleToggleFavorite(caseId, "favorites")}
           onClearFavorites={handleClearFavorites}
         />
       </section>
@@ -435,10 +479,12 @@ function MobileNavLink({
 
 function SearchBox({
   query,
-  onQueryChange
+  onQueryChange,
+  onQuerySubmit
 }: {
   query: string;
   onQueryChange: (value: string) => void;
+  onQuerySubmit: (value: string) => void;
 }) {
   return (
     <label className="flex h-12 items-center gap-3 rounded-full border border-black/10 bg-white px-4 shadow-sm">
@@ -447,13 +493,26 @@ function SearchBox({
       <input
         value={query}
         onChange={(event) => onQueryChange(event.target.value)}
+        onKeyDown={(event) => {
+          if (event.key === "Enter") {
+            onQuerySubmit(query);
+          }
+        }}
+        onBlur={() => {
+          if (query.trim()) {
+            onQuerySubmit(query);
+          }
+        }}
         placeholder="搜索紫水晶、白底、小红书、礼赠场景..."
         className="min-w-0 flex-1 bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400"
       />
       {query ? (
         <button
           type="button"
-          onClick={() => onQueryChange("")}
+          onClick={() => {
+            onQueryChange("");
+            onQuerySubmit("");
+          }}
           className="grid h-8 w-8 place-items-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-950"
           aria-label="清空搜索"
         >
