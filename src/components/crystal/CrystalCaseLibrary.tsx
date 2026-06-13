@@ -1,16 +1,16 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo, useState, type ReactNode } from "react";
 import Link from "next/link";
+import { useMemo, useState, type ReactNode } from "react";
 import {
   ArrowRight,
   BadgeCheck,
-  ClipboardCheck,
+  Bookmark,
   Gem,
-  Layers3,
   Menu,
   Search,
+  Sparkles,
   Star,
   X
 } from "lucide-react";
@@ -20,8 +20,8 @@ import {
   getFavoriteCrystalCases,
   latestCaseSlugs,
   popularCaseSlugs,
-  supportedModelLabels,
-  searchCrystalCases
+  searchCrystalCases,
+  supportedModelLabels
 } from "@/lib/crystal-cases";
 import type { CrystalCase, CrystalProduct } from "@/types/crystal";
 import { CrystalCaseCard } from "./CrystalCaseCard";
@@ -100,6 +100,8 @@ export function CrystalCaseLibrary({
     () => getFavoriteCrystalCases(favoriteIds),
     [favoriteIds]
   );
+  const heroCase = latestCases[0] ?? cases[0];
+  const heroProduct = heroCase ? getCrystalProductById(heroCase.productId) : null;
 
   const handleClearFavorites = () => {
     if (window.confirm("确定清空全部收藏案例吗？")) {
@@ -108,134 +110,115 @@ export function CrystalCaseLibrary({
   };
 
   return (
-    <main className="min-h-screen bg-[#F6F7F4] text-neutral-950">
-      <section className="mx-auto w-full max-w-7xl px-4 py-4 sm:px-6 lg:px-8">
-        <header className="grid gap-3 lg:grid-cols-[minmax(0,1fr)_minmax(24rem,0.56fr)] lg:items-end">
+    <main className="min-h-screen text-neutral-950">
+      <header className="sticky top-0 z-40 border-b border-black/5 bg-[#fbfaf7]/86 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <Link
+            href="/"
+            className="flex items-center gap-2 text-sm font-semibold tracking-tight text-neutral-950"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-neutral-950 text-white">
+              <Gem className="h-4 w-4" aria-hidden="true" />
+            </span>
+            Crystal Case Library
+          </Link>
+
+          <nav className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex">
+            <NavPill href="#cases">案例</NavPill>
+            <NavPill href="#products">材质</NavPill>
+            <NavPill href="#why">价值</NavPill>
+            <NavPill href="#favorites">收藏 {favoriteIds.length}</NavPill>
+          </nav>
+
+          <button
+            type="button"
+            onClick={() => setMobileMenuOpen((current) => !current)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-nav"
+            aria-label={mobileMenuOpen ? "关闭导航菜单" : "打开导航菜单"}
+            className="grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white/80 text-neutral-800 shadow-sm md:hidden"
+          >
+            {mobileMenuOpen ? (
+              <X className="h-4 w-4" aria-hidden="true" />
+            ) : (
+              <Menu className="h-4 w-4" aria-hidden="true" />
+            )}
+          </button>
+        </div>
+
+        <nav
+          id="mobile-nav"
+          className={`mx-4 mb-3 grid gap-1 rounded-2xl border border-black/10 bg-white p-2 shadow-xl md:hidden ${
+            mobileMenuOpen ? "grid" : "hidden"
+          }`}
+        >
+          <MobileNavLink href="#cases" onClick={() => setMobileMenuOpen(false)}>
+            全部案例
+          </MobileNavLink>
+          <MobileNavLink href="#products" onClick={() => setMobileMenuOpen(false)}>
+            产品材质
+          </MobileNavLink>
+          <MobileNavLink href="#why" onClick={() => setMobileMenuOpen(false)}>
+            使用价值
+          </MobileNavLink>
+          <MobileNavLink href="#favorites" onClick={() => setMobileMenuOpen(false)}>
+            收藏案例 {favoriteIds.length}
+          </MobileNavLink>
+        </nav>
+      </header>
+
+      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 pb-8 pt-6 sm:px-6 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:px-8 lg:pt-10">
+        <div className="flex flex-col justify-between rounded-[2rem] border border-black/10 bg-[#fbfaf7]/86 p-5 shadow-[0_18px_70px_rgba(23,23,23,0.08)] sm:p-7 lg:min-h-[34rem]">
           <div>
-            <div className="flex items-center justify-between gap-3">
-              <div className="inline-flex items-center gap-2 rounded-full border border-neutral-200 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600 shadow-sm">
-                <span className="h-1.5 w-1.5 rounded-full bg-teal-600" />
-                Crystal Bracelet Case Library
-              </div>
-              <button
-                type="button"
-                onClick={() => setMobileMenuOpen((current) => !current)}
-                aria-expanded={mobileMenuOpen}
-                aria-controls="mobile-nav"
-                aria-label={mobileMenuOpen ? "关闭导航菜单" : "打开导航菜单"}
-                className="grid h-10 w-10 place-items-center rounded-full border border-neutral-200 bg-white text-neutral-700 shadow-sm transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:hidden"
-              >
-                {mobileMenuOpen ? (
-                  <X className="h-4 w-4" aria-hidden="true" />
-                ) : (
-                  <Menu className="h-4 w-4" aria-hidden="true" />
-                )}
-              </button>
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600 shadow-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-teal-700" />
+              水晶手串 AI 商业视觉案例库
             </div>
-            <h1 className="mt-3 text-[1.85rem] font-semibold leading-[1.04] tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
-              <span className="block">Crystal Bracelet Visual Library</span>
-              <span className="mt-1 block text-2xl leading-tight sm:text-3xl lg:text-4xl">
-                水晶手串 AI 商业视觉案例库
-              </span>
+            <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-950 sm:text-6xl lg:text-7xl">
+              Crystal visual cases for commercial sellers.
             </h1>
-            <p className="mt-2 max-w-3xl text-sm leading-6 text-neutral-600 sm:text-base sm:leading-7">
+            <p className="mt-5 max-w-xl text-base leading-7 text-neutral-600">
               面向水晶商家、小红书卖家和电商运营，整理可直接复用的商品图、种草图、品牌广告图与礼赠场景 Prompt。
             </p>
-            <div className="mt-4 grid max-w-2xl grid-cols-2 gap-2 sm:grid-cols-4">
+
+            <div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4 lg:grid-cols-2">
               <HeroMetric value={String(cases.length)} label="商用案例" />
               <HeroMetric value={String(products.length)} label="水晶材质" />
               <HeroMetric value={String(styleCount)} label="拍摄风格" />
               <HeroMetric value="3" label="模型 Prompt" />
             </div>
-            <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-neutral-600">
-              <span className="rounded-full bg-white px-3 py-1.5 shadow-sm">
-                可复制 Prompt
-              </span>
-              <span className="rounded-full bg-white px-3 py-1.5 shadow-sm">
-                可替换材质
-              </span>
-              <span className="rounded-full bg-white px-3 py-1.5 shadow-sm">
-                含构图与灯光分析
-              </span>
-            </div>
           </div>
 
-          <div className="grid gap-3">
-            <div className="rounded-lg border border-neutral-200 bg-white p-2 shadow-sm">
-              <label className="flex min-h-11 items-center gap-2 px-3">
-                <Search className="h-4 w-4 text-neutral-400" aria-hidden="true" />
-                <span className="sr-only">搜索案例</span>
-                <input
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                  placeholder="搜索紫水晶、白底、小红书、奢侈品广告..."
-                  className="min-w-0 flex-1 bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400"
-                />
-                {query ? (
-                  <button
-                    type="button"
-                    onClick={() => setQuery("")}
-                    className="grid h-8 w-8 place-items-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-950"
-                    aria-label="清空搜索"
-                  >
-                    <X className="h-4 w-4" aria-hidden="true" />
-                  </button>
-                ) : null}
-              </label>
+          <div className="mt-8 grid gap-3">
+            <SearchBox query={query} onQueryChange={setQuery} />
+            <div className="flex flex-wrap gap-2">
+              {["可复制 Prompt", "可替换材质", "构图与灯光分析"].map((label) => (
+                <span
+                  key={label}
+                  className="rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600"
+                >
+                  {label}
+                </span>
+              ))}
             </div>
-            <div className="hidden gap-2 sm:flex sm:flex-wrap">
-              <Link
-                href="#cases"
-                className="inline-flex h-10 items-center justify-center rounded-full bg-neutral-950 px-4 text-sm font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
-              >
-                全部案例
-              </Link>
-              <Link
-                href="#products"
-                className="inline-flex h-10 items-center justify-center rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
-              >
-                产品分类
-              </Link>
-              <Link
-                href="#why"
-                className="inline-flex h-10 items-center justify-center rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
-              >
-                使用价值
-              </Link>
-              <Link
-                href="#favorites"
-                className="inline-flex h-10 items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
-              >
-                <Star className="h-4 w-4" aria-hidden="true" />
-                收藏 {favoriteIds.length}
-              </Link>
-            </div>
-            <nav
-              id="mobile-nav"
-              className={`gap-2 rounded-xl border border-neutral-200 bg-white p-2 shadow-sm transition sm:hidden ${
-                mobileMenuOpen ? "grid" : "hidden"
-              }`}
-            >
-              <MobileNavLink href="#cases" onClick={() => setMobileMenuOpen(false)}>
-                全部案例
-              </MobileNavLink>
-              <MobileNavLink href="#products" onClick={() => setMobileMenuOpen(false)}>
-                产品分类
-              </MobileNavLink>
-              <MobileNavLink href="#why" onClick={() => setMobileMenuOpen(false)}>
-                使用价值
-              </MobileNavLink>
-              <MobileNavLink href="#favorites" onClick={() => setMobileMenuOpen(false)}>
-                收藏案例 {favoriteIds.length}
-              </MobileNavLink>
-            </nav>
           </div>
-        </header>
+        </div>
 
-        <div className="mt-4 grid gap-4 lg:grid-cols-[minmax(0,1.52fr)_minmax(22rem,0.8fr)]">
+        {heroCase && heroProduct ? (
+          <HeroCase
+            caseItem={heroCase}
+            product={heroProduct}
+            favorite={favoriteSet.has(heroCase.id)}
+            onToggleFavorite={toggleFavorite}
+          />
+        ) : null}
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+        <div className="grid gap-5 lg:grid-cols-[minmax(0,1.2fr)_minmax(20rem,0.8fr)]">
           <section>
-            <SectionHeading eyebrow="Latest cases" title="最新案例" />
-            <div className="mt-3 grid gap-3 sm:grid-cols-3">
+            <SectionHeading eyebrow="Latest" title="最新精选案例" />
+            <div className="mt-4 grid gap-4 md:grid-cols-3">
               {latestCases.map((caseItem) => {
                 const product = getCrystalProductById(caseItem.productId);
 
@@ -244,106 +227,92 @@ export function CrystalCaseLibrary({
                 }
 
                 return (
-                  <div
+                  <CrystalCaseCard
                     key={caseItem.id}
-                    className="min-w-0"
-                  >
-                    <CrystalCaseCard
-                      caseItem={caseItem}
-                      product={product}
-                      favorite={favoriteSet.has(caseItem.id)}
-                      onToggleFavorite={toggleFavorite}
-                      variant="featured"
-                    />
-                  </div>
+                    caseItem={caseItem}
+                    product={product}
+                    favorite={favoriteSet.has(caseItem.id)}
+                    onToggleFavorite={toggleFavorite}
+                    variant="featured"
+                  />
                 );
               })}
             </div>
           </section>
 
-          <div className="grid gap-4">
-            <section>
-              <SectionHeading eyebrow="Popular" title="热门案例" />
-              <div className="mt-3 grid gap-2">
-                {popularCases.map((caseItem) => {
-                  const product = getCrystalProductById(caseItem.productId);
+          <section className="rounded-[1.5rem] border border-black/10 bg-white/70 p-3 shadow-sm">
+            <SectionHeading eyebrow="Popular" title="热门浏览" compact />
+            <div className="mt-3 grid gap-2">
+              {popularCases.map((caseItem) => {
+                const product = getCrystalProductById(caseItem.productId);
 
-                  if (!product) {
-                    return null;
-                  }
+                if (!product) {
+                  return null;
+                }
 
-                  return (
-                    <CrystalCaseCard
-                      key={caseItem.id}
-                      caseItem={caseItem}
-                      product={product}
-                      favorite={favoriteSet.has(caseItem.id)}
-                      onToggleFavorite={toggleFavorite}
-                      variant="compact"
-                    />
-                  );
-                })}
-              </div>
-            </section>
-
-            <section id="products">
-              <SectionHeading eyebrow="Products" title="产品分类" />
-              <div className="mt-3 grid gap-2 sm:grid-cols-3 lg:grid-cols-1">
-                {products.map((product) => (
-                  <ProductCategoryCard
-                    key={product.id}
+                return (
+                  <CrystalCaseCard
+                    key={caseItem.id}
+                    caseItem={caseItem}
                     product={product}
-                    caseCount={productCaseCounts.get(product.id) ?? 0}
+                    favorite={favoriteSet.has(caseItem.id)}
+                    onToggleFavorite={toggleFavorite}
+                    variant="compact"
                   />
-                ))}
-              </div>
-            </section>
-          </div>
+                );
+              })}
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section
+        id="products"
+        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+      >
+        <SectionHeading eyebrow="Materials" title="按水晶材质浏览" />
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {products.map((product) => (
+            <ProductCategoryCard
+              key={product.id}
+              product={product}
+              caseCount={productCaseCounts.get(product.id) ?? 0}
+            />
+          ))}
         </div>
       </section>
 
       <section
         id="why"
-        className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
       >
-        <div className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div className="rounded-[2rem] border border-black/10 bg-neutral-950 p-5 text-white shadow-[0_24px_90px_rgba(23,23,23,0.2)] sm:p-7">
+          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-200">
                 Why this library
               </p>
-              <h2 className="mt-1 text-2xl font-semibold tracking-tight text-neutral-950">
-                为什么使用本案例库
+              <h2 className="mt-3 max-w-lg text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
+                不是关键词堆砌，而是可复用的商业视觉案例。
               </h2>
             </div>
-            <div className="flex flex-wrap gap-1.5">
-              {supportedModelLabels.map((model) => (
-                <span
-                  key={model}
-                  className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600"
-                >
-                  {model}
-                </span>
-              ))}
+            <div className="grid gap-3 md:grid-cols-3">
+              <ValueCard
+                icon={<Sparkles className="h-4 w-4" aria-hidden="true" />}
+                title="图片优先"
+                description="每个案例以真实出图场景组织，先看画面，再复制 Prompt。"
+              />
+              <ValueCard
+                icon={<BadgeCheck className="h-4 w-4" aria-hidden="true" />}
+                title="结构完整"
+                description="保留构图、灯光、商业用途和模型专用 Prompt。"
+              />
+              <ValueCard
+                icon={<Bookmark className="h-4 w-4" aria-hidden="true" />}
+                title="适合复用"
+                description="收藏案例后可快速回看，适合持续优化店铺视觉。"
+              />
             </div>
-          </div>
-
-          <div className="mt-4 grid gap-3 md:grid-cols-3">
-            <ValueCard
-              icon={<ClipboardCheck className="h-4 w-4" aria-hidden="true" />}
-              title="Prompt 可直接复用"
-              description="每个案例都整理为完整中文 Prompt，适合快速迁移到 GPT Image、Midjourney 和 Flux。"
-            />
-            <ValueCard
-              icon={<Layers3 className="h-4 w-4" aria-hidden="true" />}
-              title="不只给关键词"
-              description="同步拆解构图、灯光和商业用途，帮助你理解为什么这样写能更稳定出图。"
-            />
-            <ValueCard
-              icon={<BadgeCheck className="h-4 w-4" aria-hidden="true" />}
-              title="围绕商业转化"
-              description="按奢侈品广告、小红书种草、电商白底和礼赠场景四类真实使用场景组织案例。"
-            />
           </div>
         </div>
       </section>
@@ -352,14 +321,15 @@ export function CrystalCaseLibrary({
         id="cases"
         className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
       >
-        <div className="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div className="mb-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <SectionHeading
-            eyebrow="All crystal cases"
-            title={query ? "搜索结果" : "全部案例"}
+            eyebrow="All cases"
+            title={query ? "搜索结果" : "全部商业案例"}
+            description={`当前筛选：${activeMaterialName}，共 ${visibleCases.length} 个案例。`}
           />
-          <span className="w-fit rounded-full bg-white px-3 py-1 text-xs font-medium text-neutral-500 shadow-sm">
-            {visibleCases.length} 个案例
-          </span>
+          <div className="flex flex-wrap gap-1.5 lg:justify-end">
+            <ModelBadges />
+          </div>
         </div>
 
         <div className="mb-5 overflow-x-auto pb-1">
@@ -384,24 +354,21 @@ export function CrystalCaseLibrary({
             <button
               type="button"
               disabled
-              className="inline-flex h-9 cursor-not-allowed items-center rounded-full border border-neutral-200 bg-neutral-100 px-4 text-sm font-medium text-neutral-400"
+              className="inline-flex h-10 cursor-not-allowed items-center rounded-full border border-black/10 bg-black/[0.04] px-4 text-sm font-medium text-neutral-400"
             >
               更多材质敬请期待...
             </button>
           </div>
-          <p className="mt-2 text-xs leading-5 text-neutral-500">
-            当前筛选：{activeMaterialName}，可与搜索关键词组合使用。
-          </p>
         </div>
 
         {visibleCases.length === 0 ? (
-          <div className="rounded-lg border border-dashed border-neutral-300 bg-white/70 p-6 text-sm leading-6 text-neutral-500">
+          <div className="rounded-[1.5rem] border border-dashed border-black/15 bg-white/70 p-8 text-sm leading-6 text-neutral-500">
             没有找到匹配案例。可以搜索「紫水晶」「黄水晶」「黑曜石」「白底」「小红书」「奢侈品广告」。
           </div>
         ) : (
           <div
             key={`${activeMaterialFilter}-${query}`}
-            className="grid gap-5 animate-[case-list-fade-in_260ms_ease-out] motion-reduce:animate-none lg:grid-cols-2"
+            className="grid gap-5 animate-[case-list-fade-in_260ms_ease-out] motion-reduce:animate-none md:grid-cols-2 xl:grid-cols-3"
           >
             {visibleCases.map((caseItem) => {
               const product = getCrystalProductById(caseItem.productId);
@@ -435,6 +402,137 @@ export function CrystalCaseLibrary({
   );
 }
 
+function NavPill({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <Link
+      href={href}
+      className="rounded-full px-4 py-2 text-neutral-600 transition hover:bg-neutral-950 hover:text-white"
+    >
+      {children}
+    </Link>
+  );
+}
+
+function MobileNavLink({
+  href,
+  children,
+  onClick
+}: {
+  href: string;
+  children: ReactNode;
+  onClick: () => void;
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className="flex h-11 items-center justify-between rounded-xl px-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-950"
+    >
+      {children}
+      <span className="text-neutral-300">#</span>
+    </Link>
+  );
+}
+
+function SearchBox({
+  query,
+  onQueryChange
+}: {
+  query: string;
+  onQueryChange: (value: string) => void;
+}) {
+  return (
+    <label className="flex h-12 items-center gap-3 rounded-full border border-black/10 bg-white px-4 shadow-sm">
+      <Search className="h-4 w-4 text-neutral-400" aria-hidden="true" />
+      <span className="sr-only">搜索案例</span>
+      <input
+        value={query}
+        onChange={(event) => onQueryChange(event.target.value)}
+        placeholder="搜索紫水晶、白底、小红书、礼赠场景..."
+        className="min-w-0 flex-1 bg-transparent text-sm text-neutral-950 outline-none placeholder:text-neutral-400"
+      />
+      {query ? (
+        <button
+          type="button"
+          onClick={() => onQueryChange("")}
+          className="grid h-8 w-8 place-items-center rounded-full text-neutral-400 transition hover:bg-neutral-100 hover:text-neutral-950"
+          aria-label="清空搜索"
+        >
+          <X className="h-4 w-4" aria-hidden="true" />
+        </button>
+      ) : null}
+    </label>
+  );
+}
+
+function HeroCase({
+  caseItem,
+  product,
+  favorite,
+  onToggleFavorite
+}: {
+  caseItem: CrystalCase;
+  product: CrystalProduct;
+  favorite: boolean;
+  onToggleFavorite: (caseId: string) => void;
+}) {
+  const caseImage = caseItem.coverImage || caseItem.image;
+
+  return (
+    <article className="group relative min-h-[30rem] overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-950 shadow-[0_24px_90px_rgba(23,23,23,0.22)]">
+      <Image
+        src={caseImage}
+        alt={caseItem.title}
+        fill
+        priority
+        sizes="(max-width: 1024px) 100vw, 56vw"
+        className="object-cover transition duration-700 group-hover:scale-[1.03]"
+      />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/18 to-transparent" />
+      <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3">
+        <div className="flex flex-wrap gap-2">
+          <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-neutral-950 backdrop-blur">
+            {product.name}
+          </span>
+          <span className="rounded-full bg-white/18 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+            {caseItem.styleName}
+          </span>
+        </div>
+        <button
+          type="button"
+          onClick={() => onToggleFavorite(caseItem.id)}
+          aria-label={favorite ? "取消收藏案例" : "收藏案例"}
+          className="grid h-10 w-10 place-items-center rounded-full bg-white/90 text-neutral-900 shadow-sm backdrop-blur transition hover:bg-white hover:text-amber-600"
+        >
+          <Star
+            className="h-4 w-4"
+            fill={favorite ? "currentColor" : "none"}
+            aria-hidden="true"
+          />
+        </button>
+      </div>
+      <div className="absolute inset-x-0 bottom-0 p-5 text-white sm:p-7">
+        <p className="text-xs font-medium uppercase tracking-[0.18em] text-white/60">
+          Featured commercial case
+        </p>
+        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
+          {caseItem.title}
+        </h2>
+        <p className="mt-3 max-w-xl text-sm leading-6 text-white/72">
+          {caseItem.summary}
+        </p>
+        <Link
+          href={`/case/${caseItem.slug}`}
+          className="mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-100"
+        >
+          查看案例
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
+    </article>
+  );
+}
+
 function MaterialFilterButton({
   active,
   children,
@@ -451,10 +549,10 @@ function MaterialFilterButton({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`inline-flex h-9 items-center rounded-full border px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 ${
+      className={`inline-flex h-10 items-center rounded-full border px-4 text-sm font-medium transition ${
         active
           ? "border-neutral-950 bg-neutral-950 text-white shadow-sm"
-          : "border-neutral-200 bg-white text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
+          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
       }`}
     >
       {children}
@@ -473,8 +571,8 @@ function MaterialFilterButton({
 
 function HeroMetric({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 shadow-sm">
-      <div className="text-lg font-semibold leading-none text-neutral-950">
+    <div className="rounded-2xl border border-black/10 bg-white/86 px-4 py-3 shadow-sm">
+      <div className="text-2xl font-semibold leading-none tracking-[-0.03em] text-neutral-950">
         {value}
       </div>
       <div className="mt-1 text-xs font-medium text-neutral-500">{label}</div>
@@ -482,36 +580,32 @@ function HeroMetric({ value, label }: { value: string; label: string }) {
   );
 }
 
-function MobileNavLink({
-  href,
-  children,
-  onClick
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+  compact = false
 }: {
-  href: string;
-  children: ReactNode;
-  onClick: () => void;
+  eyebrow: string;
+  title: string;
+  description?: string;
+  compact?: boolean;
 }) {
   return (
-    <Link
-      href={href}
-      onClick={onClick}
-      className="flex h-11 items-center justify-between rounded-lg px-3 text-sm font-medium text-neutral-700 transition hover:bg-neutral-100 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
-    >
-      {children}
-      <span className="text-neutral-300">#</span>
-    </Link>
-  );
-}
-
-function SectionHeading({ eyebrow, title }: { eyebrow: string; title: string }) {
-  return (
     <div>
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-teal-700">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
         {eyebrow}
       </p>
-      <h2 className="mt-1 text-xl font-semibold tracking-tight text-neutral-950">
+      <h2
+        className={`mt-1 font-semibold tracking-[-0.03em] text-neutral-950 ${
+          compact ? "text-xl" : "text-2xl sm:text-3xl"
+        }`}
+      >
         {title}
       </h2>
+      {description ? (
+        <p className="mt-2 text-sm leading-6 text-neutral-500">{description}</p>
+      ) : null}
     </div>
   );
 }
@@ -526,14 +620,14 @@ function ValueCard({
   description: string;
 }) {
   return (
-    <div className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
-      <div className="flex items-center gap-2 text-sm font-semibold text-neutral-950">
-        <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-teal-700 shadow-sm">
+    <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
+      <div className="flex items-center gap-2 text-sm font-semibold text-white">
+        <span className="grid h-8 w-8 place-items-center rounded-full bg-white text-neutral-950">
           {icon}
         </span>
         {title}
       </div>
-      <p className="mt-3 text-sm leading-6 text-neutral-600">{description}</p>
+      <p className="mt-3 text-sm leading-6 text-white/62">{description}</p>
     </div>
   );
 }
@@ -548,28 +642,55 @@ function ProductCategoryCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="flex items-center gap-3 rounded-lg border border-neutral-200 bg-white p-2 shadow-sm transition hover:border-neutral-300 hover:shadow-soft-panel focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
+      className="group overflow-hidden rounded-[1.5rem] border border-black/10 bg-white/78 shadow-sm transition hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(23,23,23,0.12)]"
     >
-      <Image
-        src={product.image}
-        alt={product.name}
-        width={160}
-        height={128}
-        className="h-16 w-20 flex-none rounded-md object-cover sm:h-20 sm:w-24"
-      />
-      <div className="min-w-0">
-        <div className="flex items-center gap-1.5 text-sm font-semibold text-neutral-950">
-          <Gem className="h-3.5 w-3.5 text-teal-700" aria-hidden="true" />
-          {product.name}
+      <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
+        <Image
+          src={product.image}
+          alt={product.name}
+          fill
+          sizes="(max-width: 768px) 100vw, 33vw"
+          className="object-cover transition duration-700 group-hover:scale-[1.04]"
+        />
+      </div>
+      <div className="p-4">
+        <div className="flex items-center justify-between gap-3">
+          <div>
+            <div className="flex items-center gap-1.5 text-base font-semibold text-neutral-950">
+              <Gem className="h-4 w-4 text-teal-700" aria-hidden="true" />
+              {product.name}
+            </div>
+            <div className="mt-1 text-xs font-medium text-neutral-500">
+              {product.englishName}
+            </div>
+          </div>
+          <div className="rounded-full bg-neutral-950 px-3 py-1 text-xs font-semibold text-white">
+            {caseCount}
+          </div>
         </div>
-        <div className="mt-1 line-clamp-2 text-xs leading-5 text-neutral-500">
-          {product.tags.join(" / ")}
-        </div>
-        <div className="mt-2 inline-flex items-center gap-1 text-xs font-medium text-teal-700">
-          {caseCount} 个案例
-          <ArrowRight className="h-3 w-3" aria-hidden="true" />
+        <p className="mt-3 line-clamp-2 text-sm leading-6 text-neutral-600">
+          {product.description}
+        </p>
+        <div className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal-800">
+          查看材质专题
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </div>
       </div>
     </Link>
+  );
+}
+
+function ModelBadges() {
+  return (
+    <>
+      {supportedModelLabels.map((model) => (
+        <span
+          key={model}
+          className="rounded-full border border-black/10 bg-white/80 px-3 py-1.5 text-xs font-medium text-neutral-600"
+        >
+          {model}
+        </span>
+      ))}
+    </>
   );
 }

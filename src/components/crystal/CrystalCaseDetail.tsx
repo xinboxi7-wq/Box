@@ -1,9 +1,17 @@
 "use client";
 
-import { useCallback, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Check, Copy, Sparkles, Star } from "lucide-react";
+import { useCallback, useMemo, useState, type ReactNode } from "react";
+import {
+  ArrowLeft,
+  Check,
+  Copy,
+  GalleryHorizontal,
+  Lightbulb,
+  Sparkles,
+  Star
+} from "lucide-react";
 import { Toast, type ToastState } from "@/components/studio/Toast";
 import { copyToClipboard } from "@/lib/clipboard";
 import { replaceCrystalMaterialTerms } from "@/lib/crystal-prompt-customization";
@@ -99,66 +107,67 @@ export function CrystalCaseDetail({
   );
 
   return (
-    <main className="min-h-screen bg-[#F6F7F4] text-neutral-950">
-      <section className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+    <main className="min-h-screen text-neutral-950">
+      <section className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
         <div className="flex flex-wrap gap-2">
           <Link
             href="/#cases"
-            className="inline-flex h-10 items-center gap-2 rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 shadow-sm transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
+            className="inline-flex h-10 items-center gap-2 rounded-full border border-black/10 bg-white/80 px-4 text-sm font-semibold text-neutral-700 shadow-sm transition hover:bg-white hover:text-neutral-950"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden="true" />
-            返回列表
+            返回案例库
           </Link>
           <Link
             href={`/products/${product.slug}`}
-            className="inline-flex h-10 items-center rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 shadow-sm transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2"
+            className="inline-flex h-10 items-center rounded-full border border-black/10 bg-white/80 px-4 text-sm font-semibold text-neutral-700 shadow-sm transition hover:bg-white hover:text-neutral-950"
           >
             查看{product.name}
           </Link>
         </div>
 
-        <article className="mt-5 overflow-hidden rounded-lg border border-neutral-200 bg-white shadow-soft-panel sm:mt-6">
-          <div className="grid gap-0 lg:grid-cols-[1.04fr_0.96fr]">
-            <div className="bg-neutral-100">
+        <article className="mt-5 overflow-hidden rounded-[2rem] border border-black/10 bg-[#fbfaf7] shadow-[0_24px_90px_rgba(23,23,23,0.12)]">
+          <div className="grid lg:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
+            <div className="relative min-h-[24rem] overflow-hidden bg-neutral-100 sm:min-h-[34rem]">
               <Image
                 src={coverImage}
                 alt={caseItem.title}
-                width={1200}
-                height={900}
+                fill
                 priority
-                className="aspect-[4/3] h-full w-full object-cover"
+                sizes="(max-width: 1024px) 100vw, 56vw"
+                className="object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:hidden" />
             </div>
-            <div className="flex flex-col justify-center p-4 sm:p-6">
-              <div className="mb-4 flex flex-wrap gap-2">
-                <span className="rounded-full bg-teal-50 px-3 py-1 text-xs font-medium text-teal-800">
+            <div className="flex flex-col justify-center p-5 sm:p-8 lg:p-10">
+              <div className="flex flex-wrap gap-2">
+                <span className="rounded-full bg-teal-50 px-3 py-1.5 text-xs font-semibold text-teal-800">
                   {product.name}
                 </span>
-                <span className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600">
+                <span className="rounded-full bg-neutral-100 px-3 py-1.5 text-xs font-medium text-neutral-600">
                   {caseItem.styleName}
                 </span>
               </div>
 
-              <h1 className="text-2xl font-semibold tracking-tight text-neutral-950 sm:text-4xl lg:text-5xl">
+              <h1 className="mt-6 text-4xl font-semibold leading-[0.98] tracking-[-0.05em] text-neutral-950 sm:text-6xl">
                 {caseItem.title}
               </h1>
-              <p className="mt-4 text-sm leading-7 text-neutral-600 sm:text-base sm:leading-8">
+              <p className="mt-5 text-base leading-8 text-neutral-600">
                 {caseItem.summary}
               </p>
 
-              <div className="mt-5 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {caseItem.tags.map((tag, index) => (
                   <span
                     key={`${caseItem.id}-tag-${tag}-${index}`}
-                    className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-600"
+                    className="rounded-full border border-black/10 bg-white px-3 py-1 text-xs font-medium text-neutral-600"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-5">
-                <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] text-neutral-400">
+              <div className="mt-7">
+                <div className="mb-2 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-400">
                   <Sparkles className="h-3.5 w-3.5" aria-hidden="true" />
                   支持模型
                 </div>
@@ -166,7 +175,7 @@ export function CrystalCaseDetail({
                   {supportedModelLabels.map((model) => (
                     <span
                       key={model}
-                      className="rounded-full bg-neutral-950 px-3 py-1 text-xs font-medium text-white"
+                      className="rounded-full bg-neutral-950 px-3 py-1.5 text-xs font-semibold text-white"
                     >
                       {model}
                     </span>
@@ -174,11 +183,11 @@ export function CrystalCaseDetail({
                 </div>
               </div>
 
-              <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+              <div className="mt-8 flex flex-col gap-2 sm:flex-row">
                 <button
                   type="button"
                   onClick={() => toggleFavorite(caseItem.id)}
-                  className={`inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-medium transition focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-fit ${
+                  className={`inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition sm:w-fit ${
                     favorite
                       ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
                       : "bg-neutral-950 text-white hover:bg-neutral-800"
@@ -193,7 +202,7 @@ export function CrystalCaseDetail({
                 </button>
                 <Link
                   href="#prompts"
-                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-neutral-200 bg-white px-4 text-sm font-medium text-neutral-700 transition hover:border-neutral-400 hover:text-neutral-950 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-fit"
+                  className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 text-sm font-semibold text-neutral-700 transition hover:bg-neutral-50 hover:text-neutral-950 sm:w-fit"
                 >
                   <Copy className="h-4 w-4" aria-hidden="true" />
                   复制 Prompt
@@ -204,25 +213,28 @@ export function CrystalCaseDetail({
         </article>
       </section>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-4 px-4 pb-14 sm:px-6 lg:grid-cols-[1.08fr_0.92fr] lg:px-8">
+      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 pb-14 sm:px-6 lg:grid-cols-[minmax(0,1.05fr)_minmax(20rem,0.95fr)] lg:px-8">
         <div
           id="prompts"
-          className="rounded-lg border border-neutral-200 bg-white p-4 shadow-sm sm:p-5"
+          className="rounded-[2rem] border border-black/10 bg-[#fbfaf7] p-4 shadow-sm sm:p-6"
         >
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <div className="text-sm font-semibold text-neutral-950">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-700">
+                Prompt studio
+              </p>
+              <h2 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-neutral-950">
                 Prompt 展示与复制
-              </div>
-              <p className="mt-1 text-xs leading-5 text-neutral-500">
-                已根据案例描述、构图分析和灯光分析生成中英文 Prompt。
+              </h2>
+              <p className="mt-2 text-sm leading-6 text-neutral-500">
+                根据案例描述、构图分析和灯光分析生成，可直接复制到对应模型。
               </p>
             </div>
             <div className="flex flex-wrap gap-1.5">
               {supportedModelLabels.map((model) => (
                 <span
                   key={model}
-                  className="rounded-full bg-neutral-100 px-2.5 py-1 text-xs font-medium text-neutral-600"
+                  className="rounded-full border border-black/10 bg-white px-2.5 py-1 text-xs font-medium text-neutral-600"
                 >
                   {model}
                 </span>
@@ -230,8 +242,8 @@ export function CrystalCaseDetail({
             </div>
           </div>
 
-          <div className="mt-4 grid gap-3">
-            <div className="rounded-xl border border-teal-200 bg-gradient-to-br from-white to-teal-50/60 p-3 shadow-sm">
+          <div className="mt-5 grid gap-3">
+            <div className="rounded-[1.5rem] border border-teal-200 bg-teal-50/70 p-4">
               <label
                 htmlFor="custom-material"
                 className="mb-2 block text-xs font-semibold uppercase tracking-[0.14em] text-teal-800"
@@ -243,11 +255,10 @@ export function CrystalCaseDetail({
                 value={customMaterial}
                 onChange={(event) => setCustomMaterial(event.target.value)}
                 placeholder="输入其他材质（如：粉水晶）自定义提示词"
-                className="h-12 w-full rounded-full border border-teal-200 bg-white px-4 text-sm font-medium text-neutral-950 shadow-inner outline-none transition placeholder:text-neutral-400 focus:border-teal-600 focus:ring-4 focus:ring-teal-100"
+                className="h-12 w-full rounded-full border border-teal-200 bg-white px-4 text-sm font-medium text-neutral-950 shadow-inner outline-none transition placeholder:text-neutral-400 focus:border-teal-700 focus:ring-4 focus:ring-teal-100"
               />
-              <p className="mt-2 text-xs leading-5 text-neutral-500">
-                输入后会实时替换下方 GPT Image、Midjourney 和 Flux
-                中的水晶材质词，复制时也会复制替换后的版本。
+              <p className="mt-2 text-xs leading-5 text-teal-900/70">
+                输入后会实时替换下方 GPT Image、Midjourney 和 Flux 中的水晶材质词，复制时也会复制替换后的版本。
               </p>
             </div>
             {promptBlocks.map((block) => (
@@ -269,14 +280,20 @@ export function CrystalCaseDetail({
             alt={caseItem.title}
           />
           <AnalysisBlock
+            icon={<GalleryHorizontal className="h-4 w-4" aria-hidden="true" />}
             title="构图分析"
             value={caseItem.compositionAnalysis}
           />
           <AnalysisBlock
+            icon={<Lightbulb className="h-4 w-4" aria-hidden="true" />}
             title="灯光分析"
             value={caseItem.lightingAnalysis}
           />
-          <AnalysisBlock title="适用场景" value={caseItem.commercialUse} />
+          <AnalysisBlock
+            icon={<Sparkles className="h-4 w-4" aria-hidden="true" />}
+            title="适用场景"
+            value={caseItem.commercialUse}
+          />
         </div>
       </section>
       <Toast toast={toast} />
@@ -296,7 +313,7 @@ function PromptBlock({
   highlightTerm: string;
 }) {
   return (
-    <section className="rounded-lg border border-neutral-100 bg-neutral-50 p-4">
+    <section className="rounded-[1.5rem] border border-black/10 bg-white p-4">
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="text-sm font-semibold text-neutral-950">
@@ -309,7 +326,7 @@ function PromptBlock({
         <button
           type="button"
           onClick={() => onCopy(block.id, block.value)}
-          className="inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-3 text-xs font-medium text-white transition hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-950 focus:ring-offset-2 sm:w-auto"
+          className="inline-flex h-9 w-full items-center justify-center gap-2 rounded-full bg-neutral-950 px-3 text-xs font-semibold text-white transition hover:bg-neutral-800 sm:w-auto"
         >
           {copied ? (
             <Check className="h-3.5 w-3.5" aria-hidden="true" />
@@ -319,7 +336,7 @@ function PromptBlock({
           {copied ? "已复制" : "复制"}
         </button>
       </div>
-      <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-neutral-700">
+      <p className="mt-4 max-h-[24rem] overflow-auto whitespace-pre-wrap rounded-2xl bg-neutral-100/70 p-4 text-sm leading-7 text-neutral-700">
         <HighlightedPromptText value={block.value} term={highlightTerm} />
       </p>
     </section>
@@ -379,7 +396,7 @@ function GalleryBlock({
   alt: string;
 }) {
   return (
-    <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
+    <section className="rounded-[2rem] border border-black/10 bg-[#fbfaf7] p-4 shadow-sm">
       <div className="text-sm font-semibold text-neutral-950">{title}</div>
       <div className="mt-3 grid gap-2">
         {images.map((image, index) => (
@@ -389,21 +406,32 @@ function GalleryBlock({
             alt={`${alt} ${index + 1}`}
             width={900}
             height={675}
-            className="aspect-[4/3] w-full rounded-md bg-neutral-100 object-cover"
+            className="aspect-[4/3] w-full rounded-2xl bg-neutral-100 object-cover"
           />
         ))}
       </div>
       <p className="mt-3 text-xs leading-5 text-neutral-500">
-        当前为本地占位图，后续可直接替换为真实出图资源。
+        当前图片资源可直接替换，页面结构会保持不变。
       </p>
     </section>
   );
 }
 
-function AnalysisBlock({ title, value }: { title: string; value: string }) {
+function AnalysisBlock({
+  icon,
+  title,
+  value
+}: {
+  icon: ReactNode;
+  title: string;
+  value: string;
+}) {
   return (
-    <section className="rounded-lg border border-neutral-200 bg-white p-5 shadow-sm">
-      <div className="text-sm font-semibold text-neutral-950">{title}</div>
+    <section className="rounded-[1.5rem] border border-black/10 bg-white/78 p-5 shadow-sm">
+      <div className="flex items-center gap-2 text-sm font-semibold text-neutral-950">
+        <span className="text-teal-700">{icon}</span>
+        {title}
+      </div>
       <p className="mt-3 text-sm leading-7 text-neutral-600">{value}</p>
     </section>
   );
