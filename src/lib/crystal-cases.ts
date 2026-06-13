@@ -27,6 +27,42 @@ export const popularCaseSlugs = [
   "obsidian-lifestyle"
 ] as const;
 export const supportedModelLabels = ["GPT Image", "Midjourney", "Flux"] as const;
+export const crystalTaskFilters = [
+  {
+    id: "ecommerce-main",
+    label: "电商主图",
+    description: "适合商品列表、详情页首图和转化广告。",
+    styleIds: ["ecommerce"],
+    keywords: ["电商主图", "商品详情", "转化广告", "白底"]
+  },
+  {
+    id: "social-seeding",
+    label: "小红书种草",
+    description: "适合内容封面、生活方式种草和礼物推荐。",
+    styleIds: ["lifestyle"],
+    keywords: ["小红书", "种草", "生活方式", "封面"]
+  },
+  {
+    id: "gift-ad",
+    label: "礼赠广告",
+    description: "适合节日礼赠、礼盒详情页和送礼场景。",
+    styleIds: ["gift"],
+    keywords: ["礼赠", "礼物", "礼盒", "节日"]
+  },
+  {
+    id: "premium-brand",
+    label: "高端品牌图",
+    description: "适合品牌广告、海报主视觉和高级静物。",
+    styleIds: ["luxury"],
+    keywords: ["奢侈品", "品牌广告", "高级静物", "海报"]
+  }
+] as const;
+
+export const crystalStyleFilters = crystalStyles.map((style) => ({
+  id: style.id,
+  label: style.name,
+  description: style.description
+}));
 
 export function getCrystalProductBySlug(slug: string) {
   return crystalProducts.find((product) => product.slug === slug) ?? null;
@@ -102,6 +138,63 @@ export function searchCrystalCases(
 
     return searchText.includes(normalizedQuery);
   });
+}
+
+export function getCrystalCasesByTask(taskId: string, cases: CrystalCase[] = crystalCases) {
+  const task = crystalTaskFilters.find((filter) => filter.id === taskId);
+
+  if (!task) {
+    return cases;
+  }
+
+  const styleIds: readonly string[] = task.styleIds;
+
+  return cases.filter((caseItem) => {
+    const searchableText = normalizeSearchText(
+      [caseItem.title, caseItem.styleName, caseItem.commercialUse, caseItem.tags.join(" ")]
+        .join(" ")
+    );
+
+    return (
+      styleIds.includes(caseItem.styleId) ||
+      task.keywords.some((keyword) =>
+        searchableText.includes(normalizeSearchText(keyword))
+      )
+    );
+  });
+}
+
+export function getCrystalCasesByStyle(styleId: string, cases: CrystalCase[] = crystalCases) {
+  if (!styleId) {
+    return cases;
+  }
+
+  return cases.filter((caseItem) => caseItem.styleId === styleId);
+}
+
+export function formatCrystalPromptPackage({
+  title,
+  gptImage,
+  midjourney,
+  flux
+}: {
+  title: string;
+  gptImage: string;
+  midjourney: string;
+  flux: string;
+}) {
+  return [
+    title,
+    "",
+    "GPT Image Prompt",
+    gptImage,
+    "",
+    "Midjourney Prompt",
+    midjourney,
+    "",
+    "Flux Prompt",
+    flux
+  ].join("\n");
 }
 
 export function applyBraceletRules(caseItem: CrystalCase): CrystalCase {

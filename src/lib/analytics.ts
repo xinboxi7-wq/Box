@@ -1,8 +1,11 @@
 export type AuditEvent =
   | "case_view"
+  | "cta_click"
   | "favorite_toggle"
   | "filter_apply"
   | "material_replace"
+  | "prompt_copy_all"
+  | "prompt_model_switch"
   | "prompt_copy"
   | "search_submit";
 

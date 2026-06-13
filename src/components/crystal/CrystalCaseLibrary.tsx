@@ -16,7 +16,11 @@ import {
 } from "lucide-react";
 import { track } from "@/lib/analytics";
 import {
+  crystalStyleFilters,
+  crystalTaskFilters,
   getCrystalCasesBySlugs,
+  getCrystalCasesByStyle,
+  getCrystalCasesByTask,
   getCrystalProductById,
   getFavoriteCrystalCases,
   latestCaseSlugs,
@@ -38,6 +42,8 @@ type CaseView = "all" | "latest" | "popular";
 
 const materialFilterProductIds = ["amethyst", "citrine", "obsidian"] as const;
 const allMaterialFilterId = "all";
+const allTaskFilterId = "all";
+const allStyleFilterId = "all";
 const caseViewOptions: Array<{ id: CaseView; label: string; description: string }> = [
   { id: "all", label: "全部案例", description: "展示完整案例库" },
   { id: "latest", label: "最新精选", description: "近期运营精选" },
@@ -52,6 +58,8 @@ export function CrystalCaseLibrary({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMaterialFilter, setActiveMaterialFilter] =
     useState<string>(allMaterialFilterId);
+  const [activeTaskFilter, setActiveTaskFilter] = useState<string>(allTaskFilterId);
+  const [activeStyleFilter, setActiveStyleFilter] = useState<string>(allStyleFilterId);
   const [activeCaseView, setActiveCaseView] = useState<CaseView>("all");
   const { favoriteIds, favoriteSet, toggleFavorite, clearFavorites } =
     useCrystalFavorites();
@@ -96,16 +104,22 @@ export function CrystalCaseLibrary({
     return cases;
   }, [activeCaseView, cases, latestCases, popularCases]);
   const visibleCases = useMemo(() => {
-    const searchedCases = searchCrystalCases(query, caseViewCases);
+    let filteredCases = searchCrystalCases(query, caseViewCases);
 
-    if (activeMaterialFilter === allMaterialFilterId) {
-      return searchedCases;
+    if (activeMaterialFilter !== allMaterialFilterId) {
+      filteredCases = filteredCases.filter(
+        (caseItem) => caseItem.productId === activeMaterialFilter
+      );
     }
 
-    return searchedCases.filter(
-      (caseItem) => caseItem.productId === activeMaterialFilter
-    );
-  }, [activeMaterialFilter, caseViewCases, query]);
+    filteredCases = getCrystalCasesByTask(activeTaskFilter, filteredCases);
+    filteredCases =
+      activeStyleFilter === allStyleFilterId
+        ? filteredCases
+        : getCrystalCasesByStyle(activeStyleFilter, filteredCases);
+
+    return filteredCases;
+  }, [activeMaterialFilter, activeStyleFilter, activeTaskFilter, caseViewCases, query]);
   const activeMaterialName = useMemo(() => {
     if (activeMaterialFilter === allMaterialFilterId) {
       return "全部";
@@ -119,6 +133,16 @@ export function CrystalCaseLibrary({
   const activeCaseViewLabel =
     caseViewOptions.find((option) => option.id === activeCaseView)?.label ??
     "全部案例";
+  const activeTaskLabel =
+    activeTaskFilter === allTaskFilterId
+      ? "全部目标"
+      : crystalTaskFilters.find((filter) => filter.id === activeTaskFilter)?.label ??
+        "全部目标";
+  const activeStyleLabel =
+    activeStyleFilter === allStyleFilterId
+      ? "全部风格"
+      : crystalStyleFilters.find((filter) => filter.id === activeStyleFilter)
+          ?.label ?? "全部风格";
   const favoriteCases = useMemo(
     () => getFavoriteCrystalCases(favoriteIds),
     [favoriteIds]
@@ -143,6 +167,36 @@ export function CrystalCaseLibrary({
       filter_type: "material",
       value: productId,
       view: activeCaseView
+    });
+  };
+  const handleTaskFilterChange = (taskId: string, scrollToCases = false) => {
+    setActiveTaskFilter(taskId);
+    setActiveCaseView("all");
+    if (scrollToCases) {
+      setActiveStyleFilter(allStyleFilterId);
+    }
+    track("filter_apply", {
+      filter_type: "task",
+      value: taskId,
+      material: activeMaterialFilter,
+      style: activeStyleFilter
+    });
+
+    if (scrollToCases) {
+      window.setTimeout(() => {
+        document
+          .getElementById("cases")
+          ?.scrollIntoView({ behavior: "smooth", block: "start" });
+      }, 0);
+    }
+  };
+  const handleStyleFilterChange = (styleId: string) => {
+    setActiveStyleFilter(styleId);
+    track("filter_apply", {
+      filter_type: "style",
+      value: styleId,
+      task: activeTaskFilter,
+      material: activeMaterialFilter
     });
   };
   const handleCaseViewChange = (view: CaseView) => {
@@ -187,9 +241,9 @@ export function CrystalCaseLibrary({
             aria-label="浏览路径"
             className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex"
           >
+            <NavPill href="#tasks">按任务找</NavPill>
             <NavPill href="#cases">浏览案例</NavPill>
             <NavPill href="#products">按材质选</NavPill>
-            <NavPill href="#why">为什么用</NavPill>
             <NavPill href="#favorites">我的收藏 {favoriteIds.length}</NavPill>
           </nav>
 
@@ -215,14 +269,14 @@ export function CrystalCaseLibrary({
             mobileMenuOpen ? "grid" : "hidden"
           }`}
         >
+          <MobileNavLink href="#tasks" onClick={() => setMobileMenuOpen(false)}>
+            按任务找案例
+          </MobileNavLink>
           <MobileNavLink href="#cases" onClick={() => setMobileMenuOpen(false)}>
             浏览全部案例
           </MobileNavLink>
           <MobileNavLink href="#products" onClick={() => setMobileMenuOpen(false)}>
             按材质选择
-          </MobileNavLink>
-          <MobileNavLink href="#why" onClick={() => setMobileMenuOpen(false)}>
-            为什么使用
           </MobileNavLink>
           <MobileNavLink href="#favorites" onClick={() => setMobileMenuOpen(false)}>
             收藏案例 {favoriteIds.length}
@@ -258,24 +312,43 @@ export function CrystalCaseLibrary({
             </div>
           </div>
 
-          <div className="mt-8 grid gap-3">
+          <div id="tasks" className="mt-8 grid gap-3">
             <SearchBox
               query={query}
               onQueryChange={setQuery}
               onQuerySubmit={handleQuerySubmit}
             />
-            <ol className="grid grid-cols-2 gap-2 text-xs font-semibold text-neutral-600 sm:grid-cols-4 lg:grid-cols-2">
-              {["选水晶材质", "挑商业风格", "打开案例", "复制 Prompt"].map(
-                (label, index) => (
-                  <li
-                    key={label}
-                    className="rounded-full border border-black/10 bg-white px-3 py-1.5"
+            <div>
+              <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-400">
+                先选你要完成的商业任务
+              </div>
+              <div className="grid grid-cols-2 gap-2">
+                {crystalTaskFilters.map((task) => (
+                  <button
+                    key={task.id}
+                    type="button"
+                    onClick={() => handleTaskFilterChange(task.id, true)}
+                    aria-pressed={activeTaskFilter === task.id}
+                    className={`rounded-2xl border px-3 py-3 text-left transition ${
+                      activeTaskFilter === task.id
+                        ? "border-neutral-950 bg-neutral-950 text-white shadow-sm"
+                        : "border-black/10 bg-white text-neutral-700 hover:border-neutral-300 hover:text-neutral-950"
+                    }`}
                   >
-                    {index + 1}. {label}
-                  </li>
-                )
-              )}
-            </ol>
+                    <span className="block text-sm font-semibold">{task.label}</span>
+                    <span
+                      className={`mt-1 line-clamp-2 block text-xs leading-5 ${
+                        activeTaskFilter === task.id
+                          ? "text-white/66"
+                          : "text-neutral-500"
+                      }`}
+                    >
+                      {task.description}
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 
@@ -348,26 +421,65 @@ export function CrystalCaseLibrary({
           <SectionHeading
             eyebrow="案例库"
             title={query ? "搜索结果" : "全部商业案例"}
-            description={`${activeCaseViewLabel} · 当前材质：${activeMaterialName}，共 ${visibleCases.length} 个案例。`}
+            description={`${activeTaskLabel} · ${activeStyleLabel} · ${activeMaterialName} · ${activeCaseViewLabel}，共 ${visibleCases.length} 个案例。`}
           />
           <div className="flex flex-wrap gap-1.5 lg:justify-end">
             <ModelBadges />
           </div>
         </div>
 
-        <div className="mb-4 overflow-x-auto pb-1">
-          <div className="flex min-w-max gap-2 sm:min-w-0 sm:flex-wrap">
+        <div className="mb-4 grid gap-3 rounded-[1.5rem] border border-black/10 bg-white/70 p-3 shadow-sm">
+          <FilterRow label="业务目标">
+            <FilterPill
+              active={activeTaskFilter === allTaskFilterId}
+              onClick={() => handleTaskFilterChange(allTaskFilterId)}
+            >
+              全部目标
+            </FilterPill>
+            {crystalTaskFilters.map((task) => (
+              <FilterPill
+                key={task.id}
+                active={activeTaskFilter === task.id}
+                onClick={() => handleTaskFilterChange(task.id)}
+                title={task.description}
+              >
+                {task.label}
+              </FilterPill>
+            ))}
+          </FilterRow>
+
+          <FilterRow label="拍摄风格">
+            <FilterPill
+              active={activeStyleFilter === allStyleFilterId}
+              onClick={() => handleStyleFilterChange(allStyleFilterId)}
+            >
+              全部风格
+            </FilterPill>
+            {crystalStyleFilters.map((style) => (
+              <FilterPill
+                key={style.id}
+                active={activeStyleFilter === style.id}
+                onClick={() => handleStyleFilterChange(style.id)}
+                title={style.description}
+              >
+                {style.label}
+              </FilterPill>
+            ))}
+          </FilterRow>
+
+          <FilterRow label="运营视图">
             {caseViewOptions.map((option) => (
-              <CaseViewButton
+              <FilterPill
                 key={option.id}
                 active={activeCaseView === option.id}
-                description={option.description}
                 onClick={() => handleCaseViewChange(option.id)}
+                title={option.description}
+                tone={activeCaseView === option.id ? "teal" : "neutral"}
               >
                 {option.label}
-              </CaseViewButton>
+              </FilterPill>
             ))}
-          </div>
+          </FilterRow>
         </div>
 
         <div className="sticky top-16 z-20 mb-5 -mx-4 overflow-x-auto border-y border-black/5 bg-[#fbfaf7]/92 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
@@ -435,13 +547,172 @@ export function CrystalCaseLibrary({
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+        <StaticConversionPanel />
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
         <CrystalFavoritePanel
           favoriteCases={favoriteCases}
           onToggleFavorite={(caseId) => handleToggleFavorite(caseId, "favorites")}
           onClearFavorites={handleClearFavorites}
         />
       </section>
+
+      <footer className="border-t border-black/5 bg-white/54">
+        <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-8 text-sm text-neutral-500 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
+          <div>
+            <div className="font-semibold text-neutral-950">
+              水晶手串 AI 商业视觉案例库
+            </div>
+            <p className="mt-2 max-w-2xl leading-6">
+              为水晶商家、小红书卖家和电商运营整理可复用的商业视觉案例、Prompt 与构图灯光分析。
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 lg:justify-end">
+            <FooterLink href="#why">使用说明</FooterLink>
+            <FooterLink href="mailto:xinboxi7-wq@users.noreply.github.com?subject=%E6%B0%B4%E6%99%B6%E6%89%8B%E4%B8%B2%E6%A1%88%E4%BE%8B%E5%BA%93%E5%95%86%E4%B8%9A%E5%90%88%E4%BD%9C">
+              商业合作
+            </FooterLink>
+            <FooterLink href="mailto:xinboxi7-wq@users.noreply.github.com?subject=%E9%A2%86%E5%8F%96%20Prompt%20Pack">
+              领取 Prompt Pack
+            </FooterLink>
+          </div>
+        </div>
+      </footer>
     </main>
+  );
+}
+
+function FilterRow({
+  label,
+  children
+}: {
+  label: string;
+  children: ReactNode;
+}) {
+  return (
+    <div className="grid gap-2 lg:grid-cols-[5rem_minmax(0,1fr)] lg:items-center">
+      <div className="text-xs font-semibold uppercase tracking-[0.16em] text-neutral-400">
+        {label}
+      </div>
+      <div className="flex min-w-0 gap-2 overflow-x-auto pb-1 sm:flex-wrap sm:overflow-visible sm:pb-0">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function FilterPill({
+  active,
+  children,
+  title,
+  tone = "neutral",
+  onClick
+}: {
+  active: boolean;
+  children: ReactNode;
+  title?: string;
+  tone?: "neutral" | "teal";
+  onClick: () => void;
+}) {
+  const activeClass =
+    tone === "teal"
+      ? "border-teal-800 bg-teal-800 text-white"
+      : "border-neutral-950 bg-neutral-950 text-white";
+
+  return (
+    <button
+      type="button"
+      onClick={onClick}
+      aria-pressed={active}
+      title={title}
+      className={`inline-flex h-10 shrink-0 items-center rounded-full border px-4 text-sm font-semibold transition ${
+        active
+          ? activeClass
+          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
+      }`}
+    >
+      {children}
+    </button>
+  );
+}
+
+function StaticConversionPanel() {
+  return (
+    <section className="overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-950 text-white shadow-[0_24px_90px_rgba(23,23,23,0.2)]">
+      <div className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-end">
+        <div>
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-200">
+            Prompt Pack / 商业合作
+          </p>
+          <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
+            想把案例库变成你的店铺视觉素材包？
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-white/66">
+            现在先开放静态咨询入口：可以领取后续 Prompt Pack 更新，也可以提出水晶材质、节日礼赠、平台主图等定制需求。
+          </p>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          <CtaLink
+            href="mailto:xinboxi7-wq@users.noreply.github.com?subject=%E9%A2%86%E5%8F%96%20%E6%B0%B4%E6%99%B6%E6%89%8B%E4%B8%B2%20Prompt%20Pack"
+            eventLabel="prompt_pack"
+          >
+            领取 Prompt Pack
+          </CtaLink>
+          <CtaLink
+            href="mailto:xinboxi7-wq@users.noreply.github.com?subject=%E6%B0%B4%E6%99%B6%E6%89%8B%E4%B8%B2%E8%A7%86%E8%A7%89%E6%A1%88%E4%BE%8B%E5%AE%9A%E5%88%B6%E5%92%A8%E8%AF%A2"
+            eventLabel="commercial_consult"
+            subtle
+          >
+            商业合作咨询
+          </CtaLink>
+          <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4 sm:col-span-2">
+            <div className="text-sm font-semibold">FAQ</div>
+            <p className="mt-2 text-sm leading-6 text-white/62">
+              当前不接入 AI 接口、不收集表单数据，所有案例和 Prompt 都来自本地内容库。后续真实图片可以直接替换资源路径。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CtaLink({
+  href,
+  children,
+  eventLabel,
+  subtle = false
+}: {
+  href: string;
+  children: ReactNode;
+  eventLabel: string;
+  subtle?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      onClick={() => track("cta_click", { target: eventLabel })}
+      className={`inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition ${
+        subtle
+          ? "border border-white/12 bg-white/[0.08] text-white hover:bg-white/[0.14]"
+          : "bg-white text-neutral-950 hover:bg-neutral-100"
+      }`}
+    >
+      {children}
+    </a>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: ReactNode }) {
+  return (
+    <a
+      href={href}
+      onClick={() => track("cta_click", { target: String(children) })}
+      className="rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-semibold text-neutral-600 transition hover:border-neutral-300 hover:text-neutral-950"
+    >
+      {children}
+    </a>
   );
 }
 
@@ -625,34 +896,6 @@ function MaterialFilterButton({
           {count}
         </span>
       ) : null}
-    </button>
-  );
-}
-
-function CaseViewButton({
-  active,
-  children,
-  description,
-  onClick
-}: {
-  active: boolean;
-  children: ReactNode;
-  description: string;
-  onClick: () => void;
-}) {
-  return (
-    <button
-      type="button"
-      onClick={onClick}
-      aria-pressed={active}
-      title={description}
-      className={`inline-flex h-10 items-center rounded-full border px-4 text-sm font-semibold transition ${
-        active
-          ? "border-teal-800 bg-teal-800 text-white shadow-sm"
-          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
-      }`}
-    >
-      {children}
     </button>
   );
 }

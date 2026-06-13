@@ -37,12 +37,17 @@ const {
   braceletRules,
   braceletSizes,
   buildCrystalPromptSet,
+  crystalStyleFilters,
   crystalCases,
   crystalProducts,
   crystalStyles,
+  crystalTaskFilters,
   defaultBraceletSize,
+  formatCrystalPromptPackage,
   getCrystalCaseBySlug,
+  getCrystalCasesByStyle,
   getCrystalCasesBySlugs,
+  getCrystalCasesByTask,
   latestCaseSlugs,
   popularCaseSlugs,
   supportedModelLabels,
@@ -144,6 +149,8 @@ function run() {
   assertBraceletRules();
   assertCrystalMaterialCustomization();
   assertCrystalHomeSections();
+  assertCrystalTaskAndStyleFilters();
+  assertCrystalPromptPackageHelper();
   assertSupportedModels();
 
   console.log("solution tests passed");
@@ -159,6 +166,8 @@ function run() {
   console.log("- bracelet rules: structure stability and commercial photography logic passed");
   console.log("- crystal prompt customization: material replacement passed");
   console.log("- crystal home sections: latest and popular slugs passed");
+  console.log("- crystal task filters: business targets and style stacking passed");
+  console.log("- crystal prompt package: copy-all formatting passed");
   console.log("- supported models: GPT Image, Midjourney, Flux passed");
 }
 
@@ -493,6 +502,104 @@ function assertCrystalHomeSections() {
   assert(
     getCrystalCasesBySlugs(popularCaseSlugs).length === 3,
     "crystal home: popular helper should return 3 valid cases"
+  );
+}
+
+function assertCrystalTaskAndStyleFilters() {
+  const taskExpectations = [
+    ["ecommerce-main", "ecommerce"],
+    ["social-seeding", "lifestyle"],
+    ["gift-ad", "gift"],
+    ["premium-brand", "luxury"]
+  ];
+
+  assert(
+    crystalTaskFilters.length === taskExpectations.length,
+    `crystal task filters: expected ${taskExpectations.length} filters`
+  );
+  assert(
+    crystalStyleFilters.length >= 4,
+    `crystal style filters: expected at least 4 filters, got ${crystalStyleFilters.length}`
+  );
+
+  for (const [taskId, expectedStyleId] of taskExpectations) {
+    const taskResults = getCrystalCasesByTask(taskId);
+
+    assert(
+      taskResults.length >= 3,
+      `crystal task filters: ${taskId} should return at least 3 cases`
+    );
+    assert(
+      taskResults.some((caseItem) => caseItem.styleId === expectedStyleId),
+      `crystal task filters: ${taskId} should include ${expectedStyleId} cases`
+    );
+  }
+
+  const stackedResults = getCrystalCasesByStyle(
+    "ecommerce",
+    getCrystalCasesByTask(
+      "ecommerce-main",
+      crystalCases.filter((caseItem) => caseItem.productId === "amethyst")
+    )
+  );
+
+  assert(
+    stackedResults.length === 1 && stackedResults[0].slug === "amethyst-ecommerce",
+    "crystal task filters: material, task, and style filters should stack"
+  );
+}
+
+function assertCrystalPromptPackageHelper() {
+  const caseItem = getCrystalCaseBySlug("amethyst-luxury");
+
+  assertObject(caseItem, "prompt package: missing amethyst-luxury case");
+
+  const product = crystalProducts.find(
+    (productItem) => productItem.id === caseItem.productId
+  );
+  const promptSet = buildCrystalPromptSet(caseItem);
+
+  assertObject(product, "prompt package: missing amethyst product");
+
+  const gptImage = replaceCrystalMaterialTerms(
+    promptSet.prompt,
+    "\u7c89\u6c34\u6676",
+    product,
+    caseItem
+  );
+  const midjourney = replaceCrystalMaterialTerms(
+    `${promptSet.promptEn} --style raw --ar 4:5`,
+    "rose quartz",
+    product,
+    caseItem
+  );
+  const flux = replaceCrystalMaterialTerms(
+    promptSet.promptEn,
+    "rose quartz",
+    product,
+    caseItem
+  );
+  const packageText = formatCrystalPromptPackage({
+    title: caseItem.title,
+    gptImage,
+    midjourney,
+    flux
+  });
+
+  assertText(packageText, "prompt package: package should not be empty");
+  assert(
+    packageText.includes(caseItem.title),
+    "prompt package: should include case title"
+  );
+  assert(
+    packageText.includes("GPT Image Prompt") &&
+      packageText.includes("Midjourney Prompt") &&
+      packageText.includes("Flux Prompt"),
+    "prompt package: should include all three model sections"
+  );
+  assert(
+    packageText.includes("\u7c89\u6c34\u6676") && packageText.includes("rose quartz"),
+    "prompt package: should include customized material terms"
   );
 }
 

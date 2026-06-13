@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import {
   ArrowLeft,
+  ArrowRight,
   Check,
   Copy,
   GalleryHorizontal,
@@ -18,6 +19,7 @@ import { copyToClipboard } from "@/lib/clipboard";
 import { replaceCrystalMaterialTerms } from "@/lib/crystal-prompt-customization";
 import {
   buildCrystalPromptSet,
+  formatCrystalPromptPackage,
   getCrystalCasesByProduct,
   supportedModelLabels
 } from "@/lib/crystal-cases";
@@ -44,6 +46,7 @@ export function CrystalCaseDetail({
   const favorite = favoriteSet.has(caseItem.id);
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [customMaterial, setCustomMaterial] = useState("");
+  const [activePromptId, setActivePromptId] = useState("gpt-image");
   const [toast, setToast] = useState<ToastState>(null);
   const promptSet = useMemo(() => buildCrystalPromptSet(caseItem), [caseItem]);
   const coverImage = caseItem.coverImage || caseItem.image;
@@ -56,6 +59,7 @@ export function CrystalCaseDetail({
         .slice(0, 3),
     [caseItem.id, product.id]
   );
+  const nextCase = relatedCases[0] ?? null;
   const normalizedCustomMaterial = customMaterial.trim();
   const customizePrompt = useCallback(
     (value: string) =>
@@ -116,6 +120,8 @@ export function CrystalCaseDetail({
     ],
     [customizePrompt, promptSet.prompt, promptSet.promptEn]
   );
+  const activePromptBlock =
+    promptBlocks.find((block) => block.id === activePromptId) ?? promptBlocks[0];
 
   const showToast = useCallback((message: string, tone: "success" | "error") => {
     const id = Date.now();
@@ -149,6 +155,48 @@ export function CrystalCaseDetail({
     },
     [caseItem.id, caseItem.slug, normalizedCustomMaterial, product.id, showToast]
   );
+  const handlePromptTabChange = (promptId: string) => {
+    setActivePromptId(promptId);
+    track("prompt_model_switch", {
+      case_id: caseItem.id,
+      case_slug: caseItem.slug,
+      model: promptId
+    });
+  };
+  const handleCopyAllPrompts = useCallback(async () => {
+    const promptPackage = formatCrystalPromptPackage({
+      title: caseItem.title,
+      gptImage: promptBlocks[0]?.value ?? "",
+      midjourney: promptBlocks[1]?.value ?? "",
+      flux: promptBlocks[2]?.value ?? ""
+    });
+    const success = await copyToClipboard(promptPackage);
+
+    if (!success) {
+      showToast("复制失败，请手动复制", "error");
+      return;
+    }
+
+    setCopiedId("all-prompts");
+    track("prompt_copy_all", {
+      case_id: caseItem.id,
+      case_slug: caseItem.slug,
+      product_id: product.id,
+      custom_material: normalizedCustomMaterial || null
+    });
+    showToast("已复制到剪贴板", "success");
+    window.setTimeout(() => {
+      setCopiedId((current) => (current === "all-prompts" ? null : current));
+    }, 1600);
+  }, [
+    caseItem.id,
+    caseItem.slug,
+    caseItem.title,
+    normalizedCustomMaterial,
+    product.id,
+    promptBlocks,
+    showToast
+  ]);
   const handleToggleFavorite = () => {
     toggleFavorite(caseItem.id);
     track("favorite_toggle", {
@@ -160,7 +208,7 @@ export function CrystalCaseDetail({
   };
 
   return (
-    <main className="min-h-screen text-neutral-950">
+    <main className="min-h-screen pb-24 text-neutral-950">
       <section className="mx-auto w-full max-w-7xl px-4 py-5 sm:px-6 lg:px-8">
         <div className="flex flex-wrap gap-2">
           <Link
@@ -321,15 +369,41 @@ export function CrystalCaseDetail({
                 输入后会实时替换下方 GPT Image、Midjourney 和 Flux 中的水晶材质词，复制时也会复制替换后的版本。
               </p>
             </div>
-            {promptBlocks.map((block) => (
+
+            <div
+              role="tablist"
+              aria-label="选择 Prompt 模型"
+              className="flex gap-2 overflow-x-auto rounded-full border border-black/10 bg-white p-1"
+            >
+              {promptBlocks.map((block) => (
+                <button
+                  key={block.id}
+                  id={block.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activePromptBlock.id === block.id}
+                  aria-controls={`${block.id}-panel`}
+                  onClick={() => handlePromptTabChange(block.id)}
+                  className={`h-10 shrink-0 rounded-full px-4 text-sm font-semibold transition ${
+                    activePromptBlock.id === block.id
+                      ? "bg-neutral-950 text-white"
+                      : "text-neutral-500 hover:bg-neutral-100 hover:text-neutral-950"
+                  }`}
+                >
+                  {block.label.replace(" Prompt", "")}
+                </button>
+              ))}
+            </div>
+
+            {activePromptBlock ? (
               <PromptBlock
-                key={block.id}
-                block={block}
-                copied={copiedId === block.id}
+                key={activePromptBlock.id}
+                block={activePromptBlock}
+                copied={copiedId === activePromptBlock.id}
                 onCopy={handleCopyPrompt}
                 highlightTerm={normalizedCustomMaterial}
               />
-            ))}
+            ) : null}
           </div>
         </div>
 
@@ -412,8 +486,102 @@ export function CrystalCaseDetail({
           </div>
         </div>
       </section>
+      <StickyActionBar
+        favorite={favorite}
+        copiedCurrent={copiedId === activePromptBlock?.id}
+        copiedAll={copiedId === "all-prompts"}
+        currentPromptLabel={activePromptBlock?.label ?? "当前 Prompt"}
+        nextCase={nextCase}
+        onToggleFavorite={handleToggleFavorite}
+        onCopyCurrent={() => {
+          if (activePromptBlock) {
+            void handleCopyPrompt(activePromptBlock.id, activePromptBlock.value);
+          }
+        }}
+        onCopyAll={() => {
+          void handleCopyAllPrompts();
+        }}
+      />
       <Toast toast={toast} />
     </main>
+  );
+}
+
+function StickyActionBar({
+  favorite,
+  copiedCurrent,
+  copiedAll,
+  currentPromptLabel,
+  nextCase,
+  onToggleFavorite,
+  onCopyCurrent,
+  onCopyAll
+}: {
+  favorite: boolean;
+  copiedCurrent: boolean;
+  copiedAll: boolean;
+  currentPromptLabel: string;
+  nextCase: CrystalCase | null;
+  onToggleFavorite: () => void;
+  onCopyCurrent: () => void;
+  onCopyAll: () => void;
+}) {
+  return (
+    <div className="fixed inset-x-3 bottom-3 z-40 mx-auto max-w-4xl rounded-[1.35rem] border border-black/10 bg-white/92 p-2 shadow-[0_18px_70px_rgba(23,23,23,0.18)] backdrop-blur-xl">
+      <div className="grid gap-2 sm:grid-cols-[1fr_1fr_auto_auto]">
+        <button
+          type="button"
+          onClick={onCopyCurrent}
+          aria-label={`复制当前展示的 ${currentPromptLabel}`}
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-neutral-950 px-4 text-sm font-semibold text-white transition hover:bg-neutral-800"
+        >
+          {copiedCurrent ? (
+            <Check className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <Copy className="h-4 w-4" aria-hidden="true" />
+          )}
+          {copiedCurrent ? "已复制当前" : "复制当前 Prompt"}
+        </button>
+        <button
+          type="button"
+          onClick={onCopyAll}
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 text-sm font-semibold text-neutral-800 transition hover:bg-neutral-50"
+        >
+          {copiedAll ? (
+            <Check className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <Copy className="h-4 w-4" aria-hidden="true" />
+          )}
+          {copiedAll ? "已复制全部" : "复制全部模型"}
+        </button>
+        <button
+          type="button"
+          onClick={onToggleFavorite}
+          aria-pressed={favorite}
+          className={`inline-flex h-11 items-center justify-center gap-2 rounded-full px-4 text-sm font-semibold transition ${
+            favorite
+              ? "bg-amber-100 text-amber-800 hover:bg-amber-200"
+              : "border border-black/10 bg-white text-neutral-800 hover:bg-neutral-50"
+          }`}
+        >
+          <Star
+            className="h-4 w-4"
+            fill={favorite ? "currentColor" : "none"}
+            aria-hidden="true"
+          />
+          {favorite ? "已收藏" : "收藏"}
+        </button>
+        {nextCase ? (
+          <Link
+            href={`/case/${nextCase.slug}`}
+            className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-black/10 bg-white px-4 text-sm font-semibold text-neutral-800 transition hover:bg-neutral-50"
+          >
+            下一个相似
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        ) : null}
+      </div>
+    </div>
   );
 }
 
@@ -429,7 +597,12 @@ function PromptBlock({
   highlightTerm: string;
 }) {
   return (
-    <section className="rounded-[1.5rem] border border-black/10 bg-white p-4">
+    <section
+      id={`${block.id}-panel`}
+      role="tabpanel"
+      aria-labelledby={block.id}
+      className="rounded-[1.5rem] border border-black/10 bg-white p-4"
+    >
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="text-sm font-semibold text-neutral-950">
