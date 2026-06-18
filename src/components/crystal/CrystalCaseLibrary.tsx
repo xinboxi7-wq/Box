@@ -225,8 +225,8 @@ export function CrystalCaseLibrary({
       <a href="#cases" className="skip-link">
         跳到全部商业案例
       </a>
-      <header className="sticky top-0 z-40 border-b border-black/5 bg-[#fbfaf7]/86 backdrop-blur-xl">
-        <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header className="sticky top-0 z-40 border-b border-black/5 bg-[#f8fbfa]/88 backdrop-blur-xl">
+        <div className="mx-auto flex h-16 w-full max-w-[1240px] items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link
             href="/"
             className="flex items-center gap-2 text-sm font-semibold tracking-tight text-neutral-950"
@@ -239,7 +239,7 @@ export function CrystalCaseLibrary({
 
           <nav
             aria-label="浏览路径"
-            className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/70 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex"
+            className="hidden items-center gap-1 rounded-full border border-black/10 bg-white/78 p-1 text-sm font-medium text-neutral-600 shadow-sm md:flex"
           >
             <NavPill href="#tasks">按任务找</NavPill>
             <NavPill href="#cases">浏览案例</NavPill>
@@ -284,14 +284,14 @@ export function CrystalCaseLibrary({
         </nav>
       </header>
 
-      <section className="mx-auto grid w-full max-w-7xl gap-5 px-4 pb-8 pt-6 sm:px-6 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:px-8 lg:pt-10">
-        <div className="flex flex-col justify-between rounded-[2rem] border border-black/10 bg-[#fbfaf7]/86 p-5 shadow-[0_18px_70px_rgba(23,23,23,0.08)] sm:p-7 lg:min-h-[34rem]">
+      <section className="mx-auto grid w-full max-w-[1240px] gap-6 px-4 pb-10 pt-6 sm:px-6 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:px-8 lg:pt-10">
+        <div className="flex flex-col justify-between px-0 py-1 lg:min-h-[35rem]">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-3 py-1.5 text-xs font-medium text-neutral-600 shadow-sm">
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white/86 px-3 py-1.5 text-xs font-medium text-neutral-600 shadow-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-teal-700" />
               水晶手串 AI 商业视觉案例库
             </div>
-            <h1 className="mt-6 max-w-xl text-4xl font-semibold leading-[0.96] tracking-[-0.04em] text-neutral-950 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-2xl text-[2.65rem] font-semibold leading-[0.98] tracking-[-0.05em] text-neutral-950 sm:text-6xl lg:text-7xl">
               水晶手串 AI 商业视觉案例库
             </h1>
             <p
@@ -300,7 +300,7 @@ export function CrystalCaseLibrary({
             >
               Crystal visual cases and reusable prompts for commercial sellers.
             </p>
-            <p className="mt-5 max-w-xl text-base leading-7 text-neutral-600">
+            <p className="mt-5 max-w-xl text-base leading-7 text-neutral-700">
               面向水晶商家、小红书卖家和电商运营，整理可直接复用的商品图、种草图、品牌广告图与礼赠场景 Prompt。
             </p>
 
@@ -322,7 +322,7 @@ export function CrystalCaseLibrary({
               <div className="mb-2 text-xs font-semibold uppercase tracking-[0.16em] text-neutral-400">
                 先选你要完成的商业任务
               </div>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid gap-2 sm:grid-cols-2">
                 {crystalTaskFilters.map((task) => (
                   <button
                     key={task.id}
@@ -331,8 +331,8 @@ export function CrystalCaseLibrary({
                     aria-pressed={activeTaskFilter === task.id}
                     className={`rounded-2xl border px-3 py-3 text-left transition ${
                       activeTaskFilter === task.id
-                        ? "border-neutral-950 bg-neutral-950 text-white shadow-sm"
-                        : "border-black/10 bg-white text-neutral-700 hover:border-neutral-300 hover:text-neutral-950"
+                        ? "border-teal-900 bg-teal-950 text-white shadow-sm"
+                        : "border-black/10 bg-white/86 text-neutral-700 hover:border-teal-900/25 hover:text-neutral-950"
                     }`}
                   >
                     <span className="block text-sm font-semibold">{task.label}</span>
@@ -364,7 +364,7 @@ export function CrystalCaseLibrary({
 
       <section
         id="products"
-        className="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-[1240px] px-4 py-6 sm:px-6 lg:px-8"
       >
         <SectionHeading eyebrow="按材质浏览" title="先选择水晶材质" />
         <div className="mt-4 grid gap-4 md:grid-cols-3">
@@ -380,9 +380,9 @@ export function CrystalCaseLibrary({
 
       <section
         id="why"
-        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-[1240px] px-4 py-8 sm:px-6 lg:px-8"
       >
-        <div className="rounded-[2rem] border border-black/10 bg-neutral-950 p-5 text-white shadow-[0_24px_90px_rgba(23,23,23,0.2)] sm:p-7">
+        <div className="rounded-[1.625rem] border border-white/10 bg-[#061412] p-5 text-white shadow-[0_24px_80px_rgba(6,20,18,0.22)] sm:p-7">
           <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-200">
@@ -415,7 +415,7 @@ export function CrystalCaseLibrary({
 
       <section
         id="cases"
-        className="mx-auto w-full max-w-7xl px-4 py-8 sm:px-6 lg:px-8"
+        className="mx-auto w-full max-w-[1240px] px-4 py-10 sm:px-6 lg:px-8"
       >
         <div className="mb-5 grid gap-4 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
           <SectionHeading
@@ -428,7 +428,7 @@ export function CrystalCaseLibrary({
           </div>
         </div>
 
-        <div className="mb-4 grid gap-3 rounded-[1.5rem] border border-black/10 bg-white/70 p-3 shadow-sm">
+        <div className="mb-4 grid gap-3 rounded-[1.5rem] border border-black/10 bg-white/78 p-3 shadow-sm">
           <FilterRow label="业务目标">
             <FilterPill
               active={activeTaskFilter === allTaskFilterId}
@@ -482,7 +482,7 @@ export function CrystalCaseLibrary({
           </FilterRow>
         </div>
 
-        <div className="sticky top-16 z-20 mb-5 -mx-4 overflow-x-auto border-y border-black/5 bg-[#fbfaf7]/92 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
+        <div className="sticky top-16 z-20 mb-5 -mx-4 overflow-x-auto border-y border-black/5 bg-[#f8fbfa]/92 px-4 py-3 backdrop-blur sm:static sm:mx-0 sm:border-0 sm:bg-transparent sm:px-0 sm:py-0">
           <div className="flex min-w-max gap-2 sm:min-w-0 sm:flex-wrap">
             <MaterialFilterButton
               active={activeMaterialFilter === allMaterialFilterId}
@@ -546,11 +546,11 @@ export function CrystalCaseLibrary({
         )}
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto w-full max-w-[1240px] px-4 pb-12 sm:px-6 lg:px-8">
         <StaticConversionPanel />
       </section>
 
-      <section className="mx-auto w-full max-w-7xl px-4 pb-12 sm:px-6 lg:px-8">
+      <section className="mx-auto w-full max-w-[1240px] px-4 pb-12 sm:px-6 lg:px-8">
         <CrystalFavoritePanel
           favoriteCases={favoriteCases}
           onToggleFavorite={(caseId) => handleToggleFavorite(caseId, "favorites")}
@@ -559,7 +559,7 @@ export function CrystalCaseLibrary({
       </section>
 
       <footer className="border-t border-black/5 bg-white/54">
-        <div className="mx-auto grid w-full max-w-7xl gap-4 px-4 py-8 text-sm text-neutral-500 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
+        <div className="mx-auto grid w-full max-w-[1240px] gap-4 px-4 py-8 text-sm text-neutral-500 sm:px-6 lg:grid-cols-[1fr_auto] lg:px-8">
           <div>
             <div className="font-semibold text-neutral-950">
               水晶手串 AI 商业视觉案例库
@@ -617,8 +617,8 @@ function FilterPill({
 }) {
   const activeClass =
     tone === "teal"
-      ? "border-teal-800 bg-teal-800 text-white"
-      : "border-neutral-950 bg-neutral-950 text-white";
+      ? "border-teal-950 bg-teal-950 text-white"
+      : "border-teal-950 bg-teal-950 text-white";
 
   return (
     <button
@@ -629,7 +629,7 @@ function FilterPill({
       className={`inline-flex h-10 shrink-0 items-center rounded-full border px-4 text-sm font-semibold transition ${
         active
           ? activeClass
-          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
+          : "border-black/10 bg-white/80 text-neutral-600 hover:border-teal-900/25 hover:text-neutral-950"
       }`}
     >
       {children}
@@ -639,7 +639,7 @@ function FilterPill({
 
 function StaticConversionPanel() {
   return (
-    <section className="overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-950 text-white shadow-[0_24px_90px_rgba(23,23,23,0.2)]">
+    <section className="overflow-hidden rounded-[1.625rem] border border-white/10 bg-[#061412] text-white shadow-[0_24px_80px_rgba(6,20,18,0.22)]">
       <div className="grid gap-6 p-5 sm:p-7 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:items-end">
         <div>
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-teal-200">
@@ -695,7 +695,7 @@ function CtaLink({
       onClick={() => track("cta_click", { target: eventLabel })}
       className={`inline-flex h-12 items-center justify-center rounded-full px-5 text-sm font-semibold transition ${
         subtle
-          ? "border border-white/12 bg-white/[0.08] text-white hover:bg-white/[0.14]"
+          ? "border border-white/16 bg-white/[0.08] text-white hover:bg-white/[0.14]"
           : "bg-white text-neutral-950 hover:bg-neutral-100"
       }`}
     >
@@ -808,16 +808,16 @@ function HeroCase({
   const caseImage = caseItem.coverImage || caseItem.image;
 
   return (
-    <article className="group relative min-h-[30rem] overflow-hidden rounded-[2rem] border border-black/10 bg-neutral-950 shadow-[0_24px_90px_rgba(23,23,23,0.22)]">
+    <article className="group relative min-h-[23rem] overflow-hidden rounded-[1.625rem] border border-white/20 bg-neutral-950 shadow-[0_30px_80px_rgba(8,18,18,0.28)] sm:min-h-[30rem] lg:min-h-[35rem]">
       <Image
         src={caseImage}
         alt={caseItem.title}
         fill
         priority
         sizes="(max-width: 1024px) 100vw, 56vw"
-        className="object-cover transition duration-700 group-hover:scale-[1.03]"
+        className="object-cover object-[center_58%] transition duration-700 group-hover:scale-[1.03]"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-black/76 via-black/18 to-transparent" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.10)_0%,transparent_34%),linear-gradient(0deg,rgba(0,0,0,0.82)_0%,rgba(0,0,0,0.34)_42%,transparent_78%)]" />
       <div className="absolute left-4 right-4 top-4 flex items-center justify-between gap-3">
         <div className="flex flex-wrap gap-2">
           <span className="rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-neutral-950 backdrop-blur">
@@ -845,7 +845,7 @@ function HeroCase({
         <p className="text-xs font-semibold tracking-[0.18em] text-white/64">
           精选商业案例
         </p>
-        <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-[-0.03em] sm:text-5xl">
+        <h2 className="mt-3 max-w-2xl text-[1.95rem] font-semibold leading-[1.03] tracking-[-0.03em] sm:text-5xl">
           {caseItem.title}
         </h2>
         <p className="mt-3 max-w-xl text-sm leading-6 text-white/72">
@@ -854,7 +854,7 @@ function HeroCase({
         <Link
           href={`/case/${caseItem.slug}`}
           aria-label={`查看 ${caseItem.title} 的完整 Prompt 和视觉分析`}
-          className="mt-5 inline-flex h-11 items-center gap-2 rounded-full bg-white px-4 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-100"
+          className="mt-5 inline-flex h-11 items-center gap-2 whitespace-nowrap rounded-full bg-white px-4 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-100"
         >
           查看完整 Prompt
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -882,8 +882,8 @@ function MaterialFilterButton({
       aria-pressed={active}
       className={`inline-flex h-10 items-center rounded-full border px-4 text-sm font-medium transition ${
         active
-          ? "border-neutral-950 bg-neutral-950 text-white shadow-sm"
-          : "border-black/10 bg-white/80 text-neutral-600 hover:border-neutral-300 hover:text-neutral-950"
+          ? "border-teal-950 bg-teal-950 text-white shadow-sm"
+          : "border-black/10 bg-white/80 text-neutral-600 hover:border-teal-900/25 hover:text-neutral-950"
       }`}
     >
       {children}
@@ -902,7 +902,7 @@ function MaterialFilterButton({
 
 function HeroMetric({ value, label }: { value: string; label: string }) {
   return (
-    <div className="rounded-2xl border border-black/10 bg-white/86 px-4 py-3 shadow-sm">
+    <div className="rounded-2xl border border-black/10 bg-white/86 px-4 py-3 shadow-[0_8px_24px_rgba(11,30,28,0.06)]">
       <div className="text-2xl font-semibold leading-none tracking-[-0.03em] text-neutral-950">
         {value}
       </div>
@@ -973,7 +973,7 @@ function ProductCategoryCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group overflow-hidden rounded-[1.5rem] border border-black/10 bg-white/78 shadow-sm transition hover:-translate-y-0.5 hover:shadow-[0_18px_60px_rgba(23,23,23,0.12)]"
+      className="group overflow-hidden rounded-[1.5rem] border border-black/10 bg-white/82 shadow-[0_10px_34px_rgba(11,30,28,0.07)] transition hover:-translate-y-1 hover:shadow-[0_18px_52px_rgba(11,30,28,0.11)]"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-neutral-100">
         <Image
@@ -995,7 +995,7 @@ function ProductCategoryCard({
               {product.englishName}
             </div>
           </div>
-          <div className="rounded-full bg-neutral-950 px-3 py-1 text-xs font-semibold text-white">
+          <div className="rounded-full bg-teal-950 px-3 py-1 text-xs font-semibold text-white">
             {caseCount}
           </div>
         </div>
