@@ -1,0 +1,4 @@
+interface:
+  display_name: "柱子哥风格创作"
+  short_description: "提炼AI商业风口短视频的标题钩子结构和复盘方法"
+  default_prompt: "Use $zhuzi-style-creator to turn this topic into a short-video title, opening hook, structure, and reusable creation checklist."
